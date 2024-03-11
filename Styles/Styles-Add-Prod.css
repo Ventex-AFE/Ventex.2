@@ -111,3 +111,68 @@ html,body{
     font-weight: 400;
     font-style: normal;
 }
+.inputbox{
+    position: relative;
+    width: 70%;
+    height: 15vh;
+    margin-left: 15%;
+    background-color: none;
+    box-sizing: border-box;
+    margin-top: 1vw;
+    border-radius: 5px;
+}
+.inputbox .inp{
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+    border: 0;
+    padding-left: 5px;
+    border: 1px solid rgb(176, 176, 176);
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 5px;
+}
+.inputbox .text_input{
+    position: absolute;
+    background-color: whitesmoke;
+    float: left;
+    top: 25%;
+    left: 5px;
+    color: rgb(182, 182, 182);
+    font-size: 1vw;
+    transition: .3s;
+    pointer-events: none;
+}
+.inputbox .inp:focus ~ .text_input,
+.inputbox .inp:valid ~ .text_input{
+    color: #2D7199;
+    top: -20%;
+    font-size: small;
+}
+.inputbox .inp:placeholder-shown + .text_input{
+    top: -20%;
+    font-size: 0.9em;
+}
+.selects{
+    width: 27%;
+    height: 30%;
+    border: none;
+    border-radius: 15px;
+    margin-left: 14%;
+    margin-top: 5%;
+    float: left;
+}
+#Up-foto{
+
+}
+#button-sumit{
+    width: 60%;
+    height: 600%;
+    border: none;
+    margin-left: 15%;
+    margin-top: 10%;
+    border-radius: 20px;
+    background-color: #282e1c;
+    color: white;
+}

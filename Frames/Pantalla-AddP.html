@@ -28,24 +28,23 @@
         </section>
         <section id="side2">
             <form action="" method="post">
-                <fieldset>
-                    <legend>Nombre del Producto</legend>
-                    <label for=""><input type="text"></label>
-                    
-                </fieldset>
-                <fieldset>
-                    <legend></legend>
-                    <input type="text">
-                </fieldset>
-                <fieldset disabled="disabled">
-                    <legend></legend>
-                    <input type="text">
-                </fieldset>
-                
-                <select name="" id="">
-                    <option value=""></option>
+                <br>
+                <div class="inputbox" style="height: 5vh;">
+                    <input type="text" name="name" class="inp" placeholder=" " required><br>
+                    <span class="text_input">Nombre del producto</span>
+                </div>
+                <div class="inputbox" >
+                    <input type="text" name="date" class="inp" placeholder=" " required><br>
+                    <span class="text_input">Descripcion</span>
+                </div>
+                <select name="" id="" class="selects">
+                    <option value="">Categoria</option>
                 </select>
-                <select name="" id=""></select>
+                <select name="" id="" class="selects">
+                    <option value="">Subcategoria</option>
+                </select>
+                <input type="file" name="" id="Up-foto">
+                <button type="submit" id="button-sumit">Agregar Producto</button>
             </form>
         </section>
     </section>
