@@ -37,14 +37,22 @@
                     <input type="text" name="date" class="inp" placeholder=" " required><br>
                     <span class="text_input">Descripcion</span>
                 </div>
-                <select name="" id="" class="selects">
-                    <option value="">Categoria</option>
-                </select>
-                <select name="" id="" class="selects">
-                    <option value="">Subcategoria</option>
-                </select>
-                <input type="file" name="" id="Up-foto">
-                <button type="submit" id="button-sumit">Agregar Producto</button>
+                <div id="contaner-selects">
+                    <select name="" id="" class="selects">
+                        <option value="">Categoria</option>
+                    </select>
+                    <select name="" id="" class="selects" style="margin-left: 10%;">
+                        <option value="">Subcategoria</option>
+                    </select>
+                </div>
+                <div id="up-photo">
+                    <label for="archivo" class="custom-file-input">Añadir Imagen
+                        <input type="file" name="archivo" id="archivo">
+                    </label>
+                </div>
+               <div id="button-div">
+                    <button type="submit" id="button-sumit">Publicar Producto</button>
+               </div>
             </form>
         </section>
     </section>

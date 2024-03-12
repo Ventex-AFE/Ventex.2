@@ -36,14 +36,15 @@ html,body{
     margin-top: 2%;
     background-color: #B0C881;
     font-size: 20px;
+    cursor: pointer;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 #search{
     margin-left: 5%;
     margin-top: 2%;
     float: left;
-    width: 15%;
-    height: 40%;
+    width: 18%;
+    height: 43%;
     border: none;
     border-radius: 20px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
@@ -146,7 +147,7 @@ html,body{
 }
 .inputbox .inp:focus ~ .text_input,
 .inputbox .inp:valid ~ .text_input{
-    color: #2D7199;
+    color: #466043;
     top: -20%;
     font-size: small;
 }
@@ -154,25 +155,69 @@ html,body{
     top: -20%;
     font-size: 0.9em;
 }
+#contaner-selects{
+    width: 100%;
+    height: 20%;
+    float: left;
+    margin-bottom: 8%;
+}
 .selects{
-    width: 27%;
-    height: 30%;
-    border: none;
+    width: 30%;
+    height: 30px;
+    text-align: center;
+    border: 2px solid #ccc;
     border-radius: 15px;
-    margin-left: 14%;
+    margin-left: 15%;
     margin-top: 5%;
     float: left;
 }
-#Up-foto{
 
+    .custom-file-input {
+        position: relative;
+        width: 38%; 
+        height: 30%; 
+        border-radius: 20px;
+        /*border: 2px solid #ccc; */
+        padding: 10px; 
+        cursor: pointer;
+        outline: none;
+        background-color: #B3D7A7; 
+        color: #333; 
+        font-size: 16px; 
+        text-align: center; 
+        line-height: 30px; 
+        overflow: hidden; 
+        margin-left: 14%;
+        margin-top: 60%;
+        font-family: "Hind", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: black;
+        font-size: 15px;
+    }
+    .custom-file-input input[type="file"] {
+        display: none; 
+    }
+#button-div{
+    width: 100%;
+    height: 30%;
+    float: left;
+    margin-top: 4%;
 }
+
 #button-sumit{
-    width: 60%;
-    height: 600%;
+    width: 71%;
+    height: 45px;
+    margin: auto;
     border: none;
     margin-left: 15%;
-    margin-top: 10%;
-    border-radius: 20px;
-    background-color: #282e1c;
+    margin-top: 5%;
+    border-radius: 10px;
+    background-color: #466043;
     color: white;
+    font-family: "Hind", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    font-size: 20px;
 }
