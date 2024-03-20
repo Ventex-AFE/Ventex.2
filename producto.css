@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Hammersmith One', sans-serif;;
+}
+html{
+    height: 100%;
+    background-color: #EBEBEB;
+}
+
+body{
+    width: 100%;
+}
+#containerD{
+    width: 100%;
+    height: 80vh;
+}
+.imagen{
+    width: 100%;
+    height: 16vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-image: url(./img/img.png);
+}
+.image{
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    border-color: 1px solid negro;
+}
+#ima{
+    width: 20vh;
+    height: 33vw;
+    margin-left: 30vh;
+    float: left;
+    margin-top: 25px;
+    background-color: teal;
+}
+#bigima{
+    width: 33vw;
+    height: 33vw;
+    float: left;
+    margin-left: 10px;
+    margin-top: 25px;
+    background-color: teal;
+}
+#description{
+    width: 25vw;
+    height: 33vw;
+    float: left;
+    margin-left: 17px;
+    margin-top: 25px;
+    background-color: teal;
+}
+#containerT{
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#textU{
+    width: 80%;
+    height: 10vh;
+    background-color: firebrick;
+    margin-left: 55px;
+    margin-bottom: 10px;
+}
+.cont{
+    width: 93%;
+    height: 50vh;
+    background-color: firebrick;
+    margin-left: 55px;
+    float: left;
+    margin-bottom: 10px;
+}
+.producto{
+    width: 40vh;
+    height: 45vh;
+    background-color: hotpink;
+    float: left;
+    margin-top: 15px;
+    margin-left: 55px;
+    margin-bottom: 10px;
+
+}
+.contD{
+    width: 85%;
+    height: 35vh;
+    float: left;
+    margin-left: 15vh;
+    margin-bottom: 10px;
+}
+.partU{
+    width: 50%;
+    height: 35vh;
+    float: left;
+}
+#textD{
+    width: 80%;
+    height: 10vh;
+    background-color: indigo;
+    float: left;
+    margin-top: 20px;
+    margin-left: 55px;
+    margin-bottom: 10px;
+}
+#contacto{
+    width: 45%;
+    height: 20vh;
+    background-color: indigo;
+    float: left;
+    margin-left: 55px;
+    margin-bottom: 10px;
+}
+#descriptionD{
+    width: 70%;
+    height: 30vh;
+    background-color: darkblue;
+    float: left;
+    margin-top: 20px;
+    margin-left: 55px;
+    margin-bottom: 10px;
+}
+#valoracion{
+    width: 95%;
+    height: 30vh;
+    float: left;
+    background-color: khaki;
+    margin-bottom: 30px;
+}
+#reseña{
+    width: 80%;
+    height: 30vh;
+    float: left;
+    background-color: khaki;
+    margin-bottom: 30px;
+}
+footer{
+    width: 100%;
+    height: 10vh;
+    float: left;
+    margin-top: 20px;
+    background-color: forestgreen;
+}
