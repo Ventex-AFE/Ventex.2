@@ -17,6 +17,7 @@ main{
    min-height: 80vh;
    display: flex;
    flex-wrap: wrap;
+   align-content: flex-start;
    justify-content: center;
 }
 .personalInfo{
@@ -65,6 +66,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: flex-start;
 }
 .socialMedia{
     width: 5vw;
@@ -77,9 +79,10 @@ main{
 /* Rigth Bar ------------------------------------------------------------------------------*/
 .rigth{
     width: 65vw;
-    min-height: 80vh;
+    height: 80vh;
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     margin-top: 5vh;
 }
 .searchSection{
