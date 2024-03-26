@@ -1,46 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../Styles/Admin-ViewProduct-porce.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <section id="bar-navegation">
-      <section id="info-user"></section>
-      <section id="button-navegation"></section>
-      <section id="button-logout"></section>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../Styles/Admin-ViewProduct-porce.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <section id="bar-navegation">
+    <!-- Secccion que se encarga de maquetar informacion de Admin -->
+    <section id="info-user">
+      <!-- Seccion para la imagen del administrador -->
+      <section id="imagen-usAdm">
+        <!-- imagen recoleccion con php en la db para obtner la ruta de la imagen -->
+        <img src="">
+      </section>
+      <section id="Name-Adm">
+        <!-- Parte para nombre de adm y va hacer pasado con session php -->
+        <h2></h2>
+      </section>
     </section>
-    <section id="section-header">
-      <header id="header-name"><h1 id="Name-page">Ventex</h1></header>
+    <section id="button-navegation">
+      <!-- Secciones para cajas para los link de direccion -->
+      <section class="Box-navegation">
+        <div class="icon-button"></div>
+        <section class="section-buton">
+          <a href=""></a>
+        </section>
+      </section>
+      <section class="Box-navegation">
+        <div class="icon-button"></div>
+        <section class="section-buton">
+          <a href=""></a>
+        </section>
+      </section>
+      <section class="Box-navegation">
+        <div class="icon-button"></div>
+        <section class="section-buton">
+          <a href=""></a>
+        </section>
+      </section>
+      <section class="Box-navegation">
+        <div class="icon-button"></div>
+        <section class="section-buton">
+          <a href=""></a>
+        </section>
+      </section>
+      <section class="Box-navegation">
+        <div class="icon-button"></div>
+        <section class="section-buton">
+          <a href=""></a>
+        </section>
+      </section>href.link-name
     </section>
-    <section id="section-serch"> <section class="searchSection">
+
+    <section id="button-logout"></section>
+  </section>
+  <section id="section-header">
+    <header id="header-name">
+      <h1 id="Name-page">Ventex</h1>
+    </header>
+  </section>
+  <section id="section-serch">
+    <section class="searchSection">
       <div class="searchContainer">
-          <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
-          <button class="searchButton"><img src="../Icons/lupaB.png" alt=""></button>
+        <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
+        <button class="searchButton"><img src="../Icons/lupaB.png" alt=""></button>
       </div>
-  </section></section>
-    <section id="section-data">
-      <table class="tabla">
-        <thead>
-          <th>Id-P</th>
-          <th>Nombre de P</th>
-          <th>Descripcion</th>
-          <th>Precio</th>
-          <th>Categoria</th>
-          <th>Subcategoria</th>
-          <th>Imagen</th>
-          <th>Modificacion</th>
-        </thead>
-      </table>
     </section>
-    <footer><h2 id="name-footer">Ventex</h2></footer>
-  </body>
+  </section>
+  <section id="section-data">
+    <table class="tabla">
+      <thead>
+        <th>Id-P</th>
+        <th>Nombre de P</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Categoria</th>
+        <th>Subcategoria</th>
+        <th>Imagen</th>
+        <th>Modificacion</th>
+      </thead>
+    </table>
+  </section>
+  <footer>
+    <h2 id="name-footer">Ventex</h2>
+  </footer>
+</body>
+
 </html>
