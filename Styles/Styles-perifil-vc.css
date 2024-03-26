@@ -1,153 +1,154 @@
-*{
-    padding: 0%;
-    margin: 0%;
-    font-family: "Hammersmith One", sans-serif;
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: "Hammersmith One", sans-serif;
 }
-html, body{
-    background-color: #EBEBEB;
+html,
+body {
+  background-color: #ebebeb;
 }
-main{
-    width: 100%;
-    min-height: 90vh;
-    display: flex;
+main {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
 }
 /* Left Bar------------------------------------------------------------------------------*/
-.left{
-   width: 32vw; 
-   min-height: 80vh;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
+.left {
+  width: 32vw;
+  min-height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.personalInfo{
-    width: 25vw;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: white;
-    margin-top: 5vh;
-    border-radius: 10px;
-    box-shadow: 0 0 3px 3px rgb(226, 226, 226);
+.personalInfo {
+  width: 25vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+  margin-top: 5vh;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 3px rgb(226, 226, 226);
 }
-.photoContainer{
-    width: 15vw;
-    height: 15vw;
-    background-color: #EBEBEB;
-    border-radius: 100%;
-    margin-top: 3vw;
+.photoContainer {
+  width: 15vw;
+  height: 15vw;
+  background-color: #ebebeb;
+  border-radius: 100%;
+  margin-top: 3vw;
 }
-.nameContainer{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
+.nameContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
-.userName{
-    font-size: 5vh;
-    margin: 2vw;
-    color: rgb(70, 70, 70);
+.userName {
+  font-size: 5vh;
+  margin: 2vw;
+  color: rgb(70, 70, 70);
 }
-.descriptionContainer{
-    width: 100%;
-    height: auto;
+.descriptionContainer {
+  width: 100%;
+  height: auto;
 }
-.text{
-    margin: 2vw;
-    font-size: 2.5vh;
+.text {
+  margin: 2vw;
+  font-size: 2.5vh;
 }
 /* Contact Information - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-.socialMedia-container{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.socialMedia-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.socialMedia{
-    width: 5vw;
-    height: 5vw;
-    border: 1px solid gray;
-    border-radius: 100%;
-    margin: 1vh;
-    cursor: pointer;
+.socialMedia {
+  width: 5vw;
+  height: 5vw;
+  border: 1px solid gray;
+  border-radius: 100%;
+  margin: 1vh;
+  cursor: pointer;
 }
 /* Rigth Bar ------------------------------------------------------------------------------*/
-.rigth{
-    width: 65vw;
-    min-height: 80vh;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 5vh;
+.rigth {
+  width: 65vw;
+  min-height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5vh;
 }
-.searchSection{
-    width: 100%;
-    height: 20vh;
-    flex-wrap: wrap;
-    display: flex;
+.searchSection {
+  width: 100%;
+  height: 20vh;
+  flex-wrap: wrap;
+  display: flex;
 }
-.tit-c{
-    width: 100%;
-    min-height: 6vh;
+.tit-c {
+  width: 100%;
+  min-height: 6vh;
 }
-.tit{
-    font-family: "Hammersmith One", sans-serif;
-    font-size: 4vw;
-    margin-left: 1vw;
-    color: gray;
+.tit {
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 4vw;
+  margin-left: 1vw;
+  color: gray;
 }
-.searchContainer{
-    position: relative;
-    margin-left: 1.5vw;
+.searchContainer {
+  position: relative;
+  margin-left: 1.5vw;
 }
- 
-.searchContainer .searchButton{
-    width: 5vh;
-    height: 5vh;
-    border: 0cap;
-    border-radius: 100%;
-    position: absolute;
-    background-color: rgb(147, 207, 147);
-    cursor: pointer;
-    top: 0;
-    right: 0;
-    transition: .5s;
+
+.searchContainer .searchButton {
+  width: 5vh;
+  height: 5vh;
+  border: 0cap;
+  border-radius: 100%;
+  position: absolute;
+  background-color: rgb(147, 207, 147);
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  transition: 0.5s;
 }
-img{
-    width: 5vh;
-    height: 5vh;
+img {
+  width: 5vh;
+  height: 5vh;
 }
-.searchContainer #searchP{
-    width: 0;
-    height: 5vh;
-    border: 0cap;
-    outline: 0cap;
-    padding: 1vw;
-    background-color: #ffffff;
-    padding-left: 1vw;
-    border-radius: 100px;
-    transition: .8s;
-    top: 0;
-    right: 0;
+.searchContainer #searchP {
+  width: 0;
+  height: 5vh;
+  border: 0cap;
+  outline: 0cap;
+  padding: 1vw;
+  background-color: #ffffff;
+  padding-left: 1vw;
+  border-radius: 100px;
+  transition: 0.8s;
+  top: 0;
+  right: 0;
 }
 .searchContainer:hover #searchP {
-    width: 25vw;
-    background-color: white;
-    border: 1px solid rgb(209, 209, 209);
+  width: 25vw;
+  background-color: white;
+  border: 1px solid rgb(209, 209, 209);
 }
-#searchP:focus{
-    width: 25vw;
-    background-color: white;
-    border: 1px solid rgb(209, 209, 209);
+#searchP:focus {
+  width: 25vw;
+  background-color: white;
+  border: 1px solid rgb(209, 209, 209);
 }
-#searchP:valid{
-    width: 25vw;
-    background-color: white;
-    border: 1px solid rgb(209, 209, 209);
+#searchP:valid {
+  width: 25vw;
+  background-color: white;
+  border: 1px solid rgb(209, 209, 209);
 }
 #searchP:valid ~ .searchButton {
-    background-color: rgb(66, 94, 66);
+  background-color: rgb(66, 94, 66);
 }
 /*------------------------------------------------------------------------------*/
