@@ -6,7 +6,6 @@ html,
 body {
   width: 100vw;
   height: 100vh;
-
   background-color: #cccccc;
 }
 #bar-navegation {
@@ -26,6 +25,7 @@ body {
     height: 10vh;
     background-color: #cccccc;
     margin-top: 4vh;
+    margin-bottom: 2vh;
     float: left;
 }
 #section-data{
@@ -35,6 +35,7 @@ body {
     background-color: rgb(234, 234, 234);
     margin-left: 1vw;
     float: left;
+    margin-top: 1vh;
     
 }
 #section-serch{
@@ -70,13 +71,33 @@ footer{
 
 #info-user{
     width:20vw;
-    height:25vh;
+    height:30vh;
     float: left;
-    background-color: #1f355f;
+}
+#Name-Adm{
+  margin-top: 2vh;
+  text-align: center;
+  color: white;
+}
+#imagen-usAdm{
+  width: 8vw;
+  height: 15vh;
+  float: left;
+  background-color: #1cb149;
+  border-radius: 15px;
+  margin-left: 6vw;
+  margin-top: 2vh;
+}
+#img-A{
+  width: 8vw;
+  height: 15vh;
+  background-color: cadetblue;
+  float: left;
+  border-radius: 15px;
 }
 
 .tabla {
-  width: 100%;
+  width: 78vw;
   border-collapse: collapse;
 }
 
@@ -167,15 +188,43 @@ img {
 #searchP:valid ~ .searchButton {
   background-color: rgb(19, 13, 106);
 }
+
 #button-navegation{
   width: 20vw ;
-  height: 60vh;
-  background-color: #f2f2f2;
+  height: 55vh;
   float: left;
 }
 #button-logout{
   width: 20vw ;
   height: 10vh;
-  background-color: #7b1717;
   float: left;
+}
+.Box-navegation{
+  width: 20vw;
+  height: 5vh;
+  float: left;
+}
+.icon-button{
+  width: 3vw;
+  height: 1.2vh;
+  float: left;
+  background-color: #061620;
+  margin: 2%;
+  border-radius: 10px;
+}
+.section-buton{
+  width: 15vw;
+  height: 5vh;
+  float: left;
+  color: white;
+}
+a{
+  color: white;
+  margin-bottom: 3vh;
+}
+#section-logut{
+width: 20vw;
+height: 10vh;
+float: left;
+background-color: #1cb149;
 }
