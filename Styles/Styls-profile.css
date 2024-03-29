@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Hammersmith One', sans-serif;;
+}
+html{
+    height: 100%;
+    background-color: #EBEBEB;
+}
+
+body{
+    width: 100%;
+}
+ main{
+    height: 90%;
+    width: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+ }
+ .parent{
+    width: 100vh;
+    min-height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    background-color: green;
+ }
+ .parent_Child{
+    width: 95vh;
+    height: 50VW;
+    background-color: yellow;
+ }
+ .parent_FirstChild{
+    width: 100%;
+    height: 15VW;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+ }
+ .parent_LastChild{
+    width: 95vh;
+    min-height: 35VW;
+    background-color: aqua;
+ }
+ #profile_Card_Img{
+    width: 30vh;
+    height: 30Vh;
+    border-radius: 50%;
+    position: relative;
+    top: 13vh;
+    background-color: gray;
+ }
