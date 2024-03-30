@@ -1,0 +1,230 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #cccccc;
+}
+#bar-navegation {
+    width: 20vw;
+    height: 94vh;
+    background: rgb(1, 4, 18);
+    background: linear-gradient(
+      0deg,
+      rgba(1, 4, 18, 1) 6%,
+      rgba(44, 46, 56, 1) 40%,
+      rgba(136, 136, 136, 1) 100%
+    );
+    float: left;
+}
+#section-header{
+    width: 80vw;
+    height: 10vh;
+    background-color: #cccccc;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+    float: left;
+}
+#section-data{
+    width: 78vw;
+    height: 60vh;
+    margin: auto;
+    background-color: rgb(234, 234, 234);
+    margin-left: 1vw;
+    float: left;
+    margin-top: 1vh;
+    
+}
+#section-serch{
+    margin-left: 35vw;
+    width: 10vw;
+    height: 5vh;
+    float: left;
+}
+footer{
+    width: 100vw;
+    height: 6vh;
+    background-color: #2e325a;
+    float: left;
+}
+#header-name > #Name-page {
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 60px;
+    text-align: center;
+    color: #1f355f;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
+  }
+#name-footer{
+    color: white;
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 30px;
+    text-align:end;
+    margin-right: 5vw;
+}
+
+#info-user{
+    width:20vw;
+    height:30vh;
+    float: left;
+}
+#Name-Adm{
+  margin-top: 2vh;
+  text-align: center;
+  color: white;
+}
+#imagen-usAdm{
+  width: 8vw;
+  height: 15vh;
+  float: left;
+  background-color: #1cb149;
+  border-radius: 15px;
+  margin-left: 6vw;
+  margin-top: 2vh;
+}
+#img-A{
+  width: 8vw;
+  height: 15vh;
+  background-color: cadetblue;
+  float: left;
+  border-radius: 15px;
+}
+
+.tabla {
+  width: 78vw;
+  border-collapse: collapse;
+}
+
+.tabla th,
+.tabla td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.tabla th {
+  background-color: #3498db;
+  color: rgb(244, 244, 244);
+}
+
+.tabla tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla tbody tr:hover {
+  background-color: #d5eaf0;
+}
+.searchSection {
+  width: 100%;
+  height: 20vh;
+  flex-wrap: wrap;
+  display: flex;
+}
+.tit-c {
+  width: 100%;
+  min-height: 6vh;
+}
+.tit {
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 4vw;
+  margin-left: 1vw;
+  color: gray;
+}
+.searchContainer {
+  position: relative;
+  margin-left: 3.5vw;
+}
+
+.searchContainer .searchButton {
+  width: 5vh;
+  height: 5vh;
+  border: 0cap;
+  border-radius: 100%;
+  position: absolute;
+  background-color: rgb(9, 53, 228);
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  transition: 0.5s;
+}
+img {
+  width: 5vh;
+  height: 5vh;
+}
+.searchContainer #searchP {
+  width: 0;
+  height: 5vh;
+  border: 0cap;
+  outline: 0cap;
+  padding: 1vw;
+  background-color: #ffffff;
+  padding-left: 1vw;
+  border-radius: 100px;
+  transition: 0.8s;
+  top: 0;
+  right: 0;
+}
+.searchContainer:hover #searchP {
+  width: 25vw;
+  background-color: white;
+  border: 1px solid rgb(209, 209, 209);
+}
+#searchP:focus {
+  width: 25vw;
+  background-color: white;
+  border: 1px solid rgb(209, 209, 209);
+}
+#searchP:valid {
+  width: 25vw;
+  background-color: white;
+  border: 1px solid rgb(209, 209, 209);
+}
+#searchP:valid ~ .searchButton {
+  background-color: rgb(19, 13, 106);
+}
+
+#button-navegation{
+  width: 20vw ;
+  height: 55vh;
+  float: left;
+}
+#button-logout{
+  width: 20vw ;
+  height: 10vh;
+  float: left;
+}
+.Box-navegation{
+  width: 20vw;
+  height: 5vh;
+  float: left;
+}
+.icon-button{
+  width: 3vw;
+  height: 1.2vh;
+  float: left;
+  background-color: #061620;
+  margin: 2%;
+  border-radius: 10px;
+}
+.section-buton{
+  width: 15vw;
+  height: 5vh;
+  float: left;
+  color: white;
+}
+a{
+  color: white;
+  margin-bottom: 3vh;
+}
+#section-logut{
+width: 20vw;
+height: 10vh;
+float: left;
+background-color: #1cb149;
+}
