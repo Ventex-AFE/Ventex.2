@@ -95,7 +95,19 @@ img{
     margin-bottom: 30px;
     border-radius: 30px;
     background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
+}
+.conte{
+    width: 90vw;
+    height: 35vh;
+    margin-left: 35px;
+    border-radius: 30px;
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
 }
 .producto{
     width: 36vh;
@@ -181,21 +193,92 @@ img{
     float: left;
     margin-top: 20px;
     margin-left: 55px;
-    margin-bottom: 10px;
 }
 #valoracion{
-    width: 95%;
-    height: 30vh;
+    width: 40vw;
+    height: 25vh;
     float: left;
-    background-color: khaki;
-    margin-bottom: 30px;
+    background-color: whitesmoke;
+    margin-left: 10vh;
+    border-radius: 15px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+}
+.textVal{
+    width: 50%;
+    height: 10vh;
+    float: left;
+}
+.textVal h2{
+    font-size: 4vh;
+    text-align: center;
+    margin-top: 20px;
+}
+#rating{
+    width: 50%;
+    height: 10vh;
+    float: left;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;           
+}
+#rating input{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    margin-top: 2vh; 
+    margin-right: 3vw; 
+}
+#rating input::before{
+    content: '\f005';
+    position: absolute;
+    font-family: fontAwesome;
+    font-size: 34px;
+    color: #767676;
+    transition: .5s;
+}
+#rating input:hover ~ input::before,
+#rating input:hover::before,
+#rating input:checked ~ input::before,
+#rating input:checked::before{
+    color: #FFC01F;
+}
+#inputVal{
+    width: 30vw;
+    height: 13vh;
+    float: left;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+#inputVal input{
+    width: 30vw;
+    height: 13vh;
+    border: none;
+    background-color: #CBC1C1;
+    border-radius: 10px;
+
 }
 #reseña{
     width: 80%;
-    height: 30vh;
+    height: 25vh;
     float: left;
-    background-color: khaki;
-    margin-bottom: 30px;
+    background-color: whitesmoke;
+    margin-left: 10vh;
+    border-radius: 15px;
+    margin-top: 40px;
 }
 footer{
     width: 100%;
