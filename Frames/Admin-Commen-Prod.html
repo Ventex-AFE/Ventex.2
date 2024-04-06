@@ -107,6 +107,26 @@
       </thead>
       <!-- contiene la informacion regresada de la db organizada en filas -->
       <TBody id="container-data-table"></TBody>
+      <script>
+        document.addEventListener("DOMContentLoaded", getData);
+
+        function getData() {
+          let input = document.getElementById("campo").value;
+          let content = document.getElementById("container-data-table");
+          let url = "load.php";
+          let formData = new FormData();
+          formData.append('campo', input);
+
+          fetch(url, {
+            method: "POST",
+            body: formData
+          }).then(response => response.text())
+            .then(data => {
+              console.log(data);
+              content.innerHTML = data;
+            }).catch(err => console.log(err));
+        }
+      </script>
     </table>
   </section>
   <footer>
