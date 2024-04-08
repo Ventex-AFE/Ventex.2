@@ -13,12 +13,13 @@ main {
   display: flex;
 }
 /* Left Bar------------------------------------------------------------------------------*/
-.left {
-  width: 32vw;
-  min-height: 80vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.left{
+   width: 32vw; 
+   min-height: 80vh;
+   display: flex;
+   flex-wrap: wrap;
+   align-content: flex-start;
+   justify-content: center;
 }
 .personalInfo {
   width: 25vw;
@@ -60,12 +61,13 @@ main {
   font-size: 2.5vh;
 }
 /* Contact Information - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
-.socialMedia-container {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.socialMedia-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
 }
 .socialMedia {
   width: 5vw;
@@ -76,12 +78,13 @@ main {
   cursor: pointer;
 }
 /* Rigth Bar ------------------------------------------------------------------------------*/
-.rigth {
-  width: 65vw;
-  min-height: 80vh;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 5vh;
+.rigth{
+    width: 65vw;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin-top: 5vh;
 }
 .searchSection {
   width: 100%;
