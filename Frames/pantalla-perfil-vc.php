@@ -1,5 +1,4 @@
-<?php
-require_once('../conexion.php');
+<?php 
 $usuario = 1;
 $prod = mysqli_query($conexion, "SELECT * FROM products WHERE owner_id = $usuario");
 
