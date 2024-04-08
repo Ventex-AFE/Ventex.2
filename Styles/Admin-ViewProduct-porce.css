@@ -9,77 +9,76 @@ body {
   background-color: #cccccc;
 }
 #bar-navegation {
-    width: 20vw;
-    height: 94vh;
-    background: rgb(1, 4, 18);
-    background: linear-gradient(
-      0deg,
-      rgba(1, 4, 18, 1) 6%,
-      rgba(44, 46, 56, 1) 40%,
-      rgba(136, 136, 136, 1) 100%
-    );
-    float: left;
+  width: 20vw;
+  height: 94vh;
+  background: rgb(1, 4, 18);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 4, 18, 1) 6%,
+    rgba(44, 46, 56, 1) 40%,
+    rgba(136, 136, 136, 1) 100%
+  );
+  float: left;
 }
-#section-header{
-    width: 80vw;
-    height: 10vh;
-    background-color: #cccccc;
-    margin-top: 4vh;
-    margin-bottom: 2vh;
-    float: left;
+#section-header {
+  width: 80vw;
+  height: 10vh;
+  background-color: #cccccc;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+  float: left;
 }
-#section-data{
-    width: 78vw;
-    height: 60vh;
-    margin: auto;
-    background-color: rgb(234, 234, 234);
-    margin-left: 1vw;
-    float: left;
-    margin-top: 1vh;
-    
+#section-data {
+  width: 78vw;
+  height: 60vh;
+  margin: auto;
+  background-color: rgb(234, 234, 234);
+  margin-left: 1vw;
+  float: left;
+  margin-top: 1vh;
 }
-#section-serch{
-    margin-left: 35vw;
-    width: 10vw;
-    height: 5vh;
-    float: left;
+#section-serch {
+  margin-left: 35vw;
+  width: 10vw;
+  height: 5vh;
+  float: left;
 }
-footer{
-    width: 100vw;
-    height: 6vh;
-    background-color: #2e325a;
-    float: left;
+footer {
+  width: 100vw;
+  height: 6vh;
+  background-color: #2e325a;
+  float: left;
 }
 #header-name > #Name-page {
-    font-family: "Hammersmith One", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    font-size: 60px;
-    text-align: center;
-    color: #1f355f;
-    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
-  }
-#name-footer{
-    color: white;
-    font-family: "Hammersmith One", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-    font-size: 30px;
-    text-align:end;
-    margin-right: 5vw;
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 60px;
+  text-align: center;
+  color: #1f355f;
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
+}
+#name-footer {
+  color: white;
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 30px;
+  text-align: end;
+  margin-right: 5vw;
 }
 
-#info-user{
-    width:20vw;
-    height:30vh;
-    float: left;
+#info-user {
+  width: 20vw;
+  height: 30vh;
+  float: left;
 }
-#Name-Adm{
+#Name-Adm {
   margin-top: 2vh;
   text-align: center;
   color: white;
 }
-#imagen-usAdm{
+#imagen-usAdm {
   width: 8vw;
   height: 15vh;
   float: left;
@@ -88,7 +87,7 @@ footer{
   margin-left: 6vw;
   margin-top: 2vh;
 }
-#img-A{
+#img-A {
   width: 8vw;
   height: 15vh;
   background-color: cadetblue;
@@ -189,22 +188,22 @@ img {
   background-color: rgb(19, 13, 106);
 }
 
-#button-navegation{
-  width: 20vw ;
+#button-navegation {
+  width: 20vw;
   height: 55vh;
   float: left;
 }
-#button-logout{
-  width: 20vw ;
+#button-logout {
+  width: 20vw;
   height: 10vh;
   float: left;
 }
-.Box-navegation{
+.Box-navegation {
   width: 20vw;
   height: 5vh;
   float: left;
 }
-.icon-button{
+.icon-button {
   width: 3vw;
   height: 1.2vh;
   float: left;
@@ -212,19 +211,19 @@ img {
   margin: 2%;
   border-radius: 10px;
 }
-.section-buton{
+.section-buton {
   width: 15vw;
   height: 5vh;
   float: left;
   color: white;
 }
-a{
+a {
   color: white;
   margin-bottom: 3vh;
 }
-#section-logut{
-width: 20vw;
-height: 10vh;
-float: left;
-background-color: #1cb149;
+#section-logut {
+  width: 20vw;
+  height: 10vh;
+  float: left;
+  background-color: #1cb149;
 }
