@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Ventex</title>
   <link rel="stylesheet" href="../Styles/Admin-ViewProduct-porce.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,42 +33,42 @@
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-ViewProduct-Porc.html">Productos - All</a>
+          <a href="Admin-ViewProduct-Porc.php">Productos - All</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Commen-Prod.html">Comentarios - Prod</a>
+          <a href="Admin-Commen-Prod.php">Comentarios - Prod</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Commen-seller.html">Comentarios - Seller</a>
+          <a href="Admin-Commen-seller.php">Comentarios - Seller</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Report-Product.html">Reportes - Prod.</a>
+          <a href="Admin-Report-Product.php">Reportes - Prod.</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Report-User.html">Reportes - User</a>
+          <a href="Admin-Report-User.php">Reportes - User</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Report-Seller.html">Reportes - Seller</a>
+          <a href="Admin-Report-Seller.php">Reportes - Seller</a>
         </section>
       </section>
     </section>
@@ -97,16 +97,36 @@
   <section id="section-data">
     <table class="tabla">
       <thead>
-        <th>Id-RP</th>
+        <th>Id-CP</th>
         <th>Id-Usuario</th>
         <th>Id-Producto</th>
-        <th>Motivo</th>
+        <th>Descripcion</th>
         <th>Fecha</th>
         <th>Hora</th>
         <th>Modificacion</th>
       </thead>
       <!-- contiene la informacion regresada de la db organizada en filas -->
       <TBody id="container-data-table"></TBody>
+      <script>
+        document.addEventListener("DOMContentLoaded", getData);
+
+        function getData() {
+          let input = document.getElementById("searchP").value;
+          let content = document.getElementById("container-data-table");
+          let url = "load-info-Admin-ComentProduct.php";
+          let formData = new FormData();
+          formData.append('searchP', input);
+
+          fetch(url, {
+            method: "POST",
+            body: formData
+          }).then(response => response.text())
+            .then(data => {
+              console.log(data);
+              content.innerHTML = data;
+            }).catch(err => console.log(err));
+        }
+      </script>
     </table>
   </section>
   <footer>

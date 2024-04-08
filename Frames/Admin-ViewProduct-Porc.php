@@ -97,12 +97,13 @@
   <section id="section-data">
     <table class="tabla">
       <thead>
-        <th>Id-CP</th>
-        <th>Id-Usuario</th>
-        <th>Id-Producto</th>
+        <th>Id-P</th>
+        <th>Nombre de P</th>
         <th>Descripcion</th>
-        <th>Fecha</th>
-        <th>Hora</th>
+        <th>Precio</th>
+        <th>Categoria</th>
+        <th>Subcategoria</th>
+        <th>Imagen</th>
         <th>Modificacion</th>
       </thead>
       <!-- contiene la informacion regresada de la db organizada en filas -->
@@ -111,11 +112,11 @@
         document.addEventListener("DOMContentLoaded", getData);
 
         function getData() {
-          let input = document.getElementById("campo").value;
+          let input = document.getElementById("searchP").value;
           let content = document.getElementById("container-data-table");
-          let url = "load.php";
+          let url = "load-info-ViewProduct-Porc.php";
           let formData = new FormData();
-          formData.append('campo', input);
+          formData.append('searchP', input);
 
           fetch(url, {
             method: "POST",

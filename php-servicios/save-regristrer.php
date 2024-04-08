@@ -1,9 +1,9 @@
 <?php
 // Credenciales de acceso a la base de datos
-$hostname=''; //Url de la direccion dela base de datos 
-$username=''; //Usuario que se uso para esta conexion y la verifcacion 
-$password=''; //Password del usuario 
-$database='ventex';//nombre de la db
+$hostname = ''; //Url de la direccion dela base de datos 
+$username = ''; //Usuario que se uso para esta conexion y la verifcacion 
+$password = ''; //Password del usuario 
+$database = 'ventex'; //nombre de la db
 
 // Conexión a la base de datos
 $Conexion = mysqli_connect($hostname, $username, $password, $database);
@@ -86,4 +86,3 @@ if (!$envio) {
 
 // Cerrar la conexión de la base de datos
 mysqli_close($Conexion);
-?>

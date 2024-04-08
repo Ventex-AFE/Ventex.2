@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Ventex</title>
   <link rel="stylesheet" href="../Styles/Admin-ViewProduct-porce.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -97,16 +97,36 @@
   <section id="section-data">
     <table class="tabla">
       <thead>
-        <th>Id-RU</th>
+        <th>Id-CS</th>
         <th>Id-Usuario</th>
-        <th>Id-User-R</th>
-        <th>Motivo</th>
+        <th>Id-seller</th>
+        <th>Descripcion</th>
         <th>Fecha</th>
         <th>Hora</th>
         <th>Modificacion</th>
       </thead>
       <!-- contiene la informacion regresada de la db organizada en filas -->
       <TBody id="container-data-table"></TBody>
+      <script>
+        document.addEventListener("DOMContentLoaded", getData);
+
+        function getData() {
+          let input = document.getElementById("searchP").value;
+          let content = document.getElementById("container-data-table");
+          let url = "load-info-Admin-ComentSeller.php";
+          let formData = new FormData();
+          formData.append('searchP', input);
+
+          fetch(url, {
+            method: "POST",
+            body: formData
+          }).then(response => response.text())
+            .then(data => {
+              console.log(data);
+              content.innerHTML = data;
+            }).catch(err => console.log(err));
+        }
+      </script>
     </table>
   </section>
   <footer>

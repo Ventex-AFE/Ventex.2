@@ -71,8 +71,8 @@
           <a href="Admin-Report-Seller.html">Reportes - Seller</a>
         </section>
       </section>
-    </section> 
-    
+    </section>
+
     <section id="button-logout">
       <section><img src="" id="icon-logout"><a href="o">Log out</a></section>
       <!-- Link al archivo para destruir la session -->
@@ -97,9 +97,9 @@
   <section id="section-data">
     <table class="tabla">
       <thead>
-        <th>Id-RS</th>
+        <th>Id-RP</th>
         <th>Id-Usuario</th>
-        <th>Id-Seller-R</th>
+        <th>Id-Producto</th>
         <th>Motivo</th>
         <th>Fecha</th>
         <th>Hora</th>
@@ -107,6 +107,26 @@
       </thead>
       <!-- contiene la informacion regresada de la db organizada en filas -->
       <TBody id="container-data-table"></TBody>
+      <script>
+        document.addEventListener("DOMContentLoaded", getData);
+
+        function getData() {
+          let input = document.getElementById("searchP").value;
+          let content = document.getElementById("container-data-table");
+          let url = "load-info-Admin-ReportProduct.php";
+          let formData = new FormData();
+          formData.append('searchP', input);
+
+          fetch(url, {
+            method: "POST",
+            body: formData
+          }).then(response => response.text())
+            .then(data => {
+              console.log(data);
+              content.innerHTML = data;
+            }).catch(err => console.log(err));
+        }
+      </script>
     </table>
   </section>
   <footer>

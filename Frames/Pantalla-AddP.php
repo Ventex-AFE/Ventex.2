@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Cabin+Sketch&family=Hammersmith+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cabin&family=Cabin+Sketch&family=Hammersmith+One&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Cabin+Sketch&family=Hammersmith+One&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <nav id="nav">
+    <nav id="nav">
         <h1 id="name">Ventex</h1>
         <button class="buttonP">Incio</button>
         <button class="buttonP">Categoria</button>
@@ -34,7 +36,7 @@
                     <input type="text" name="name" class="inp" placeholder=" " required><br>
                     <span class="text_input">Nombre del producto</span>
                 </div>
-                <div class="inputbox" >
+                <div class="inputbox">
                     <input type="text" name="date" class="inp" placeholder=" " required><br>
                     <span class="text_input">Descripcion</span>
                 </div>
@@ -51,9 +53,9 @@
                         <input type="file" name="archivo" id="archivo">
                     </label>
                 </div>
-               <div id="button-div">
+                <div id="button-div">
                     <button type="submit" id="button-sumit">Publicar Producto</button>
-               </div>
+                </div>
             </form>
         </section>
     </section>
@@ -61,4 +63,5 @@
         <h1 id="name-footer">Ventex</h1>
     </footer>
 </body>
+
 </html>
