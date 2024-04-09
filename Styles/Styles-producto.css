@@ -151,7 +151,7 @@ img{
     box-shadow: 0 0 5px 5px rgb(226, 226, 226);
 }
 .partU{
-    width: 50%;
+    width: 50vw;
     height: 35vh;
     float: left;
 }
@@ -210,14 +210,25 @@ img{
 
 }
 .textVal{
-    width: 50%;
+    width: 15vw;
     height: 10vh;
-    float: left;
+    display: flex;
+    gap: 5rem;
 }
 .textVal h2{
-    font-size: 4vh;
+    font-size: 2.5rem;
     text-align: center;
     margin-top: 20px;
+    margin-left: 15px;
+}
+.textVal h1{ 
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 1.3rem;
+    background-color: aqua;
 }
 #rating{
     width: 50%;
@@ -264,21 +275,67 @@ img{
     align-items: center;
 }
 #inputVal input{
-    width: 30vw;
-    height: 13vh;
+    width: 20vw;
+    height: 10vh;
     border: none;
-    background-color: #CBC1C1;
+    outline: none;
+    background-color: #cbc1c164;
     border-radius: 10px;
-
+    box-shadow: 5px black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
 }
+#inputVal input:focus{
+    transform: scale(0.99);
+  }
+#inputSub input{
+    width: 5vw;
+    height: 5vh;
+    border-radius: 25% 10%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+#inputSub input:hover{
+    box-shadow: 1px 3px 47px -8px #B0C881;
+-webkit-box-shadow: 1px 3px 47px -8px #B0C881;
+-moz-box-shadow: 1px 3px 47px -8px #B0C881;
+  transform: translateY(-2px);
+  border: 2px whitesmoke;
+  background-color: rgba(69, 176, 69, 0.57);
+  color: whitesmoke;
+}
+#inputSub input:active {
+    transform: scale(0.95);
+  }
 #reseña{
-    width: 80%;
-    height: 25vh;
+    width: 35vw;
+    height: 30vh;
     float: left;
     background-color: whitesmoke;
     margin-left: 10vh;
     border-radius: 15px;
     margin-top: 40px;
+}
+.contRes{
+    width: 35vw;
+    height: 19vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+.viewRes{
+    width: 30vw;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 3px;
+    word-wrap: break-word;
+    border-radius: 5px;
+    background-color: #cbc1c164;
 }
 footer{
     width: 100%;
