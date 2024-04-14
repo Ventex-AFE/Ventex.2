@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Styles/Styles-registro.css">
+</head>
+<body>
+    <header>
+        <h1 class="ventexLogo">Ventex</h1>
+    </header>
+    <main>
+        <article class="container">
+            <section class="titleContainer">
+                <h1 class="screamTitle">Registrate!</h1>
+            </section>
+            <section class="content">
+                <form action="" method="post">
+                    <div class="photoContainer">
+                        <!-- <img src="../Product-Images/pulsera_f.jpg" alt="" > -->
+                        <img src="../Icons/perfilPic.png" alt="" class="defaultPhoto">
+                        <input type="file" name="userPhoto" id="userPhoto">
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" name="nombre" class="input" required>
+                        <label for="nombre" class="inputText"><pre> Nombre </pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="email" name="correo" class="input" required>
+                        <label for="correo" class="inputText"><pre> Email </pre></label>
+                    </div>
+                    <div class="inputContainerSmall">
+                        <input type="number" name="correo" class="input" required>
+                        <label for="correo" class="inputText"><pre> Celular </pre></label>
+                    </div>
+                    <div class="inputContainerSmall">
+                        <input type="date" name="correo" class="input" required>
+                        <label for="correo" class="inputText"><pre> Fecha Nacimiento </pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="password" name="contraseña" class="input" required>
+                        <label for="contraseña" class="inputText"> <pre> Contraseña </pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="password" name="contraseñaC" class="input" required>
+                        <label for="contraseñaC" class="inputText"><pre> Confirmar contraseña </pre></label>
+                    </div>
+                    <input type="submit" value="Registrarse" class="Registrarse">
+                </form>
+            </section>
+        </article>
+    </main>
+</body>
+</html>

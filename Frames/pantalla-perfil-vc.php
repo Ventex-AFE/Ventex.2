@@ -1,3 +1,8 @@
+<?php 
+$usuario = 1;
+$prod = mysqli_query($conexion, "SELECT * FROM products WHERE owner_id = $usuario");
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -65,36 +70,13 @@
                     <button class="searchButton"><img src="../Icons/lupaB.png" alt=""></button>
                 </div>
             </section>
-            <button class="productContainer">
-                <div class="productPhoto"></div>
-                <div class="productPrice"><p class="priceStyle">$00.00</p></div>
-                <div class="productName"><p class="nameStyle">Nombre del producto</p></div>
-            </button>
-            <button class="productContainer">
-                <div class="productPhoto"></div>
-                <div class="productPrice"><p class="priceStyle">$00.00</p></div>
-                <div class="productName"><p class="nameStyle">Nombre del producto</p></div>
-            </button>
-            <button class="productContainer">
-                <div class="productPhoto"></div>
-                <div class="productPrice"><p class="priceStyle">$00.00</p></div>
-                <div class="productName"><p class="nameStyle">Nombre del producto</p></div>
-            </button>
-            <button class="productContainer">
-                <div class="productPhoto"></div>
-                <div class="productPrice"><p class="priceStyle">$00.00</p></div>
-                <div class="productName"><p class="nameStyle">Nombre del producto</p></div>
-            </button>
-            <button class="productContainer">
-                <div class="productPhoto"></div>
-                <div class="productPrice"><p class="priceStyle">$00.00</p></div>
-                <div class="productName"><p class="nameStyle">Nombre del producto</p></div>
-            </button>
-            <button class="productContainer">
-                <div class="productPhoto"></div>
-                <div class="productPrice"><p class="priceStyle">$00.00</p></div>
-                <div class="productName"><p class="nameStyle">Nombre del producto</p></div>
-            </button>
+            <?php while($mostrar = mysqli_fetch_array($prod)) { ?>
+                <button class="productContainer">
+                    <div class="productPhoto"><img src="../Product-Images/<?php echo $mostrar['image'] ?>" class="productImage"></div>
+                    <div class="productPrice"><p class="priceStyle">$<?php echo $mostrar['price'] ?></p></div>
+                    <div class="productName"><p class="nameStyle"><?php echo $mostrar['name'] ?></p></div>
+                </button>
+            <?php } ?>
         </article>
     </main>
     <footer><p class="logo-f">Ventex</p></footer>
