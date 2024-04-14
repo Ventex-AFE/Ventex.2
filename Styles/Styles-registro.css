@@ -9,6 +9,13 @@ body{
     flex-wrap: wrap;
     background-color: rgb(222, 222, 222);
 }
+main{
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
 header{
     width: 100%;
     height: 10vh;
@@ -23,8 +30,7 @@ header{
 }
 .container{
     width: 50vw;
-    height: 70vh;
-    margin-top: 10vh;
+    height: 75vh;
     background-color: white;
     display: flex;
     border-radius: 5px;
@@ -33,7 +39,7 @@ header{
 }
 .titleContainer{
     width: 20vw;
-    height: 70vh;
+    height: 75vh;
     /* background-color: rgb(90, 100, 90); */
     background-image: linear-gradient(rgb(112, 124, 112), rgb(61, 65, 61));
     display: flex;
@@ -57,10 +63,10 @@ header{
 .photoContainer{
     width: 11vw;
     height: 11vw;
-    background-color: #78855F;
+    background-color: rgb(112, 124, 112);
     border-radius: 100%;
     overflow:hidden;
-    margin-top: 3vh;
+    margin-top: 5vh;
     cursor: pointer;
     transition: .3s;
     position: relative;
@@ -87,8 +93,16 @@ header{
 .inputContainer{
     width: 25vw;
     height: 5vh;
-    border-radius: 100px;
     margin-top: 2vh;
+    position: relative;
+    transition: .3s;
+}
+.inputContainerSmall{
+    width: 12vw;
+    height: 5vh;
+    margin-top: 2vh;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
     position: relative;
     transition: .3s;
 }
@@ -98,17 +112,18 @@ header{
     outline: none;
     border: 0;
     padding-left: 1vh;
-    position: absolute;
+    position: relative;
     background: none;
     transition: .3s;
-    background-color: #78855F;
+    /* background-color: #78855F; */
+    background-color:var(--inputColor);
     border-radius: 100px;
+    border: 1px solid rgb(179, 179, 179);
 }
 
 .input:focus,
 .input:valid{
     background-color: white;
-    border: 1px solid rgb(117, 117, 117);
 }
 .inputText:hover ~ .input{
     background-color: white;
@@ -124,6 +139,7 @@ header{
  .input:valid ~ .inputText{
     top: -1vh;
     background-color: white;
+    color: green;
 }
 /* .input:focus ~ .inputText{
     top: -1vh;
@@ -142,10 +158,10 @@ header{
     position: absolute;
     top: 1vh;
     color: rgb(211, 211, 211);
-    margin-left: 2vh;
+    margin-left: 1vh;
     font-weight: 100;
     transition: .3s;
-    background-color: #78855F;
+    background-color: var(--inputColor);
     pointer-events: none;
 }
 .Registrarse{
@@ -153,12 +169,19 @@ header{
     height: 5vh;
     border: none;
     border-radius: 100px;
-    margin-top: 5vh;
-    background-color: #78855F;
+    margin-top: 3vh;
+    background-color: rgb(112, 124, 112);
     color: white;
     transition: .3s;
 }
 .Registrarse:hover{
 
     transform: scale(1.02);
+    background-color: rgb(88, 97, 88);
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    --inputColor:  rgb(245, 245, 245);
 }
