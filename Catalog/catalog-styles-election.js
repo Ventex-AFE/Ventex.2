@@ -10,3 +10,5 @@ const productBox = document.getElementById('style-product-box');
 
 Page.href = `./Styles-Frames/Styles-catalogo-${stylePage}.css`;
 productBox.href = `./Styles-Product-Box/product-box-${productBoxStyle}.css`;
+
+console.log(`width: ${screen.width} height: ${screen.height}`);
