@@ -17,40 +17,224 @@ body{
     display: grid;
     justify-content: center;
     align-items: center;
-    background-color: red;
  }
  .parent{
-    width: 100vh;
+    min-width: 120vw;
     min-height: 100%;
     display: grid;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    background-color: green;
  }
  .parent_Child{
     width: 95vh;
     height: 50VW;
-    background-color: yellow;
+    
  }
  .parent_FirstChild{
     width: 100%;
-    height: 15VW;
-    display: grid;
+    height: 20VW;
+    display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    border-top-left-radius: 20px;
+    /* background-color: aqua; */
  }
  .parent_LastChild{
-    width: 95vh;
-    min-height: 35VW;
-    background-color: aqua;
+   width: 95vh;
+   min-height: 25VW;
+   border-radius: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: white;
+   align-items: flex-start;
+   flex-wrap: wrap;
+   gap: 20px;
+   padding-top: 20px;
+   padding-bottom: 20px;
+ }
+ #background{
+   width: 95vh;
+   height: 90%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   top: 5vh;
+   z-index: 0;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+   background-image: url(https://i.pinimg.com/564x/3e/3e/7e/3e3e7e2ae52503139c2a71ef8cf01c4e.jpg);
  }
  #profile_Card_Img{
     width: 30vh;
     height: 30Vh;
     border-radius: 50%;
     position: relative;
-    top: 13vh;
-    background-color: gray;
+    top: 9vh;
+    background-image: url(https://i.pinimg.com/564x/e2/5a/c1/e25ac198405c799681a7667e5204b922.jpg);
  }
+
+.info{
+   width: 50%; 
+   height: 100%;  
+   border-radius: 20px; 
+   padding-top: 30px;
+   text-align: center;
+   padding-top: 5rem;
+}
+
+.info h1{
+   font-size: 3rem;
+}
+.data table{
+   font-size: 1rem;
+   gap: 2px;
+}
+table {
+   border-collapse: collapse;
+   width: 100%;
+   text-align: start;
+}
+
+td {
+   padding: 8px;
+}
+.socialMedia{
+   width: 80%; 
+   height: 100px;  
+   display: flex; 
+   align-items: center; 
+   justify-content: center;
+   font-size: 2rem;
+   gap: 1rem;
+}
+.socialMedia h1{
+   font-size: 1.6rem;
+}
+.socialMedia a{
+   color: inherit;
+   text-decoration: none;
+}
+.card {
+   position: relative;
+   width: 11.875em;
+   height: 16.5em;
+   box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+   cursor: pointer;
+   transition: all 120ms;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #fff;
+   padding: 0.5em;
+   padding-bottom: 3.4em;
+ }
+ 
+ .card::after {
+   content: "Add to Cart";
+   padding-top: 1.25em;
+   padding-left: 1.25em;
+   position: absolute;
+   left: 0;
+   bottom: -60px;
+   background: #00AC7C;
+   color: #fff;
+   height: 2.5em;
+   width: 90%;
+   transition: all 80ms;
+   font-weight: 600;
+   text-transform: uppercase;
+   opacity: 0;
+ }
+ 
+ .card .title {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 0.9em;
+   position: absolute;
+   left: 0.625em;
+   bottom: 1.875em;
+   font-weight: 400;
+   color: #000;
+ }
+ 
+ .card .price {
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-size: 0.9em;
+   position: absolute;
+   left: 0.625em;
+   bottom: 0.625em;
+   color: #000;
+ }
+ 
+ .card:hover::after {
+   bottom: 0;
+   opacity: 1;
+ }
+ 
+ .card:active {
+   transform: scale(0.98);
+ }
+ 
+ .card:active::after {
+   content: "Added !";
+   height: 3.125em;
+ }
+ 
+ .text {
+   max-width: 55px;
+ }
+ 
+ .image {
+   background: rgb(241, 241, 241);
+   width: 100%;
+   height: 100%;
+   display: grid;
+   place-items: center;
+ }
+ .group {
+   width: 100%;
+   display: flex;
+   line-height: 28px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+  }
+  
+  .input {
+   width: 10vw;
+   height: 40px;
+   line-height: 28px;
+   padding: 0 1rem;
+   padding-left: 2.5rem;
+   border: 2px solid transparent;
+   border-radius: 8px;
+   outline: none;
+   background-color: #f3f3f4;
+   color: #0d0c22;
+   transition: .3s ease;
+  }
+  
+  .input::placeholder {
+   color: #9e9ea7;
+  }
+  
+  .input:focus, input:hover {
+   outline: none;
+   border-color: rgba(234,76,137,0.4);
+   background-color: #fff;
+   box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+  }
+  
+  .icon {
+   position: absolute;
+   left: 1rem;
+   fill: #9e9ea7;
+   width: 1rem;
+   height: 1rem;
+  }
+  
+  
+  
