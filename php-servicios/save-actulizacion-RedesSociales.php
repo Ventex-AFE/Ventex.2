@@ -22,13 +22,13 @@ if (empty($_POST['profileD']) || empty($_POST['WhatsAppup']) || empty($_POST['x'
 }
 
 // Recoger los datos del formulario y evitar inyección SQL
-$idup = mysqli_real_escape_string($Conexion, $_POST['ideup']);
-$profileD = mysqli_real_escape_string($Conexion, $_POST['profileD']);
-$WhatsAppup = mysqli_real_escape_string($Conexion, $_POST['WhatsAppup']);
+$idup = mysqli_real_escape_string($Conexion, $_POST['id-usser-update']);
+$profileD = mysqli_real_escape_string($Conexion, $_POST['description']);
+$WhatsAppup = mysqli_real_escape_string($Conexion, $_POST['whatsapp']);
 $x = mysqli_real_escape_string($Conexion, $_POST['x']);
-$Instagram = mysqli_real_escape_string($Conexion, $_POST['Instagram']);
-$Contactdescription = mysqli_real_escape_string($Conexion, $_POST['Contactdescription']);
-$facebook = mysqli_real_escape_string($Conexion, $_POST['facebook']);
+$Instagram = mysqli_real_escape_string($Conexion, $_POST['facebook']);
+$Contactdescription = mysqli_real_escape_string($Conexion, $_POST['instagram']);
+$facebook = mysqli_real_escape_string($Conexion, $_POST['Información de contacto']);
 
 // Consulta SQL para actualizar los datos
 $sql = "UPDATE sellerprofile SET profileDescription = ?, Contactdescription = ?, instagram = ?, x = ?, whatsapp = ?, facebook = ? WHERE idddfi = ?";
