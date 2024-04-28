@@ -25,10 +25,12 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    gap: 3rem;
  }
  .parent_Child{
     width: 95vh;
     height: 50VW;
+    gap: 2rem;
     
  }
  .parent_FirstChild{
@@ -42,7 +44,7 @@ body{
  }
  .parent_LastChild{
    width: 95vh;
-   min-height: 25VW;
+   min-height: 30VW;
    border-radius: 20px;
    display: flex;
    justify-content: center;
@@ -166,20 +168,6 @@ td {
    left: 0.625em;
    bottom: 0.625em;
    color: #000;
- }
- 
- .card:hover::after {
-   bottom: 0;
-   opacity: 1;
- }
- 
- .card:active {
-   transform: scale(0.98);
- }
- 
- .card:active::after {
-   content: "Added !";
-   height: 3.125em;
  }
  
  .text {
