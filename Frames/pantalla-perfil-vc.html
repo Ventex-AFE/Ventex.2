@@ -15,20 +15,32 @@ $prod = mysqli_query($conexion, "SELECT * FROM products WHERE owner_id = $usuari
 </head>
 <body>
     <header class="main-container-header">
-        <section class="c-logo"><p class="logo">Ventex</p></section>
-        <section class="h-options">
-            <button class="butt-h">Inicio</button>
-            <button class="butt-h">Categorías</button>
-            <button class="butt-h">Planes</button>
-            <button class="butt-h">Vender</button>
-            <form action="" method="post">
-                <input type="search" name="search-product" id="search-p">
-            </form>
-        </section>
-        <section class="profileContainer">
-            <button class="basket"> <img src="../Icons/bolsa-de-la-compra.png" alt=""></button>
-            <button class="profile"></button>
-        </section>
+        <nav>
+            <section class="c-logo"><p class="logo">Ventex</p></section>
+            <ul class="h-options">
+                <li>
+                    <button class="butt-h">Inicio</button>
+                </li>
+                <li>
+                    <button class="butt-h">Categorías</button>
+                </li>
+                <li>
+                    <button class="butt-h">Planes</button>
+                </li>
+                <li>
+                    <button class="butt-h">Vender</button>
+                </li>
+            </ul>
+            <section class="">
+                <form action="" method="post">
+                    <input type="search" name="search-product" id="search-p">
+                </form>
+            </section>
+            <section class="profileContainer">
+                <button class="basket"> <img src="../Icons/bolsa-de-la-compra.png" alt=""></button>
+                <button class="profile"></button>
+            </section>
+        </nav>
     </header>
     <main>
 <!--Left------------------------------------------------------------------------------------------->
