@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="../Componentes/header-v.css">
     <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
 
+    <style> /* <-------Styles extensible search input*/
+        .searchSection{
+            text-align: left;
+        }
+        .containerSearchSection{
+            min-width: 20vw;
+            height: 8vh;
+            display: flex;
+            align-items: center;
+        }
+        .searchButton{ /* <------Color Button*/
+            background-color: rgb(174, 186, 175);
+        }
+        #searchP:valid ~ .searchButton { /* <------Color of the button when te input is valid*/
+            background-color: rgb(148, 156, 148);
+        }
+    </style>
 
 </head>
 <body>
@@ -43,9 +60,11 @@
         <table class="container">
             <tr class="table-header">
                 <th colspan="3" class="searchSection">
-                    <div class="searchContainer">
-                        <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
-                        <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
+                    <div class="containerSearchSection">
+                        <div class="searchContainer">
+                            <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
+                            <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
+                        </div>
                     </div>
                 </th>
                 <th colspan="5">
