@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: rgb(244, 244, 244);
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+table, tr, th, td{
+    border-collapse: collapse;
+}
+.container{
+    margin-top: 5vh;
+}
+.table-header{
+    background-color: rgb(119, 123, 119);
+    height: 8vh;
+}
+.table-name{
+    font-size: 2rem;
+    color: white;
+}
+.table-options{
+    text-align: right;
+}
+.btn{
+    background: none;
+    color: white;
+    border: none;
+    padding-bottom: 0.2vh;
+    margin-right: 2vw;
+}
+.btn:hover{
+    border-bottom: 0.1vw solid white;
+}
+.table-header-data{
+    height: 5vh;
+}
+.header-data{
+    color: gray;
+    font-size: 1vw;
+    font-weight: 300;
+}
+.check{
+    width: 7vw;
+    text-align: center;
+}
+.checkButton{
+    width: 2vw;
+    height: 2vw;
+}
+.row-column-order{
+    height: 10vh;
+    background-color: white;
+    transition: .3s;
+}
+.row-column-order:hover{
+    height: 15vh;
+    /* box-shadow: 0 0 0.1vw 0.11vw rgb(229, 229, 229); */
+    border: 0.1vw solid rgb(229, 229, 229);
+    transform: scale(1.01);
+}
+.table-data{
+    text-align: center;
+    color: gray;
+    font-size: 1vw;
+    width: 9vw;
+}
+.modal{
+    width: 50vw;
+    height: 50vh;
+    position: fixed;
+    top: 20vh;
+    z-index: 10;
+    background-color: white;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(186, 186, 186, 0.191);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    z-index: 5;
+    top: 0;
+}
+.hidden{
+    display: none;
+}
