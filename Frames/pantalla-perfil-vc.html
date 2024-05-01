@@ -79,7 +79,7 @@ $prod = mysqli_query($conexion, "SELECT * FROM products WHERE owner_id = $usuari
                 </div>
                 <div class="searchContainer">
                     <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
-                    <button class="searchButton"><img src="../Icons/lupaB.png" alt=""></button>
+                    <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
                 </div>
             </section>
             <?php while($mostrar = mysqli_fetch_array($prod)) { ?>
