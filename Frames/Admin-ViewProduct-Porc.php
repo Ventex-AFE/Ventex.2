@@ -33,42 +33,42 @@
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-ViewProduct-Porc.html">Productos - All</a>
+          <a href="Admin-ViewProduct-Porc.php">Productos - All</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Commen-Prod.html">Comentarios - Prod</a>
+          <a href="Admin-Commen-Prod.php">Comentarios - Prod</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Commen-seller.html">Comentarios - Seller</a>
+          <a href="Admin-Commen-seller.php">Comentarios - Seller</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Report-Product.html">Reportes - Prod.</a>
+          <a href="Admin-Report-Product.php">Reportes - Prod.</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Report-User.html">Reportes - User</a>
+          <a href="Admin-Report-User.php">Reportes - User</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Report-Seller.html">Reportes - Seller</a>
+          <a href="Admin-Report-Seller.php">Reportes - Seller</a>
         </section>
       </section>
     </section>
@@ -114,7 +114,7 @@
         function getData() {
           let input = document.getElementById("searchP").value;
           let content = document.getElementById("container-data-table");
-          let url = "load-info-ViewProduct-Porc.php";
+          let url = "../php-servicios/load-info-ViewProduct-Porc.php";
           let formData = new FormData();
           formData.append('searchP', input);
 
