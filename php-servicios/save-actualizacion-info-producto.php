@@ -10,6 +10,9 @@ $Conexion = mysqli_connect($hostname, $username, $password, $database);
 if (mysqli_connect_error()) {
     exit('Fallo en la conexión de MySQL: ' . mysqli_connect_error());
 }
-$Nombre_produc=$_POST['Nombre_Prod'];
+$Nombre_produc= mysqli_real_escape_string($Conexion,$_POST['Nombre_Prod'];)
+$precio = mi$_POST['Precio'];
+$Categoria = $_POST['categoria'];
+$subcategoria = $_POST['subcategoria'];
 
 ?>

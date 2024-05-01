@@ -32,7 +32,6 @@ ul{
     height: 10vh;
     display: flex;
     align-items: center;
-    background-color: aqua;
 }
 .butt-h{
     width: 8vw;
@@ -77,6 +76,10 @@ ul{
 }
 .basket:hover{
     box-shadow: 0 0 5px 1px rgb(167, 167, 167);
+}
+.basket-icon{
+    width: 50%;
+    height: 50%;
 }
 .profile{
     width: 8vh;
