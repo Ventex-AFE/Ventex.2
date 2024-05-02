@@ -88,7 +88,7 @@
   <section id="section-serch">
     <section class="searchSection">
       <div class="searchContainer">
-        <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
+        <input type="search" name="searchP" id="searchP" placeholder="Buscar" onkeyup="getData()" required>
         <button class="searchButton"><img src="../Icons/lupaB.png" alt=""></button>
       </div>
     </section>
