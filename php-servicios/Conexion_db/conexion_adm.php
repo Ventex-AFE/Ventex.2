@@ -12,6 +12,6 @@ $Conexion_adm_root = mysqli_connect($hostname, $username, $password, $database);
 if (mysqli_connect_error()) {
     exit('Fallo en la conexión de MySQL: ' . mysqli_connect_error());
 }else{
-    echo'Conexion is look well :D 1';
+    //echo'Conexion is look well :D 1';
 }
 ?>
