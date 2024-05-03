@@ -1,0 +1,247 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Hammersmith One', sans-serif;
+}
+html{
+    height: 100%;
+    background-color: #EBEBEB;
+}
+
+body{
+    width: 100%;
+}
+ main{
+    height: auto;
+    width: auto;
+    display: grid;
+    justify-content: center;
+    align-items: start;
+ }
+ .parent{
+    min-width: 90vw;
+    min-height: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 3rem;
+ }
+ .parent_Child{
+    width: 95vh;
+    height: 50VW;
+    gap: 2rem;
+    
+ }
+ .parent_FirstChild{
+    width: 100%;
+    height: 20VW;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 20px;
+    /* background-color: aqua; */
+ }
+ .edit{
+   text-decoration: none;
+   color: inherit;
+ }
+ .parent_LastChild{
+   width: 100%;
+   min-height: 40Vh;
+   border-radius: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-content: center   ;
+   background-color: white;
+   align-items: flex-start;
+   flex-wrap: wrap;
+   gap: 20px;
+   padding-top: 20px;
+   padding-bottom: 20px;
+ }
+ #background{
+   width: 100%;
+   height: 90%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   align-content: center;
+   position: relative;
+   top: 5vh;
+   z-index: 0;
+   border-top-left-radius: 20px;
+   border-top-right-radius: 20px;
+   background-image: url(https://i.pinimg.com/564x/3e/3e/7e/3e3e7e2ae52503139c2a71ef8cf01c4e.jpg);
+ }
+ #profile_Card_Img{
+    width: 30vh;
+    height: 30Vh;
+    border-radius: 50%;
+    position: relative;
+    top: 9vh;
+    background-image: url(https://i.pinimg.com/564x/e2/5a/c1/e25ac198405c799681a7667e5204b922.jpg);
+ }
+
+.info{
+   width: 50%; 
+   min-height: 50vh;  
+   border-radius: 20px; 
+   display: grid;
+   align-items: center;
+   align-content: center;
+   justify-content: center;
+   text-align: center;
+   padding-top: 5rem;
+   padding: 2rem;
+}
+
+.info h1{
+   font-size: 3rem;
+}
+.data table{
+   font-size: 1rem;
+   gap: 2px;
+}
+table {
+   border-collapse: collapse;
+   width: 100%;
+   text-align: start;
+   gap: 10px;
+}
+
+td {
+   padding: 8px;
+}
+.socialMedia{
+   width: 80%; 
+   height: 100px;  
+   display: flex; 
+   flex-direction: column;
+   justify-content: center;
+   align-items: center; 
+   justify-content: center;
+   font-size: 2rem;
+   gap: 1rem;
+}
+.info-edit > a > i{
+   font-size: 1rem;
+}
+.socialMedia h1{
+   width: 9vw;
+   font-size: 1.3rem;
+}
+.socialMedia a{
+   display: flex;
+   align-items: center;
+   color: inherit;
+   text-decoration: none;
+}
+.socialMedia i{
+   font-size: 2.3rem;
+}
+
+.socialMedia section {
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+   gap: 1rem;
+}
+
+.card {
+   position: relative;
+   width: 12vw;
+   height: 35vh;
+   box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
+   cursor: pointer;
+   transition: all 120ms;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: #fff;
+   padding: 0.5em;
+   padding-bottom: 3.4em;
+ }
+ .card:hover{
+   -webkit-box-shadow: 10px 10px 12px 2px rgba(0, 0, 0, 0.281);
+  box-shadow: 10px 10px 12px 2px rgba(0, 0, 0, 0.281);
+ }
+ 
+ .card .title {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 0.9em;
+   position: absolute;
+   left: 0.625em;
+   bottom: 1.875em;
+   font-weight: 400;
+   color: #000;
+ }
+ 
+ .card .price {
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   font-size: 0.9em;
+   position: absolute;
+   left: 0.625em;
+   bottom: 0.625em;
+   color: #000;
+ }
+ 
+ .text {
+   max-width: 55px;
+ }
+ 
+ .image {
+   background: rgb(241, 241, 241);
+   width: 100%;
+   height: 100%;
+   display: grid;
+   place-items: center;
+ }
+ .group {
+   width: 100%;
+   display: flex;
+   line-height: 28px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   padding-left   : 20px;
+  }
+  
+  .buscador {
+   width: 20vw;
+   height: 40px;
+   line-height: 28px;
+   padding: 0 1rem;
+   padding-left: 2.5rem;
+   border: 2px solid transparent;
+   border-radius: 8px;
+   outline: none;
+   background-color: #f3f3f4;
+   color: #0d0c22;
+   transition: .3s ease;
+  }
+  
+  .buscador::placeholder {
+   color: #9e9ea7;
+  }
+  
+  .buscador:focus, input:hover {
+   outline: none;
+   border-color: #B0C881;
+   background-color: #fff;
+   box-shadow: 0 0 0 4px #b0c88127;
+  }
+  
+  .icon {
+   position: absolute;
+   left: 1rem;
+   fill: #9e9ea7;
+   width: 1rem;
+   height: 1rem;
+  }
+  
+  
+
+  

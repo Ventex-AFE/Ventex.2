@@ -1,0 +1,346 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Hammersmith One', sans-serif;;
+}
+html{
+    height: 100%;
+    background-color: #EBEBEB;
+}
+
+body{
+    width: 100%;
+}
+#containerD{
+    width: 100%;
+    height: 80vh;
+}
+img{
+    max-width: 100%;
+    height: 100%;
+}
+.imagen{
+    width: 40vh;
+    height: 16vh;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.image{
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    border-color: 1px solid negro;
+}
+#ima{
+    width: 20vh;
+    height: 33vw;
+    margin-left: 30vh;
+    float: left;
+    margin-top: 25px;
+}
+#bigima{
+    width: 33vw;
+    height: 33vw;
+    float: left;
+    margin-top: 25px;
+    background-color: teal;
+    display: flex;
+}
+.phpto{
+    background-color: blue;
+    height: 33vw;
+    width: 100%;
+    display: flex;
+}
+#description{
+    width: 25vw;
+    height: 33vw;
+    float: left;
+    margin-left: 90px;
+}
+.desc{
+    width: 100%;
+    height: 30vw;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 5px rgb(226, 226, 226);
+}
+.text{
+    margin: 2vw;
+    font-size: 2.5vh;
+}
+#containerT{
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#textU{
+    width: 80%;
+    height: 7vh;
+    margin-left: 55px;
+    margin-bottom: 5px;
+}
+.textorel{
+    font-size: 45px;
+    color: #767676;
+    font-family: 'Hammersmith One', sans-serif;
+}
+.cont{
+    width: 90vw;
+    height: 55vh;
+    margin-left: 35px;
+    float: left;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.conte{
+    width: 90vw;
+    height: 35vh;
+    margin-left: 35px;
+    border-radius: 30px;
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+}
+.producto{
+    width: 36vh;
+    height: 50vh;
+    background-color: white;
+    box-shadow: 0 0 5px 5px rgb(226, 226, 226);
+    float: left;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+#contImg{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.part1{
+    max-width: 25vh;
+    height: 25vh;
+    margin-top: 15px;
+    background-color: aquamarine;
+}
+.part2{
+    width: 30vh;
+    height: 20vh;
+    margin-top: 15px;
+}
+.contD{
+    width: 85%;
+    height: 35vh;
+    float: left;
+    margin-left: 15vh;
+    margin-bottom: 10px;
+    background-color: #F2F2F2;
+    border-radius: 50px;
+    box-shadow: 0 0 5px 5px rgb(226, 226, 226);
+}
+.partU{
+    width: 50vw;
+    height: 35vh;
+    float: left;
+}
+#textD{
+    width: 40vh;
+    height: 10vh;
+    float: left;
+    margin-top: 20px;
+    margin-left: 15vh;
+    margin-bottom: 10px;
+}
+#Informacion{
+    font-size: 40px;
+    color: #767676;
+    font-family: 'Hammersmith One', sans-serif;
+}
+#contacto{
+    width: 45vh;
+    height: 20vh;
+    float: left;
+    margin-left: 55px;
+    margin-bottom: 10px;
+    margin-left: 15vh;
+}
+.redes{
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+}
+.red{
+    max-width: 8vh;
+    height: 8vh;
+    float: left;
+    margin-left: 10px;
+}
+#descriptionD{
+    width: 70%;
+    height: 30vh;
+    float: left;
+    margin-top: 20px;
+    margin-left: 55px;
+}
+#valoracion{
+    width: 40vw;
+    height: 25vh;
+    float: left;
+    background-color: whitesmoke;
+    margin-left: 10vh;
+    border-radius: 15px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+
+}
+.textVal{
+    width: 15vw;
+    height: 10vh;
+    display: flex;
+    gap: 5rem;
+}
+.textVal h2{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.textVal h1{ 
+    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 1.3rem;
+    background-color: aqua;
+}
+#rating{
+    width: 50%;
+    height: 10vh;
+    float: left;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;           
+}
+#rating input{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    margin-top: 2vh; 
+    margin-right: 3vw; 
+}
+#rating input::before{
+    content: '\f005';
+    position: absolute;
+    font-family: fontAwesome;
+    font-size: 34px;
+    color: #767676;
+    transition: .5s;
+}
+#rating input:hover ~ input::before,
+#rating input:hover::before,
+#rating input:checked ~ input::before,
+#rating input:checked::before{
+    color: #FFC01F;
+}
+#inputVal{
+    width: 30vw;
+    height: 13vh;
+    float: left;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+#inputVal input{
+    width: 20vw;
+    height: 10vh;
+    border: none;
+    outline: none;
+    background-color: #cbc1c164;
+    border-radius: 10px;
+    box-shadow: 5px black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+#inputVal input:focus{
+    transform: scale(0.99);
+  }
+#inputSub input{
+    width: 5vw;
+    height: 5vh;
+    border-radius: 25% 10%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+#inputSub input:hover{
+    box-shadow: 1px 3px 47px -8px #B0C881;
+-webkit-box-shadow: 1px 3px 47px -8px #B0C881;
+-moz-box-shadow: 1px 3px 47px -8px #B0C881;
+  transform: translateY(-2px);
+  border: 2px whitesmoke;
+  background-color: rgba(69, 176, 69, 0.57);
+  color: whitesmoke;
+}
+#inputSub input:active {
+    transform: scale(0.95);
+  }
+#reseña{
+    width: 35vw;
+    height: 30vh;
+    float: left;
+    background-color: whitesmoke;
+    margin-left: 10vh;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+.contRes{
+    width: 35vw;
+    height: 19vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+.viewRes{
+    width: 30vw;
+    height: auto;
+    padding: 10px;
+    margin-bottom: 3px;
+    word-wrap: break-word;
+    border-radius: 5px;
+    background-color: #cbc1c164;
+}
+footer{
+    width: 100%;
+    height: 10vh;
+    float: left;
+    margin-top: 20px;
+    background-color: forestgreen;
+}
