@@ -1,0 +1,12 @@
+@media (max-width: 70em){
+
+    .productsContainer{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (max-width: 34em){
+
+    .productsContainer{
+        grid-template-columns: 1fr ;
+    }
+}

@@ -1,0 +1,83 @@
+/* 
+
+    --- Customizable styles --------------------------------------------------------------------------
+
+    <style>  /* <-------Styles extensible search input
+        .searchSection{
+            text-align: left;
+        }
+        .containerSearchSection{
+            min-width: 20vw;
+            height: 8vh;
+            display: flex;
+            align-items: center;
+        }
+        .searchButton{  /*<------Color Button
+            background-color: black;
+        }
+        #searchP:valid ~ .searchButton {  /* <------Color of the button when te input is valid
+            background-color: rgb(66, 94, 66);
+        }
+    </style>
+
+    --- HTML -----------------------------------------------------------------------------------------
+
+    <div class="searchContainer">
+        <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
+        <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
+    </div>
+
+    --------------------------------------------------------------------------------------------------
+
+*/
+.searchContainer {
+    position: relative;
+    margin-left: 1.5vw;
+  }
+  
+  .searchContainer .searchButton {
+    width: 5vh;
+    height: 5vh;
+    border: 0;
+    border-radius: 100%;
+    position: absolute;
+    /* background-color: rgb(147, 207, 147); */
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+  }
+  .searchIcon {
+    width: 5vh;
+    height: 5vh;
+  }
+  .searchContainer #searchP {
+    width: 5vh;
+    height: 5vh;
+    border: 0cap;
+    outline: 0cap;
+    padding: 1vw;
+    background-color: #ffffff;
+    padding-left: 1vw;
+    border-radius: 100px;
+    transition: 0.8s;
+    top: 0;
+    right: 0;
+  }
+  .searchContainer:hover #searchP {
+    width: 20vw;
+    background-color: white;
+    border: 1px solid rgb(209, 209, 209);
+  }
+  #searchP:focus {
+    width: 20vw;
+    background-color: white;
+    border: 1px solid rgb(209, 209, 209);
+  }
+  #searchP:valid {
+    width: 20vw;
+    background-color: white;
+    border: 1px solid rgb(209, 209, 209);
+  }
+  /*------------------------------------------------------------------------------*/
+  
