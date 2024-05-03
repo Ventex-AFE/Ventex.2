@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Hammersmith One', sans-serif;;
+    font-family: 'Hammersmith One', sans-serif;
 }
 html{
     height: 100%;
@@ -12,15 +12,15 @@ body{
     width: 100%;
 }
  main{
-    height: 90%;
+    height: auto;
     width: auto;
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-items: start;
  }
  .parent{
-    min-width: 120vw;
-    min-height: 100%;
+    min-width: 90vw;
+    min-height: auto;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -42,13 +42,18 @@ body{
     border-top-left-radius: 20px;
     /* background-color: aqua; */
  }
+ .edit{
+   text-decoration: none;
+   color: inherit;
+ }
  .parent_LastChild{
-   width: 95vh;
-   min-height: 30VW;
+   width: 100%;
+   min-height: 40Vh;
    border-radius: 20px;
    display: flex;
    justify-content: center;
    align-items: center;
+   align-content: center   ;
    background-color: white;
    align-items: flex-start;
    flex-wrap: wrap;
@@ -57,11 +62,12 @@ body{
    padding-bottom: 20px;
  }
  #background{
-   width: 95vh;
+   width: 100%;
    height: 90%;
    display: flex;
    align-items: center;
    justify-content: center;
+   align-content: center;
    position: relative;
    top: 5vh;
    z-index: 0;
@@ -80,11 +86,15 @@ body{
 
 .info{
    width: 50%; 
-   height: 100%;  
+   min-height: 50vh;  
    border-radius: 20px; 
-   padding-top: 30px;
+   display: grid;
+   align-items: center;
+   align-content: center;
+   justify-content: center;
    text-align: center;
    padding-top: 5rem;
+   padding: 2rem;
 }
 
 .info h1{
@@ -98,6 +108,7 @@ table {
    border-collapse: collapse;
    width: 100%;
    text-align: start;
+   gap: 10px;
 }
 
 td {
@@ -107,22 +118,41 @@ td {
    width: 80%; 
    height: 100px;  
    display: flex; 
+   flex-direction: column;
+   justify-content: center;
    align-items: center; 
    justify-content: center;
    font-size: 2rem;
    gap: 1rem;
 }
+.info-edit > a > i{
+   font-size: 1rem;
+}
 .socialMedia h1{
-   font-size: 1.6rem;
+   width: 9vw;
+   font-size: 1.3rem;
 }
 .socialMedia a{
+   display: flex;
+   align-items: center;
    color: inherit;
    text-decoration: none;
 }
+.socialMedia i{
+   font-size: 2.3rem;
+}
+
+.socialMedia section {
+   display: flex;
+   justify-content: center;
+   align-items: center; 
+   gap: 1rem;
+}
+
 .card {
    position: relative;
-   width: 11.875em;
-   height: 16.5em;
+   width: 12vw;
+   height: 35vh;
    box-shadow: 0px 1px 13px rgba(0,0,0,0.1);
    cursor: pointer;
    transition: all 120ms;
@@ -133,22 +163,9 @@ td {
    padding: 0.5em;
    padding-bottom: 3.4em;
  }
- 
- .card::after {
-   content: "Add to Cart";
-   padding-top: 1.25em;
-   padding-left: 1.25em;
-   position: absolute;
-   left: 0;
-   bottom: -60px;
-   background: #00AC7C;
-   color: #fff;
-   height: 2.5em;
-   width: 90%;
-   transition: all 80ms;
-   font-weight: 600;
-   text-transform: uppercase;
-   opacity: 0;
+ .card:hover{
+   -webkit-box-shadow: 10px 10px 12px 2px rgba(0, 0, 0, 0.281);
+  box-shadow: 10px 10px 12px 2px rgba(0, 0, 0, 0.281);
  }
  
  .card .title {
@@ -189,10 +206,11 @@ td {
    justify-content: center;
    align-items: center;
    position: relative;
+   padding-left   : 20px;
   }
   
-  .input {
-   width: 10vw;
+  .buscador {
+   width: 20vw;
    height: 40px;
    line-height: 28px;
    padding: 0 1rem;
@@ -205,15 +223,15 @@ td {
    transition: .3s ease;
   }
   
-  .input::placeholder {
+  .buscador::placeholder {
    color: #9e9ea7;
   }
   
-  .input:focus, input:hover {
+  .buscador:focus, input:hover {
    outline: none;
-   border-color: rgba(234,76,137,0.4);
+   border-color: #B0C881;
    background-color: #fff;
-   box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+   box-shadow: 0 0 0 4px #b0c88127;
   }
   
   .icon {

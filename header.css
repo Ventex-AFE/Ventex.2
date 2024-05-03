@@ -1,72 +1,103 @@
+*{
+ margin: 0;
+ padding: 0;
+}
+
 header{
     width: 100%;
     height: 10vh;
+    display: flex;
+    align-items: center;
+    background-color: #649c587f;
 }
-#containerU{
-    width: 100%;
-    height: 10vh;
-}
-#logo{
-    width: 30vh;
+.logo{
+    width: 15vw;
     height: 100%;
-    float: left;
-    margin-left: 10vh;
+    padding: 2rem;
+    font-size: 3rem;
 }
-.ventex{
-    font-size: 70px;
-    color: black;
-    text-shadow: 1px 2px 3px black;
-    font-family: 'Hammersmith One', sans-serif;;
+
+nav{
+    width: 40vw;
 }
-#options{
-    width: 40vh;
-    float: left;
-    margin-top: 3vh;
-    margin-left:10vh;
+
+ul{
+    list-style: none;
 }
-nav a{
-    text-decoration:none;
-    color:inherit;
-    font-size:14px;
-    text-align: center;
+
+a{
+    cursor: pointer;
+    font-size: 1.5rem;
 }
-nav li{
-    width:12vh;
-    height: 4vh;
+
+.menu{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 8vh;
+}
+
+.menu li{
     display: inline-block;
-    list-style: none;
-    text-align:center;
-    color:#fff;
-    background-color: #B0C881;
-    margin-right: 9px;
-    border-radius: 20px;
-    }
-nav li a{
-    font-size: 20px;
-    margin-top: 2px;
-    text-align: center;
-    display: block;
-    padding: auto;  
+    width: 8vw;
+    transition:  all 0.3 ease-in-out;
 }
-.menu > li:hover{
-    background-color: #434F41;
+
+.menu li:hover > a{
+    height: 5vh;
 }
-.menuv{
-    color: white;
+
+.menu > li:hover > a::before{
+    visibility: visible;
+    scale: 1 1;
+}
+
+.menu > li a{
+    color: #424242;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 7px;
+    text-decoration: none;
+    position: relative;
+    height: 100%;
+}
+
+.menu >li > a::before{
+    content: "";
     position: absolute;
-    display: none;
-    list-style: none;
-    width: 10%;
-    z-index: 1000;
+    width: 100%;
+    height: 3px;
+    bottom: 3px;
+    left: 0px;
+    background-color: #649c58da;
+    transition: all 0.2s ease-in-out;
+    scale: 0 0;
+    visibility: hidden;
 }
-   .menu li:hover .menuv{
-    display: block;
+
+form{
+    width: 20vw;
 }
-.menuv li:hover{
-    background-color: #78855F;
+
+form > input{
+    height: 4vh;
+    width: 16vw;
+    border-radius: 20px;
+    padding-left: 1rem;
 }
-.menuv li a{
-    display: block;
-    color: white;
-    margin-top: 7%;
+
+.imgProfile{
+    width: 12vw;
+    height: 10vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.imgProfile div{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 100%;
+    background-color: blueviolet;
 }
