@@ -1,24 +1,7 @@
 <?php
 session_start();
 
-//credenciales de acceso a la base datos
-
-$hostname=''; //Url de la direccion dela base de datos 
-$username=''; //Usuario que se uso para esta conexion y la verifcacion 
-$password=''; //Password del usuario 
-$database='ventex';//nombre de la db
-
-// conexion a la base de datos
-
-$Conexion = mysqli_connect($hostname, $username, $password, $database);
-
-if (mysqli_connect_error()) {
-
-    // si se encuentra error en la conexión
-
-    exit('Fallo en la conexión de MySQL:' . mysqli_connect_error());
-}
-
+require('../php-servicios/Conexion_db/conexion_usser_select.php');
 // Se valida si se ha enviado información, con la función isset()
 
 if (!isset($_POST['correo'], $_POST['contra'])) {
@@ -30,7 +13,7 @@ if (!isset($_POST['correo'], $_POST['contra'])) {
 
 // evitar inyección sql
 // pasar los parametros a recolectar 
-if ($Result = $Conexion->prepare('SELECT id,pass,nameUser, email, birthdate, phone, img FROM users WHERE email = ?')) {
+if ($Result = $$Conexion_usser_select->prepare('SELECT ID_Usuario,Nombre_Us,Correo,Pass,Fecha_Nac,Celular,Imagen FROM usuarioregistrado WHERE Correo = ?')) {
     // parámetros de enlace de la cadena s
 
     //s=string i=intenger 
@@ -39,14 +22,14 @@ if ($Result = $Conexion->prepare('SELECT id,pass,nameUser, email, birthdate, pho
 
 } else {
     // Si la preparación de la consulta falla, muestra el error
-    die('Error en la preparación de la consulta: ' . mysqli_error($Conexion));
+    die('Error en la preparación de la consulta: ' . mysqli_error($Conexion_usser_select));
 }
 
 // acá se valida si lo ingresado coincide con la base de datos
 
 $Result->store_result();
 if ($Result->num_rows > 0) {
-    $Result->bind_result($id, $hash_password, $name, $email, $birthdate, $phone, $img);
+    $Result->bind_result($id,$name, $email,$hash_password, $birthdate, $phone, $img);
     $Result->fetch();
 
     // se confirma que la cuenta existe ahora validamos la contraseña
@@ -81,5 +64,5 @@ if ($Result->num_rows > 0) {
 //vaciar el stock
 $Result->close();
 //cierrara base de datos :D
-$Conexion->close();
+$Conexion_usser_select->close();
 ?>
