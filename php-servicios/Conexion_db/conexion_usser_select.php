@@ -9,9 +9,10 @@ $database = 'ventexafe'; //nombre de la db
 $Conexion_usser_select = mysqli_connect($hostname, $username, $password, $database);
 
 // Verificar la conexión
-if (mysqli_connect_error()) {
-    exit('Fallo en la conexión de MySQL: ' . mysqli_connect_error());
-}else{
-    echo'Conexion is look well :D 4';
-}
+// if (mysqli_connect_error()) {
+//     exit('Fallo en la conexión de MySQL: ' . mysqli_connect_error());
+// }else{
+//     echo'Conexion is look well :D 4';
+// }
+
 ?>

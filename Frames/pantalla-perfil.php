@@ -81,14 +81,16 @@
             <section class="parent_Child">
                 <section class="parent_LastChild">
                     <section class="group">
-                            <input type="search" id="searchP" name="searchP" placeholder="Buscar" required>
+                        <section class="inputSearch">
+                            <input type="search" id="searchP" name="searchP" placeholder="Buscar" required> <br>
+                        </section>
                             <script>
                                 document.addEventListener("DOMContentLoaded", getData);
 
                                 function getData() {
                                 let input = document.getElementById("searchP").value;
-                                let content = document.getElementById("container-data-table");
-                                let url = "../php-servicios/load-info-ViewProduct-Porc.php";
+                                let content = document.getElementById("resultados");
+                                let url = "../php-servicios/load-info-pantalla-perfil.php";
                                 let formData = new FormData();
                                 formData.append('searchP', input);
 
@@ -102,33 +104,8 @@
                                     }).catch(err => console.log(err));
                                 }
                             </script>
-                        <div id="resultados"></div>
+                    <div id="resultados"></div>
                     </section>
-                    <section class="card">
-                        <div class="image"><span class="text">This is a chair.</span></div>
-                          <span class="title">Cool Chair</span>
-                          <span class="price">$100</span>
-                    </section>
-                    <section class="card">
-                        <div class="image"><span class="text">This is a chair.</span></div>
-                          <span class="title">Cool Chair</span>
-                          <span class="price">$100</span>
-                    </section>
-                    <section class="card">
-                        <div class="image"><span class="text">This is a chair.</span></div>
-                          <span class="title">Cool Chair</span>
-                          <span class="price">$100</span>
-                    </section>
-                    <section class="card">
-                        <div class="image"><span class="text">This is a chair.</span></div>
-                          <span class="title">Cool Chair</span>
-                          <span class="price">$100</span>
-                    </section> 
-                    <section class="card">
-                        <div class="image"><span class="text">This is a chair.</span></div>
-                          <span class="title">Cool Chair</span>
-                          <span class="price">$100</span>
-                    </section>  
                 </section>
             </section>
 
