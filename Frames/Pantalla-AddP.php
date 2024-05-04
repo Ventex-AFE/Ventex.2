@@ -41,7 +41,7 @@
         <!-- Columna lateral 2 -->
         <section id="side2">
             <!-- Formulario para agregar nuevo producto -->
-            <form action="../php-servicios/save-regristrer-new-product.php" method="post" enctype="multipart/form-data">
+            <form action="..\php-servicios\save_data\save-regristrer-new-product.php" method="post" enctype="multipart/form-data">
                 <br>
                 <!-- Campo de entrada para el nombre del producto -->
                 <div class="inputbox" style="height: 5vh;">
@@ -50,7 +50,7 @@
                     <span class="text_input">Nombre del producto</span>
                 </div>
                 <div class="inputbox" style="height: 5vh;">
-                    <input type="text" name="product_price" class="inp" placeholder=" " required><br>
+                    <input type="number" name="product_price" class="inp" placeholder=" " min="0" required><br>
                     <!-- Etiqueta para describir el campo -->
                     <span class="text_input">Precio</span>
                 </div>

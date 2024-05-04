@@ -1,10 +1,10 @@
 <?php
 // Incluir el archivo de conexión a la base de datos
-require('../php-servicios/Conexion_db/conexion_adm.php');
+require('../Conexion_db/conexion_adm.php');
 
 // Definir las columnas a las que se aplicará el filtrado
-$columas = ['ID_Comentario_S','ID_Usuario',	'ID_Seller','Descripcion','Fecha','Hora'];//ejemplo : 'id', 'nombreprod', 'descrip', 'existnafterm', 'stock'
-$table = "comentarios_seller"; // Nombre de la tabla en la base de datos
+$columas = ['ID_Reporte','ID_Usuario','ID_Us_Report','Motivo','Fecha','Hora'];//ejemplo : 'id', 'nombreprod', 'descrip', 'existnafterm', 'stock'
+$table = "reportes_usuario"; // Nombre de la tabla en la base de datos
 
 // Obtener el valor del campo de búsqueda desde un formulario POST
 $campo = isset($_POST['searchP']) ? $Conexion_adm_root->real_escape_string($_POST['searchP']) : null;
@@ -49,11 +49,12 @@ if ($num_rows > 0) {
     // Iterar sobre cada fila (registro) devuelto por la consulta
     while ($row = $result->fetch_assoc()) {
         // Imprimir cada columna de la fila en una fila de una tabla HTML
+
         echo '<tr>';
-        echo '<td>' . $row['ID_Comentario_S'] . '</td>';
+        echo '<td>' . $row['ID_Reporte'] . '</td>';
         echo '<td>' . $row['ID_Usuario'] . '</td>';
-        echo '<td>' . $row['ID_Seller'] . '</td>';
-        echo '<td>' . $row['Descripcion'] . '</td>';
+        echo '<td>' . $row['ID_Us_Report'] . '</td>';
+        echo '<td>' . $row['Motivo'] . '</td>';
         echo '<td>' . $row['Fecha'] . '</td>';
         echo '<td>' . $row['Hora'] . '</td>';
         echo '</tr>';
@@ -61,7 +62,7 @@ if ($num_rows > 0) {
 } else {
     // Si no se devolvieron filas, mostrar un mensaje de "Sin resultados"
     echo '<tr>';
-    echo '<td colspan="7">Sin resultados</td>';
+    echo '<td colspan="8">Sin resultados</td>';
     echo '</tr>';
 }
 /*

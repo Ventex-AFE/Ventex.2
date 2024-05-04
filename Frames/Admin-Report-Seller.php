@@ -113,7 +113,7 @@
         function getData() {
           let input = document.getElementById("searchP").value;
           let content = document.getElementById("container-data-table");
-          let url = "../php-servicios/load-info-Admin-ReportSeller.php";
+          let url = "../php-servicios/load_data/load-info-Admin-ReportSeller.php";
           let formData = new FormData();
           formData.append('searchP', input);
 

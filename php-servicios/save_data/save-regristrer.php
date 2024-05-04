@@ -1,5 +1,5 @@
 <?php
-require_once('../php-servicios/Conexion_db/conexion_usser_insert.php');
+require_once('../Conexion_db/conexion_usser_changes.php');
 
 // Datos del primer formulario
 $Nom = mysqli_real_escape_string($Conexion, $_POST['nombre']);

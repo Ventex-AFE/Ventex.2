@@ -1,10 +1,10 @@
 <?php
 // Incluir el archivo de conexión a la base de datos
-require('../php-servicios/Conexion_db/conexion_adm.php');
+require('../Conexion_db/conexion_adm.php');
 
 // Definir las columnas a las que se aplicará el filtrado
-$columas = ['ID_Reporte_P','ID_Usuario','ID_Producto','Motivo','Fecha','Hora'];//ejemplo : 'id', 'nombreprod', 'descrip', 'existnafterm', 'stock'
-$table = "reportes_producto"; // Nombre de la tabla en la base de datos
+$columas = ['ID_Cometario', 'ID_Usuario', 'ID_Producto', 'Descripcion', 'fechar', 'Hora']; //ejemplo : 'id', 'nombreprod', 'descrip', 'existnafterm', 'stock'
+$table = "comentarios_product"; // Nombre de la tabla en la base de datos
 
 // Obtener el valor del campo de búsqueda desde un formulario POST
 $campo = isset($_POST['searchP']) ? $Conexion_adm_root->real_escape_string($_POST['searchP']) : null;
@@ -50,11 +50,11 @@ if ($num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         // Imprimir cada columna de la fila en una fila de una tabla HTML
         echo '<tr>';
-        echo '<td>' . $row['ID_Reporte_P'] . '</td>';
+        echo '<td>' . $row['ID_Cometario'] . '</td>';
         echo '<td>' . $row['ID_Usuario'] . '</td>';
         echo '<td>' . $row['ID_Producto'] . '</td>';
-        echo '<td>' . $row['Motivo'] . '</td>';
-        echo '<td>' . $row['Fecha'] . '</td>';
+        echo '<td>' . $row['Descripcion'] . '</td>';
+        echo '<td>' . $row['fechar'] . '</td>';
         echo '<td>' . $row['Hora'] . '</td>';
         echo '</tr>';
     }

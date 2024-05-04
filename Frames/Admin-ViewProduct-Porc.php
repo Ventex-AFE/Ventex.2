@@ -98,6 +98,7 @@
     <table class="tabla">
       <thead>
         <th>Id-P</th>
+        <th>Id_usser_r</th>
         <th>Nombre de P</th>
         <th>Descripcion</th>
         <th>Precio</th>
@@ -114,7 +115,7 @@
         function getData() {
           let input = document.getElementById("searchP").value;
           let content = document.getElementById("container-data-table");
-          let url = "../php-servicios/load-info-Admin-ViewProduct-Porc.php";
+          let url = "../php-servicios/load_data/load-info-Admin-ViewProduct-Porc.php";
           let formData = new FormData();
           formData.append('searchP', input);
 
