@@ -90,7 +90,7 @@
                                 function getData() {
                                 let input = document.getElementById("searchP").value;
                                 let content = document.getElementById("resultados");
-                                let url = "../php-servicios/load-info-pantalla-perfil.php";
+                                let url = "../php-servicios/load_data/load-info-pantalla-perfil.php";
                                 let formData = new FormData();
                                 formData.append('searchP', input);
 
