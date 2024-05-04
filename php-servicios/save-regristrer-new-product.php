@@ -2,20 +2,21 @@
 session_start();
 require_once('conexion_usser_changes.php');
 
-$idpv = mysqli_real_escape_string($Conexion_usser_changes, $_POST['idpv']);
-$nameProduct = mysqli_real_escape_string($Conexion_usser_changes, $_POST['nameProduct']);
-$descriptionp = mysqli_real_escape_string($Conexion_usser_changes, $_POST['descriptionp']);
-$price = mysqli_real_escape_string($Conexion_usser_changes, $_POST['price']);
-$categoria = mysqli_real_escape_string($Conexion_usser_changes, $_POST['categoria']);
-$subCategoria = mysqli_real_escape_string($Conexion_usser_changes, $_POST['subcategoria']);
-$seller = mysqli_real_escape_string($Conexion_usser_changes, $_POST['seller']);
+// 	Id_usser_regristro	Nombre_Prod	Descripción	Precio	Categoría	Subcategoría	Imagen	
+$Id_usser_regristro = $_SESSION['id'];
+$nameProduct = mysqli_real_escape_string($Conexion_usser_changes, $_POST['product_name']);
+$price = mysqli_real_escape_string($Conexion_usser_changes, $_POST['product_price']);
+$descriptionp = mysqli_real_escape_string($Conexion_usser_changes, $_POST['product_description']);
+$categoria = mysqli_real_escape_string($Conexion_usser_changes, $_POST['product_category']);
+$subCategoria = mysqli_real_escape_string($Conexion_usser_changes, $_POST['product_subcategory']);
 
-if (isset($_FILES["archivo"])) {
-    $archivo = basename($_FILES["archivo"]["name"]);
+
+if (isset($_FILES["product_image"])) {
+    $archivo = basename($_FILES["product_image"]["name"]);
     $targetDirectory = "../Product-Images/";  // Ruta relativa al directorio del script
     $targetFile = $targetDirectory . $archivo;
 
-    $esImagen = getimagesize($_FILES["archivo"]["tmp_name"]);
+    $esImagen = getimagesize($_FILES["product_image"]["tmp_name"]);
     if ($esImagen !== false) {
         if (move_uploaded_file($_FILES["archivo"]["tmp_name"], $targetFile)) {
             echo "El archivo $archivo ha sido subido correctamente.";
@@ -29,8 +30,9 @@ if (isset($_FILES["archivo"])) {
     echo "No se ha seleccionado ningún archivo.";
 }
 
-$sentence = "INSERT INTO products (idpv, nameProduct, descriptionP, price, category, subCategory, seller, productImage) 
-            VALUES ('$idpv', '$nameProduct', '$descriptionp', '$price', '$categoria', '$subCategoria', '$seller', '$archivo')";
+
+$sentence = "INSERT INTO products (Id_usser_regristro, Nombre_Prod, Descripción, Precio, Categoría, Subcategoría, Imagen) 
+            VALUES ('$Id_usser_regristro', '$nameProduct', '$descriptionp', '$price', '$categoria', '$subCategoria','$archivo')";
 $guardar = mysqli_query($Conexion_usser_changes, $sentence);
 
 if (!$guardar) {
