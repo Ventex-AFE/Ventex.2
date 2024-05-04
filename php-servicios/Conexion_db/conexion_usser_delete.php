@@ -6,7 +6,7 @@ $password = '(p`u})=8h4/C?-@6d+3}>LUaEnd'; //Password del usuario
 $database = 'ventexafe'; //nombre de la db
 
 // Conexión a la base de datos
-$Conexion_usser_select = mysqli_connect($hostname, $username, $password, $database);
+$Conexion_usser_delete = mysqli_connect($hostname, $username, $password, $database);
 
 // Verificar la conexión
 if (mysqli_connect_error()) {
