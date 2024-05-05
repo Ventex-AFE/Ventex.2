@@ -46,9 +46,9 @@
   <main>
     <article class="left">
       <section class="usersContainer" id="users_Container">
-        <div class="UserstitleContainer">
+        <!-- <div class="UserstitleContainer">
           <h1 class="titUsers">Usuarios similares</h1>
-        </div>
+        </div> -->
       </section>
     </article>
     <article class="rigth">

@@ -33,6 +33,11 @@ if ($result === false) {
 $num_rows = $result->num_rows;
 
 if ($num_rows > 0) {
+    ?>
+        <div class="UserstitleContainer">
+          <h1 class="titUsers">Usuarios similares</h1>
+        </div>
+        <?php
     while ($row = $result->fetch_assoc()) {
         ?>
         <button class="userBox">
