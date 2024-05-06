@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Perfil</title>
-    <link rel="stylesheet" href="../header.css">
-    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../Componentes/header.css">
+    <link rel="stylesheet" href="../Componentes/footer.css">
     <link rel="stylesheet" href="../Styles/Styls-profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
@@ -21,7 +21,7 @@
                 <li><a href="">Vender</a></li>
             </ul>
         </nav>
-        <form>
+        <form class="busqueda">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Buscar">
         </form>
