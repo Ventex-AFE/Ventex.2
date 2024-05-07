@@ -1,13 +1,13 @@
 <?php
 // Incluir el archivo de conexión a la base de datos
-require('conexion.php');
+require('../Conexion_db/conexion_adm.php');
 
 // Definir las columnas a las que se aplicará el filtrado
-$columas = [];//ejemplo : 'id', 'nombreprod', 'descrip', 'existnafterm', 'stock'
-$table = "nombre_de_la_tabla"; // Nombre de la tabla en la base de datos
+$columas = ['ID_Reporte_S','ID_Usuario','ID_Seller','Motivo','Fecha','Hora'];//ejemplo : 'id', 'nombreprod', 'descrip', 'existnafterm', 'stock'
+$table = "reportes_seller"; // Nombre de la tabla en la base de datos
 
 // Obtener el valor del campo de búsqueda desde un formulario POST
-$campo = isset($_POST['searchP']) ? $Conexion->real_escape_string($_POST['searchP']) : null;
+$campo = isset($_POST['searchP']) ? $Conexion_adm_root->real_escape_string($_POST['searchP']) : null;
 $where = '';
 
 // Construir la cláusula WHERE para el filtrado si se proporcionó un valor de búsqueda
@@ -29,16 +29,16 @@ if ($campo != null) {
 $consult = "SELECT " . implode(",", $columas) . " FROM $table $where";
 
 // Establecer el conjunto de caracteres de la conexión a UTF-8
-$Conexion->set_charset("utf8");
+$Conexion_adm_root->set_charset("utf8");
 header('Content-Type: text/html; charset=utf-8');
 
 // Ejecutar la consulta SQL
-$result = $Conexion->query($consult);
+$result = $Conexion_adm_root->query($consult);
 
 // Verificar si ocurrió un error durante la ejecución de la consulta
 if ($result === false) {
     // Mostrar un mensaje de error y la descripción del error
-    die("Error in query: " . $Conexion->error);
+    die("Error in query: " . $Conexion_adm_root->error);
 }
 
 // Obtener el número de filas devueltas por la consulta
@@ -50,17 +50,18 @@ if ($num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         // Imprimir cada columna de la fila en una fila de una tabla HTML
         echo '<tr>';
-        echo '<td>' . $row['id'] . '</td>';
-        echo '<td>' . $row['nombreprod'] . '</td>';
-        echo '<td>' . $row['descrip'] . '</td>';
-        echo '<td>' . $row['existnafterm'] . '</td>';
-        echo '<td>' . $row['stock'] . '</td>';
+        echo '<td>' . $row['ID_Reporte_S'] . '</td>';
+        echo '<td>' . $row['ID_Usuario'] . '</td>';
+        echo '<td>' . $row['ID_Seller'] . '</td>';
+        echo '<td>' . $row['Motivo'] . '</td>';
+        echo '<td>' . $row['Fecha'] . '</td>';
+        echo '<td>' . $row['Hora'] . '</td>';
         echo '</tr>';
     }
 } else {
     // Si no se devolvieron filas, mostrar un mensaje de "Sin resultados"
     echo '<tr>';
-    echo '<td colspan="5">Sin resultados</td>';
+    echo '<td colspan="7">Sin resultados</td>';
     echo '</tr>';
 }
 /*

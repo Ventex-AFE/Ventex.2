@@ -111,7 +111,7 @@
     background-color: #ffff;
   }
   #imagen-usser-container {
-    width: 12vw;
+    width: 11vw;
     height: 19vh;
     margin: auto;
     border-radius: 50%;
@@ -122,7 +122,7 @@
   #imagen-product {
     max-width: 15vh;
     margin-top: 0.9vh;
-    margin-left: 1.6vw;
+    margin-left: 1.5vw;
   }
   
   #footler-v {

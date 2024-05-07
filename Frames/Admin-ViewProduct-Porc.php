@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Ventex</title>
   <link rel="stylesheet" href="../Styles/Admin-ViewProduct-porce.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -88,7 +88,7 @@
   <section id="section-serch">
     <section class="searchSection">
       <div class="searchContainer">
-        <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
+        <input type="search" name="searchP" id="searchP" onkeyup="getData()" placeholder="Buscar" required>
         <button class="searchButton"><img src="../Icons/lupaB.png" alt=""></button>
       </div>
     </section>
@@ -98,6 +98,7 @@
     <table class="tabla">
       <thead>
         <th>Id-P</th>
+        <th>Id_usser_r</th>
         <th>Nombre de P</th>
         <th>Descripcion</th>
         <th>Precio</th>
@@ -114,7 +115,7 @@
         function getData() {
           let input = document.getElementById("searchP").value;
           let content = document.getElementById("container-data-table");
-          let url = "../php-servicios/load-info-ViewProduct-Porc.php";
+          let url = "../php-servicios/load_data/load-info-Admin-ViewProduct-Porc.php";
           let formData = new FormData();
           formData.append('searchP', input);
 

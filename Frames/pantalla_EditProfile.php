@@ -35,7 +35,7 @@
         <section class="line"></section>
         <section class="form">
             <h1 class="form-title">Editar Perfil</h1>
-            <form action="./php-servicios/save-actualizacion-datos-personales.php" method="PUT">
+            <form action=".\php-servicios\save_data\save-actualizacion-datos-personales.php" method="PUT">
 
                 <div class="profileImage">
                     <img src="https://static-00.iconduck.com/assets.00/user-avatar-icon-512x512-vufpcmdn.png" alt="" id="imgPreview">
