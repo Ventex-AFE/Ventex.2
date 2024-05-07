@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Styles/Styles-pedidos.css">
     <link rel="stylesheet" href="../Componentes/header-v.css">
     <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
+    <link rel="stylesheet" href="../Componentes/modalForm.css">
 
     <style> /* <-------Styles extensible search input*/
         .searchSection{
@@ -72,7 +73,7 @@
                 </div>
                 <div class="table-options">
                     <button class="btn calc">Calcular</button>
-                    <button class="btn">Agregar Pedido</button>
+                    <button class="btn addOrder">Agregar Pedido</button>
                 </div>
             </section>
             <table class="tableContainer">
@@ -267,49 +268,54 @@
         <div class="modal hidden"></div>
         <div class="overlay hidden"></div>
         <div class="invisibleOverlay hidden"></div>
+
+<!-- Form Modal -------------------------------------------------------------------------------------------------->
+
+        <article class="modalFormMainContainer hidden">
+            <section class="titleFormContainer">
+                <h1 class="titleForm">Agregar Pedido</h1>
+            </section>
+            <section class="contentFormInputs">
+                <form action="" method="post" class="formInputs">
+                    <div class="inputContainer">
+                        <input type="text" name="nombre" class="input" required>
+                        <label for="nombre" class="inputText"><pre> Nombre </pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="email" name="correo" class="input" required>
+                        <label for="correo" class="inputText"><pre> Email </pre></label>
+                    </div>
+                    <div class="inputContainerSmall">
+                        <input type="number" name="correo" class="input" required>
+                        <label for="correo" class="inputText"><pre> Celular </pre></label>
+                    </div>
+                    <div class="inputContainerSmall">
+                        <input type="date" name="correo" class="input" required>
+                        <label for="correo" class="inputText"><pre> Fecha Nacimiento </pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="password" name="contraseña" class="input" required>
+                        <label for="contraseña" class="inputText"> <pre> Contraseña </pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="password" name="contraseñaC" class="input" required>
+                        <label for="contraseñaC" class="inputText"><pre> Confirmar contraseña </pre></label>
+                    </div>
+                    <input type="submit" value="Agregar Pedido" class="but">
+                    <button class="cancel"> Cancelar </button>
+                </form>
+            </section>
+            </section>
+        </article>
+
+        <div class="formOverlay hidden"></div>
+
+<!---------------------------------------------------------------------------------------------------------------->
     </main>
     <footer></footer>
 
 <!--------------------------------------------------------------------------------->
-    <script>
-        const calcular = document.querySelector('.calc');
-        const modal = document.querySelector('.modal');
-        const overlay = document.querySelector('.overlay');
-
-
-        const openModal = () =>{ // This function opens the modal
-            modal.classList.remove('hidden');
-            overlay.classList.remove('hidden');
-        }
-        const closeModal = () =>{ // Rhis function close the modal
-            modal.classList.add('hidden');
-            overlay.classList.add('hidden');
-        }
-        calcular.addEventListener('click', openModal);
-        overlay.addEventListener('click', closeModal);
-    </script>
-    <!-- <script>
-        const openPointsOptions = document.querySelector('.pointsOptions');
-        const invisibleOverlay = document.querySelector('.invisibleOverlay');
-        const points = document.querySelectorAll('.checkButton');
-
-        const openPointsOptionsF = () =>{ // This function opens the modal
-
-            console.log('hola');
-            openPointsOptions.classList.remove('hidden');
-            invisibleOverlay.classList.remove('hidden');
-        }
-        const closePointsOptions = () =>{ // Rhis function close the modal
-            openPointsOptions.classList.add('hidden');
-            invisibleOverlay.classList.add('hidden');
-        }
-
-        for (let i = 0; i < points.length; i++)
-        points[i].addEventListener('click', openPointsOptionsF);
-
-        invisibleOverlay.addEventListener('click', closePointsOptions);
-        console.log('holaP');
-    </script> -->
+<script src="../Scripts/Script-pedidos.js"></script>
 <!--------------------------------------------------------------------------------->
 
 </body>
