@@ -8,6 +8,7 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     background-color: rgb(222, 222, 222);
+    background: no-repeat center/100% url("../Icons//Fondos-Pantallas/fondo.jpg");
 }
 main{
     height: 90vh;

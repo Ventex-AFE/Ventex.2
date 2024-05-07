@@ -28,15 +28,15 @@
         <!-- Sección lateral 1 -->
         <section id="side1">
             <h1 id="Descrip-AgregarP">Actualiza</h1>
-            <h3 id="Descrip-AgregarP2">Información Personal</h3>
+            <h3 id="Descrip-AgregarP2">Información producto</h3>
         </section>
         <!-- Sección lateral 2 (formulario para actualizar redes sociales) -->
         <section id="side2">
              <section id="imagen-usser-container">
                 <img src="../Icons/bolsa-de-la-compra.png" id="imagen-product" >
              </section>
-            <form action="../php-servicios/save-actualizacion-datos-personales.php" method="post">
-                <input type="hidden" name="id-usser-update" value=""><!-- aqui va ir lo de sesion -->
+            <form action="..\php-servicios\save_data\save-actualizacion-datos-personales.php" method="post">
+                <input type="hidden" name="id_Product_update" value=""><!-- aqui va ir lo de sesion -->
                 <br>
                 <!-- Inputs para actualizar datos de redes sociales -->
                 <div class="inputbox" style="height: 6vh;">

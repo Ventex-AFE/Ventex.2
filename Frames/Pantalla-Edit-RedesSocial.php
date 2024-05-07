@@ -32,7 +32,7 @@
         <!-- Sección lateral 2 (formulario para actualizar redes sociales) -->
         <section id="side2">
             
-            <form action="/php-servicios/save-actulizacion-RedesSociales.php" method="post">
+            <form action="..\php-servicios\save_data\save-actulizacion-RedesSociales.php" method="post">
                 <input type="hidden" name="id-usser-update" value=""><!-- aqui va ir lo de sesion -->
                 <br>
                 <!-- Inputs para actualizar datos de redes sociales -->

@@ -3,10 +3,10 @@
 session_start();
 
 // Requiere el archivo de conexión a la base de datos
-require('../php-servicios/Conexion_db/conexion_usser_select.php');
+require('../Conexion_db/conexion_usser_select.php');
 
 // Verifica si están presentes los datos del formulario
-if (!isset($_POST['correo'], $_POST['contra'])) {
+if (!isset($_POST['correo'], $_POST['contrasena'])) {
     // Redirige a la página de inicio si falta algún dato
     header('Location: Incios.html');
     exit;
@@ -14,7 +14,7 @@ if (!isset($_POST['correo'], $_POST['contra'])) {
 
 // Escapa los caracteres especiales en el correo y la contraseña para prevenir inyección SQL
 $correo = mysqli_real_escape_string($Conexion_usser_select, $_POST['correo']);
-$contra = mysqli_real_escape_string($Conexion_usser_select, $_POST['contra']);
+$contra = mysqli_real_escape_string($Conexion_usser_select, $_POST['contrasena']);
 
 // Prepara una consulta SQL para seleccionar el usuario con el correo proporcionado
 if ($Result = $Conexion_usser_select->prepare('SELECT ID_Usuario, Nombre_Us, Correo, Pass, Fecha_Nac, Celular, Imagen FROM usuarioregistrado WHERE Correo = ?')) {
@@ -46,16 +46,17 @@ if ($Result->num_rows > 0) {
         $_SESSION['email'] = $email;
         $_SESSION['img'] = $img;
         // Redirige al perfil del usuario
-        header('Location: perfil.php');
+        header('Location: ..\..\Frames\pantalla-perfil.php');
         exit;
     } else {
         // Redirige a la página de inicio con un mensaje de error si la contraseña es incorrecta
-        header('Location: Incios.php?error=1');
+        header('Location: ..\..\Frames\pantalla-Login.html');
         exit;
     }
 } else {
     // Redirige a la página de inicio con un mensaje de error si no se encontró ningún usuario con el correo proporcionado
-    header('Location: Incios.html?error=2');
+ 
+    header('Location: ..\..\Frames\pantalla-Login.html');
     exit;
 }
 
