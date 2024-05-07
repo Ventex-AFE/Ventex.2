@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ventex</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../Styles/Styles-Inicio.css">
 </head>
 <body>
     <header>
@@ -21,7 +21,7 @@
             <button type="submit">Buscar</button>
         </form>
         <div class="user-profile">
-            <img src="imagenes/yofinobuena.jpg" alt="User Profile">
+            <img src="../Product-Images/yofinobuena.jpg" alt="User Profile">
             <span>Nombre de usuario</span>
         </div>
     </header>
@@ -33,7 +33,7 @@
     <main>
         
         <div class="card">
-            <img  class="card-img" src="/imagenes/yofinobuena.jpg" alt="">
+            <img  class="card-img" src="../Product-Images/yofinobuena.jpg" alt="">
             <div class="card-info">
               <p class="text-body">Descripcion</p>
             </div>
@@ -48,7 +48,7 @@
             </div>
           </div></div>
           <div class="card">
-            <img  class="card-img" src="/imagenes/yofinobuena.jpg" alt="">
+            <img  class="card-img" src="../Product-Images/yofinobuena.jpg" alt="">
             <div class="card-info">
               <p class="text-body">Descripcion</p>
             </div>
@@ -63,7 +63,7 @@
             </div>
           </div></div>
           <div class="card">
-            <img  class="card-img" src="/imagenes/yofinobuena.jpg" alt="">
+            <img  class="card-img" src="../Product-Images/yofinobuena.jpg" alt="">
             <div class="card-info">
               <p class="text-body">Descripcion</p>
             </div>
@@ -78,7 +78,7 @@
             </div>
           </div> </div>
           <div class="card">
-            <img  class="card-img" src="/imagenes/yofinobuena.jpg" alt="">
+            <img  class="card-img" src="../Product-Images/yofinobuena.jpg" alt="">
             <div class="card-info">
               <p class="text-body">Descripcion</p>
             </div>
