@@ -84,7 +84,7 @@
                         <section class="inputSearch">
                             <input type="search" id="searchP" name="searchP" placeholder="Buscar" required> <br>
                         </section>
-                            <script>
+                            <!--<script>
                                 document.addEventListener("DOMContentLoaded", getData);
 
                                 function getData() {
@@ -103,7 +103,7 @@
                                     content.innerHTML = data;
                                     }).catch(err => console.log(err));
                                 }
-                            </script>
+                            </script>-->
                     <div id="resultados"></div>
                     </section>
                 </section>
