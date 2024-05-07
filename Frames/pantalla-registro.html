@@ -14,9 +14,19 @@
         <article class="container">
             <section class="titleContainer">
                 <h1 class="screamTitle">Registrate!</h1>
+      
             </section>
             <section class="content">
-                <form action="" method="post">
+                <form action="../php-servicios/save_data/save-regristrer.php" method="post" enctype="multipart/form-data">
+                    <div id="continer_seller_table">
+                        <input type="hidden" name="value1" value="#">
+                        <input type="hidden" name="value2" value="#">
+                        <input type="hidden" name="value3" value="#">
+                        <input type="hidden" name="value4" value="#">
+                        <input type="hidden" name="value5" value="#">
+                        <input type="hidden" name="value6" value="#">
+                        <input type="hidden" name="value7" value="#">
+                    </div>
                     <div class="photoContainer">
                         <!-- <img src="../Product-Images/pulsera_f.jpg" alt="" > -->
                         <img src="../Icons/perfilPic.png" alt="" class="defaultPhoto">
@@ -31,25 +41,43 @@
                         <label for="correo" class="inputText"><pre> Email </pre></label>
                     </div>
                     <div class="inputContainerSmall">
-                        <input type="number" name="correo" class="input" required>
+                        <input type="number" name="telefono" class="input" required>
                         <label for="correo" class="inputText"><pre> Celular </pre></label>
                     </div>
                     <div class="inputContainerSmall">
-                        <input type="date" name="correo" class="input" required>
-                        <label for="correo" class="inputText"><pre> Fecha Nacimiento </pre></label>
+                        <input type="date" name="fecha_nac" class="input" required>
+                        <label for="fecha_nac" class="inputText"><pre> Fecha Nacimiento </pre></label>
                     </div>
                     <div class="inputContainer">
-                        <input type="password" name="contraseña" class="input" required>
+                        <input type="password" name="contrasena" id="contrasena" class="input" required>
                         <label for="contraseña" class="inputText"> <pre> Contraseña </pre></label>
                     </div>
                     <div class="inputContainer">
-                        <input type="password" name="contraseñaC" class="input" required>
+                        <input type="password" name="contrasemaC" id="contrasenaC" class="input" required>
                         <label for="contraseñaC" class="inputText"><pre> Confirmar contraseña </pre></label>
                     </div>
+                    <p id="mensaje"></p>
                     <input type="submit" value="Registrarse" class="Registrarse">
                 </form>
             </section>
         </article>
+        
     </main>
+    <script>
+         function verificarContraseña() {
+        let password = document.getElementById("contrasena").value;
+        let confirmPassword = document.getElementById("contrasenaC").value;
+
+        if (password !== confirmPassword) {
+            document.getElementById("mensaje").innerHTML = "Las contraseñas no coinciden.";
+        } else {
+            document.getElementById("mensaje").innerHTML = "Las contraseñas coinciden.";
+        }
+    }
+
+    // Agregar eventos de entrada para verificar mientras el usuario escribe
+    document.getElementById("contrasena").addEventListener("input", verificarContraseña);
+    document.getElementById("contrasenaC").addEventListener("input", verificarContraseña);
+    </script>
 </body>
 </html>
