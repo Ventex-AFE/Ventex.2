@@ -100,6 +100,13 @@ body{
 .info h1{
    font-size: 3rem;
 }
+.details{
+   width: 80%; 
+   height: 100px;  
+   display: flex; 
+   align-items: center; 
+   justify-content: space-between;
+}
 .data table{
    font-size: 1rem;
    gap: 2px;

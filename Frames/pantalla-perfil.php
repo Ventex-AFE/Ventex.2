@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,19 +45,19 @@
 
                 <section class="parent_LastChild">
                         <article class="info">                                 
-                            <a href="pantalla_EditProfile.php" class="edit"><i class="fa-solid fa-user-pen"></i></a>
-                            <h1>Manu</h1>
-                            <h2>manu@manu.com</h2>
-                            <section class="cel" style="width: 80%; height: 100px;  display: flex; align-items: center; justify-content: space-between;">
+                            <a href="Pantalla-Edit-Info-Personal.php" class="edit"><i class="fa-solid fa-user-pen"></i></a>
+                            <h1><?php echo $_SESSION['name']; ?></h1>
+                            <h2><?php echo $_SESSION['email']; ?></h2>
+                            <section class="details">
                                 <section class="data">
                                     <table>
                                         <tr>
                                             <td>Fecha de nacimiento: </td>
-                                            <td>24/06/2000</td>
+                                            <td><?php echo $_SESSION['birthdate']; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Número de teléfono: </td>
-                                            <td>3322557745</td>
+                                            <td><?php echo $_SESSION['phone']; ?></td>
                                         </tr>
                                     </table>
                                 </section>
