@@ -1,13 +1,16 @@
 <?php
-require('../php-servicios/Conexion_db/conexion_usser_select.php');
+session_start();
+require('../Conexion_db/conexion_usser_select.php');
 
-$columas = ['ID_Producto', 'Nombre_Prod', 'Descripción', 'Precio', 'Categoría', 'Subcategoría', 'Imagen'];
+$columas = ['ID_Producto', 'Id_usser_regristro', 'Nombre_Prod', 'Descripcion', 'Precio', 'Categoria', 'Subcategoria', 'Imagen'];
 $table = "productos";
+// $idUser = $_SESSION['id'];
+$idUser = 5;
 $campo = isset($_POST['searP']) ? $Conexion_usser_select->real_escape_string($_POST['searP']) : null;
 $where = '';
 
 if ($campo != null) {
-    $where = "WHERE (";
+    $where = "AND (";
     $cont = count($columas);
 
     for ($i = 0; $i < $cont; $i++) {
@@ -18,7 +21,7 @@ if ($campo != null) {
     $where .= ")";
 }
 
-$consult = "SELECT " . implode(",", $columas) . " FROM $table $where";
+$consult = "SELECT " . implode(",", $columas) . " FROM $table WHERE Id_usser_regristro = $idUser $where";
 $Conexion_usser_select->set_charset("utf8");
 header('Content-Type: text/html; charset=utf-8');
 $result = $Conexion_usser_select->query($consult);

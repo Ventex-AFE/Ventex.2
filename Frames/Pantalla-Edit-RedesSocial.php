@@ -44,23 +44,33 @@ mysqli_stmt_close($stmt);
     <title>Ventex</title>
     <!-- Enlaces a tus hojas de estilo y fuentes -->
     <link rel="stylesheet" href="../Styles/Styles-Edit-RedesSocial.css">
+    <link rel="stylesheet" href="../Componentes/header.css">
+    <link rel="stylesheet" href="../Componentes/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Cabin+Sketch&family=Hammersmith+One&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <!-- Barra de navegación -->
-    <nav id="nav">
-        <h1 id="name">Ventex</h1>
-        <!-- Botones de navegación -->
-        <button class="buttonP">Inicio</button>
-        <button class="buttonP">Categoría</button>
-        <button class="buttonP">Planes</button>
-        <!-- Barra de búsqueda -->
-        <input type="search" name="search" id="search">
-        <!-- Sección para fotos de perfil  -->
-        <section id="photo"></section>
-    </nav>
+    <header>
+            <section><p class="logo">Ventex</p></section>
+            <nav>
+                <ul class="menu">
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="">Categoria</a></li>
+                    <li><a href="">Planes</a></li>
+                    <li><a href="">Vender</a></li>
+                </ul>
+            </nav>
+            <form class="busqueda">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Buscar">
+            </form>
+            <section class="imgProfile">
+                <div></div>
+            </section>
+    </header>
+
+
     <!-- Contenido principal -->
     <section id="main">
         <!-- Sección lateral 1 -->
