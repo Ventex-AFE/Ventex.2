@@ -5,7 +5,8 @@ require_once('../Conexion_db/conexion_usser_select.php');
 // Obtener la categoría seleccionada desde la solicitud AJAX
 
 $categoria = $_POST['product_category'];
-//$categoria= 'Ropa';
+// echo $categoria;
+//categoria= 'Hogar y jardin';
 // Consulta SQL para obtener las subcategorías de la categoría seleccionada
 $sql = "SELECT Nombre_Subcat FROM subcategoria WHERE Categoria = ?";
 $stmt = mysqli_prepare($Conexion_usser_select, $sql);

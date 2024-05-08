@@ -78,7 +78,7 @@ mysqli_stmt_close($stmt);
             <section id="imagen-usser-container">
                 <img src="../Icons/bolsa-de-la-compra.png" id="imagen-product">
             </section>
-            <form action="..\php-servicios\save_data\save-actualizacion-datos-personales.php" method="post">
+            <form action="..\php-servicios\save_data\save-actualizacion-datos-personales.php" method="post" id="form_product">
                 <input type="hidden" name="id_Product_update" value=""><!-- aqui va ir lo de sesion -->
                 <br>
                 <!-- Inputs para actualizar datos de redes sociales -->
@@ -133,16 +133,12 @@ mysqli_stmt_close($stmt);
         $(document).ready(function() {
             // Manejar el cambio en el primer selector de categoría
             $('#product_category').change(function() {
-                var categoria = $(this).value(); // Obtener la categoría seleccionada
-
                 // Realizar una solicitud AJAX para obtener las subcategorías de la categoría seleccionada
                 $.ajax({
                     url: '../php-servicios/load_data/load-subcategoria-pantallas-Edit-Add-Producto.php',
                     type: 'POST',
                     dataType: 'json',
-                    data: {
-                        categoria: categoria // Pasar la categoría seleccionada
-                    },
+                    data: $('#form_product').serialize(), // Serializar los datos del formulario
                     success: function(response) {
                         // Limpiar el selector de subcategorías
                         $('#product_subcategory').empty();
