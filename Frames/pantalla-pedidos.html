@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Styles/Styles-pedidos.css">
     <link rel="stylesheet" href="../Componentes/header-v.css">
     <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
+    <link rel="stylesheet" href="../Componentes/modalForm.css">
 
     <style> /* <-------Styles extensible search input*/
         .searchSection{
@@ -72,14 +73,14 @@
                 </div>
                 <div class="table-options">
                     <button class="btn calc">Calcular</button>
-                    <button class="btn">Agregar Pedido</button>
+                    <button class="btn addOrder">Agregar Pedido</button>
                 </div>
             </section>
             <table class="tableContainer">
                 <tr class="table-header-data">
                     <th class="header-data">Terminar</th>
-                    <th class="header-data">Nombre</th>
                     <th class="header-data">ID-pedido</th>
+                    <th class="header-data">Nombre</th>
                     <th class="header-data">ID-producto</th>
                     <th class="header-data">Usuario-Cliente</th>
                     <th class="header-data">Fecha</th>
@@ -93,15 +94,16 @@
 
                     <tr class="row-column-order">
                         <td class="check">
-                            <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                            <ul class="pointsOptions hidden">
-                                <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Hola</p></a></li>
-                                <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Hola</p></a></li>
-                                <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Hola</p></a></li>
-                            </ul>
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
                         </td>
-                        <td class="table-data"><p class="table-text">Pulcera especial para parejas, personalizadas al gusto</p></td>
                         <td class="table-data">27182</td>
+                        <td class="table-data"><p class="table-text">Pulcera especial para parejas, personalizadas al gusto</p></td>
                         <td class="table-data">318273</td>
                         <td class="table-data"><p class="table-text">Nayeli</p></td>
                         <td class="table-data">26/04/24</td>
@@ -113,10 +115,16 @@
                     </tr>
                     <tr class="row-column-order">
                         <td class="check">
-                            <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
                         </td>
-                        <td class="table-data">Pulcera</td>
                         <td class="table-data">27182</td>
+                        <td class="table-data">Pulcera</td>
                         <td class="table-data">318273</td>
                         <td class="table-data">Nayeli</td>
                         <td class="table-data">26/04/24</td>
@@ -128,10 +136,16 @@
                     </tr>
                     <tr class="row-column-order">
                         <td class="check">
-                            <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
                         </td>
-                        <td class="table-data">Pulcera</td>
                         <td class="table-data">27182</td>
+                        <td class="table-data">Pulcera</td>
                         <td class="table-data">318273</td>
                         <td class="table-data">Nayeli</td>
                         <td class="table-data">26/04/24</td>
@@ -143,10 +157,16 @@
                     </tr>
                     <tr class="row-column-order">
                         <td class="check">
-                            <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
                         </td>
-                        <td class="table-data">Pulcera</td>
                         <td class="table-data">27182</td>
+                        <td class="table-data">Pulcera</td>
                         <td class="table-data">318273</td>
                         <td class="table-data">Nayeli</td>
                         <td class="table-data">26/04/24</td>
@@ -158,10 +178,16 @@
                     </tr>
                     <tr class="row-column-order">
                         <td class="check">
-                            <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
                         </td>
-                        <td class="table-data">Pulcera</td>
                         <td class="table-data">27182</td>
+                        <td class="table-data">Pulcera</td>
                         <td class="table-data">318273</td>
                         <td class="table-data">Nayeli</td>
                         <td class="table-data">26/04/24</td>
@@ -173,10 +199,16 @@
                     </tr>
                     <tr class="row-column-order">
                         <td class="check">
-                            <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
                         </td>
-                        <td class="table-data">Pulcera</td>
                         <td class="table-data">27182</td>
+                        <td class="table-data">Pulcera</td>
                         <td class="table-data">318273</td>
                         <td class="table-data">Nayeli</td>
                         <td class="table-data">26/04/24</td>
@@ -188,10 +220,16 @@
                     </tr>
                     <tr class="row-column-order">
                         <td class="check">
-                            <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
                         </td>
-                        <td class="table-data">Pulcera</td>
                         <td class="table-data">27182</td>
+                        <td class="table-data">Pulcera</td>
                         <td class="table-data">318273</td>
                         <td class="table-data">Nayeli</td>
                         <td class="table-data">26/04/24</td>
@@ -203,10 +241,16 @@
                     </tr>
                     <tr class="row-column-order">
                         <td class="check">
-                            <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
                         </td>
-                        <td class="table-data">Pulcera</td>
                         <td class="table-data">27182</td>
+                        <td class="table-data">Pulcera</td>
                         <td class="table-data">318273</td>
                         <td class="table-data">Nayeli</td>
                         <td class="table-data">26/04/24</td>
@@ -218,10 +262,16 @@
                     </tr>
                     <tr class="row-column-order">
                         <td class="check">
-                            <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
                         </td>
-                        <td class="table-data">Pulcera</td>
                         <td class="table-data">27182</td>
+                        <td class="table-data">Pulcera</td>
                         <td class="table-data">318273</td>
                         <td class="table-data">Nayeli</td>
                         <td class="table-data">26/04/24</td>
@@ -233,10 +283,16 @@
                     </tr>
                     <tr class="row-column-order">
                         <td class="check">
-                            <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
                         </td>
-                        <td class="table-data">Pulcera</td>
                         <td class="table-data">27182</td>
+                        <td class="table-data">Pulcera</td>
                         <td class="table-data">318273</td>
                         <td class="table-data">Nayeli</td>
                         <td class="table-data">26/04/24</td>
@@ -248,10 +304,37 @@
                     </tr>
                     <tr class="row-column-order">
                         <td class="check">
-                            <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
                         </td>
-                        <td class="table-data">Pulcera</td>
                         <td class="table-data">27182</td>
+                        <td class="table-data">Pulcera</td>
+                        <td class="table-data">318273</td>
+                        <td class="table-data">Nayeli</td>
+                        <td class="table-data">26/04/24</td>
+                        <td class="table-data">14:24</td>
+                        <td class="table-data">Tecamachalco</td>
+                        <td class="table-data">2</td>
+                        <td class="table-data">$200</td>
+                        <td class="table-data">Pulceras personalizables para pareja</td>
+                    </tr>
+                    <tr class="row-column-order">
+                        <td class="check">
+                            <div class="pointsContiner">
+                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                                <ul class="pointsOptions hidden">
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></a></li>
+                                    <li class="pointsOption"><a href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="table-data">27182</td>
+                        <td class="table-data">Pulcera</td>
                         <td class="table-data">318273</td>
                         <td class="table-data">Nayeli</td>
                         <td class="table-data">26/04/24</td>
@@ -267,49 +350,54 @@
         <div class="modal hidden"></div>
         <div class="overlay hidden"></div>
         <div class="invisibleOverlay hidden"></div>
+
+<!-- Form Modal -------------------------------------------------------------------------------------------------->
+
+        <article class="modalFormMainContainer hidden">
+            <section class="titleFormContainer">
+                <h1 class="titleForm">Agregar Pedido</h1>
+            </section>
+            <section class="contentFormInputs">
+                <form action="" method="post" class="formInputs">
+                    <div class="inputContainer">
+                        <input type="text" name="nombre" class="input" required>
+                        <label for="nombre" class="inputText"><pre> Nombre del Producto</pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" name="correo" class="input" required>
+                        <label for="correo" class="inputText"><pre> Nombre Cliente </pre></label>
+                    </div>
+                    <div class="inputContainerSmall">
+                        <input type="time" name="time" class="input" required>
+                        <label for="time" class="inputText"><pre> Hora   </pre></label>
+                    </div>
+                    <div class="inputContainerSmall">
+                        <input type="date" name="fechaEntrega" class="input" required>
+                        <label for="fechaEntrega" class="inputText"><pre> Fecha Entrega </pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="password" name="contraseña" class="input" required>
+                        <label for="contraseña" class="inputText"> <pre> Dirección de entrega </pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="password" name="contraseñaC" class="input" required>
+                        <label for="contraseñaC" class="inputText"><pre> Descripción del pedido </pre></label>
+                    </div>
+                    <input type="submit" value="Agregar Pedido" class="but">
+                    <button class="cancel"> Cancelar </button>
+                </form>
+            </section>
+            </section>
+        </article>
+
+        <div class="formOverlay hidden"></div>
+
+<!---------------------------------------------------------------------------------------------------------------->
     </main>
     <footer></footer>
 
 <!--------------------------------------------------------------------------------->
-    <script>
-        const calcular = document.querySelector('.calc');
-        const modal = document.querySelector('.modal');
-        const overlay = document.querySelector('.overlay');
-
-
-        const openModal = () =>{ // This function opens the modal
-            modal.classList.remove('hidden');
-            overlay.classList.remove('hidden');
-        }
-        const closeModal = () =>{ // Rhis function close the modal
-            modal.classList.add('hidden');
-            overlay.classList.add('hidden');
-        }
-        calcular.addEventListener('click', openModal);
-        overlay.addEventListener('click', closeModal);
-    </script>
-    <!-- <script>
-        const openPointsOptions = document.querySelector('.pointsOptions');
-        const invisibleOverlay = document.querySelector('.invisibleOverlay');
-        const points = document.querySelectorAll('.checkButton');
-
-        const openPointsOptionsF = () =>{ // This function opens the modal
-
-            console.log('hola');
-            openPointsOptions.classList.remove('hidden');
-            invisibleOverlay.classList.remove('hidden');
-        }
-        const closePointsOptions = () =>{ // Rhis function close the modal
-            openPointsOptions.classList.add('hidden');
-            invisibleOverlay.classList.add('hidden');
-        }
-
-        for (let i = 0; i < points.length; i++)
-        points[i].addEventListener('click', openPointsOptionsF);
-
-        invisibleOverlay.addEventListener('click', closePointsOptions);
-        console.log('holaP');
-    </script> -->
+<script src="../Scripts/Script-pedidos.js"></script>
 <!--------------------------------------------------------------------------------->
 
 </body>

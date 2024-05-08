@@ -17,7 +17,7 @@ $correo = mysqli_real_escape_string($Conexion_usser_select, $_POST['correo']);
 $contra = mysqli_real_escape_string($Conexion_usser_select, $_POST['contrasena']);
 
 // Prepara una consulta SQL para seleccionar el usuario con el correo proporcionado
-if ($Result = $Conexion_usser_select->prepare('SELECT ID_Usuario, Nombre_Us, Correo, Pass, Fecha_Nac, Celular, Imagen FROM usuarioregistrado WHERE Correo = ?')) {
+if ($Result = $Conexion_usser_select->prepare('SELECT ID_Usuario, Nombre_Us, Correo, Pass, Fecha_Nac, telefono, Imagen FROM usuarioregistrado WHERE Correo = ?')) {
     $Result->bind_param('s', $correo); // Asocia el parámetro con el valor y ejecuta la consulta
     $Result->execute();
 } else {
