@@ -1,10 +1,13 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Perfil</title>
-    <link rel="stylesheet" href="../header.css">
-    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../Componentes/header.css">
+    <link rel="stylesheet" href="../Componentes/footer.css">
     <link rel="stylesheet" href="../Styles/Styls-profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
@@ -21,7 +24,7 @@
                 <li><a href="">Vender</a></li>
             </ul>
         </nav>
-        <form>
+        <form class="busqueda">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Buscar">
         </form>
@@ -42,19 +45,19 @@
 
                 <section class="parent_LastChild">
                         <article class="info">                                 
-                            <a href="pantalla_EditProfile.php" class="edit"><i class="fa-solid fa-user-pen"></i></a>
-                            <h1>Manu</h1>
-                            <h2>manu@manu.com</h2>
-                            <section class="cel" style="width: 80%; height: 100px;  display: flex; align-items: center; justify-content: space-between;">
+                            <a href="Pantalla-Edit-Info-Personal.php" class="edit"><i class="fa-solid fa-user-pen"></i></a>
+                            <h1><?php echo $_SESSION['name']; ?></h1>
+                            <h2><?php echo $_SESSION['email']; ?></h2>
+                            <section class="details">
                                 <section class="data">
                                     <table>
                                         <tr>
                                             <td>Fecha de nacimiento: </td>
-                                            <td>24/06/2000</td>
+                                            <td><?php echo $_SESSION['birthdate']; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Número de teléfono: </td>
-                                            <td>3322557745</td>
+                                            <td><?php echo $_SESSION['phone']; ?></td>
                                         </tr>
                                     </table>
                                 </section>
