@@ -12,8 +12,8 @@ session_start();
 // }
 
 // Obtener el ID de usuario de la sesión
-//$id_product = $_POST['id_product']; //extraido desde el perfil con el boton del editar producto
-$id_product = 5;
+ $id_product = $_POST['id_product']; //extraido desde el perfil con el boton del editar producto
+//$id_product = 5;
 // Preparar la consulta para obtener los datos del usuario
 $sql = "SELECT Nombre_Prod, Descripcion, Precio, Categoria, Subcategoria FROM productos WHERE ID_Producto = ?";
 // Verificar si la preparación de la consulta tuvo éxito
@@ -78,8 +78,8 @@ mysqli_stmt_close($stmt);
             <section id="imagen-usser-container">
                 <img src="../Icons/bolsa-de-la-compra.png" id="imagen-product">
             </section>
-            <form action="..\php-servicios\save_data\save-actualizacion-datos-personales.php" method="post" id="form_product">
-                <input type="hidden" name="id_Product_update" value=""><!-- aqui va ir lo de sesion -->
+            <form action="../php-servicios/save_data/save-actualizacion-info-producto.php" method="post" id="form_product">
+                <input type="hidden" name="id_Product_update" value="<?php echo $id_product ?>"><!-- aqui va ir lo de sesion -->
                 <br>
                 <!-- Inputs para actualizar datos de redes sociales -->
                 <div class="inputbox" style="height: 6vh;">
@@ -87,16 +87,16 @@ mysqli_stmt_close($stmt);
                     <span class="text_input">Nombre del producto:</span>
                 </div>
                 <div class="inputbox" style="height: 6vh;">
-                    <input type="text" name="categoria" class="inp" placeholder=" " value="<?php echo $Descripcion ?>" required><br>
+                    <input type="text" name="Descripcion" class="inp" placeholder=" " value="<?php echo $Descripcion ?>" required><br>
                     <span class="text_input">Descripcion</span>
                 </div>
                 <div class="inputbox" style="height: 6vh;">
-                    <input type="text" name="Precio" class="inp" placeholder=" " value="<?php echo $Precio ?>" required><br>
+                    <input type="number" name="Precio" class="inp" placeholder=" " value="<?php echo $Precio ?>" required><br>
                     <span class="text_input">Precio:</span>
                 </div>
                 <div id="contaner-selects">
                     <!-- Selector de categoría -->
-                    <select name="product_category" id="product_category" class="selects">
+                    <select name="product_category" id="product_category" class="selects" require>
                         <option value="">Categoría</option>
                         <?php
                         // Consulta SQL para obtener todas las categorías
@@ -113,7 +113,7 @@ mysqli_stmt_close($stmt);
                         ?>
                     </select>
                     <!-- Selector de subcategoría -->
-                    <select name="product_subcategory" id="product_subcategory" class="selects" style="margin-left: 10%;">
+                    <select name="product_subcategory" id="product_subcategory" require class="selects" style="margin-left: 10%;">
                         <option value="">Subcategoría</option>
                     </select>
                 </div>
