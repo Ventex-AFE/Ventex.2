@@ -112,6 +112,8 @@ table, tr, th, td{
     color: gray;
     display: flex;
     align-items: center;
+    background: none;
+    border: none;
     padding-left: 1vw;
 }
 .linkOptionPoints:hover{
@@ -141,6 +143,8 @@ table, tr, th, td{
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+/*-- Modals ---------------------------------------------------------*/
+
 .modal{
     width: 50vw;
     height: 50vh;

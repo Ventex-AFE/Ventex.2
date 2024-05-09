@@ -6,13 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ventex</title>
   <link rel="stylesheet" href="../Styles/Admin-ViewProduct-porce.css" />
+  <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet" />
+
+  <style>  /* <-------Styles extensible search input*/
+        .searchSection{
+            text-align: left;
+        }
+        .containerSearchSection{
+            min-width: 20vw;
+            height: 8vh;
+            display: flex;
+            align-items: center;
+        }
+        .searchButton{  /*<------Color Button*/
+            background-color: #61abdc;
+        }
+        #searchP:valid ~ .searchButton {  /* <------Color of the button when te input is valid*/
+            background-color: rgb(66, 94, 66);
+        }
+    </style>
 </head>
 
 <body>
-  <section id="bar-navegation">
+  <article id="bar-navegation">
     <!-- Secccion que se encarga de maquetar informacion de Admin -->
     <section id="info-user">
       <!-- Seccion para la imagen del administrador -->
@@ -22,7 +41,7 @@
       </section>
       <section id="Name-Adm">
         <!-- Parte para nombre de adm y va hacer pasado con session php -->
-        <h2>Alejandro G</h2>
+        <h2>Alejandro G</h2><br>
         <P>CEO - Ventex</P>
       </section>
     </section>
@@ -33,104 +52,106 @@
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-ViewProduct-Porc.php">Productos - All</a>
+          <a href="Admin-ViewProduct-Porc.php" class="linkOption">Productos - All</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Commen-Prod.php">Comentarios - Prod</a>
+          <a href="Admin-Commen-Prod.php" class="linkOption">Comentarios - Prod</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Commen-seller.php">Comentarios - Seller</a>
+          <a href="Admin-Commen-seller.php" class="linkOption">Comentarios - Seller</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Report-Product.php">Reportes - Prod.</a>
+          <a href="Admin-Report-Product.php" class="linkOption">Reportes - Prod.</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Report-User.php">Reportes - User</a>
+          <a href="Admin-Report-User.php" class="linkOption">Reportes - User</a>
         </section>
       </section>
       <section class="Box-navegation">
         <div class="icon-button">
         </div>
         <section class="section-buton">
-          <a href="Admin-Report-Seller.php">Reportes - Seller</a>
+          <a href="Admin-Report-Seller.php" class="linkOption">Reportes - Seller</a>
         </section>
       </section>
     </section>
 
     <section id="button-logout">
-      <section><img src="" id="icon-logout"><a href="o">Log out</a></section>
+        <img src="" id="icon-logout">
+        <a href="o" class="link-logout">Log out</a>
       <!-- Link al archivo para destruir la session -->
     </section>
-  </section>
-  <!-- La seccion del header -->
-  <section id="section-header">
-    <header id="header-name">
-      <h1 id="Name-page">Ventex</h1>
-    </header>
-  </section>
-  <!-- seccion para implementacion del input para la busqueda -->
-  <section id="section-serch">
-    <section class="searchSection">
-      <div class="searchContainer">
-        <form action="" method="post">
-        <input type="search" name="searchP" id="searchP" onkeyup="getData()" placeholder="Buscar" required>
-        </form>
-        <button class="searchButton"><img src="../Icons/lupaB.png" alt=""></button>
-      </div>
+  </article>
+
+  <main> <!-- | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | --- MAIN --- | | | | | | | | |-->
+
+    <!-- La seccion del header -->
+    <section id="section-header">
+      <header id="header-name">
+        <h1 id="Name-page">Ventex</h1>
+      </header>
+    </section>
+    <!-- seccion para implementacion del input para la busqueda -->
+    <section id="section-search">
+        <div class="searchContainer">
+          <input type="search" name="searchP" id="searchP" onkeyup="getData()" placeholder="Buscar" required>
+          <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
+        </div>
     </section>
   </section>
-  <!-- Seccion de resultado de datos regresara todos los datos encontrados si claro hay informacion en db -->
-  <section id="section-data">
-    <table class="tabla">
-      <thead>
-        <th>Id-CP</th>
-        <th>Id-Usuario</th>
-        <th>Id-Producto</th>
-        <th>Descripcion</th>
-        <th>Fecha</th>
-        <th>Hora</th>
-        <th>Modificacion</th>
-      </thead>
-      <!-- contiene la informacion regresada de la db organizada en filas -->
-      <TBody id="container-data-table"></TBody>
-      <script>
-        document.addEventListener("DOMContentLoaded", getData);
+    <!-- Seccion de resultado de datos regresara todos los datos encontrados si claro hay informacion en db -->
+    <section id="section-data">
+      <table class="tabla">
+        <thead>
+          <th>Id-CP</th>
+          <th>Id-Usuario</th>
+          <th>Id-Producto</th>
+          <th>Descripcion</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Modificacion</th>
+        </thead>
+        <!-- contiene la informacion regresada de la db organizada en filas -->
+        <TBody id="container-data-table"></TBody>
+        <script>
+          document.addEventListener("DOMContentLoaded", getData);
 
-        function getData() {
-          let input = document.getElementById("searchP").value;
-          let content = document.getElementById("container-data-table");
-          let url = "../php-servicios/load_data/load-info-Admin-ComentProduct.php";
-          let formData = new FormData();
-          formData.append('searchP', input);
+          function getData() {
+            let input = document.getElementById("searchP").value;
+            let content = document.getElementById("container-data-table");
+            let url = "../php-servicios/load_data/load-info-Admin-ComentProduct.php";
+            let formData = new FormData();
+            formData.append('searchP', input);
 
-          fetch(url, {
-            method: "POST",
-            body: formData
-          }).then(response => response.text())
-            .then(data => {
-              console.log(data);
-              content.innerHTML = data;
-            }).catch(err => console.log(err));
-        }
-      </script>
-    </table>
-  </section>
+            fetch(url, {
+              method: "POST",
+              body: formData
+            }).then(response => response.text())
+              .then(data => {
+                console.log(data);
+                content.innerHTML = data;
+              }).catch(err => console.log(err));
+          }
+        </script>
+      </table>
+    </section>
+  </main>
   <footer>
     <h2 id="name-footer">Ventex</h2>
   </footer>
