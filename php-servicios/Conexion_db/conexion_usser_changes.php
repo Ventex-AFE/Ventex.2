@@ -12,6 +12,6 @@ $Conexion_usser_changes = mysqli_connect($hostname, $username, $password, $datab
 if (mysqli_connect_error()) {
     exit('Fallo en la conexión de MySQL: ' . mysqli_connect_error());
 }else{
-    echo'Conexion is look well :D 2';
+   // echo'Conexion is look well :D 2';
 }
 ?>

@@ -57,27 +57,32 @@
                         <label for="contraseñaC" class="inputText"><pre> Confirmar contraseña </pre></label>
                     </div>
                     <p id="mensaje"></p>
-                    <input type="submit" value="Registrarse" class="Registrarse">
+                    <input type="submit" value="Registrarse" class="Registrarse" id="submitButton">
                 </form>
             </section>
         </article>
         
     </main>
     <script>
-         function verificarContraseña() {
-        let password = document.getElementById("contrasena").value;
-        let confirmPassword = document.getElementById("contrasenaC").value;
+     function verificarContraseña() {
+    let password = document.getElementById("contrasena").value;
+    let confirmPassword = document.getElementById("contrasenaC").value;
+    let mensaje = document.getElementById("mensaje");
+    let submitButton = document.getElementById("submitButton");
 
-        if (password !== confirmPassword) {
-            document.getElementById("mensaje").innerHTML = "Las contraseñas no coinciden.";
-        } else {
-            document.getElementById("mensaje").innerHTML = "Las contraseñas coinciden.";
-        }
+    if (password !== confirmPassword) {
+        mensaje.innerHTML = "Las contraseñas no coinciden.";
+        submitButton.disabled = true; // Deshabilitar el botón de envío
+    } else {
+        mensaje.innerHTML = "Las contraseñas coinciden.";
+        submitButton.disabled = false; // Habilitar el botón de envío
     }
+}
 
-    // Agregar eventos de entrada para verificar mientras el usuario escribe
-    document.getElementById("contrasena").addEventListener("input", verificarContraseña);
-    document.getElementById("contrasenaC").addEventListener("input", verificarContraseña);
+// Agregar eventos de entrada para verificar mientras el usuario escribe
+document.getElementById("contrasena").addEventListener("input", verificarContraseña);
+document.getElementById("contrasenaC").addEventListener("input", verificarContraseña);
+
     </script>
 </body>
 </html>
