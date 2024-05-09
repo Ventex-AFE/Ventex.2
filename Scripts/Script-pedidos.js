@@ -32,8 +32,8 @@ const closeModalForm = () =>{ //This function close the form modal
 const closeOptionsList = () =>{
     optionsList.forEach((list) => {
             list.classList.add('hidden');
-            invisibleOverlay.classList.add('hidden');
     });
+    invisibleOverlay.classList.add('hidden');
 }
 
 calcular.addEventListener('click', openModal);
