@@ -48,3 +48,83 @@ optionsButton.forEach((but, index) => {
     });
 });
 invisibleOverlay.addEventListener('click', closeOptionsList);
+
+
+
+//Automatizacion pedidos 
+    function extraerNumeroDesdeElemento(elemento) {
+        let miTexto = elemento.value;
+        let miNumero = Number(miTexto);
+    
+        return miNumero;
+      }
+      function calcular2() {
+        let ventas = [];
+        let posicionVentas = 0;
+        let elementosVentas = document.getElementById("container_data_pedidos");
+    
+        for (let item of elementosVentas.children) {
+          let valorVenta = extraerNumeroDesdeElemento(item.children[0]);
+          ventas[posicionVentas] = valorVenta;
+          posicionVentas = posicionVentas + 1;
+        }
+    
+        let totalVentas = sumarTotal(ventas);
+        let ventaMayor = calcularMayor(ventas);
+        let ventaMenor = calcularMenor(ventas);
+    
+        for (let item of elementosVentas.children) {
+          let valorVenta = extraerNumeroDesdeElemento(item.children[1]);
+    
+          item.children[0].className = "menuNeutro";
+    
+          if (valorVenta == ventaMayor) {
+            item.children[0].className = "menuInputMayor";
+          }
+    
+          if (valorVenta == ventaMenor) {
+            item.children[0].className = "menuInputMenor";
+          }
+        }
+    
+        // let mensajeSalida = "Total Ventas: " + totalVentas;
+    
+        // let elementoSalida = document.getElementById("parrafoSalida");
+    
+        // elementoSalida.textContent = mensajeSalida;
+        console.log(totalVentas);
+      }
+    
+      function sumarTotal(array) {
+        let total = 0;
+    
+        for (let venta of array) {
+          total = total + venta;
+        }
+    
+        return total;
+      }
+    
+      function calcularMayor(array) {
+        let maximo = array[0];
+    
+        for (let venta of array) {
+          if (venta > maximo) {
+            maximo = venta;
+          }
+        }
+    
+        return maximo;
+      }
+    
+      function calcularMenor(array) {
+        let minimo = array[0];
+    
+        for (let venta of array) {
+          if (venta < minimo) {
+            minimo = venta;
+          }
+        }
+    
+        return minimo;
+      }

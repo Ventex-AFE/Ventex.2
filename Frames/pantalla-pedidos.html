@@ -63,7 +63,7 @@
                 <div colspan="3" class="searchSection">
                     <div class="containerSearchSection">
                         <div class="searchContainer">
-                            <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
+                            <input type="search" name="searchP" id="searchP" placeholder="Buscar" onkeyup="getData()" >
                             <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                     <h1 class="table-name">Pedidos</h1>
                 </div>
                 <div class="table-options">
-                    <button class="btn calc">Calcular</button>
+                    <button class="btn calc" onclick="calcular2()">Calcular</button>
                     <button class="btn addOrder">Agregar Pedido</button>
                 </div>
             </section>
@@ -90,239 +90,9 @@
                     <th class="header-data">Precio</th>
                     <th class="header-data">Descripción</th>
                 </tr>
-                <tbody>
+                <tbody id="container_data_pedidos">
 
-                    <tr class="row-column-order">
-                        <td class="check">
-                            <div class="pointsContiner">
-                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                                <ul class="pointsOptions hidden">
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></button></li>
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></button></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td class="table-data">27182</td>
-                        <td class="table-data"><p class="table-text">Pulcera especial para parejas, personalizadas al gusto</p></td>
-                        <td class="table-data">318273</td>
-                        <td class="table-data"><p class="table-text">Nayeli</p></td>
-                        <td class="table-data">26/04/24</td>
-                        <td class="table-data">14:24</td>
-                        <td class="table-data"><p class="table-text">Tecamachalco</p></td>
-                        <td class="table-data">2</td>
-                        <td class="table-data">$200</td>
-                        <td class="table-data"><p class="table-text">Pulceras personalizables para pareja o como sea, solo necesito llenar este espacio con mucha información</p></td>
-                    </tr>
-                    <tr class="row-column-order">
-                        <td class="check">
-                            <div class="pointsContiner">
-                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                                <ul class="pointsOptions hidden">
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></button></li>
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></button></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td class="table-data">27182</td>
-                        <td class="table-data">Pulcera</td>
-                        <td class="table-data">318273</td>
-                        <td class="table-data">Nayeli</td>
-                        <td class="table-data">26/04/24</td>
-                        <td class="table-data">14:24</td>
-                        <td class="table-data">Tecamachalco</td>
-                        <td class="table-data">2</td>
-                        <td class="table-data">$200</td>
-                        <td class="table-data">Pulceras personalizables para pareja</td>
-                    </tr>
-                    <tr class="row-column-order">
-                        <td class="check">
-                            <div class="pointsContiner">
-                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                                <ul class="pointsOptions hidden">
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></button></li>
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></button></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td class="table-data">27182</td>
-                        <td class="table-data">Pulcera</td>
-                        <td class="table-data">318273</td>
-                        <td class="table-data">Nayeli</td>
-                        <td class="table-data">26/04/24</td>
-                        <td class="table-data">14:24</td>
-                        <td class="table-data">Tecamachalco</td>
-                        <td class="table-data">2</td>
-                        <td class="table-data">$200</td>
-                        <td class="table-data">Pulceras personalizables para pareja</td>
-                    </tr>
-                    <tr class="row-column-order">
-                        <td class="check">
-                            <div class="pointsContiner">
-                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                                <ul class="pointsOptions hidden">
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></button></li>
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></button></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td class="table-data">27182</td>
-                        <td class="table-data">Pulcera</td>
-                        <td class="table-data">318273</td>
-                        <td class="table-data">Nayeli</td>
-                        <td class="table-data">26/04/24</td>
-                        <td class="table-data">14:24</td>
-                        <td class="table-data">Tecamachalco</td>
-                        <td class="table-data">2</td>
-                        <td class="table-data">$200</td>
-                        <td class="table-data">Pulceras personalizables para pareja</td>
-                    </tr>
-                    <tr class="row-column-order">
-                        <td class="check">
-                            <div class="pointsContiner">
-                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                                <ul class="pointsOptions hidden">
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></button></li>
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></button></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td class="table-data">27182</td>
-                        <td class="table-data">Pulcera</td>
-                        <td class="table-data">318273</td>
-                        <td class="table-data">Nayeli</td>
-                        <td class="table-data">26/04/24</td>
-                        <td class="table-data">14:24</td>
-                        <td class="table-data">Tecamachalco</td>
-                        <td class="table-data">2</td>
-                        <td class="table-data">$200</td>
-                        <td class="table-data">Pulceras personalizables para pareja</td>
-                    </tr>
-                    <tr class="row-column-order">
-                        <td class="check">
-                            <div class="pointsContiner">
-                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                                <ul class="pointsOptions hidden">
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></button></li>
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></button></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td class="table-data">27182</td>
-                        <td class="table-data">Pulcera</td>
-                        <td class="table-data">318273</td>
-                        <td class="table-data">Nayeli</td>
-                        <td class="table-data">26/04/24</td>
-                        <td class="table-data">14:24</td>
-                        <td class="table-data">Tecamachalco</td>
-                        <td class="table-data">2</td>
-                        <td class="table-data">$200</td>
-                        <td class="table-data">Pulceras personalizables para pareja</td>
-                    </tr>
-                    <tr class="row-column-order">
-                        <td class="check">
-                            <div class="pointsContiner">
-                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                                <ul class="pointsOptions hidden">
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></button></li>
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></button></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td class="table-data">27182</td>
-                        <td class="table-data">Pulcera</td>
-                        <td class="table-data">318273</td>
-                        <td class="table-data">Nayeli</td>
-                        <td class="table-data">26/04/24</td>
-                        <td class="table-data">14:24</td>
-                        <td class="table-data">Tecamachalco</td>
-                        <td class="table-data">2</td>
-                        <td class="table-data">$200</td>
-                        <td class="table-data">Pulceras personalizables para pareja</td>
-                    </tr>
-                    <tr class="row-column-order">
-                        <td class="check">
-                            <div class="pointsContiner">
-                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                                <ul class="pointsOptions hidden">
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></button></li>
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></button></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td class="table-data">27182</td>
-                        <td class="table-data">Pulcera</td>
-                        <td class="table-data">318273</td>
-                        <td class="table-data">Nayeli</td>
-                        <td class="table-data">26/04/24</td>
-                        <td class="table-data">14:24</td>
-                        <td class="table-data">Tecamachalco</td>
-                        <td class="table-data">2</td>
-                        <td class="table-data">$200</td>
-                        <td class="table-data">Pulceras personalizables para pareja</td>
-                    </tr>
-                    <tr class="row-column-order">
-                        <td class="check">
-                            <div class="pointsContiner">
-                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                                <ul class="pointsOptions hidden">
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></button></li>
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></button></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td class="table-data">27182</td>
-                        <td class="table-data">Pulcera</td>
-                        <td class="table-data">318273</td>
-                        <td class="table-data">Nayeli</td>
-                        <td class="table-data">26/04/24</td>
-                        <td class="table-data">14:24</td>
-                        <td class="table-data">Tecamachalco</td>
-                        <td class="table-data">2</td>
-                        <td class="table-data">$200</td>
-                        <td class="table-data">Pulceras personalizables para pareja</td>
-                    </tr>
-                    <tr class="row-column-order">
-                        <td class="check">
-                            <div class="pointsContiner">
-                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                                <ul class="pointsOptions hidden">
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></button></li>
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></button></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td class="table-data">27182</td>
-                        <td class="table-data">Pulcera</td>
-                        <td class="table-data">318273</td>
-                        <td class="table-data">Nayeli</td>
-                        <td class="table-data">26/04/24</td>
-                        <td class="table-data">14:24</td>
-                        <td class="table-data">Tecamachalco</td>
-                        <td class="table-data">2</td>
-                        <td class="table-data">$200</td>
-                        <td class="table-data">Pulceras personalizables para pareja</td>
-                    </tr>
-                    <tr class="row-column-order">
-                        <td class="check">
-                            <div class="pointsContiner">
-                                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                                <ul class="pointsOptions hidden">
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Editar</p></button></li>
-                                    <li class="pointsOption"><button href="#" class="linkOptionPoints"><p class="textLinkOptions">Eliminar</p></button></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td class="table-data">27182</td>
-                        <td class="table-data">Pulcera</td>
-                        <td class="table-data">318273</td>
-                        <td class="table-data">Nayeli</td>
-                        <td class="table-data">26/04/24</td>
-                        <td class="table-data">14:24</td>
-                        <td class="table-data">Tecamachalco</td>
-                        <td class="table-data">2</td>
-                        <td class="table-data">$200</td>
-                        <td class="table-data">Pulceras personalizables para pareja</td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </article>
@@ -378,6 +148,25 @@
 <!--------------------------------------------------------------------------------->
 <script src="../Scripts/Script-pedidos.js"></script>
 <!--------------------------------------------------------------------------------->
+<script>
+    document.addEventListener("DOMContentLoaded", getData);
 
+    function getData() {
+    let input = document.getElementById("searchP").value;
+    let content = document.getElementById("container_data_pedidos");
+    let url = "../php-servicios/load_data/load-info-pantalla-pedidos.php";
+    let formData = new FormData();
+    formData.append('searchP', input);
+
+    fetch(url, {
+        method: "POST",
+        body: formData
+    }).then(response => response.text())
+        .then(data => {
+        console.log(data);
+        content.innerHTML = data;
+        }).catch(err => console.log(err));
+    }
+</script>
 </body>
 </html>
