@@ -1,141 +1,136 @@
 * {
   padding: 0%;
   margin: 0%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 html,
 body {
   width: 100vw;
   height: 100vh;
   background-color: #cccccc;
+  display: flex;
+  flex-wrap: wrap;
 }
+main{
+  width: 80vw;
+  min-height: 94vh;
+}
+/*-----------------------------------------------------------------------------------*/
+/*   Barra de Navegación (Izquieda)                                                  */
+/*-----------------------------------------------------------------------------------*/
 #bar-navegation {
   width: 20vw;
   height: 94vh;
-  background: rgb(1, 4, 18);
-  background: linear-gradient(
-    0deg,
-    rgba(1, 4, 18, 1) 6%,
-    rgba(44, 46, 56, 1) 40%,
-    rgba(136, 136, 136, 1) 100%
-  );
-  float: left;
+  background-image: linear-gradient(rgb(29, 29, 66), black);
 }
-#section-header {
-  width: 80vw;
+/*-- info user ----------------------------------------------------------------------*/
+
+#info-user {
+  width: 20vw;
+  height: 35vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+#imagen-usAdm {
+  width: 8vw;
+  height: 8vw;
+  background-color: rgb(219, 219, 219);
+  border-radius: 100%;
+  margin-top: 3vh;
+  overflow: hidden;
+}
+#img-A {
+  width: 100%;
+  height: auto;
+}
+#Name-Adm {
+  margin-top: 2vh;
+  width: 19vw;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+/*-- button navigation ------------------------------------------------------------*/
+
+#button-navegation {
+  width: 20vw;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 3vh;
+}
+.linkOption{
+  text-decoration: none;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 3vh;
+  margin-left: 2.5vw;
+}
+.linkOption:hover{
+  transform: scale(1.1);
+}
+.Box-navegation {
+  width: 20vw;
+  height: 5vh;
+}
+.section-buton {
+  width: 15vw;
+  height: 5vh;
+  color: white;
+}
+#button-logout {
+  width: 20vw;
   height: 10vh;
-  background-color: #cccccc;
+  background-color: rgba(89, 89, 89, 0.433);
+  display: flex;
+  align-items: center;
+}
+.link-logout{
+  text-decoration: none;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 3vh;
+  margin-left: 2.5vw;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*   Derecha                                                                         */
+/*-----------------------------------------------------------------------------------*/
+#section-header {
+  width: 100%;
+  height: 10vh;
   margin-top: 4vh;
   margin-bottom: 2vh;
-  float: left;
-}
-#section-data {
-  width: 78vw;
-  height: 60vh;
-  margin: auto;
-  background-color: rgb(234, 234, 234);
-  margin-left: 1vw;
-  float: left;
-  margin-top: 1vh;
-}
-#section-serch {
-  margin-left: 35vw;
-  width: 10vw;
-  height: 5vh;
-  float: left;
-}
-footer {
-  width: 100vw;
-  height: 6vh;
-  background-color: #2e325a;
-  float: left;
 }
 #header-name > #Name-page {
   font-family: "Hammersmith One", sans-serif;
   font-weight: 800;
-  font-style: normal;
-  font-size: 60px;
+  font-size: 4.5vw;
   text-align: center;
   color: #1f355f;
-  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
+  /* text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5); */
 }
-#name-footer {
-  color: white;
-  font-family: "Hammersmith One", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-  font-size: 30px;
-  text-align: end;
-  margin-right: 5vw;
-}
-
-#info-user {
-  width: 20vw;
-  height: 30vh;
-  float: left;
-}
-#Name-Adm {
-  margin-top: 2vh;
-  text-align: center;
-  color: white;
-}
-#imagen-usAdm {
-  width: 8vw;
-  height: 15vh;
-  float: left;
-  background-color: #1cb149;
-  border-radius: 15px;
-  margin-left: 6vw;
-  margin-top: 2vh;
-}
-#img-A {
-  width: 8vw;
-  height: 15vh;
-  background-color: cadetblue;
-  float: left;
-  border-radius: 15px;
-}
-
-.tabla {
+#section-data {
   width: 78vw;
-  border-collapse: collapse;
-}
-
-.tabla th,
-.tabla td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: center;
-}
-
-.tabla th {
-  background-color: #3498db;
-  color: rgb(244, 244, 244);
-}
-
-.tabla tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.tabla tbody tr:hover {
-  background-color: #d5eaf0;
-}
-.searchSection {
-  width: 100%;
-  height: 20vh;
-  flex-wrap: wrap;
-  display: flex;
-}
-.tit-c {
-  width: 100%;
-  min-height: 6vh;
-}
-.tit {
-  font-family: "Hammersmith One", sans-serif;
-  font-size: 4vw;
+  height: 60vh;
+  background-color: rgb(234, 234, 234);
   margin-left: 1vw;
-  color: gray;
+  margin-top: 1vh;
 }
-.searchContainer {
+
+/*-- Search Input ---------------------------------------------------------------------------------------------*/
+#section-search {
+  width: 100%;
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+/* .searchContainer {
   position: relative;
   margin-left: 3.5vw;
 }
@@ -186,44 +181,63 @@ img {
 }
 #searchP:valid ~ .searchButton {
   background-color: rgb(19, 13, 106);
+} */
+/*-----------------------------------------------------------------------------------------------*/
+footer {
+  width: 100vw;
+  height: 6vh;
+  background-color: #2e325a;
+  float: left;
+}
+#name-footer {
+  color: white;
+  font-family: "Hammersmith One", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 30px;
+  text-align: end;
+  margin-right: 5vw;
 }
 
-#button-navegation {
-  width: 20vw;
-  height: 55vh;
-  float: left;
+
+
+.tabla {
+  width: 78vw;
+  border-collapse: collapse;
 }
-#button-logout {
-  width: 20vw;
-  height: 10vh;
-  float: left;
+
+.tabla th,
+.tabla td {
+  /* border: 1px solid #ccc;
+  padding: 8px; */
+  text-align: center;
 }
-.Box-navegation {
-  width: 20vw;
+
+.tabla th {
+  background-color: #004b7e;
+  color: rgb(244, 244, 244); 
+  font-weight: 400;
   height: 5vh;
-  float: left;
 }
-.icon-button {
-  width: 3vw;
-  height: 1.2vh;
-  float: left;
-  background-color: #061620;
-  margin: 2%;
-  border-radius: 10px;
-}
-.section-buton {
-  width: 15vw;
-  height: 5vh;
-  float: left;
-  color: white;
-}
-a {
-  color: white;
-  margin-bottom: 3vh;
-}
-#section-logut {
-  width: 20vw;
+
+.tabla tbody tr:nth-child(even) {
   height: 10vh;
-  float: left;
-  background-color: #1cb149;
+  background-color: white;
+  transition: .3s;
+  container-type: inline-size;
+}
+
+.tabla tbody tr:hover {
+  background-color: #d5eaf0;
+  height: 15vh;
+}
+.tit-c {
+  width: 100%;
+  min-height: 6vh;
+}
+.tit {
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 4vw;
+  margin-left: 1vw;
+  color: gray;
 }
