@@ -149,6 +149,7 @@
 <script src="../Scripts/Script-pedidos.js"></script>
 <!--------------------------------------------------------------------------------->
 <script>
+    
     document.addEventListener("DOMContentLoaded", getData);
 
     function getData() {
