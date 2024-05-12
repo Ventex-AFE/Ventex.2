@@ -125,7 +125,7 @@
         <th>Precio</th>
         <th>Categoria</th>
         <th>Subcategoria</th>
-        <th>Imagen</th>
+        <th style="width: 20vw;">Imagen</th>
         <th>Modificacion</th>
       </thead>
       <!-- contiene la informacion regresada de la db organizada en filas -->
