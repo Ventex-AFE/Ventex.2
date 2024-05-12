@@ -1,8 +1,8 @@
 <?php
     require_once('../Conexion_db/conexion_usser_delete.php');
 
-    //$eliminar=$_POST['eliminar'];
-    $eliminar = 6; // Suponiendo que este es un valor válido para eliminar un registro de la base de datos
+    $eliminar=$_POST['Id_Reporte_Venta'];
+    // Suponiendo que este es un valor válido para eliminar un registro de la base de datos
     $sql = "DELETE FROM regristroventa WHERE ID_Venta = $eliminar";
     $delete = mysqli_query($Conexion_usser_delete, $sql);
 

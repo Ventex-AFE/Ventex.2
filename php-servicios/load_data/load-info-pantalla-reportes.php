@@ -1,11 +1,11 @@
 <?php
 require('../Conexion_db/conexion_usser_select.php');
 
-$columas = ['ID_pedido', 'Nombre_pedido', 'Id_usser_regristro', ' ID_producto', 'usuario_cliente	', 'fecha', 'hora', 'lugar', 'cantidad', 'precio', 'descripcion'];
-$columas2 = ['Nombre_Prod', 'Categoría', 'Subcategoría',];
-$table = "pedidos";
+$columas = ['ID_Venta',	'Usuario_Venta', 'ID_Producto',	'Nombre_reporte_venta',	'Descripcio', 'fecha', 'hora','total'];
+$columas2 = ['Nombre_Prod', 'Categoría', 'Subcategoría'];
+$table = "regristroventa";
 // $id_usser = $_SESSION['id'];
-$id_usser = 1;
+$id_usser = 5;
 $campo = isset($_POST['searchP']) ? $Conexion_usser_select->real_escape_string($_POST['searchP']) : null;
 $where = '';
 
@@ -36,22 +36,22 @@ if ($num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 ?>
         <tr class="row-column-order">
-            <input type="hidden" name="precio" value="<?php echo floatval($row['precio']); ?>">
+            <input type="hidden" name="precio" value="<?php echo floatval($row['total']); ?>">
             <td class="check">
                 <div class="pointsContiner">
                     <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
                     <ul class="pointsOptions hidden">
                         <li class="pointsOption">
                             <form action="editar_pedido.php" method="post" id="form_editar_pedido">
-                                <input type="hidden" name="Id_Pedido" value="<?php echo intval($row['ID_pedido']); ?>">
+                                <input type="hidden" name="Id_Reporte_Venta" value="<?php echo intval($row['ID_Venta']); ?>">
                                 <button class="linkOptionPoints editButton" id="editButton">
                                     <p class="textLinkOptions">Editar</p>
                                 </button> <!-- Agrega un valor al input oculto con el ID del pedido -->
                             </form>
                         </li>
                         <li class="pointsOption">
-                            <form action="../php-servicios/deletion_data/deletion_pedido.php" method="post" id="form_eliminar_pedido">
-                                <input type="hidden" name="Id_Pedido" value="<?php echo intval($row['ID_pedido']); ?>">
+                            <form action="../php-servicios/deletion_data/deletion_reporte-venta.php" method="post" id="form_eliminar_pedido">
+                                <input type="hidden" name="Id_Reporte_Venta" value="<?php echo intval($row['ID_Venta']); ?>">
                                 <button class="linkOptionPoints deleteButton">
                                     <p class="textLinkOptions">Eliminar</p>
                                 </button><!-- Agrega un valor al input oculto con el ID del pedido -->
@@ -60,23 +60,19 @@ if ($num_rows > 0) {
                     </ul>
                 </div>
             </td>
-            <td class="table-data"><?php echo $row['ID_pedido']; ?></td>
+            <td class="table-data"><?php echo $row['ID_Venta']; ?></td>
             <td class="table-data">
-                <p class="table-text"><?php echo $row['Nombre_pedido']; ?></p>
+                <p class="table-text"><?php echo $row['Nombre_reporte_venta']; ?></p>
             </td>
-            <td class="table-data"><?php echo $row['ID_producto']; ?></td>
+            <td class="table-data"><?php echo $row['ID_Producto']; ?></td>
             <td class="table-data">
-                <p class="table-text"><?php echo $row['usuario_cliente']; ?></p>
+                <p class="table-text"><?php echo $row['Usuario_Venta']; ?></p>
             </td>
             <td class="table-data"><?php echo $row['fecha']; ?></td>
             <td class="table-data"><?php echo $row['hora']; ?></td>
+            <td class="table-data"><?php echo $row['total']; ?></td>
             <td class="table-data">
-                <p class="table-text"><?php echo $row['lugar']; ?></p>
-            </td>
-            <td class="table-data"><?php echo $row['cantidad']; ?></td>
-            <td class="table-data"><?php echo $row['precio']; ?></td>
-            <td class="table-data">
-                <p class="table-text"><?php echo $row['descripcion']; ?></p>
+                <p class="table-text"><?php echo $row['Descripcio']; ?></p>
             </td>
         </tr>
     <?php
@@ -93,18 +89,15 @@ if ($num_rows > 0) {
     </td>
     <td class="table-data"></td>
     <td class="table-data">
-        <p class="table-text"></p>
-    </td>
-    <td class="table-data">Sin resultados</td>
-    <td class="table-data"></td>
-    <td class="table-data">
-        <p class="table-text"></p>
+        <p class="table-text">Sin resultados</p>
     </td>
     <td class="table-data"></td>
     <td class="table-data"></td>
     <td class="table-data">
-        <p class="table-text">></p>
+        <p class="table-text"></p>
     </td>
+    <td class="table-data"></td>
+
 <?php
     echo '</tr>';
 }

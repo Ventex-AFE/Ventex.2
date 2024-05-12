@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,29 +10,38 @@
     <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
     <link rel="stylesheet" href="../Componentes/modalForm.css">
 
-    <style> /* <-------Styles extensible search input*/
-        .searchSection{
+    <style>
+        /* <-------Styles extensible search input*/
+        .searchSection {
             text-align: left;
         }
-        .containerSearchSection{
+
+        .containerSearchSection {
             min-width: 20vw;
             height: 8vh;
             display: flex;
             align-items: center;
         }
-        .searchButton{ /* <------Color Button*/
+
+        .searchButton {
+            /* <------Color Button*/
             background-color: rgb(174, 186, 175);
         }
-        #searchP:valid ~ .searchButton { /* <------Color of the button when te input is valid*/
+
+        #searchP:valid~.searchButton {
+            /* <------Color of the button when te input is valid*/
             background-color: rgb(148, 156, 148);
         }
     </style>
 
 </head>
+
 <body>
     <header class="main-container-header">
         <nav>
-            <section class="c-logo"><p class="logo">Ventex</p></section>
+            <section class="c-logo">
+                <p class="logo">Ventex</p>
+            </section>
             <ul class="h-options">
                 <li>
                     <button class="butt-h">Inicio</button>
@@ -92,7 +102,7 @@
                 </tr>
                 <tbody id="container_data_pedidos">
 
-                    
+
                 </tbody>
             </table>
         </article>
@@ -100,7 +110,7 @@
         <div class="overlay hidden"></div>
         <div class="invisibleOverlay hidden"></div>
 
-<!-- Form Modal -------------------------------------------------------------------------------------------------->
+        <!-- Form Modal -------------------------------------------------------------------------------------------------->
 
         <article class="modalFormMainContainer hidden">
             <section class="titleFormContainer">
@@ -110,27 +120,39 @@
                 <form action="" method="post" class="formInputs">
                     <div class="inputContainer">
                         <input type="text" name="nombre" class="input" required>
-                        <label for="nombre" class="inputText"><pre> Nombre del Producto</pre></label>
+                        <label for="nombre" class="inputText">
+                            <pre> Nombre del Producto</pre>
+                        </label>
                     </div>
                     <div class="inputContainer">
                         <input type="text" name="correo" class="input" required>
-                        <label for="correo" class="inputText"><pre> Nombre Cliente </pre></label>
+                        <label for="correo" class="inputText">
+                            <pre> Nombre Cliente </pre>
+                        </label>
                     </div>
                     <div class="inputContainerSmall">
                         <input type="time" name="time" class="input" required>
-                        <label for="time" class="inputText"><pre> Hora   </pre></label>
+                        <label for="time" class="inputText">
+                            <pre> Hora   </pre>
+                        </label>
                     </div>
                     <div class="inputContainerSmall">
                         <input type="date" name="fechaEntrega" class="input" required>
-                        <label for="fechaEntrega" class="inputText"><pre> Fecha Entrega </pre></label>
+                        <label for="fechaEntrega" class="inputText">
+                            <pre> Fecha Entrega </pre>
+                        </label>
                     </div>
                     <div class="inputContainer">
                         <input type="password" name="contraseña" class="input" required>
-                        <label for="contraseña" class="inputText"> <pre> Dirección de entrega </pre></label>
+                        <label for="contraseña" class="inputText">
+                            <pre> Dirección de entrega </pre>
+                        </label>
                     </div>
                     <div class="inputContainer">
                         <input type="password" name="contraseñaC" class="input" required>
-                        <label for="contraseñaC" class="inputText"><pre> Descripción del pedido </pre></label>
+                        <label for="contraseñaC" class="inputText">
+                            <pre> Descripción del pedido </pre>
+                        </label>
                     </div>
                     <input type="submit" value="Agregar Pedido" class="but">
                     <button class="cancel"> Cancelar </button>
@@ -140,34 +162,73 @@
         </article>
 
         <div class="formOverlay hidden"></div>
-
-<!---------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------------------->
     </main>
     <footer></footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", getData);
 
-<!--------------------------------------------------------------------------------->
-<script src="../Scripts/Script-pedidos.js"></script>
-<!--------------------------------------------------------------------------------->
-<script>
-    
-    document.addEventListener("DOMContentLoaded", getData);
+        function getData() {
+            let input = document.getElementById("searchP").value;
+            let content = document.getElementById("container_data_pedidos");
+            let url = "../php-servicios/load_data/load-info-pantalla-pedidos.php";
+            let formData = new FormData();
+            formData.append('searchP', input);
 
-    function getData() {
-    let input = document.getElementById("searchP").value;
-    let content = document.getElementById("container_data_pedidos");
-    let url = "../php-servicios/load_data/load-info-pantalla-pedidos.php";
-    let formData = new FormData();
-    formData.append('searchP', input);
+            fetch(url, {
+                    method: "POST",
+                    body: formData
+                }).then(response => response.text())
+                .then(data => {
+                    //console.log(data);
+                    content.innerHTML = data;
+                    asignarEventos();
+                }).catch(err => console.log(err));
+        }
 
-    fetch(url, {
-        method: "POST",
-        body: formData
-    }).then(response => response.text())
-        .then(data => {
-        console.log(data);
-        content.innerHTML = data;
-        }).catch(err => console.log(err));
-    }
-</script>
+        function asignarEventos() {
+            const optionsButton = document.querySelectorAll('.checkButton');
+            const optionsList = document.querySelectorAll('.pointsOptions');
+            const invisibleOverlay = document.querySelector('.invisibleOverlay');
+
+            optionsButton.forEach((but, index) => {
+                but.addEventListener('click', () => {
+                    optionsList[index].classList.remove('hidden');
+                    invisibleOverlay.classList.remove('hidden');
+                });
+            });
+            invisibleOverlay.addEventListener('click', closeOptionsList);
+
+            /*--------------------------------------------------------------------*/
+            document.addEventListener("DOMContentLoaded", function() {
+                // Obtener los botones de editar y eliminar
+                const editButtons = document.querySelectorAll('.editButton');
+                const deleteButtons = document.querySelectorAll('.deleteButton');
+
+                // Agregar event listener para el botón de editar
+                editButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Enviar el formulario correspondiente
+                        const form = this.parentNode.querySelector('form');
+                        form.submit();
+                    });
+                });
+
+                // Agregar event listener para el botón de eliminar
+                deleteButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Enviar el formulario correspondiente
+                        const form = this.parentNode.querySelector('form');
+                        form.submit();
+                    });
+                });
+            });
+
+        }
+    </script>
+    <!--------------------------------------------------------------------------------->
+    <script src="../Scripts/Script-pedidos.js"></script>
+    <!--------------------------------------------------------------------------------->
 </body>
+
 </html>

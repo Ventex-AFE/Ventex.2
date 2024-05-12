@@ -1,5 +1,15 @@
+<?php
+require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
+session_start();
+// $id_usser = $_SESSION['id'];
+$id_usser = 5;
+$sql = "SELECT ID_Producto, Nombre_Prod FROM productos WHERE Id_usser_regristro = $id_usser";
+
+$result = $Conexion_usser_select->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,29 +19,42 @@
     <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
     <link rel="stylesheet" href="../Componentes/modalForm.css">
 
-    <style> /* <-------Styles extensible search input*/
-        .searchSection{
+    <style>
+        /* <-------Styles extensible search input*/
+        .searchSection {
             text-align: left;
         }
-        .containerSearchSection{
+
+        .containerSearchSection {
             min-width: 20vw;
             height: 8vh;
             display: flex;
             align-items: center;
         }
-        .searchButton{ /* <------Color Button*/
+
+        .searchButton {
+            /* <------Color Button*/
             background-color: rgb(174, 186, 175);
         }
-        #searchP:valid ~ .searchButton { /* <------Color of the button when te input is valid*/
+
+        #searchP:valid~.searchButton {
+            /* <------Color of the button when te input is valid*/
             background-color: rgb(148, 156, 148);
+        }
+        #total_input{
+            align-items: start;
+            margin-right: 15vw;
         }
     </style>
 
 </head>
+
 <body>
     <header class="main-container-header">
         <nav>
-            <section class="c-logo"><p class="logo">Ventex</p></section>
+            <section class="c-logo">
+                <p class="logo">Ventex</p>
+            </section>
             <ul class="h-options">
                 <li>
                     <button class="butt-h">Inicio</button>
@@ -69,30 +92,29 @@
                     </div>
                 </div>
                 <div class="table-name-container">
-                    <h1 class="table-name">Pedidos</h1>
+                    <h1 class="table-name">Reportes de venta</h1>
                 </div>
                 <div class="table-options">
                     <button class="btn calc" onclick="calcular2()">Calcular</button>
-                    <button class="btn addOrder">Agregar Pedido</button>
+                    <button class="btn addOrder">Agregar Reporte</button>
                 </div>
             </section>
             <table class="tableContainer">
                 <tr class="table-header-data">
+
                     <th class="header-data">Terminar</th>
-                    <th class="header-data">ID-pedido</th>
-                    <th class="header-data">Nombre</th>
+                    <th class="header-data">ID_Venta</th>
+                    <th class="header-data">Nombre Producto</th>
                     <th class="header-data">ID-producto</th>
                     <th class="header-data">Usuario-Cliente</th>
                     <th class="header-data">Fecha</th>
                     <th class="header-data">Hora</th>
-                    <th class="header-data">Lugar</th>
-                    <th class="header-data">Cantidad</th>
-                    <th class="header-data">Precio</th>
+                    <th class="header-data">Total</th>
                     <th class="header-data">Descripción</th>
                 </tr>
-                <tbody id="container_data_pedidos">
+                <tbody id="container_data_reportes">
 
-                    
+
                 </tbody>
             </table>
         </article>
@@ -100,37 +122,62 @@
         <div class="overlay hidden"></div>
         <div class="invisibleOverlay hidden"></div>
 
-<!-- Form Modal -------------------------------------------------------------------------------------------------->
+        <!-- Form Modal -------------------------------------------------------------------------------------------------->
 
         <article class="modalFormMainContainer hidden">
             <section class="titleFormContainer">
-                <h1 class="titleForm">Agregar Pedido</h1>
+                <h1 class="titleForm">Agregar Reporte</h1>
             </section>
             <section class="contentFormInputs">
-                <form action="" method="post" class="formInputs">
+                <form action="../php-servicios/save_data/save_new_reporte_venta.php" method="post" class="formInputs">
                     <div class="inputContainer">
-                        <input type="text" name="nombre" class="input" required>
-                        <label for="nombre" class="inputText"><pre> Nombre del Producto</pre></label>
+                        <input type="text" name="nombre_product" class="input" required>
+                        <label for="nombre" class="inputText">
+                            <pre> Nombre del Producto</pre>
+                        </label>
                     </div>
                     <div class="inputContainer">
-                        <input type="text" name="correo" class="input" required>
-                        <label for="correo" class="inputText"><pre> Nombre Cliente </pre></label>
+                        <select name="Id_producto" class="input" required>
+                            <option value="" class="inputText">Escoje el producto</option>
+                            <?php
+                            // Itera sobre los resultados de la consulta y genera opciones para cada producto
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo '<option value="' . $row["ID_Producto"] . '">' . $row["Nombre_Prod"] . '</option>';
+                                }
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" name="Nombre_Cliente" class="input" required>
+                        <label for="correo" class="inputText">
+                            <pre> Nombre Cliente </pre>
+                        </label>
                     </div>
                     <div class="inputContainerSmall">
                         <input type="time" name="time" class="input" required>
-                        <label for="time" class="inputText"><pre> Hora   </pre></label>
+                        <label for="time" class="inputText">
+                            <pre> Hora   </pre>
+                        </label>
                     </div>
                     <div class="inputContainerSmall">
                         <input type="date" name="fechaEntrega" class="input" required>
-                        <label for="fechaEntrega" class="inputText"><pre> Fecha Entrega </pre></label>
+                        <label for="fechaEntrega" class="inputText">
+                            <pre> Fecha Entrega </pre>
+                        </label>
+                    </div>
+                    <div class="inputContainer" style="width: 10vw;" id="total_input">
+                        <input type="number" name="Total" class="input" required>
+                        <label for="Total" class="inputText">
+                            <pre> Total </pre>
+                        </label>
                     </div>
                     <div class="inputContainer">
-                        <input type="password" name="contraseña" class="input" required>
-                        <label for="contraseña" class="inputText"> <pre> Dirección de entrega </pre></label>
-                    </div>
-                    <div class="inputContainer">
-                        <input type="password" name="contraseñaC" class="input" required>
-                        <label for="contraseñaC" class="inputText"><pre> Descripción del pedido </pre></label>
+                        <input type="text" name="descripcion_report" class="input" required>
+                        <label for="descripcion_report" class="inputText">
+                            <pre> Descripción del pedido </pre>
+                        </label>
                     </div>
                     <input type="submit" value="Agregar Pedido" class="but">
                     <button class="cancel"> Cancelar </button>
@@ -141,33 +188,47 @@
 
         <div class="formOverlay hidden"></div>
 
-<!---------------------------------------------------------------------------------------------------------------->
+        <!---------------------------------------------------------------------------------------------------------------->
     </main>
     <footer></footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", getData);
 
-<!--------------------------------------------------------------------------------->
-<script src="../Scripts/Script-pedidos.js"></script>
-<!--------------------------------------------------------------------------------->
-<script>
-    
-    document.addEventListener("DOMContentLoaded", getData);
+        function getData() {
+            let input = document.getElementById("searchP").value;
+            let content = document.getElementById("container_data_reportes");
+            let url = "../php-servicios/load_data/load-info-pantalla-reportes.php";
+            let formData = new FormData();
+            formData.append('searchP', input);
 
-    function getData() {
-    let input = document.getElementById("searchP").value;
-    let content = document.getElementById("container_data_pedidos");
-    let url = "../php-servicios/load_data/load-info-pantalla-pedidos.php";
-    let formData = new FormData();
-    formData.append('searchP', input);
+            fetch(url, {
+                    method: "POST",
+                    body: formData
+                }).then(response => response.text())
+                .then(data => {
+                    //console.log(data);
+                    content.innerHTML = data;
+                    asignarEventos();
+                }).catch(err => console.log(err));
+        }
 
-    fetch(url, {
-        method: "POST",
-        body: formData
-    }).then(response => response.text())
-        .then(data => {
-        console.log(data);
-        content.innerHTML = data;
-        }).catch(err => console.log(err));
-    }
-</script>
+        function asignarEventos() {
+            const optionsButton = document.querySelectorAll('.checkButton');
+            const optionsList = document.querySelectorAll('.pointsOptions');
+            const invisibleOverlay = document.querySelector('.invisibleOverlay');
+
+            optionsButton.forEach((but, index) => {
+                but.addEventListener('click', () => {
+                    optionsList[index].classList.remove('hidden');
+                    invisibleOverlay.classList.remove('hidden');
+                });
+            });
+            invisibleOverlay.addEventListener('click', closeOptionsList);
+        }
+    </script>
+    <!--------------------------------------------------------------------------------->
+    <script src="../Scripts/Scripts_reportes_ventas.js"></script>
+    <!--------------------------------------------------------------------------------->
 </body>
+
 </html>
