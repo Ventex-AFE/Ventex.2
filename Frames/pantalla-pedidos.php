@@ -1,3 +1,12 @@
+<?php
+require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
+session_start();
+// $id_usser = $_SESSION['id'];
+$id_usser = 5;
+$sql = "SELECT ID_Producto, Nombre_Prod FROM productos WHERE Id_usser_regristro = $id_usser";
+
+$result = $Conexion_usser_select->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +40,14 @@
         #searchP:valid~.searchButton {
             /* <------Color of the button when te input is valid*/
             background-color: rgb(148, 156, 148);
+        }
+
+        #input_more_little1 {
+            margin-left: .1vw;
+        }
+
+        #input_more_little2 {
+            margin-left: 3vw;
         }
     </style>
 
@@ -117,41 +134,66 @@
                 <h1 class="titleForm">Agregar Pedido</h1>
             </section>
             <section class="contentFormInputs">
-                <form action="" method="post" class="formInputs">
+                <form action="../php-servicios/save_data/save_new_pedido.php" method="post" class="formInputs">
                     <div class="inputContainer">
-                        <input type="text" name="nombre" class="input" required>
-                        <label for="nombre" class="inputText">
+                        <input type="text" name="nombre_producto" class="input" required>
+                        <label for="nombre_producto" class="inputText">
                             <pre> Nombre del Producto</pre>
                         </label>
                     </div>
                     <div class="inputContainer">
-                        <input type="text" name="correo" class="input" required>
-                        <label for="correo" class="inputText">
-                            <pre> Nombre Cliente </pre>
+                        <select name="id_producto" class="input" required>
+                            <option value="" class="inputText">Selecciona el producto</option>
+                            <?php
+                            // Itera sobre los resultados de la consulta y genera opciones para cada producto
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo '<option value="' . $row["ID_Producto"] . '">' . $row["Nombre_Prod"] . '</option>';
+                                }
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="text" name="nombre_cliente" class="input" required>
+                        <label for="nombre_cliente" class="inputText">
+                            <pre> Nombre del Cliente </pre>
                         </label>
                     </div>
                     <div class="inputContainerSmall">
-                        <input type="time" name="time" class="input" required>
-                        <label for="time" class="inputText">
-                            <pre> Hora   </pre>
+                        <input type="time" name="hora_entrega" class="input" required>
+                        <label for="hora_entrega" class="inputText">
+                            <pre> Hora de Entrega </pre>
                         </label>
                     </div>
                     <div class="inputContainerSmall">
-                        <input type="date" name="fechaEntrega" class="input" required>
-                        <label for="fechaEntrega" class="inputText">
-                            <pre> Fecha Entrega </pre>
+                        <input type="date" name="fecha_entrega" class="input" required>
+                        <label for="fecha_entrega" class="inputText">
+                            <pre> Fecha de Entrega </pre>
                         </label>
                     </div>
                     <div class="inputContainer">
-                        <input type="password" name="contraseña" class="input" required>
-                        <label for="contraseña" class="inputText">
-                            <pre> Dirección de entrega </pre>
+                        <input type="text" name="direccion_entrega" class="input" required>
+                        <label for="direccion_entrega" class="inputText">
+                            <pre> Dirección de Entrega </pre>
                         </label>
                     </div>
                     <div class="inputContainer">
-                        <input type="password" name="contraseñaC" class="input" required>
-                        <label for="contraseñaC" class="inputText">
-                            <pre> Descripción del pedido </pre>
+                        <input type="text" name="descripcion_pedido" class="input" required>
+                        <label for="descripcion_pedido" class="inputText">
+                            <pre> Descripción del Pedido </pre>
+                        </label>
+                    </div>
+                    <div class="inputContainer input_more_little" style="width: 11vw;" id="input_more_little1">
+                        <input type="number" name="cantidad_producto" class="input" required>
+                        <label for="cantidad_producto" class="inputText">
+                            <pre> Cantidad </pre>
+                        </label>
+                    </div>
+                    <div class="inputContainer" style="width: 11vw;" id="input_more_little2">
+                        <input type="number" name="precio_producto" class="input" required>
+                        <label for="precio_producto" class="inputText">
+                            <pre> Precio </pre>
                         </label>
                     </div>
                     <input type="submit" value="Agregar Pedido" class="but">
