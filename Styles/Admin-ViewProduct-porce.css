@@ -112,13 +112,6 @@ main{
   color: #1f355f;
   /* text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5); */
 }
-#section-data {
-  width: 78vw;
-  height: 60vh;
-  background-color: rgb(234, 234, 234);
-  margin-left: 1vw;
-  margin-top: 1vh;
-}
 
 /*-- Search Input ---------------------------------------------------------------------------------------------*/
 #section-search {
@@ -130,59 +123,76 @@ main{
   justify-content: center;
   margin-bottom: 2vh;
 }
-/* .searchContainer {
-  position: relative;
-  margin-left: 3.5vw;
+/*-----------------------------------------------------------------------------------------------*/
+
+
+#section-data {
+  width: 78vw;
+  height: 60vh;
+  background-color: rgb(234, 234, 234);
+  margin-left: 1vw;
+  margin-top: 1vh;
+}
+.tabla {
+  width: 78vw;
+  border-collapse: collapse;
 }
 
-.searchContainer .searchButton {
-  width: 5vh;
+
+.tabla td {
+  /* border: 1px solid #ccc;
+  padding: 8px; */
+  text-align: center;
+  width: 5vw;
+  overflow: hidden;
+}
+.data-table{
+  width: 20vw;
+  overflow: hidden;
+}
+.tabla th {
+  background-color: #004b7e;
+  color: rgb(244, 244, 244); 
+  font-weight: 400;
   height: 5vh;
-  border: 0cap;
+  width: 15vw;
+}
+
+.tabla tbody tr{
+  height: 10vh;
+  background-color: white;
+  transition: .3s;
+  /* container-type: inline-size; */
+}
+
+.tabla tbody tr:hover {
+  background-color: #f0f0f0;
+}
+.tit-c {
+  width: 100%;
+  min-height: 6vh;
+}
+.tit {
+  font-family: "Hammersmith One", sans-serif;
+  font-size: 4vw;
+  margin-left: 1vw;
+  color: gray;
+}
+.optionPoints{
+  width: 2vw;
+  height: 2vw;
+  background: none;
+  border: none;
   border-radius: 100%;
-  position: absolute;
-  background-color: rgb(9, 53, 228);
-  cursor: pointer;
-  top: 0;
-  right: 0;
-  transition: 0.5s;
 }
-img {
-  width: 5vh;
-  height: 5vh;
+.optionPoints:hover{
+  border: 0.1vw solid rgb(207, 207, 207);
 }
-.searchContainer #searchP {
-  width: 0;
-  height: 5vh;
-  border: 0cap;
-  outline: 0cap;
-  padding: 1vw;
-  background-color: #ffffff;
-  padding-left: 1vw;
-  border-radius: 100px;
-  transition: 0.8s;
-  top: 0;
-  right: 0;
+.pointsV{
+  width: 100%;
+  height: 100%;
 }
-.searchContainer:hover #searchP {
-  width: 25vw;
-  background-color: white;
-  border: 1px solid rgb(209, 209, 209);
-}
-#searchP:focus {
-  width: 25vw;
-  background-color: white;
-  border: 1px solid rgb(209, 209, 209);
-}
-#searchP:valid {
-  width: 25vw;
-  background-color: white;
-  border: 1px solid rgb(209, 209, 209);
-}
-#searchP:valid ~ .searchButton {
-  background-color: rgb(19, 13, 106);
-} */
-/*-----------------------------------------------------------------------------------------------*/
+/*-- Footer ---------------------------------------------------------------------------------------------*/
 footer {
   width: 100vw;
   height: 6vh;
@@ -197,47 +207,4 @@ footer {
   font-size: 30px;
   text-align: end;
   margin-right: 5vw;
-}
-
-
-
-.tabla {
-  width: 78vw;
-  border-collapse: collapse;
-}
-
-.tabla th,
-.tabla td {
-  /* border: 1px solid #ccc;
-  padding: 8px; */
-  text-align: center;
-}
-
-.tabla th {
-  background-color: #004b7e;
-  color: rgb(244, 244, 244); 
-  font-weight: 400;
-  height: 5vh;
-}
-
-.tabla tbody tr:nth-child(even) {
-  height: 10vh;
-  background-color: white;
-  transition: .3s;
-  container-type: inline-size;
-}
-
-.tabla tbody tr:hover {
-  background-color: #d5eaf0;
-  height: 15vh;
-}
-.tit-c {
-  width: 100%;
-  min-height: 6vh;
-}
-.tit {
-  font-family: "Hammersmith One", sans-serif;
-  font-size: 4vw;
-  margin-left: 1vw;
-  color: gray;
 }

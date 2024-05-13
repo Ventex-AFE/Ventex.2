@@ -39,7 +39,8 @@ if ($num_rows > 0) {
         echo '<td>' . $row['Precio'] . '</td>';
         echo '<td>' . $row['Categoria'] . '</td>';
         echo '<td>' . $row['Subcategoria'] . '</td>';
-        echo '<td>' . $row['Imagen'] . '</td>';
+        echo '<td class="data-table">' . $row['Imagen'] . '</td>';
+        echo '<td> <button class="optionPoints"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button> </td>';
         echo '</tr>';
     }
 } else {

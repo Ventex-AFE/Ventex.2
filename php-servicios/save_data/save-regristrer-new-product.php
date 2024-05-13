@@ -14,7 +14,7 @@ $subCategoria = mysqli_real_escape_string($Conexion_usser_changes, $_POST['produ
 
 if (isset($_FILES["product_image"])) {
     $archivo = basename($_FILES["product_image"]["name"]);
-    $targetDirectory = "../Product-Images/";  // Ruta relativa al directorio del script
+    $targetDirectory = "../../Product-Images/";  // Ruta relativa al directorio del script
     $targetFile = $targetDirectory . $archivo;
 
     $esImagen = getimagesize($_FILES["product_image"]["tmp_name"]);
