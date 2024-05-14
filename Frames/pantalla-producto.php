@@ -169,6 +169,10 @@
                     <section class="contRes">
                         <article class="viewRes"><p>No hay reseña</p></article>
                         <article class="viewRes">esta chido</article>
+                        <article class="viewRes">esta chido</article>
+                        <article class="viewRes">esta chido</article>
+                        <article class="viewRes">esta chido</article>
+
                         <article class="viewRes"><p>ygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygfd
                             hffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
                             aisuggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg

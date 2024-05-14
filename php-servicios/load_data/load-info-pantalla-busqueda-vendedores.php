@@ -2,8 +2,8 @@
 require('../Conexion_db/conexion_usser_select.php');
 
 
-$columas = ['ID_Usuario','Nombre_Us', 'Imagen'];
-$columas2 = ['ID_Usuario','Nombre_Us'];
+$columas = ['ID_Usuario', 'Nombre_Us', 'Imagen'];
+$columas2 = ['ID_Usuario', 'Nombre_Us'];
 
 $table = "usuarioregistrado";
 $campo = isset($_POST['search-p']) ? $Conexion_usser_select->real_escape_string($_POST['search-p']) : null;
@@ -33,24 +33,28 @@ if ($result === false) {
 $num_rows = $result->num_rows;
 
 if ($num_rows > 0) {
-    ?>
-        <div class="UserstitleContainer">
-          <h1 class="titUsers">Usuarios similares</h1>
-        </div>
-        <?php
+?>
+    <div class="UserstitleContainer">
+        <h1 class="titUsers">Usuarios similares</h1>
+    </div>
+    <?php
     while ($row = $result->fetch_assoc()) {
-        ?>
-        <button class="userBox">
-            <div class="userPhotoSection">
-                <div class="userPhotoContainer"><?php echo $row['Imagen']; ?></div>
-            </div>
-            <div class="userNameSection">
-                <h1 class="userName"><?php echo $row['Nombre_Us']; ?></h1>
-            </div>
-        </button>
-        <?php
+    ?>
+        <form action="../Frames/pantalla-perfil-vc.php" method="post">
+            <input type="hidden" name="Id_seller" value="<?php echo $row['ID_Usuario']; ?>">
+            <button type="submit" class="userBox">
+                <div class="userPhotoSection">
+                    <div class="userPhotoContainer"><img src="../Imgens-Pefil/<?php echo $row['Imagen']; ?>" alt="" style="max-width: 4.5vw;"></div>
+                </div>
+                <div class="userNameSection">
+                    <h1 class="userName"><?php echo $row['Nombre_Us']; ?></h1>
+                </div>
+            </button>
+        </form>
+
+<?php
     }
 } else {
- 
+
     echo '<h2 >Sin resultados</h2>';
 }
