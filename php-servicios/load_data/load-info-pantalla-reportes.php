@@ -42,7 +42,7 @@ if ($num_rows > 0) {
                     <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
                     <ul class="pointsOptions hidden">
                         <li class="pointsOption">
-                            <form action="editar_pedido.php" method="post" id="form_editar_pedido">
+                            <form action="../Frames/Pantalla-Edit-Reporte-venta.php" method="post" id="form_editar_pedido">
                                 <input type="hidden" name="Id_Reporte_Venta" value="<?php echo intval($row['ID_Venta']); ?>">
                                 <button class="linkOptionPoints editButton" id="editButton">
                                     <p class="textLinkOptions">Editar</p>

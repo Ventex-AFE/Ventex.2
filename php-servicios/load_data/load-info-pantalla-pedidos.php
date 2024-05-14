@@ -1,8 +1,8 @@
 <?php
 require('../Conexion_db/conexion_usser_select.php');
 
-$columas = ['ID_pedido', 'Nombre_pedido', 'Id_usser_regristro', ' ID_producto', 'usuario_cliente	', 'fecha', 'hora', 'lugar', 'cantidad', 'precio', 'descripcion'];
-$columas2 = ['Nombre_Prod', 'Categoría', 'Subcategoría',];
+$columas = ['ID_pedido', 'Nombre_pedido', 'Id_usser_regristro', 'ID_producto', 'usuario_cliente', 'fecha', 'hora', 'lugar', 'cantidad', 'precio', 'descripcion'];
+$columas2 = ['Nombre_Prod', 'Categoría', 'Subcategoría'];
 $table = "pedidos";
 // $id_usser = $_SESSION['id'];
 $id_usser = 1;
@@ -42,11 +42,11 @@ if ($num_rows > 0) {
                     <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
                     <ul class="pointsOptions hidden">
                         <li class="pointsOption">
-                            <form action="editar_pedido.php" method="post" id="form_editar_pedido">
+                            <form action="../Frames/Pantalla-Edit-Pedido.php" method="post" id="form_editar_pedido">
                                 <input type="hidden" name="Id_Pedido" value="<?php echo intval($row['ID_pedido']); ?>">
                                 <button class="linkOptionPoints editButton" id="editButton">
                                     <p class="textLinkOptions">Editar</p>
-                                </button> <!-- Agrega un valor al input oculto con el ID del pedido -->
+                                </button>
                             </form>
                         </li>
                         <li class="pointsOption">
@@ -54,7 +54,7 @@ if ($num_rows > 0) {
                                 <input type="hidden" name="Id_Pedido" value="<?php echo intval($row['ID_pedido']); ?>">
                                 <button class="linkOptionPoints deleteButton">
                                     <p class="textLinkOptions">Eliminar</p>
-                                </button><!-- Agrega un valor al input oculto con el ID del pedido -->
+                                </button>
                             </form>
                         </li>
                     </ul>
@@ -79,14 +79,12 @@ if ($num_rows > 0) {
                 <p class="table-text"><?php echo $row['descripcion']; ?></p>
             </td>
         </tr>
-    <?php
+<?php
     }
 } else {
     echo '<tr>';
-    ?>
-    <td class="check">
-
-    </td>
+?>
+    <td class="check"></td>
     <td class="table-data"></td>
     <td class="table-data">
         <p class="table-text"></p>
