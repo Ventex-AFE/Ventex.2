@@ -5,6 +5,8 @@ footer{
     align-items: center;
     justify-content: center;
     background-color: rgba(154, 149, 149, 0.66);
+    z-index: 1;
+    position: relative;
 }
 
 .name-year{

@@ -117,6 +117,15 @@ session_start();
             </section>
 
         </section>
+        <aside>
+                <nav>
+                    <ul>
+                        <li><a href="pantalla-pedidos.html">Pedidos</a></li>
+                        <li><a href="#">Reportes</a></li>
+                        <li><a href="#">Catálogo</a></li>
+                    </ul>
+                </nav>
+            </aside>
     </main>
 
     <footer>
