@@ -242,7 +242,7 @@ mysqli_stmt_close($stmt);
             let input = document.getElementById("searchP").value;
             let id_usser = document.getElementById("usser_id").value;
             let content = document.getElementById("container_all_products_seller");
-            let url = "../php-servicios/load_data/load-info-Pantalla-Perfil-Selller";
+            let url = "../php-servicios/load_data/load-info-Pantalla-Perfil-Selller.php";
             let formData = new FormData();
             formData.append('searchP', input);
             formData.append('usser_id', id_usser);
