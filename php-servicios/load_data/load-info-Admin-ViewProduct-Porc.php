@@ -40,7 +40,24 @@ if ($num_rows > 0) {
         echo '<td>' . $row['Categoria'] . '</td>';
         echo '<td>' . $row['Subcategoria'] . '</td>';
         echo '<td class="data-table">' . $row['Imagen'] . '</td>';
-        echo '<td> <button class="optionPoints"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button> </td>';
+        // echo '<td> <button class="optionPoints"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button> </td>';
+?>
+
+    |   <td class="check">
+            <div class="pointsContiner">
+                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                    <ul class="pointsOptions hidden">
+                        <li class="pointsOption"><button href="#" class="linkOptionPoints">
+                                <p class="textLinkOptions">Editar</p>
+                            </button></li>
+                        <li class="pointsOption"><button href="#" class="linkOptionPoints">
+                                <p class="textLinkOptions">Eliminar</p>
+                            </button></li>
+                  </ul>
+            </div>
+        </td>
+
+            <?php
         echo '</tr>';
     }
 } else {
@@ -48,3 +65,4 @@ if ($num_rows > 0) {
     echo '<td colspan="17">Sin resultados</td>';
     echo '</tr>';
 }
+?>

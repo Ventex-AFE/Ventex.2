@@ -145,7 +145,7 @@
             body: formData
           }).then(response => response.text())
             .then(data => {
-              console.log(data);
+              // console.log(data);
               content.innerHTML = data;
             }).catch(err => console.log(err));
         }
@@ -156,6 +156,12 @@
   <footer>
     <h2 id="name-footer">Ventex</h2>
   </footer>
+  <!-- Script --------------------------------------------------------->
+  <div class="invisibleOverlay hidden"></div>
+
+
+  <script src="../Scripts/Script-Admin-ViewProduct-Porc.js"></script>
+  <!------------------------------------------------------------------->
 </body>
 
 </html>
