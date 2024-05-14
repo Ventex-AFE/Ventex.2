@@ -8,10 +8,23 @@ session_start();
     <title>Perfil</title>
     <link rel="stylesheet" href="../Componentes/header.css">
     <link rel="stylesheet" href="../Componentes/footer.css">
+    <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
     <link rel="stylesheet" href="../Styles/Styls-profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>  
+    /* <-------Styles extensible search input*/
+        .searchSection{
+            text-align: left;
+        }
+        .searchButton{  /*<------Color Button*/
+            background-color: black;
+        }
+        #searchP:valid ~ .searchButton {  /* <------Color of the button when te input is valid*/
+            background-color: rgb(66, 94, 66);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -88,9 +101,11 @@ session_start();
             <section class="parent_Child">
                 <section class="parent_LastChild">
                     <section class="group">
-                        <section class="inputSearch">
-                            <input type="search" id="searchP" name="searchP" placeholder="Buscar" required> <br>
-                        </section>
+                    <div class="searchContainer">
+                        <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
+                        <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
+                    </div>
+                        <section class="cards">
                             <script>
                                 document.addEventListener("DOMContentLoaded", getData);
 
@@ -111,6 +126,7 @@ session_start();
                                     }).catch(err => console.log(err));
                                 }
                             </script>
+                        </section>
                     <div id="resultados"></div>
                     </section>
                 </section>
