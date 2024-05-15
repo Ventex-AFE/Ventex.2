@@ -101,7 +101,7 @@ mysqli_stmt_close($stmt);
                     <span class="text_input">Cantidad:</span>
                 </div>
                 <div class="inputbox" style="height: 6vh;">
-                    <input type="number" name="Precio" class="inp" placeholder=" " value="<?php echo $precio ?>" required><br>
+                    <input type="number" name="Precio" class="inp" placeholder=" " step="0.01" min="0" value="<?php echo $precio ?>" required><br>
                     <span class="text_input">Precio:</span>
                 </div>
                 <div class="inputbox" style="height: 6vh;">

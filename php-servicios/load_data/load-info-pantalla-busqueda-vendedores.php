@@ -34,9 +34,9 @@ $num_rows = $result->num_rows;
 
 if ($num_rows > 0) {
 ?>
-    <div class="UserstitleContainer">
-        <h1 class="titUsers">Usuarios similares</h1>
-    </div>
+    <!-- <div class="UserstitleContainer">
+        <h1 class="titUsers">Vendedores</h1>
+    </div> -->
     <?php
     while ($row = $result->fetch_assoc()) {
     ?>
@@ -44,7 +44,7 @@ if ($num_rows > 0) {
             <input type="hidden" name="Id_seller" value="<?php echo $row['ID_Usuario']; ?>">
             <button type="submit" class="userBox">
                 <div class="userPhotoSection">
-                    <div class="userPhotoContainer"><img src="../Imgens-Pefil/<?php echo $row['Imagen']; ?>" alt="" style="max-width: 4.5vw;"></div>
+                    <div class="userPhotoContainer"><img src="../Imgens-Pefil/<?php echo $row['Imagen']; ?>" alt="" class="userPhoto"></div>
                 </div>
                 <div class="userNameSection">
                     <h1 class="userName"><?php echo $row['Nombre_Us']; ?></h1>

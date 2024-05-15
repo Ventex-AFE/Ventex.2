@@ -10,21 +10,24 @@ body {
 main{
     display: flex;
 }
-/*-- LEFT --------------------------------------------------------------------*/
-.left{
-    width: 33%;
-    height: 90vh;
+.resultTitleContainer{
+    width: 80%;
+    background-color: aqua;
+}
+/*-- RIGTH --------------------------------------------------------------------*/
+.rigth{
+    width: 35%;
+    min-height: 90vh;
     display: flex;
     flex-wrap: wrap;
-    justify-content: right;
+    justify-content: left;
     align-content: flex-start;
 }
 .usersContainer{
-    width: 28vw;
-    height: 90vh;
-    background-color: white;
+    width: 30vw;
+    height: 95vh;
     border-radius: 0.5vw;
-    margin-top: 5vh;
+    margin-top: 2.5vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -51,13 +54,14 @@ main{
     height: 6vw;
     border-radius: 0.5vw;
     background-color: white;
-    border: 0.1vw solid rgb(192, 192, 192);
+    border: none;
     margin-bottom: 1vw;
     display: flex;
     transition: .3s;
 }
 .userBox:hover{
-    box-shadow: 0 0 0.2vw 0.2vw rgb(230, 230, 230);
+    box-shadow: 0 0 10px 3px rgb(206, 206, 206);
+    transform: scale(1.02);
 }
 .userPhotoSection{
     width: 6vw;
@@ -71,6 +75,14 @@ main{
     height: 4.5vw;
     background-color: rgb(204, 204, 204);
     border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.userPhoto{
+    width: 100%;
+    height: auto;
 }
 .userNameSection{
     width: 21.5vw;
@@ -88,14 +100,14 @@ main{
     color: rgb(94, 113, 94);
     margin-left: 1vw;
 }
-/*-- RIGTH -------------------------------------------------------------------*/
-.rigth{
-    width: 67%;
-    height: 90vh;
+/*-- LEFT -------------------------------------------------------------------*/
+.left{
+    width: 65%;
+    min-height: 90vh;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    justify-content: center;
+    justify-content: right;
 }
 .titleContainer{
     width: 95%;

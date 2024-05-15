@@ -1,5 +1,5 @@
 .productContainer{
-    width: 20vw;
+    width: 19vw;
     height: 30vw;
     background-color: white;
     margin-left: 1vw;
@@ -13,12 +13,12 @@
     cursor: pointer;
 }
 .productContainer:hover{
-    box-shadow: 0 0 10px 3px rgb(206, 206, 206);
+    box-shadow: 0 0 1vw 0.3vw rgb(206, 206, 206);
 }
 .productPhoto{
     width: 20vw;
     height: 20vw;
-    border-bottom: 1px solid rgb(204, 204, 204);
+    border-bottom: 0.1vw solid rgb(204, 204, 204);
     display: flex;
     display: flex;
     align-items: center;
