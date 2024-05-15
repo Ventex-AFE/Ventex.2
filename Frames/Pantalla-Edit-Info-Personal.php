@@ -1,3 +1,44 @@
+<?php
+// Incluir el archivo de conexión
+require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
+
+// Comprobar si la sesión está iniciada
+session_start();
+// if (!isset($_SESSION['id'])) {
+//     // Si no hay sesión iniciada, redireccionar o manejar el caso según tus necesidades
+//     // Por ejemplo, redireccionar a una página de inicio de sesión
+//     header("Location: login.php");
+//     exit;
+// }
+
+// Obtener el ID de usuario de la sesión
+// $Id_Usuario = $_SESSION['id'];
+ $Id_Usuario = 9; //extraido desde el perfil con el boton del editar producto
+
+// Preparar la consulta para obtener los datos del usuario
+$sql = "SELECT 	Nombre_Us, Correo, Fecha_Nac, telefono, Imagen FROM usuarioregistrado WHERE ID_Usuario = ?";
+// Verificar si la preparación de la consulta tuvo éxito
+
+$stmt = mysqli_prepare($Conexion_usser_select, $sql);
+if (!$stmt) {
+    exit('Error en la preparación de la consulta: ' . mysqli_error($Conexion_usser_select));
+}
+// Vincular parámetro(s) a la consulta preparada
+mysqli_stmt_bind_param($stmt, "i", $Id_Usuario);
+
+// Ejecutar la consulta preparada
+mysqli_stmt_execute($stmt);
+
+// Vincular variables a los resultados de la consulta
+mysqli_stmt_bind_result($stmt, $Nombre_Us, $Correo, $Fecha_Nac, $telefono, $Imagen);
+
+// Obtener los resultados
+mysqli_stmt_fetch($stmt);
+
+// Cerrar la consulta preparada
+mysqli_stmt_close($stmt);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,12 +85,11 @@
                 <section id="imagen-usser-container">
                     <img src="../Icons/perfilPic.png" class="imagen-usser" id="imgPreview" >
                 </section>
-                <form action="..\php-servicios\save_data\save-actualizacion-datos-personales.php" method="post">
-                    <input type="hidden" name="id-usser-update" value=""><!-- aqui va ir lo de sesion -->
+                <form action="..\php-servicios\save_data\save-actualizacion-datos-personales.php" method="post" enctype="multipart/form-data">
                     <br>
                     <!-- Inputs para actualizar datos de redes sociales -->
                     <div class="inputbox" style="height: 6vh;">
-                    <input type="file" name="" class="inp" accept="image/*" onchange="previewImage(event, '#imgPreview')">
+                    <input type="file" name="Imagen" class="inp" accept="image/*"  onchange="previewImage(event, '#imgPreview')">
                     <script>
                         function previewImage(event, querySelector){
                         const input = event.target;
@@ -65,24 +105,25 @@
                         }
                     </script>
                     </div>
-
+                        <input type="hidden" name="imagenanterior" value="<?php echo $Imagen ?>">
+                        
                     <div class="inputbox" style="height: 6vh;">
-                        <input type="text" name="description" class="inp" placeholder=" " required><br>
+                        <input type="text" name="nombre" class="inp" placeholder="" value="<?php echo $Nombre_Us ?>" required><br>
                         <span class="text_input">Nombre(s):</span>
                     </div>
 
                     <div class="inputbox" style="height: 6vh;">
-                        <input type="text" name="whatsapp" class="inp" placeholder=" " required><br>
+                        <input type="email" name="correo" class="inp" placeholder="" value="<?php echo $Correo ?>" required><br>
                         <span class="text_input">Email</span>
                     </div>
 
                     <div class="inputbox" style="height: 6vh;">
-                        <input type="text" name="x" class="inp" placeholder=" " required><br>
+                        <input type="date" name="fecha" class="inp" placeholder="" value="<?php echo $Fecha_Nac ?>" required><br>
                         <span class="text_input">Fecha Nacimiento</span>
                     </div>
 
                     <div class="inputbox" style="height: 6vh;">
-                        <input type="text" name="facebook" class="inp" placeholder=" " required><br>
+                        <input type="number" name="telefono" class="inp" placeholder="" value="<?php echo $telefono ?>" required><br>
                         <span class="text_input">Telefono</span>
                     </div>
                     <!-- Botón para enviar el formulario -->
