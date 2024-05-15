@@ -1,0 +1,371 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  font-family: "Hammersmith One", sans-serif;
+}
+html,
+body {
+  height: 100%;
+  background-color: #f3e9dc;
+}
+main {
+  width: 100%;
+  height: auto;
+  float: left;
+  margin-top: 15vh;
+}
+.tit_process {
+  margin: auto;
+  font-size: 2vw;
+}
+h1 {
+  text-align: center;
+  color: white;
+  margin-left: 12vw;
+  font-size: 50px;
+}
+
+.modal {
+  width: fit-content;
+  height: fit-content;
+  background: #ffffff;
+  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01),
+    0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09),
+    0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 26px;
+  max-width: 450px;
+  margin: auto;
+  margin-top: 12vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.payment--options {
+  width: calc(100% - 40px);
+  display: grid;
+  grid-template-columns: 33% 34% 33%;
+  gap: 20px;
+  padding: 10px;
+}
+
+.payment--options button {
+  height: 55px;
+  background: #f2f2f2;
+  border-radius: 11px;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+.payment--options button svg {
+  height: 18px;
+}
+
+.payment--options button:last-child svg {
+  height: 22px;
+}
+
+.separator {
+  width: calc(100% - 20px);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+  color: #8b8e98;
+  margin: 0 10px;
+}
+
+.separator > p {
+  word-break: keep-all;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 11px;
+  margin: auto;
+}
+.separator .line {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  border: 0;
+  background-color: #e8e8e8;
+  margin: auto;
+}
+
+.credit-card-info--form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input_container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 15px;
+}
+
+.split input {
+  width: 100%;
+}
+
+.input_label {
+  font-size: 10px;
+  color: rgb(52, 96, 52);
+  font-weight: 600;
+}
+
+.input_field {
+  width: auto;
+  height: 40px;
+  padding: 0 0 0 16px;
+  border-radius: 9px;
+  outline: none;
+  background-color: #f2f2f2;
+  border: 1px solid #e5e5e500;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input_field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
+
+.purchase--btn {
+  height: 55px;
+  background: #f2f2f2;
+  border-radius: 11px;
+  border: 0;
+  outline: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(180deg, #4c8968 0%, #204f28 50%, #1f4333 100%);
+  box-shadow: 0px 0px 0px 0px #ffffff, 0px 0px 0px 0px #000000;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.purchase--btn:hover {
+  box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #43291f;
+}
+
+/* Reset input number styles */
+.input_field::-webkit-outer-spin-button,
+.input_field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input_field[type="number"] {
+  -moz-appearance: textfield;
+}
+#process {
+  width: 100%;
+  height: 8vh;
+  background-color: #c5a68c;
+  position: fixed;
+  display: flex;
+  z-index: 2;
+}
+.select {
+  width: 33.3333%;
+  height: 100%;
+  float: left;
+  background-color: #c5a68c;
+  border-left: 1px solid gray;
+  display: flex;
+  align-items: center;
+}
+footer {
+  width: 100%;
+  height: 20vh;
+  float: left;
+  margin-top: 5vh;
+  background-color: rgb(104, 134, 104);
+}
+#aviso {
+  width: 100%;
+  height: 12vh;
+  float: left;
+  display: flex;
+  text-align: center;
+}
+#av {
+  margin-top: 3vh;
+  margin-left: 35vh;
+  float: left;
+  font-size: 15px;
+  color: whitesmoke;
+}
+#logo {
+  width: 50%;
+  height: 60%;
+  float: left;
+  background-color: rgb(104, 134, 104);
+}
+#log {
+  margin-left: 20%;
+  margin-top: 1.5%;
+  float: left;
+  font-size: 3vw;
+  color: white;
+  font-family: "Hammersmith One", sans-serif;
+}
+#lo {
+  width: 50%;
+  margin-top: 1.9%;
+  margin-left: 1%;
+  float: left;
+  color: white;
+}
+#redes {
+  width: 50%;
+  height: 60%;
+  float: left;
+  background-color: rgb(104, 134, 104);
+}
+.ic {
+  width: 6vh;
+  height: 6vh;
+  object-fit: cover;
+}
+.main-container-header{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+nav{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+ul{
+    list-style: none;
+    display: flex;
+}
+.c-logo{
+    width: 18%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 1000;
+    font-size:4vw;
+    color: rgb(88, 88, 88);
+}
+.h-options{
+    width: 40vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+.butt-h{
+    width: 8vw;
+    height: 7vh;
+    background-color: #B0C881;
+    margin-left: 2vh;
+    border: 0;
+    border-radius: 100px;
+    transition: all .3s;
+    color: white;
+    cursor: pointer;
+    font-size: 1vw;
+}
+.butt-h:hover{
+    background-color: #8ca063;
+    transform: scale(1.1);
+}
+#search-p{
+    width: 28vw;
+    height: 5vh;
+    margin-left: 5vh;
+    border-radius: 100px;
+    outline: 0;
+    padding-left: 1vw;
+    border: 1px solid rgb(196, 196, 196);
+}
+.profileContainer{
+    width: 12vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+.basket{
+    width: 8vh;
+    height: 8vh;
+    margin-left: 2vh;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 100px;
+    transition: .3s;
+    color: white;
+    cursor: pointer;
+}
+.basket:hover{
+    box-shadow: 0 0 5px 1px rgb(167, 167, 167);
+}
+.basket-icon{
+    width: 50%;
+    height: 50%;
+}
+.profile{
+    width: 8vh;
+    height: 8vh;
+    margin-left: 2vh;
+    border: 1px solid rgb(196, 196, 196);
+    background-color: #748553;
+    border-radius: 100px;
+    transition: .3s;
+    color: white;
+}
+/*-Footer------------------------------------------------------------------------------*/
+/* footer{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    background-color: #748553;
+    margin-top: 5vh;
+}
+.logo-f{
+    font-family: "Hammersmith One", sans-serif;
+    font-weight: 1000;
+    font-size:3em;
+    margin-left: 3vw;
+    color: white;
+} */
+/*
+ <header class="main-container-header">
+        <section class="c-logo"><p class="logo">Ventex</p></section>
+        <section class="h-options">
+            <button class="butt-h">Inicio</button>
+            <button class="butt-h">Categorías</button>
+            <button class="butt-h">Planes</button>
+            <button class="butt-h">Vender</button>
+            <form action="" method="post">
+                <input type="search" name="search-product" id="search-p">
+            </form>
+        </section>
+        <section class="profileContainer">
+            <button class="basket"> <img src="bolsa-de-la-compra.png" alt=""></button>
+            <button class="profile"></button>
+        </section>
+    </header>
+*/
