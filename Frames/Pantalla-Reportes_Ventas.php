@@ -18,6 +18,7 @@ $result = $Conexion_usser_select->query($sql);
     <link rel="stylesheet" href="../Componentes/header-v.css">
     <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
     <link rel="stylesheet" href="../Componentes/modalForm.css">
+    <link rel="stylesheet" href="../Componentes/calculationModal.css">
 
     <style>
         /* <-------Styles extensible search input*/
@@ -229,6 +230,15 @@ $result = $Conexion_usser_select->query($sql);
     <!--------------------------------------------------------------------------------->
     <script src="../Scripts/Scripts_reportes_ventas.js"></script>
     <!--------------------------------------------------------------------------------->
+
+    <div class="calculateModal hidden">
+                <h1 class="titleCalculate">Recopilación de ganancias</h1>
+                
+                <h2 class="resultCalculation">$00.00</h2>
+    </div>
+
+    <div class="overlay hidden"></div>
+
 </body>
 
 </html>

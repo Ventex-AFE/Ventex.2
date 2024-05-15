@@ -1,6 +1,6 @@
 function asignarEventos() {
   const calcular = document.querySelector('.calc');
-  const modal = document.querySelector('.modal');
+  const modal = document.querySelector('.calculateModal');
   const overlay = document.querySelector('.overlay');
   const cancelButton = document.querySelector('.cancel');
   const modalForm = document.querySelector('.modalFormMainContainer');

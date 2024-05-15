@@ -44,24 +44,29 @@
     </nav>
   </header>
   <main>
+    <!-- <section class="resultTitleContainer">
+        <h1 class="tit">
+          Resultados similares a <span class="titResult">"Busqueda"</span>
+        </h1>
+    </section> -->
     <article class="left">
-      <section class="usersContainer" id="users_Container">
-        <!-- <div class="UserstitleContainer">
-          <h1 class="titUsers">Usuarios similares</h1>
-        </div> -->
-      </section>
-    </article>
-    <article class="rigth">
       <section class="titleContainer">
         <h1 class="tit">
           Resultados similares a <span class="titResult">"Busqueda"</span>
         </h1>
       </section>
       <section class="productsContainer" id="products_Container">
-
-      </section>
-    </article>
-  </main>
+        
+        </section>
+      </article>
+      <article class="rigth">
+        <section class="usersContainer" id="users_Container">
+          <!-- <div class="UserstitleContainer">
+            <h1 class="titUsers">Usuarios similares</h1>
+          </div> -->
+        </section>
+      </article>
+    </main>
 
   <script>
     // document.addEventListener("DOMContentLoaded", getData);
@@ -83,15 +88,18 @@
     //     }).catch(err => console.log(err));
     // }
 
-    const usersContainer = document.querySelector(".usersContainer");
+    //------------------------------------------------------------------------------------------------------------------------
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 70) {
-        usersContainer.classList.add("block");
-      } else {
-        usersContainer.classList.remove("block");
-      }
-    });
+
+     const usersContainer = document.querySelector(".usersContainer");
+
+     window.addEventListener("scroll", () => {
+       if (window.scrollY > 70) {
+          usersContainer.classList.add("block");
+       } else {
+          usersContainer.classList.remove("block");
+        }
+      });
 
 
 
