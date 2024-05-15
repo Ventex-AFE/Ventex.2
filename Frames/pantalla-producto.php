@@ -12,9 +12,9 @@ session_start();
 // }
 
 // Obtener el ID de usuario de la sesión
-if(!isset($_POST['id_product'])){
+if (!isset($_POST['id_product'])) {
     $id_product = 5;
-}else{
+} else {
     $id_product = $_POST['id_product'];
 }
 //extraido desde el perfil con el boton del editar producto
@@ -58,7 +58,7 @@ mysqli_stmt_bind_param($stmt2, "i", $id_Seller);
 mysqli_stmt_execute($stmt2);
 
 // Vincular variables a los resultados de la consulta
-mysqli_stmt_bind_result($stmt2, $Descripcion_contact,$profile_Description,$instagram,$x,$whatsapp);
+mysqli_stmt_bind_result($stmt2, $Descripcion_contact, $profile_Description, $instagram, $x, $whatsapp);
 
 // Obtener los resultados
 mysqli_stmt_fetch($stmt2);
@@ -200,10 +200,13 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
                     <input type="radio" name="star">
                 </section>
 
-                <article id="inputVal">
-                    <input type="text" placeholder="Escribe una reseña del producto">
-                </article>
-                <article id="inputSub"><input type="submit"></article>
+                <form id="inputVal" method="post" action="../php-servicios/save_data/save_new_comentario.php">
+                    <input type="hidden" name="fecha_Coment" value="<?php echo date('Y-m-d'); ?>">
+                    <input type="hidden" name="hora_comentario" value="<?php echo date('H:i:s'); ?>">
+                    <input type="hidden" name="id_prod" value="<?php echo $id_product; ?>">
+                    <input type="text" placeholder="Escribe una reseña del producto" name="descripcion">
+                    <article id="inputSub"><input type="submit" value="Comentar"></article>
+                </form>
             </article>
         </section>
         <section class="partU">
@@ -212,27 +215,35 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
                     <h2>Reseñas</h2>
                     <h1>Promedio de estrellas:</h1>
                 </section>
-                <section class="contRes">
-                    <article class="viewRes">
-                        <p>No hay reseña</p>
-                    </article>
-                    <article class="viewRes">esta chido</article>
-                    <article class="viewRes">esta chido</article>
-                    <article class="viewRes">esta chido</article>
-                    <article class="viewRes">esta chido</article>
+                <section class="contRes" id="contRes">
 
-                    <article class="viewRes">
-                        <p>ygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygygfd
-                            hffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-                            aisuggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-                            ytuhuuuuuuuuuuuuuuuuuuuuuuuuyh
-                        </p>
-                    </article>
-                    <article class="viewRes">no me gustos</article>
                 </section>
             </article>
         </section>
     </section>
+    <form action="" method="post">
+        <input type="hidden" value="<?php echo $id_product ?>" name="id_product" id="id_product">
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", getData);
+
+        function getData() {
+            let input = document.getElementById("id_product").value;
+            let content = document.getElementById("contRes");
+            let url = "../php-servicios/load_data/load-info-comentarios-Pantalla-seller.php";
+            let formData = new FormData();
+            formData.append('id_product', input);
+
+            fetch(url, {
+                    method: "POST",
+                    body: formData
+                }).then(response => response.text())
+                .then(data => {
+                    console.log(data);
+                    content.innerHTML = data;
+                }).catch(err => console.log(err));
+        }
+    </script>
 </body>
 <footer></footer>
 
