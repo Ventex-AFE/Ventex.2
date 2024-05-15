@@ -106,6 +106,12 @@ session_start();
                         <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
                     </div>
                         <section class="cards">
+                           
+                        <section class="inputSearch">
+                            <input type="search" id="searchP" name="searchP" placeholder="Buscar" required> <br>
+                            
+                        </section>
+                        <section class="cards">
                             <script>
                                 document.addEventListener("DOMContentLoaded", getData);
 
