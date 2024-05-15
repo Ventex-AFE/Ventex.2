@@ -76,8 +76,8 @@ mysqli_stmt_close($stmt);
         <!-- Sección lateral 2 (formulario para actualizar redes sociales) -->
 
         <section id="side2">
-            <form action="../php-servicios/save_data/save-actualizacion-info-producto.php" method="post" id="form_product">
-                <input type="hidden" name="id_Product_update" value="<?php echo $ID_pedido ?>"><!-- aqui va ir lo de sesion -->
+            <form action="../php-servicios/save_data/save_actulizacion_de_pedidos.php" method="post" id="form_product">
+                <input type="hidden" name="id_Pedidos_update" value="<?php echo $ID_pedido ?>"><!-- aqui va ir lo de sesion -->
                 <br>
                 <!-- Inputs para actualizar datos de redes sociales -->
                 <div class="inputbox" style="height: 6vh;">
