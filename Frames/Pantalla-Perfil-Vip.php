@@ -8,8 +8,8 @@ session_start();
     <title>Perfil</title>
     <link rel="stylesheet" href="../Componentes/header.css">
     <link rel="stylesheet" href="../Componentes/footer.css">
-    <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
     <link rel="stylesheet" href="../Styles/Styls-profile.css">
+    <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -88,7 +88,6 @@ session_start();
                                     <a href=""><i class="fa-brands fa-tiktok"></i></a>
                                 </section>
 
-                                <a href="" class="subs">Suscribirse</a>
                                 <a href="" class="subs">Cerrar Sesión <i class="fa-solid fa-right-from-bracket"></i></a>  
 
                             </section>
@@ -105,18 +104,7 @@ session_start();
                         <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
                         <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
                     </div>
-                        <section class="cards">
-                           
-                        <section class="inputSearch">
-                            <input type="search" id="searchP" name="searchP" placeholder="Buscar" required> <br>
-                            
-                        </section>
-
-                        <section class="cards">
                             <script>
-
-                            <script>
-
                                 document.addEventListener("DOMContentLoaded", getData);
 
                                 function getData() {
@@ -135,18 +123,22 @@ session_start();
                                     content.innerHTML = data;
                                     }).catch(err => console.log(err));
                                 }
-
                             </script>
-                        </section>
-
-                            </script>-->
-
                     <div id="resultados"></div>
                     </section>
                 </section>
             </section>
 
         </section>
+        <aside>
+                <nav>
+                    <ul>
+                        <li><a href="pantalla-pedidos.html">Pedidos</a></li>
+                        <li><a href="#">Reportes</a></li>
+                        <li><a href="#">Catálogo</a></li>
+                    </ul>
+                </nav>
+            </aside>
     </main>
 
     <footer>
