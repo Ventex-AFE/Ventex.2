@@ -8,14 +8,16 @@ header{
     height: 10vh;
     display: flex;
     align-items: center;
-    background-color: #b2c274b5;
+    background-color: #8eb268;
     font-family: Arial, Helvetica, sans-serif;
+    z-index: 1;
 }
 .logo{
     width: 15vw;
     height: 100%;
     padding: 2rem;
     font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 nav{
@@ -71,7 +73,7 @@ a{
     height: 3px;
     bottom: 3px;
     left: 0px;
-    background-color: #649c58da;
+    background-color: #597c36;
     transition: all 0.2s ease-in-out;
     scale: 0 0;
     visibility: hidden;
