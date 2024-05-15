@@ -8,7 +8,7 @@ if (!isset($_POST['nombre'], $_POST['correo'], $_POST['fecha'], $_POST['telefono
     //header('Location: ../../Frames/Pantalla-Edit-Info-Personal.php');
     exit();
 }
-if (isset($_FILES["Imagen"])) {
+if (!isset($_FILES["Imagen"])) {
     $archivo = basename($_FILES["Imagen"]["name"]);
     $targetDirectory = "../../Imgens-Pefil/";  // Ruta relativa al directorio del script
     $targetFile = $targetDirectory . $archivo;
@@ -27,8 +27,8 @@ if (isset($_FILES["Imagen"])) {
     $archivo = mysqli_real_escape_string($Conexion_usser_changes,$_POST['imagenanterior']);
 }
 // Recoger los datos del formulario
-//$idup = $_SESSION['id'];
-$idup = 9;
+$idup = $_SESSION['id'];
+// $idup = 9;
 $Nom = mysqli_real_escape_string($Conexion_usser_changes,$_POST['nombre']);
 $correo = mysqli_real_escape_string($Conexion_usser_changes,$_POST['correo']);
 $fecha = mysqli_real_escape_string($Conexion_usser_changes,$_POST['fecha']);

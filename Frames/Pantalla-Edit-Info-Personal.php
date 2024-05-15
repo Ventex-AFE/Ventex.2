@@ -12,8 +12,8 @@ session_start();
 // }
 
 // Obtener el ID de usuario de la sesión
-// $Id_Usuario = $_SESSION['id'];
- $Id_Usuario = 9; //extraido desde el perfil con el boton del editar producto
+$Id_Usuario = $_SESSION['id'];
+ //$Id_Usuario = 9; //extraido desde el perfil con el boton del editar producto
 
 // Preparar la consulta para obtener los datos del usuario
 $sql = "SELECT 	Nombre_Us, Correo, Fecha_Nac, telefono, Imagen FROM usuarioregistrado WHERE ID_Usuario = ?";
@@ -106,7 +106,7 @@ mysqli_stmt_close($stmt);
                     </script>
                     </div>
                         <input type="hidden" name="imagenanterior" value="<?php echo $Imagen ?>">
-                        
+
                     <div class="inputbox" style="height: 6vh;">
                         <input type="text" name="nombre" class="inp" placeholder="" value="<?php echo $Nombre_Us ?>" required><br>
                         <span class="text_input">Nombre(s):</span>
