@@ -115,8 +115,6 @@ session_start();
                         <section class="cards">
                             <script>
 
-                            <script>
-
                                 document.addEventListener("DOMContentLoaded", getData);
 
                                 function getData() {
@@ -138,8 +136,6 @@ session_start();
 
                             </script>
                         </section>
-
-                            </script>-->
 
                     <div id="resultados"></div>
                     </section>

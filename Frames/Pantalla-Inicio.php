@@ -3,120 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventex</title>
+    <link rel="stylesheet" href="../Componentes/header.css">
+    <link rel="stylesheet" href="../Componentes/footer.css">
     <link rel="stylesheet" href="../Styles/Styles-Inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Inicio</title>
 </head>
 <body>
     <header>
-        <h1>Ventex</h1>
+        <section><p class="logo">Ventex</p></section>
         <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Categoria</a></li>
-                <li><a href="#">Planes</a></li>
+            <ul class="menu">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Categoria</a></li>
+                <li><a href="">Planes</a></li>
+                <li><a href="">Vender</a></li>
             </ul>
         </nav>
-        <form class="search-bar">
+        <form class="busqueda">
+            <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Buscar">
-            <button type="submit">Buscar</button>
         </form>
-        <div class="user-profile">
-            <img src="../Product-Images/yofinobuena.jpg" alt="User Profile">
-            <span>Nombre de usuario</span>
-        </div>
+        <section class="imgProfile">
+            <div></div>
+        </section>
     </header>
-    <h1>Productos Recomendados</h1>
-    <div class="slider">
 
-    </div>
-    <h1>Vistos recientemente</h1>
     <main>
-        
-        <div class="card">
-            <img  class="card-img" src="../Product-Images/yofinobuena.jpg" alt="">
-            <div class="card-info">
-              <p class="text-body">Descripcion</p>
-            </div>
-            <div class="card-footer">
-            <span class="text-title">$499.49</span>
-            <div class="card-button">
-              <svg class="svg-icon" viewBox="0 0 20 20">
-                <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
-                <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>
-                <path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>
-              </svg>
-            </div>
-          </div></div>
-          <div class="card">
-            <img  class="card-img" src="../Product-Images/yofinobuena.jpg" alt="">
-            <div class="card-info">
-              <p class="text-body">Descripcion</p>
-            </div>
-            <div class="card-footer">
-            <span class="text-title">$499.49</span>
-            <div class="card-button">
-              <svg class="svg-icon" viewBox="0 0 20 20">
-                <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
-                <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>
-                <path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>
-              </svg>
-            </div>
-          </div></div>
-          <div class="card">
-            <img  class="card-img" src="../Product-Images/yofinobuena.jpg" alt="">
-            <div class="card-info">
-              <p class="text-body">Descripcion</p>
-            </div>
-            <div class="card-footer">
-            <span class="text-title">$499.49</span>
-            <div class="card-button">
-              <svg class="svg-icon" viewBox="0 0 20 20">
-                <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
-                <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>
-                <path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>
-              </svg>
-            </div>
-          </div> </div>
-          <div class="card">
-            <img  class="card-img" src="../Product-Images/yofinobuena.jpg" alt="">
-            <div class="card-info">
-              <p class="text-body">Descripcion</p>
-            </div>
-            <div class="card-footer">
-            <span class="text-title">$499.49</span>
-            <div class="card-button">
-              <svg class="svg-icon" viewBox="0 0 20 20">
-                <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
-                <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>
-                <path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>
-              </svg>
-            </div>
-          </div></div>
 
+      <section class="presentacion">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="ventex"><span>Ventex</span></div>
+        <div class="slogan">
+          <span>En busca de nuevos emprendedores.</span><br>
+          <span>Sé tú el siguiente.</span>
+        </div>
+      </section>
 
+      <section class="productos-Recomendados">
+        <h1>Productos Recomendados</h1>
+        <section class="slider">
+          <!-- <section class="card">
+            <div class="image"><span class="text">dsdas</span></div>
+            <span class="title">dadas</span>
+            <span class="price">$dsd</span>
+          </section>
+
+          <section class="card">
+            <div class="image"><span class="text">dsdas</span></div>
+            <span class="title">dadas</span>
+            <span class="price">$dsd</span>
+          </section>
+
+          <section class="card">
+            <div class="image"><span class="text">dsdas</span></div>
+            <span class="title">dadas</span>
+            <span class="price">$dsd</span>
+          </section>
+
+          <section class="card">
+            <div class="image"><span class="text">dsdas</span></div>
+            <span class="title">dadas</span>
+            <span class="price">$dsd</span>
+          </section>
+
+          <section class="card">
+            <div class="image"><span class="text">dsdas</span></div>
+            <span class="title">dadas</span>
+            <span class="price">$dsd</span>
+          </section> -->
+
+          <script>
+            document.addEventListener("DOMContentLoaded", getData);
+            function getData() {
+            let input = document.getElementById("searchP").value;
+            let content = document.getElementById("resultados");
+            let url = "../php-servicios/load_data/load-info-pantalla-perfil.php";
+            let formData = new FormData();
+            formData.append('searchP', input);
+
+            fetch(url, {
+            method: "POST",
+            body: formData
+            }).then(response => response.text())
+            .then(data => {
+            console.log(data);
+            content.innerHTML = data;
+            }).catch(err => console.log(err));
+            }
+
+          </script>
+
+        </section>
+      </section>
+
+      <section class="ad">
+          <div class="e-card playing">
+              <div class="image"></div>
+              <div class="wave"></div>
+                  <div class="infotop">
+                  <span>Gran Variedad de Productos</span> 
+              </div>
+            </div>
+      </section>
+
+      <section class="productos-Recomendados">
+        <h1>Vistos recientemente</h1>
+        <section class="slider">
+          <section class="card">
+            <div class="image"><span class="text">dsdas</span></div>
+            <span class="title">dadas</span>
+            <span class="price">$dsd</span>
+          </section>
+
+          <section class="card">
+            <div class="image"><span class="text">dsdas</span></div>
+            <span class="title">dadas</span>
+            <span class="price">$dsd</span>
+          </section>
+
+          <section class="card">
+            <div class="image"><span class="text">dsdas</span></div>
+            <span class="title">dadas</span>
+            <span class="price">$dsd</span>
+          </section>
+
+          <section class="card">
+            <div class="image"><span class="text">dsdas</span></div>
+            <span class="title">dadas</span>
+            <span class="price">$dsd</span>
+          </section>
+
+          <section class="card">
+            <div class="image"><span class="text">dsdas</span></div>
+            <span class="title">dadas</span>
+            <span class="price">$dsd</span>
+          </section>
           
+        </section>
+      </section>
+
     </main>
-    <div class="ad">
-        <div class="e-card playing">
-            <div class="image"></div>
-            
-            <div class="wave"></div>
-       
-            
-          
-                <div class="infotop">
-                Gran Variedad de Productos
-                <br>
-            </div>
-          </div>
-
-    </div>
-    <h1>Productos Populares</h1>
-    <div class="slider">
-        
-    </div>
     <footer>
-        <h1>Ventex</h1>
+        <section class="name-year"><h1>2023-Ventex</h1></section>
+        <section class="logo-ventex"><h1>Ventex</h1></section>
+        <section class="socialmedia-ventex">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+        </section>
     </footer>
 </body>
 
