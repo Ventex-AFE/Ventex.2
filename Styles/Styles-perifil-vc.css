@@ -4,7 +4,7 @@
   font-family: "Hammersmith One", sans-serif;
 }
 html,
-body {
+body { 
   background-color: #ebebeb;
 }
 main {
@@ -27,10 +27,10 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: white;
-  margin-top: 5vh;
-  border-radius: 10px;
-  box-shadow: 0 0 3px 3px rgb(226, 226, 226);
+  background-color: rgb(255, 255, 255);
+  margin-top: 3vw;
+  border-radius: 0.5vw;
+  box-shadow: 0 0 0.3vw 0.3vw rgb(226, 226, 226);
 }
 .photoContainer {
   width: 15vw;
@@ -38,6 +38,14 @@ main {
   background-color: #ebebeb;
   border-radius: 100%;
   margin-top: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.profilePhoto{
+  width: 100%;
+  height: auto;
 }
 .nameContainer {
   width: 100%;
@@ -48,8 +56,9 @@ main {
   text-align: center;
 }
 .userName {
-  font-size: 5vh;
+  font-size: 3vw;
   margin: 2vw;
+  margin-bottom: 0;
   color: rgb(70, 70, 70);
 }
 .descriptionContainer {
@@ -58,7 +67,7 @@ main {
 }
 .text {
   margin: 2vw;
-  font-size: 2.5vh;
+  font-size: 1.5vw;
 }
 /* Contact Information - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
 .socialMedia-container{
@@ -68,33 +77,39 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
+    margin-top: 2vh;
 }
 .socialMedia {
   width: 5vw;
   height: 5vw;
-  border: 1px solid gray;
+  border: none;
   border-radius: 100%;
   margin: 1vh;
   cursor: pointer;
 }
+.iconMedia{
+  width: 100%;
+  height: 100%;
+}
 /* Rigth Bar ------------------------------------------------------------------------------*/
 .rigth{
     width: 65vw;
-    height: 80vh;
+    min-height: 80vh;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    margin-top: 5vh;
+    margin-top: 3vw;
 }
 .searchSection {
   width: 100%;
-  height: 20vh;
+  height: auto;
+  margin-bottom: 2vw;
   flex-wrap: wrap;
   display: flex;
 }
 .tit-c {
   width: 100%;
-  min-height: 6vh;
+  min-height: 6vw;
 }
 .tit {
   font-family: "Hammersmith One", sans-serif;
@@ -102,7 +117,18 @@ main {
   margin-left: 1vw;
   color: gray;
 }
-.searchContainer {
+
+img {
+  width: 5vh;
+  height: 5vh;
+}
+#container_all_products_seller{
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: auto;
+} 
+/* .searchContainer {
   position: relative;
   margin-left: 1.5vw;
 }
@@ -118,10 +144,6 @@ main {
   top: 0;
   right: 0;
   transition: 0.5s;
-}
-img {
-  width: 5vh;
-  height: 5vh;
 }
 .searchContainer #searchP {
   width: 0;
@@ -154,4 +176,5 @@ img {
 #searchP:valid ~ .searchButton {
   background-color: rgb(66, 94, 66);
 }
+*/
 /*------------------------------------------------------------------------------*/

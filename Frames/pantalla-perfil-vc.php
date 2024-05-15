@@ -57,7 +57,20 @@ mysqli_stmt_close($stmt);
     <title>Ventex</title>
     <link rel="stylesheet" href="../Styles/Styles-perifil-vc.css">
     <link rel="stylesheet" href="../Componentes/header-v.css">
+    <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
     <link rel="stylesheet" href="../Componentes/productBox.css">
+
+    <style>  /* <-------Styles extensible search input*/
+        .searchSection{
+            text-align: left;
+        }
+        .searchButton{  /*<------Color Button*/
+            background-color: #B0C881;
+        }
+        #searchP:valid ~ .searchButton {  /* <------Color of the button when te input is valid*/
+            background-color: rgb(66, 94, 66);
+        }
+    </style>
 </head>
 
 <body>
@@ -96,7 +109,7 @@ mysqli_stmt_close($stmt);
         <!--Left------------------------------------------------------------------------------------------->
         <article class="left">
             <section class="personalInfo">
-                <div class="photoContainer"><img src="../Imgens-Pefil/<?php echo $Imagen ?>" alt=""></div>
+                <div class="photoContainer"><img src="../Imgens-Pefil/<?php echo $Imagen ?>" alt="" class="profilePhoto"></div>
                 <div class="nameContainer">
                     <p class="userName"><?php echo $Name_Seller ?></p>
                 </div>
@@ -109,9 +122,9 @@ mysqli_stmt_close($stmt);
             <section class="personalInfo">
                 <p class="userName">Información de contacto</p>
                 <div class="socialMedia-container">
-                    <div class="socialMedia"><a href="<?php echo $whatsapp ?>"><img src="../Icons/whatsapp.png" alt=""></a></div>
-                    <div class="socialMedia"><a href="<?php echo $instagram ?>"><img src="../Icons/instagram.png" alt=""></a></div>
-                    <div class="socialMedia"><a href="<?php echo $x ?>"><img src="../Icons/x.png" alt=""></a></div>
+                    <div class="socialMedia"><a href="<?php echo $whatsapp ?>"><img src="../Icons/whatsapp.png" alt="" class="iconMedia"></a></div>
+                    <div class="socialMedia"><a href="<?php echo $instagram ?>"><img src="../Icons/instagram.png" alt="" class="iconMedia"></a></div>
+                    <div class="socialMedia"><a href="<?php echo $x ?>"><img src="../Icons/x.png" alt="" class="iconMedia"></a></div>
                 </div>
                 <p class="text"><?php echo $Contact_description ?>
                 </p>
@@ -131,7 +144,7 @@ mysqli_stmt_close($stmt);
                     <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
                 </div>
             </section>
-                <section id="container_all_products_seller" class="rigth">
+                <section id="container_all_products_seller">
                 <button class="productContainer">
                     <div class="productPhoto"><img src="../Product-Images/<?php //echo $mostrar['image'] 
                                                                             ?>" class="productImage"></div>
@@ -242,7 +255,7 @@ mysqli_stmt_close($stmt);
             let input = document.getElementById("searchP").value;
             let id_usser = document.getElementById("usser_id").value;
             let content = document.getElementById("container_all_products_seller");
-            let url = "../php-servicios/load_data/load-info-Pantalla-Perfil-Selller";
+            let url = "../php-servicios/load_data/load-info-Pantalla-Perfil-Selller.php";
             let formData = new FormData();
             formData.append('searchP', input);
             formData.append('usser_id', id_usser);
