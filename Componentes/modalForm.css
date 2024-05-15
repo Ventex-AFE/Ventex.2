@@ -1,0 +1,188 @@
+/*
+
+        <article class="modalFormMainContainer hidden">
+            <section class="titleFormContainer">
+                <h1 class="titleForm">Agregar Pedido</h1>
+            </section>
+            <section class="contentFormInputs">
+                <form action="" method="post" class="formInputs">
+                    <div class="inputContainer">
+                        <input type="text" name="nombre" class="input" required>
+                        <label for="nombre" class="inputText"><pre> Nombre </pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="email" name="correo" class="input" required>
+                        <label for="correo" class="inputText"><pre> Email </pre></label>
+                    </div>
+                    <div class="inputContainerSmall">
+                        <input type="number" name="correo" class="input" required>
+                        <label for="correo" class="inputText"><pre> Celular </pre></label>
+                    </div>
+                    <div class="inputContainerSmall">
+                        <input type="date" name="correo" class="input" required>
+                        <label for="correo" class="inputText"><pre> Fecha Nacimiento </pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="password" name="contraseña" class="input" required>
+                        <label for="contraseña" class="inputText"> <pre> Contraseña </pre></label>
+                    </div>
+                    <div class="inputContainer">
+                        <input type="password" name="contraseñaC" class="input" required>
+                        <label for="contraseñaC" class="inputText"><pre> Confirmar contraseña </pre></label>
+                    </div>
+                    <input type="submit" value="Agregar Pedido" class="but">
+                    <button class="cancel"> Cancelar </button>
+                </form>
+            </section>
+            </section>
+        </article>
+
+        <div class="formOverlay hidden"></div>
+
+*/
+.modalFormMainContainer{
+    width: 50vw;
+    height: 75vh;
+    background-color: white;
+    position: fixed;
+    top: 15vh;
+    left: 25vw;
+    z-index: 11;
+    border-radius: 0.5vw;
+    overflow: hidden;
+    display: flex;
+}
+.titleFormContainer{
+    width: 20vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* background-color: rgb(157, 169, 157); */
+    background-image: linear-gradient(rgb(157, 169, 157), rgb(139, 151, 139));
+}
+.titleForm{
+    font-size: 3.5vw;
+    color: white;
+}
+.contentFormInputs{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/*--- INPUTS -------------------------------------------------------------------------------------------*/
+
+.inputContainer{
+    width: 25vw;
+    height: 5vh;
+    margin-top: 3vh;
+    position: relative;
+    transition: .3s;
+}
+.inputContainerSmall{
+    width: 11.5vw;
+    height: 5vh;
+    margin-top: 3vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    position: relative;
+    transition: .3s;
+}
+.input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 0;
+    padding-left: 1vh;
+    position: relative;
+    background: none;
+    transition: .3s;
+    /* background-color: #78855F; */
+    background-color:var(--inputColor);
+    border-radius: 100px;
+    border: 1px solid rgb(179, 179, 179);
+}
+
+.input:focus,
+.input:valid{
+    background-color: white;
+}
+.inputText:hover ~ .input{
+    background-color: white;
+    border: 1px solid rgb(117, 117, 117);
+}
+ .input:focus ~ .inputText,
+ .input:valid ~ .inputText{
+    top: -1vh;
+    background-color: white;
+    color: green;
+}
+.inputText:focus{
+    top: -1vh;
+    background-color: white;
+} 
+.inputText{
+    position: absolute;
+    top: 1vh;
+    color: rgb(211, 211, 211);
+    margin-left: 1vh;
+    font-weight: 100;
+    transition: .3s;
+    background-color: var(--inputColor);
+    pointer-events: none;
+}
+.but{
+    width: 25vw;
+    height: 5vh;
+    border: none;
+    border-radius: 100px;
+    margin-top: 3vh;
+    background-color: rgb(112, 124, 112);
+    color: white;
+    transition: .3s;
+}
+.but:hover{
+
+    transform: scale(1.02);
+    background-color: rgb(88, 97, 88);
+}
+.cancel{
+    width: 25vw;
+    height: 5vh;
+    border: none;
+    border-radius: 100px;
+    margin-top: 3vh;
+    border: 0.1vw solid rgb(177, 177, 177);
+    background-color: white;
+    color: rgb(176, 176, 176);
+    transition: .3s;
+}
+.cancel:hover{
+
+    transform: scale(1.02);
+    background-color: rgb(237, 237, 237);
+}
+.formInputs{
+    width: 30vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    --inputColor:  rgb(245, 245, 245);
+}
+.formOverlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(186, 186, 186, 0.191);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    z-index: 6;
+    top: 0;
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+.hidden{
+    display: none;
+}

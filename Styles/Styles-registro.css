@@ -186,3 +186,6 @@ form{
     justify-content: center;
     --inputColor:  rgb(245, 245, 245);
 }
+#mensaje{
+    font-size: 15px;
+}

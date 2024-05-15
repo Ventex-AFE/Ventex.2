@@ -111,8 +111,12 @@ session_start();
                             <input type="search" id="searchP" name="searchP" placeholder="Buscar" required> <br>
                             
                         </section>
+
                         <section class="cards">
                             <script>
+
+                            <script>
+
                                 document.addEventListener("DOMContentLoaded", getData);
 
                                 function getData() {
@@ -131,8 +135,12 @@ session_start();
                                     content.innerHTML = data;
                                     }).catch(err => console.log(err));
                                 }
+
                             </script>
                         </section>
+
+                            </script>-->
+
                     <div id="resultados"></div>
                     </section>
                 </section>
