@@ -15,7 +15,7 @@ session_start();
 $id_reporte = $_POST['Id_Reporte_Venta']; //extraido desde el perfil con el boton del editar producto
 //$id_product = 5;
 // Preparar la consulta para obtener los datos del usuario
-$sql = "SELECT ID_Venta, Usuario_Venta, fecha, hora, total FROM regristroventa WHERE ID_Venta = ?";
+$sql = "SELECT ID_Venta, Usuario_Venta, fecha, hora, total, Descripcio FROM regristroventa WHERE ID_Venta = ?";
 // Verificar si la preparación de la consulta tuvo éxito
 
 $stmt = mysqli_prepare($Conexion_usser_select, $sql);
@@ -29,7 +29,7 @@ mysqli_stmt_bind_param($stmt, "i", $id_reporte);
 mysqli_stmt_execute($stmt);
 
 // Vincular variables a los resultados de la consulta
-mysqli_stmt_bind_result($stmt, $Id_venta, $Usuario_Venta, $fecha, $hora, $total);
+mysqli_stmt_bind_result($stmt, $Id_venta, $Usuario_Venta, $fecha, $hora, $total, $Descripcio);
 
 // Obtener los resultados
 mysqli_stmt_fetch($stmt);
@@ -75,13 +75,17 @@ mysqli_stmt_close($stmt);
         </section>
         <!-- Sección lateral 2 (formulario para actualizar redes sociales) -->
         <section id="side2">
-            <form action="../php-servicios/save_data/save-actualizacion-info-producto.php" method="post" id="form_product">
-                <input type="hidden" name="id_Product_update" value="<?php echo $Id_venta ?>"><!-- aqui va ir lo de sesion -->
+            <form action="../php-servicios/save_data/save_actulizacion_de_reportes_ventas.php" method="post" id="form_product">
+                <input type="hidden" name="id_Reporte_update" value="<?php echo $Id_venta ?>"><!-- aqui va ir lo de sesion -->
                 <br>
                 <!-- Inputs para actualizar datos de redes sociales -->
                 <div class="inputbox" style="height: 6vh;">
                     <input type="text" name="Nombre_Cliente" class="inp" placeholder=" " value="<?php echo $Usuario_Venta ?>" required><br>
                     <span class="text_input">Nombre del cliente:</span>
+                </div>
+                <div class="inputbox" style="height: 6vh;">
+                    <input type="text" name="Descripcion" class="inp" placeholder=" " value="<?php echo $Descripcio ?>" required><br>
+                    <span class="text_input">Descripcion:</span>
                 </div>
                 <div class="inputbox" style="height: 6vh;">
                     <input type="date" name="Fecha" class="inp" placeholder=" " value="<?php echo $fecha ?>" required><br>
