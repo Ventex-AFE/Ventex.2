@@ -155,6 +155,11 @@ img{
     height: 35vh;
     float: left;
 }
+.partU2{
+    width: 20vw;
+    height: 35vh;
+    float: left;
+}
 #textD{
     width: 40vh;
     height: 10vh;
@@ -188,11 +193,11 @@ img{
     margin-left: 10px;
 }
 #descriptionD{
-    width: 70%;
+    width: 60%;
     height: 30vh;
     float: left;
-    margin-top: 20px;
-    margin-left: 55px;
+    /* margin-top: 20px;
+    margin-left: 55px; */
 }
 #valoracion{
     width: 40vw;
@@ -343,4 +348,144 @@ footer{
     float: left;
     margin-top: 20px;
     background-color: forestgreen;
+}
+#container_info{
+    width: 32%;
+    height: auto;
+    float: left;
+    margin: 2%;
+    background-color: #F2F2F2;
+    border: 3px;
+    border-radius: 5px;
+    border-color: #D8D1D1;
+}
+#more_products{
+    width: 100%;
+    height: 50%;
+    float: left;
+    margin-top: 3%;
+}
+.m_product{
+    width: 31%;
+    height: 50vh;
+    float: right;
+    margin: 1%;
+    background-color: #F2F2F2;
+    border: none;
+    text-align: left;
+}
+
+.m_product:hover{
+    box-shadow: 0px 0px 10px 3px rgb(214, 214, 214);
+}
+.mc_picture{
+    width: 100%;
+    height: 28vh;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+}
+.mc_picture .m_imagen{
+    width: auto;
+    height: 100%;
+}
+.m_info{
+    width: 100%;
+    height: 20vh;
+    float: left;
+}
+.m_precio{
+    font-family: 'Farro', sans-serif;
+    color: #7E7E7E;
+    font-size: xx-large;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+.m_nombre{
+    font-family: 'Farro', sans-serif;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.prec{
+    font-family: 'Farro', sans-serif;
+    color: #7E7E7E;
+    font-size: xx-large;
+    margin-left: 10%;
+}
+#contact_information{
+    width: 32%;
+    height: auto;
+    float: left;
+    margin-left: 2%;
+    background-color: #F2F2F2;
+    border: 3px;
+    border-radius: 5px;
+    border-color: #D8D1D1;
+}
+#precio{
+    font-family: 'Farro', sans-serif;
+    color: #7E7E7E;
+    font-size: xx-large;
+    margin-left: 10%;
+}
+.namP{
+    font-family: 'Cabina', sans-serif;
+    font-size: xx-large;
+    margin-left: 10%;
+    margin-bottom: 2vw;
+}
+#verd{
+    font-family: 'Cabina', sans-serif;
+    margin-left: 10%;
+    color: #4CBD24;
+}
+.desc{
+    font-family: 'Cabina', sans-serif;
+    margin: 10%;
+}
+#bot{
+    width: 80%;
+    height: 35px;
+    border-radius: 10px;
+    border: 0ch;
+    color: white;
+    font-family: 'Cabina', sans-serif;
+    margin-left:10%;
+    margin-bottom: 2vw;
+    background-color: #78855F;
+    transition: .3s;
+}
+#mas{
+    font-family: 'Cabina', sans-serif;
+    font-size: small;
+    text-align: center;
+    color: #7E7E7E;
+}
+.container_links{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.link{
+    width: 5vw;
+    height: 5vw;
+    float: left;
+    margin-left: 10%;
+    background-color: #a5a5a5;
+    border-radius: 100%;
+    margin-bottom: 1vw;
+    transition: .3s;
+}
+.link:hover{
+    box-shadow: 0 0 5px 2px rgb(177, 177, 177);
+}
+#bot:hover{
+    box-shadow: 0 0 5px 2px rgb(177, 177, 177);
+}
+.contact_description{
+    font-family: 'Cabina', sans-serif;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2vw;
 }
