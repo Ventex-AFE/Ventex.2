@@ -110,3 +110,44 @@ a{
     border-radius: 100%;
     background-color: blueviolet;
 }
+/* //Este el header que funciona con las pantallas de categorias y tambien la pnatlla de buqueda, te falata agregar la foto del perfil
+y tambien en los perfiles
+
+Antes del doctype vas a tener que abrir la consullta para las categorias 
+<?php
+ // tienesque poner estas dos lineas o si 
+    require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
+
+    $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria");
+?>
+
+
+<header>
+        <section>
+            <p class="logo">Ventex</p>
+        </section>
+        <nav>
+            <ul class="menu">
+                <li><a href="">Inicio</a></li>
+                <li><a href="#">Categorías</a>
+                    <ul class="menuv">
+                        <?php while ($cat = mysqli_fetch_array($cats)) { ?>
+                            <li class="ca">
+                                <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name=""><?php echo $cat['Nombre_Cat']; ?></a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </li>
+                <li><a href="">Planes</a></li>
+                <li><a href="">Vender</a></li>
+            </ul>
+        </nav>
+        <form class="busqueda" action="../Frames/Pantalla-Busqueda.php" method="post" onsubmit="return enviarFormulario()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="Buscar" name="busqueda">
+        </form>
+        <section class="imgProfile">
+            <div></div>
+        </section>
+    </header>
+*/

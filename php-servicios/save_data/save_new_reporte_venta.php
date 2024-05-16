@@ -8,8 +8,8 @@ if (empty($_POST['nombre_product']) || empty($_POST['Id_producto']) || empty($_P
     exit; // Detener la ejecución del script si hay campos vacíos
 }
 // 	Id_usser_regristro	Nombre_Prod	Descripción	Precio	Categoría	Subcategoría	Imagen	
-//$Id_usser_regristro = $_SESSION['id'];
-$Id_usser_regristro = 5;
+$Id_usser_regristro = $_SESSION['id'];
+//$Id_usser_regristro = 5;
 $nameProduct = mysqli_real_escape_string($Conexion_usser_changes, $_POST['nombre_product']);
 $id_product = mysqli_real_escape_string($Conexion_usser_changes, $_POST['Id_producto']);
 $Nombre_cliente = mysqli_real_escape_string($Conexion_usser_changes, $_POST['Nombre_Cliente']);

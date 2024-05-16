@@ -1,8 +1,8 @@
 <?php
 require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
 session_start();
-// $id_usser = $_SESSION['id'];
-$id_usser = 5;
+ $id_usser = $_SESSION['id'];
+//$id_usser = 5;
 $sql = "SELECT ID_Producto, Nombre_Prod FROM productos WHERE Id_usser_regristro = $id_usser";
 
 $result = $Conexion_usser_select->query($sql);
@@ -42,7 +42,8 @@ $result = $Conexion_usser_select->query($sql);
             /* <------Color of the button when te input is valid*/
             background-color: rgb(148, 156, 148);
         }
-        #total_input{
+
+        #total_input {
             align-items: start;
             margin-right: 15vw;
         }
@@ -119,7 +120,12 @@ $result = $Conexion_usser_select->query($sql);
                 </tbody>
             </table>
         </article>
-        <div class="modal hidden"></div>
+        <div class="calculateModal hidden">
+                <h1 class="titleCalculate">Recopilación de ganancias</h1>
+                
+                <h2 class="resultCalculation" id="parrafoSalida"></h2>
+        </div>
+
         <div class="overlay hidden"></div>
         <div class="invisibleOverlay hidden"></div>
 
@@ -232,9 +238,9 @@ $result = $Conexion_usser_select->query($sql);
     <!--------------------------------------------------------------------------------->
 
     <div class="calculateModal hidden">
-                <h1 class="titleCalculate">Recopilación de ganancias</h1>
-                
-                <h2 class="resultCalculation">$00.00</h2>
+        <h1 class="titleCalculate">Recopilación de ganancias</h1>
+
+        <h2 class="resultCalculation">$00.00</h2>
     </div>
 
     <div class="overlay hidden"></div>

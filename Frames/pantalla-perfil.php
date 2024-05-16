@@ -1,5 +1,40 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['id'])) {
+    // Si no hay sesión iniciada, redireccionar a la página de inicio de sesión
+    header("Location: ../Frames/pantalla-Login.html");
+    exit;
+} 
+
+if($_SESSION['Type'] === 2){
+    //header("Location: ../Frames/Pantalla-Perfil.php");
+}else{
+    header("Location: ../Frames/Pantalla-Perfil-Vip.php");
+}
+
+require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
+// Obtener el ID de usuario de la sesión
+$id_usser = $_SESSION['id'];
+//$id_usser = 5;
+// Preparar la consulta para obtener los datos del usuario
+$sql = "SELECT instagram, x, whatsapp, facebook FROM seller_porfile WHERE Id_sellerP = ?";
+$stmt = mysqli_prepare($Conexion_usser_select, $sql);
+
+// Vincular parámetro(s) a la consulta preparada
+mysqli_stmt_bind_param($stmt, "i", $id_usser);
+
+// Ejecutar la consulta preparada
+mysqli_stmt_execute($stmt);
+
+// Vincular variables a los resultados de la consulta
+mysqli_stmt_bind_result($stmt, $instagram, $x, $whatsapp, $facebook);
+
+// Obtener los resultados
+mysqli_stmt_fetch($stmt);
+
+// Cerrar la consulta preparada
+mysqli_stmt_close($stmt);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,9 +80,9 @@ session_start();
                 <li><a href="">Vender</a></li>
             </ul>
         </nav>
-        <form class="busqueda">
+        <form class="busqueda" action="../Frames/Pantalla-Busqueda.php" method="post" onsubmit="return enviarFormulario()">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Buscar">
+            <input type="search" placeholder="Buscar" name="busqueda">
         </form>
         <section class="imgProfile">
             <div></div>
@@ -91,13 +126,13 @@ session_start();
                             </section>
 
                             <section>
-                                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                                <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
-                                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                                <a href="<?php echo $facebook ?>"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="<?php echo $x ?>"><i class="fa-brands fa-square-x-twitter"></i></a>
+                                <a href="<?php echo $whatsapp ?>"><i class="fa-brands fa-tiktok"></i></a>
                             </section>
 
-                            <a href="" class="subs">Suscribirse</a>
-                            <a href="" class="subs">Cerrar Sesión <i class="fa-solid fa-right-from-bracket"></i></a>
+                            <a href="../Frames/Pantalla-Pago-Suscripcion.php" class="subs">Suscribirse</a>
+                            <a href="../php-servicios/deletion_data/deletion_session_usser.php" class="subs">Cerrar Sesión <i class="fa-solid fa-right-from-bracket"></i></a>
 
                         </section>
 
