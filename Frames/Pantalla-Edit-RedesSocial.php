@@ -13,7 +13,7 @@ session_start();
 
 // Obtener el ID de usuario de la sesión
 $id_usser = $_SESSION['id'];
-$id_usser = 5;
+//$id_usser = 5;
 // Preparar la consulta para obtener los datos del usuario
 $sql = "SELECT profile_Description, Contact_description, instagram, x, whatsapp, facebook FROM seller_porfile WHERE Id_sellerP = ?";
 $stmt = mysqli_prepare($Conexion_usser_select, $sql);

@@ -4,8 +4,8 @@ session_start();
 require_once('../Conexion_db/conexion_usser_changes.php');
 
 // Verifica y filtra los datos de entrada
-//$Id_usuario = $_SESSION['id'];
-$Id_usuario = 5;
+$Id_usuario = $_SESSION['id'];
+//$Id_usuario = 5;
 $nom = mysqli_real_escape_string($Conexion_usser_changes, $_POST['namet']);
 $numbertar = mysqli_real_escape_string($Conexion_usser_changes, $_POST['numbertar']);
 $fechex = mysqli_real_escape_string($Conexion_usser_changes, $_POST['fechex']);

@@ -59,18 +59,18 @@ session_start();
                 <section class="parent_LastChild">
                         <article class="info">                              
                             <a href="Pantalla-Edit-Info-Personal.php" class="edit"><i class="fa-solid fa-user-pen"></i></a>
-                            <h1>Ateez<!-- <?php echo $_SESSION['name']; ?> --></h1>
-                            <h2> ateez@gmail.comdsbhahb<!--<?php echo $_SESSION['email']; ?>--></h2>
+                            <h1><?php echo $_SESSION['name']; ?> </h1>
+                            <h2> <?php echo $_SESSION['email']; ?> </h2>
                             <section class="details">
                                 <section class="data">
                                     <table>
                                         <tr>
                                             <td>Fecha de nacimiento: </td>
-                                            <td>20/07/2005<!--<?php echo $_SESSION['birthdate']; ?>--></td>
+                                            <td><?php echo $_SESSION['birthdate']; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Número de teléfono: </td>
-                                            <td>3323989259<!--<?php echo $_SESSION['phone']; ?>--></td> 
+                                            <td><?php echo $_SESSION['phone']; ?></td> 
                                         </tr>
                                     </table>
                                 </section>
@@ -101,7 +101,7 @@ session_start();
                 <section class="parent_LastChild">
                     <section class="group">
                     <div class="searchContainer">
-                        <input type="search" name="searchP" id="searchP" placeholder="Buscar" required>
+                        <input type="search" name="searchP" id="searchP" placeholder="Buscar" required onkeyup="getData()">
                         <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
                     </div>
                             <script>
@@ -133,8 +133,8 @@ session_start();
         <aside>
                 <nav>
                     <ul>
-                        <li><a href="pantalla-pedidos.html">Pedidos</a></li>
-                        <li><a href="#">Reportes</a></li>
+                        <li><a href="../Frames/pantalla-pedidos.php">Pedidos</a></li>
+                        <li><a href="../Frames/Pantalla-Reportes_Ventas.php">Reportes</a></li>
                         <li><a href="#">Catálogo</a></li>
                     </ul>
                 </nav>

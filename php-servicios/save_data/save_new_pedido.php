@@ -8,7 +8,7 @@ if (empty($_POST['nombre_producto']) || empty($_POST['id_producto']) || empty($_
     exit; // Detener la ejecución del script si hay campos vacíos
 }
 
-$Id_usser_regristro = 1;
+$Id_usser_regristro = $_SESSION['id'];
 $nameProduct = mysqli_real_escape_string($Conexion_usser_changes, $_POST['nombre_producto']);
 $id_product = mysqli_real_escape_string($Conexion_usser_changes, $_POST['id_producto']);
 $Nombre_cliente = mysqli_real_escape_string($Conexion_usser_changes, $_POST['nombre_cliente']);

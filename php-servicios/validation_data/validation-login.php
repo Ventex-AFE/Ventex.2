@@ -80,7 +80,7 @@ if ($Result->num_rows > 0) {
             $_SESSION['img'] = $img;
             $_SESSION['Type'] = $type_usser;
             echo'3';
-            header('Location: ..\..\Frames\pantalla-perfil2.php');
+            header('Location: ..\..\Frames\Pantalla-Perfil-Vip.php');
         }
 
         // Redirige al perfil del usuario
