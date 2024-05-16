@@ -74,30 +74,32 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
     <meta charset="UTF-8">
     <title>Producto</title>
     <link rel="stylesheet" href="../Styles/Styles-producto.css">
-    <link rel="stylesheet" href="../Componentes/header-v.css">
+    <link rel="stylesheet" href="../Componentes/header.css">
+    <link rel="stylesheet" href="../Componentes/footer.css">
     <link rel="stylesheet" href="../Componentes/productBox.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <header class="main-container-header">
-        <section class="c-logo">
-            <p class="logo">Ventex</p>
-        </section>
-        <section class="h-options">
-            <button class="butt-h">Inicio</button>
-            <button class="butt-h">Categorías</button>
-            <button class="butt-h">Planes</button>
-            <button class="butt-h">Vender</button>
-            <form action="" method="post">
-                <input type="search" name="search-product" id="search-p">
-            </form>
-        </section>
-        <section class="profileContainer">
-            <button class="basket"> <img src="#" alt=""></button>
-            <button class="profile"></button>
+<header>
+        <section><p class="logo">Ventex</p></section>
+        <nav>
+            <ul class="menu">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Categoria</a></li>
+                <li><a href="">Planes</a></li>
+                <li><a href="">Vender</a></li>
+            </ul>
+        </nav>
+        <form class="busqueda">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar">
+        </form>
+        <section class="imgProfile">
+            <div></div>
         </section>
     </header>
+    <main>
     <section id="containerD">
         <section id="ima">
             <section class="imagen"><img src="../Imagens-Products/img.png"></section>
@@ -244,7 +246,22 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
                 }).catch(err => console.log(err));
         }
     </script>
+    </main>
+
+    <footer>
+        <section class="name-year">
+            <h1>2023-Ventex</h1>
+        </section>
+        <section class="logo-ventex">
+            <h1>Ventex</h1>
+        </section>
+        <section class="socialmedia-ventex">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+        </section>
+    </footer>
+
 </body>
-<footer></footer>
 
 </html>

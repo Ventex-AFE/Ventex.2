@@ -1,3 +1,58 @@
+<?php
+
+// Función para mostrar los productos vistos recientemente
+function mostrarProductosVistosRecientemente($Conexion_usser_select) {
+    // Verificar si existe la cookie de productos vistos recientemente
+    $productos_vistos = isset($_COOKIE['productos_vistos']) ? json_decode($_COOKIE['productos_vistos'], true) : [];
+
+    // Verificar si hay productos vistos recientemente
+    if (!empty($productos_vistos)) {
+        echo '<section class="productos-Recomendados">';
+        echo '<h1>Vistos recientemente</h1>';
+        echo '<section class="slider">';
+        foreach ($productos_vistos as $producto_id) {
+            // Consultar la información del producto desde la base de datos
+            $sql = "SELECT * FROM productos WHERE id = $producto_id";
+            $resultado = $Conexion_usser_select->query($sql);
+            if ($resultado->num_rows > 0) {
+                $row = $resultado->fetch_assoc();
+                // Mostrar los productos 
+                echo '<section class="card">';
+                echo '<div class="image"><img src="' . $row['Imagen'] . '"></div>';
+                echo '<span class="title">' . $row['Nombre_Prod'] . '</span>';
+                echo '<span class="price">$' . $row['Precio'] . '</span>';
+                echo '</section>';
+            }
+        }
+        echo '</section>';
+        echo '</section>';
+    } else {
+        echo '<p styles="text-aling:center;">No hay productos vistos recientemente.</p>';
+    }
+}
+// require('../Conexion_db/conexion_usser_select.php');
+$hostname = '127.0.0.1'; //Url de la direccion dela base de datos 
+$username = 'Usser_consult';
+//$username = 'root'; //Usuario que se uso para esta conexion y la verifcacion 
+$password = 'Dw0&Q=]o95F]Wlj5y/TMvt:=UX'; //Password del usuario 
+//$password = ''; //Password del usuario 
+$database = 'ventexafe'; //nombre de la db
+
+// Conexión a la base de datos
+$Conexion_usser_select = mysqli_connect($hostname, $username, $password, $database);
+
+// Verificar la conexión
+ if (mysqli_connect_error()) {
+     exit('Fallo en la conexión de MySQL: ' . mysqli_connect_error());
+ }else{
+   // echo'Conexion is look well 😄 4';
+}
+
+    $sql = "SELECT * FROM productos ORDER BY RAND() LIMIT 5";
+    $resultado = $Conexion_usser_select->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,61 +97,21 @@
       </section>
 
       <section class="productos-Recomendados">
-        <h1>Productos Recomendados</h1>
-        <section class="slider">
-          <!-- <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section> -->
-
-          <script>
-            document.addEventListener("DOMContentLoaded", getData);
-            function getData() {
-            let input = document.getElementById("searchP").value;
-            let content = document.getElementById("resultados");
-            let url = "../php-servicios/load_data/load-info-pantalla-perfil.php";
-            let formData = new FormData();
-            formData.append('searchP', input);
-
-            fetch(url, {
-            method: "POST",
-            body: formData
-            }).then(response => response.text())
-            .then(data => {
-            console.log(data);
-            content.innerHTML = data;
-            }).catch(err => console.log(err));
-            }
-
-          </script>
-
-        </section>
-      </section>
+    <h1>Productos Recomendados</h1>
+    <section class="slider">
+        <?php
+        while ($row = $resultado->fetch_assoc()) {
+            ?>
+            <section class="card">
+                <div class="image"><img src="<?php echo $row['Imagen']; ?>"></div>
+                <span class="title"><?php echo $row['Nombre_Prod']; ?></span>
+                <span class="price">$<?php echo $row['Precio']; ?></span>
+            </section>
+            <?php
+        }
+        ?>
+    </section>
+</section>
 
       <section class="ad">
           <div class="e-card playing">
@@ -110,37 +125,7 @@
 
       <section class="productos-Recomendados">
         <h1>Vistos recientemente</h1>
-        <section class="slider">
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-          
+        <?php mostrarProductosVistosRecientemente($Conexion_usser_select); ?>
         </section>
       </section>
 
