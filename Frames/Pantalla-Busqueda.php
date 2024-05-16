@@ -1,3 +1,6 @@
+<?php
+$recibir_datos = isset($_POST['busqueda']) ? $_POST['busqueda'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +35,7 @@
       </ul>
       <section class="">
         <form action="" method="post">
-          <input type="search" name="search-product" id="search-p" onkeyup="getData()" />
+          <input type="search" name="search-product" id="search-p" onkeyup="getData()" value="<?php echo $recibir_datos ?>"/>
         </form>
       </section>
       <section class="profileContainer">

@@ -1,11 +1,12 @@
 <?php
 require('../Conexion_db/conexion_usser_select.php');
+session_start();
 
 $columas = ['ID_Venta',	'Usuario_Venta', 'ID_Producto',	'Nombre_reporte_venta',	'Descripcio', 'fecha', 'hora','total'];
 $columas2 = ['Nombre_Prod', 'Categoría', 'Subcategoría'];
 $table = "regristroventa";
-// $id_usser = $_SESSION['id'];
-$id_usser = 5;
+$id_usser = $_SESSION['id'];
+//$id_usser = 5;
 $campo = isset($_POST['searchP']) ? $Conexion_usser_select->real_escape_string($_POST['searchP']) : null;
 $where = '';
 

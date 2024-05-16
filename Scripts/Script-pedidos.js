@@ -89,11 +89,11 @@ function asignarEventos() {
           }
         }
     
-        // let mensajeSalida = "Total Ventas: " + totalVentas;
+        let mensajeSalida = "$ " + totalVentas;
     
-        // let elementoSalida = document.getElementById("parrafoSalida");
+        let elementoSalida = document.getElementById("parrafoSalida");
     
-        // elementoSalida.textContent = mensajeSalida;
+         elementoSalida.textContent = mensajeSalida;
         console.log(totalVentas);
       }
     

@@ -4,16 +4,16 @@ require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
 
 // Comprobar si la sesión está iniciada
 session_start();
-// if (!isset($_SESSION['id'])) {
-//     // Si no hay sesión iniciada, redireccionar o manejar el caso según tus necesidades
-//     // Por ejemplo, redireccionar a una página de inicio de sesión
-//     header("Location: login.php");
-//     exit;
-// }
+if (!isset($_SESSION['id'])) {
+    // Si no hay sesión iniciada, redireccionar o manejar el caso según tus necesidades
+    // Por ejemplo, redireccionar a una página de inicio de sesión
+    header("Location: ../Frames/pantalla-Login.html");
+    exit;
+}
 
 // Obtener el ID de usuario de la sesión
 $id_usser = $_SESSION['id'];
-$id_usser = 5;
+//$id_usser = 5;
 // Preparar la consulta para obtener los datos del usuario
 $sql = "SELECT profile_Description, Contact_description, instagram, x, whatsapp, facebook FROM seller_porfile WHERE Id_sellerP = ?";
 $stmt = mysqli_prepare($Conexion_usser_select, $sql);
@@ -32,8 +32,6 @@ mysqli_stmt_fetch($stmt);
 
 // Cerrar la consulta preparada
 mysqli_stmt_close($stmt);
-?>
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

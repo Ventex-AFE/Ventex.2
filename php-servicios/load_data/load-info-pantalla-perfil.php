@@ -4,8 +4,8 @@ require('../Conexion_db/conexion_usser_select.php');
 
 $columas = ['ID_Producto', 'Id_usser_regristro', 'Nombre_Prod', 'Descripcion', 'Precio', 'Categoria', 'Subcategoria', 'Imagen'];
 $table = "productos";
-// $idUser = $_SESSION['id'];
-$idUser = 5;
+$idUser = $_SESSION['id'];
+//$idUser = 5;
 $campo = isset($_POST['searchP']) ? $Conexion_usser_select->real_escape_string($_POST['searchP']) : null;
 $where = '';
 

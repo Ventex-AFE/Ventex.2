@@ -42,7 +42,7 @@ if (!$envio) {
     echo 'Error de MySQL: ' . mysqli_error($Conexion_usser_changes);
 } else {
     // Redireccionar a la página de inicio de sesión si la actualización fue exitosa
-    //header('Location: ../../Frames/pantalla-pedidos.php');
+    header('Location: ../../Frames/pantalla-pedidos.php');
     exit();
 }
 

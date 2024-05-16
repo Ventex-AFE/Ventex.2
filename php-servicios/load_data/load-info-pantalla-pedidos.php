@@ -1,11 +1,12 @@
 <?php
+session_start();
 require('../Conexion_db/conexion_usser_select.php');
 
 $columas = ['ID_pedido', 'Nombre_pedido', 'Id_usser_regristro', 'ID_producto', 'usuario_cliente', 'fecha', 'hora', 'lugar', 'cantidad', 'precio', 'descripcion'];
 $columas2 = ['Nombre_Prod', 'Categoría', 'Subcategoría'];
 $table = "pedidos";
-// $id_usser = $_SESSION['id'];
-$id_usser = 1;
+$id_usser = $_SESSION['id'];
+//$id_usser = 1;
 $campo = isset($_POST['searchP']) ? $Conexion_usser_select->real_escape_string($_POST['searchP']) : null;
 $where = '';
 

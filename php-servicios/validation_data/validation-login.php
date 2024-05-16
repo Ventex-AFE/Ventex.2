@@ -65,6 +65,7 @@ if ($Result->num_rows > 0) {
             $_SESSION['email'] = $email;
             $_SESSION['img'] = $img;
             $_SESSION['Type'] = $type_usser;
+            $_SESSION['VIP'] = FALSE;
             echo'2';
             header('Location: ..\..\Frames\pantalla-perfil.php');
         } elseif ($type_usser === 3) {
@@ -79,8 +80,9 @@ if ($Result->num_rows > 0) {
             $_SESSION['email'] = $email;
             $_SESSION['img'] = $img;
             $_SESSION['Type'] = $type_usser;
+            $_SESSION['VIP'] = TRUE;
             echo'3';
-            header('Location: ..\..\Frames\pantalla-perfil2.php');
+            header('Location: ..\..\Frames\Pantalla-Perfil-Vip.php');
         }
 
         // Redirige al perfil del usuario
