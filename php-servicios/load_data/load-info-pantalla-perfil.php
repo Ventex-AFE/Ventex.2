@@ -6,7 +6,7 @@ $columas = ['ID_Producto', 'Id_usser_regristro', 'Nombre_Prod', 'Descripcion', '
 $table = "productos";
 // $idUser = $_SESSION['id'];
 $idUser = 5;
-$campo = isset($_POST['searP']) ? $Conexion_usser_select->real_escape_string($_POST['searP']) : null;
+$campo = isset($_POST['searchP']) ? $Conexion_usser_select->real_escape_string($_POST['searchP']) : null;
 $where = '';
 
 if ($campo != null) {
@@ -36,14 +36,14 @@ if ($num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 ?>
         <section class="card">
-                        <div class="image"><span class="text"><?php echo $row['Imagen']; ?></span></div>
+                        <div class="image"><img src="../Product-Images/<?php echo $row['Imagen']; ?>" alt=""></div>
                           <span class="title"><?php echo $row['Nombre_Prod']; ?></span>
                           <span class="price">$<?php echo $row['Precio'] ?></span>
         </section>
 <?php
     }
 } else {
-    echo '<tr>';
-    echo '<td colspan="17">Sin resultados</td>';
-    echo '</tr>';
+   
+    echo '<h1 id="Noresult">Sin resultados</h1>';
+
 }
