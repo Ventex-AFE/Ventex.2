@@ -150,7 +150,10 @@ mysqli_stmt_close($stmt);
                         </div>
                         <section class="cards">
 
+
+
                             <script>
+
                                 document.addEventListener("DOMContentLoaded", getData);
 
                                 function getData() {
@@ -172,8 +175,12 @@ mysqli_stmt_close($stmt);
                             </script>
 
 
+                    <div id="resultados"></div>
+
+
                             <div id="resultados"></div>
                         </section>
+
                     </section>
                 </section>
 
