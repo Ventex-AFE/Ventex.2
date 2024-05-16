@@ -6,7 +6,7 @@ session_start();
 // $usuario = 1;
 // $prod = mysqli_query($conexion, "SELECT * FROM products WHERE owner_id = $usuario");
 //$Id_usser = $_POST['Id_seller'];
-if(isset($_POST['Id_seller'])) {
+if (isset($_POST['Id_seller'])) {
     $Id_seller = $_POST['Id_seller'];
     // Aquí puedes utilizar el ID del vendedor como necesites
 } else {
@@ -56,18 +56,23 @@ mysqli_stmt_close($stmt);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ventex</title>
     <link rel="stylesheet" href="../Styles/Styles-perifil-vc.css">
-    <link rel="stylesheet" href="../Componentes/header-v.css">
+    <link rel="stylesheet" href="../Componentes/header.css">
     <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
     <link rel="stylesheet" href="../Componentes/productBox.css">
 
-    <style>  /* <-------Styles extensible search input*/
-        .searchSection{
+    <style>
+        /* <-------Styles extensible search input*/
+        .searchSection {
             text-align: left;
         }
-        .searchButton{  /*<------Color Button*/
-            background-color: #B0C881;
+
+        .searchButton {
+            /*<------Color Button*/
+            background-color: #182722;
         }
-        #searchP:valid ~ .searchButton {  /* <------Color of the button when te input is valid*/
+
+        #searchP:valid~.searchButton {
+            /* <------Color of the button when te input is valid*/
             background-color: rgb(66, 94, 66);
         }
     </style>
@@ -75,35 +80,33 @@ mysqli_stmt_close($stmt);
 
 <body>
 
-    <header class="main-container-header">
+    <header>
+        <section>
+            <p class="logo">Ventex</p>
+        </section>
         <nav>
-            <section class="c-logo">
-                <p class="logo">Ventex</p>
-            </section>
-            <ul class="h-options">
-                <li>
-                    <button class="butt-h">Inicio</button>
+            <ul class="menu">
+                <li><a href="">Inicio</a></li>
+                <li><a href="#">Categorías</a>
+                    <ul class="menuv">
+                        <?php while ($cat = mysqli_fetch_array($cats)) { ?>
+                            <li class="ca">
+                                <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name=""><?php echo $cat['Nombre_Cat']; ?></a>
+                            </li>
+                        <?php } ?>
+                    </ul>
                 </li>
-                <li>
-                    <button class="butt-h">Categorías</button>
-                </li>
-                <li>
-                    <button class="butt-h">Planes</button>
-                </li>
-                <li>
-                    <button class="butt-h">Vender</button>
-                </li>
+                <li><a href="">Planes</a></li>
+                <li><a href="">Vender</a></li>
             </ul>
-            <section class="">
-                <form action="" method="post">
-                    <input type="search" name="search-product" id="search-p">
-                </form>
-            </section>
-            <section class="profileContainer">
-                <button class="basket"> <img src="../Icons/bolsa-de-la-compra.png" alt=""></button>
-                <button class="profile"></button>
-            </section>
         </nav>
+        <form class="busqueda">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar">
+        </form>
+        <section class="imgProfile">
+            <div></div>
+        </section>
     </header>
     <main>
         <!--Left------------------------------------------------------------------------------------------->
@@ -136,7 +139,7 @@ mysqli_stmt_close($stmt);
                 <div class="tit-c">
                     <p class="tit">Productos del Usuario</p>
                 </div>
-                <div class="searchContainer"> 
+                <div class="searchContainer">
                     <form action="" method="post">
                         <input type="search" name="searchP" id="searchP" placeholder="Buscar" required onkeyup="getData()">
                         <input type="hidden" name="usser_id" id="usser_id" value="<?php echo $Id_seller; ?>">
@@ -144,7 +147,7 @@ mysqli_stmt_close($stmt);
                     <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
                 </div>
             </section>
-                <section id="container_all_products_seller">
+            <section id="container_all_products_seller">
                 <button class="productContainer">
                     <div class="productPhoto"><img src="../Product-Images/<?php //echo $mostrar['image'] 
                                                                             ?>" class="productImage"></div>

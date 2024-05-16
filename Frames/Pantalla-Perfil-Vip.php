@@ -12,6 +12,7 @@ if ($_SESSION['Type'] === 3) {
 }
 
 require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
+$cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
 // Obtener el ID de usuario de la sesión
 $id_usser = $_SESSION['id'];
 //$id_usser = 5;
@@ -74,7 +75,15 @@ mysqli_stmt_close($stmt);
         <nav>
             <ul class="menu">
                 <li><a href="">Inicio</a></li>
-                <li><a href="">Categoria</a></li>
+                <li><a href="#">Categorías</a>
+                    <ul class="menuv">
+                        <?php while ($cat = mysqli_fetch_array($cats)) { ?>
+                            <li class="ca">
+                                <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name=""><?php echo $cat['Nombre_Cat']; ?></a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </li>
                 <li><a href="">Planes</a></li>
                 <li><a href="">Vender</a></li>
             </ul>
