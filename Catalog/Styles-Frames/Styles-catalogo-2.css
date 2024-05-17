@@ -115,7 +115,9 @@ header{
     align-items: center;
 }
 .productsContainer{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
     flex-wrap: wrap;
     /* background-color: blue; */
 }

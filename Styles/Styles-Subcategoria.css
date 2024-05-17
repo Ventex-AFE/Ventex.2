@@ -10,181 +10,127 @@ html,body{
 main{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
-.bar_perfil{
-    width: 25%;
-    height: 40%;
-    float: left;
-    margin-top: 15%;
-    margin-left: 2%;
-    border-radius: 7px;
+/*-- SUBCATEGORIES ----------------------------------------------------------------------------------------------*/
+.subcategoriesSection{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: white;
 }
-#form1{
-    margin-left: 5%;
-}
-.sub,.ca{
-    list-style: none;
-}
-.subcate{
-    width: 90%;
-    height: 3vw;
-    float: left;
-    border-radius: 10px;
-    background-color: #929d7d;
+.subcategoryButton{
+    width: 8vw;
+    height: 10vw;
+    border: none;
+    background: none;
     transform: .3s;
-}
-.subcate:hover{
-    box-shadow: 1px 1px black, 6px 6px #434F41, 3px 3px #434F41;
-    transform: translateX(-3px);;
-}
-#c_pic{
-    width: 25vw;
-    height: 50vh;
-    float: left;
-}
-#pict{
-    width: 14vw;
-    height: 14vw;
-    margin: auto;
-    margin-top: 9%;
-    border-radius: 100%;
-    background-color: #c9c9c9;
-}
-#nomUsuario{
-    font-size: xx-large;
-    font-family: 'Hammersmith One', sans-serif;
-    margin: 1vh;
-    margin-top: 4vh;
-    text-align: center;
-}
-.description{
-    margin: 2vw;
-}
-#container_contact{
-    width: 90%;
-    height: auto;
-    margin-left: 5%;
-    border: 1px solid rgb(150, 150, 150);
-    border-radius: 5px;
-    margin-bottom: 2vw;
-}
-.namP{
-    font-family: 'Cabina', sans-serif;
-    font-size: xx-large;
-    margin-left: 10%;
-    margin-top: 2vw;
-    margin-bottom: 2vw;
-}
-.container_links{
-    width: 100%;
-    height: auto;
-    float: left;
-}
-.link{
-    width: 5vw;
-    height: 5vw;
-    float: left;
-    margin-left: 10%;
-    background-color: #a5a5a5;
-    border-radius: 100%;
-    margin-bottom: 1vw;
+    cursor: pointer;
     transition: .3s;
+    gap: 5vw;
+    margin: 1%;
 }
-.link:hover{
-    box-shadow: 0 0 5px 2px rgb(177, 177, 177);
+.subcategoryButton:hover{
+
+    transform: scale(1.03);
 }
-.contact_description{
-    font-family: 'Cabina', sans-serif;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 2vw;
+.subcategoryPhotoContainer{
+    width: 8vw;
+    height: 8vw;
+    border-radius: 100%;
+    background-color: #2b3617;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
-/*---------------------------------------------------------------------------------------------------------------------*/
-.tituleishon{
-    font-size: 400%;
+.subcategoryPhoto{
+    width: 100%;
+    height: 100%;
+}
+.subcategoryNameContainer{
+    width: 100%;
+    min-height: 2vw;
+}
+.subcategoryName{
+    margin-top: 0.5vw;
+    font-size: 1vw;
+    color: black;
+}
+/*-- ADVERTISING ------------------------------------------------------------------------------------------------------*/
+.advertisingContainer{
+    width: 100%;
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.advertisingBox{
+    width: 35vw;
+    height: 15vw;
+    background-color: white;
+    margin: 1%;
+    border-radius: 0.5vw;
+}
+/*-- CONTENT ----------------------------------------------------------------------------------------------------------*/
+.subcategoryTitle{
+    font-size: 2.5vw;
     color: rgb(77, 75, 75);
-    margin-left: 30%;
+    font-weight: 500;
+    margin-left: 12vw;
 }
-#titulo_C{
-    width: 69vw;
-    height: 15vh;
-    float: left;
-    margin-top: 10vh;
+.subcategoryTitleContainer{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
 }
 #tir{
     color: white;
     font-size: 8vh;
     font-family: 'Hammersmith One', sans-serif;
 }
-#pr_productos{
-    width: 69vw;
-    height: auto;
-    float: left;
-    margin-top: 3vh;
-    margin-left: 5vh;
-}
-#pr_productos_sub{
-    width: 94vw;
-    height: auto;
-    float: left;
-    margin-top: 5vh;
-    margin-left: 3vw;
-    margin-bottom: 3vw;
-}
-.subcate{
-    font-size: 20px;
-    margin: 1%;
-    color: whitesmoke;  
-}
-.container_p{
-    width: 20vw;
-    height: 35vw;
-    float: left;
-    margin: 1vh;
-    background-color: white;
-    border-color: white;
-    border-radius: 5px;
-    transition: .3s;
-    text-align: left;
-}
-.container_p:hover{
-    box-shadow: 0px 0px 10px 5px rgb(170, 170, 170);
-}
-.container_p .c_picture{
+#productsContainer{
     width: 100%;
-    height: 20vw;
-    float: left;
+    height: 35vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.carrusel{
+    width: 80vw;
+    height: auto;
+    background-color: white;
+    display: flex;
+    position: relative;
+}
+.productsCarrusel{
+    width: 80vw;
+    height: auto;
+    background-color: white;
+    display: flex;
     overflow: hidden;
-    text-align: center;
-    border-bottom: 1px solid #e9e9e9;
-    
 }
-.c_precio{
-    width: 20vw;
+.carruselButton{
+    position: absolute;
+    width: 5vw;
     height: 5vw;
-    float: left;
-    margin-top: 1vw;
+    border-radius: 100%;
+    z-index: 4;
+    border: 1px solid gray;
+    background-color: white;
 }
-.precio{
-    color: rgb(126, 126, 126);
-    font-family: 'Hammersmith One', sans-serif;
-    font-size: xx-large;
-    margin: 1vw;
-    margin-left: 2vw;
+.prev{
+    top: 10vw;
+    left: -2.5vw;
 }
-.c_nombre{
-    width: 18vw;
-    height: 8vw;
-    float: left;
-}
-.nombre{
-    font-size: larger;
-    font-family: 'Hammersmith One', sans-serif;
-    margin-left: 2vw;
-}
- .imagen{
-    object-fit: cover;
-    width: auto;
-    height: 100%;
+.next{
+    top: 10vw;
+    right: -2.5vw;
 }
