@@ -24,6 +24,7 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
     <meta charset="UTF-8">
     <title>Ventex</title>
     <link rel="stylesheet" href="../Componentes/header.css">
+    <link rel="stylesheet" href="../Componentes/productBoxSmaller.css">
     <link rel="stylesheet" href="../Styles/Styles-Subcategoria.css">
 </head>
 
@@ -35,18 +36,24 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
         </section>
         <nav>
             <ul class="menu">
-                <li><a href="">Inicio</a></li>
-                <li><a href="#">Categorías</a>
+                <li><a href="" class="headerOption">Inicio</a></li>
+                <li><a href="#" id="categorias" class="headerOption">Categorías</a>
+                    <div class="invisible"></div>
                     <ul class="menuv">
                         <?php while ($cat = mysqli_fetch_array($cats)) { ?>
                             <li class="ca">
-                                <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name=""><?php echo $cat['Nombre_Cat']; ?></a>
+                                <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
+                                    <div class="categorieSection">
+                                        <p class="categorieOption"><?php echo $cat['Nombre_Cat']; ?></p>
+                                    </div>
+                                    
+                                </a>
                             </li>
                         <?php } ?>
                     </ul>
                 </li>
-                <li><a href="">Planes</a></li>
-                <li><a href="">Vender</a></li>
+                <li><a href="" class="headerOption">Planes</a></li>
+                <li><a href="" class="headerOption">Vender</a></li>
             </ul>
         </nav>
         <form class="busqueda" action="../Frames/Pantalla-Busqueda.php" method="post" onsubmit="return enviarFormulario()">
@@ -59,45 +66,113 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
     </header>
     <!-------------------------------------------------------------------------------------------------------->
     <main>
-        <article class="bar_perfil">
+        <article class="subcategoriesSection">
             <br>
             <?php while ($subcat = mysqli_fetch_array($subc)) { ?>
                 <form action="Pantalla-subcategoria-sub.php" method="post" class="subcategoria-form">
-                    <button class="subcate" type="submit">
-                        <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
-                        <p><?php echo $subcat['Subcategoria']; ?></p>
+                    <button class="subcategoryButton" type="submit">
+                        <div class="subcategoryPhotoContainer">
+                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
+                        </div>
+                        <div class="subcategoryNameContainer">
+                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
+                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron en salsa</p>
+                        </div>
                     </button>
                 </form>
+                    <button class="subcategoryButton" type="submit">
+                        <div class="subcategoryPhotoContainer">
+                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
+                        </div>
+                        <div class="subcategoryNameContainer">
+                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
+                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
+                        </div>
+                    </button>
+                    <button class="subcategoryButton" type="submit">
+                        <div class="subcategoryPhotoContainer">
+                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
+                        </div>
+                        <div class="subcategoryNameContainer">
+                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
+                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
+                        </div>
+                    </button>
+                    <button class="subcategoryButton" type="submit">
+                        <div class="subcategoryPhotoContainer">
+                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
+                        </div>
+                        <div class="subcategoryNameContainer">
+                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
+                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
+                        </div>
+                    </button>
+                    <button class="subcategoryButton" type="submit">
+                        <div class="subcategoryPhotoContainer">
+                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
+                        </div>
+                        <div class="subcategoryNameContainer">
+                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
+                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
+                        </div>
+                    </button>
+                    <button class="subcategoryButton" type="submit">
+                        <div class="subcategoryPhotoContainer">
+                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
+                        </div>
+                        <div class="subcategoryNameContainer">
+                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
+                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
+                        </div>
+                    </button>
+                    <button class="subcategoryButton" type="submit">
+                        <div class="subcategoryPhotoContainer">
+                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
+                        </div>
+                        <div class="subcategoryNameContainer">
+                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
+                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
+                        </div>
+                    </button>
             <?php } ?>
         </article>
-        <section id="titulo_C">
-            <h1 class="tituleishon"><?php echo $mywher ?></h1>
+        <article class="advertisingContainer">
+            <div class="advertisingBox"></div>
+            <div class="advertisingBox"></div>
+        </article>
+        <article id="productsContainer">
+        <section class="subcategoryTitleContainer">
+            <h1 class="subcategoryTitle"><?php echo $mywher ?> Categoría</h1>
         </section>
-        <article id="pr_productos">
-            <!-------------------------------------------------------------------------------------------------------->
-            <?php while ($mostrar = mysqli_fetch_array($ex)) { ?>
+            <section class="carrusel">
+                <button class="carruselButton prev"><</button>
+                <section class="productsCarrusel">
+                    <!-------------------------------------------------------------------------------------------------------->
+                    <?php while ($mostrar = mysqli_fetch_array($ex)) { ?>
 
-                <form action="../Frames/pantalla-producto.php" method="post">
-                    <input type="hidden" name="id_product" value="<?php echo $mostrar['ID_Producto']; ?>">
-                    <button class="productContainer" type="submit">
-                        <div class="productPhoto">
-                            <img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>" class="productImage" />
-                        </div>
-                        <div class="productPrice">
-                            <p class="priceStyle">$<?php echo $mostrar['Precio']; ?></p>
-                        </div>
-                        <div class="productName">
-                            <p class="nameStyle"><?php echo $mostrar['Nombre_Prod']; ?></p>
-                        </div>
-                    </button>
-                </form>
+                        <form action="../Frames/pantalla-producto.php" method="post">
+                            <input type="hidden" name="id_product" value="<?php echo $mostrar['ID_Producto']; ?>">
+                            <button class="productContainer" type="submit">
+                                <div class="productPhoto">
+                                    <img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>" class="productImage" />
+                                </div>
+                                <div class="productPrice">
+                                    <p class="priceStyle">$<?php echo $mostrar['Precio']; ?></p>
+                                </div>
+                                <div class="productName">
+                                    <p class="nameStyle"><?php echo $mostrar['Nombre_Prod']; ?></p>
+                                </div>
+                            </button>
+                        </form>
 
-            <?php } ?>
-            <!-------------------------------------------------------------------------------------------------------->
-
+                    <?php } ?>
+                    <!--------------------------------------------------------------------------------------------------------></section>
+                <button class="carruselButton next">></button>
+            </section>
         </article>
     </main>
     <footer></footer>
+    <script src="../Scripts/Script-subcategoria.js"></script>
 </body>
 
 </html>

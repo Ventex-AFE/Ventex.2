@@ -57,7 +57,7 @@ a{
     scale: 1 1;
 }
 
-.menu > li a{
+.menu > li .headerOption{
     color: aliceblue;
     display: flex;
     align-items: center;
@@ -68,7 +68,7 @@ a{
     height: 100%;
 }
 
-.menu >li > a::before{
+.menu >li > .headerOption::before{
     content: "";
     position: absolute;
     width: 100%;
@@ -80,6 +80,55 @@ a{
     scale: 0 0;
     visibility: hidden;
 }
+.menuv{
+    width: 15vw;
+    height: auto;
+    position: absolute;
+    background-color: rgba(77, 77, 77, 0.741);
+    display: none;
+    top: 10.5vh;
+}
+.invisible{
+    position: absolute;
+    width: 10vw;
+    height: 5vh;
+    display: none;
+}
+.invisible:hover{
+    display: flex;
+}
+.menuv:hover,
+.invisible:hover,
+.invisible:hover ~ .menuv,
+.menuv:hover ~ .invisible,
+#categorias:hover ~ .invisible,
+#categorias:hover ~ .menuv{
+    display: flex;
+    flex-wrap: wrap;
+}
+.linkCategoriesOption{
+    text-decoration: none;
+}
+.categorieSection{
+    width: 12vw;
+    height: 3vh;
+    padding: 0.5vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    display: flex;
+    align-items: center;
+}
+.categorieSection:hover{
+    background-color: rgba(63, 63, 63, 0.741);
+}
+
+.categorieOption{
+    text-decoration: none;
+    color: white;
+    font-size: small;
+}
+
+/* ------------------------------------------------- */
 
 .busqueda{
     width: 20vw;
