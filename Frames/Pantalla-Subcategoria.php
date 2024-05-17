@@ -29,7 +29,7 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
 </head>
 
 <body>
-    <!-------------------------------------------------------------------------------------------------------->
+<!--- HEADER ------------------------------------------------------------------------------------------------------->
     <header>
         <section>
             <p class="logo">Ventex</p>
@@ -64,9 +64,11 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
             <div></div>
         </section>
     </header>
-    <!-------------------------------------------------------------------------------------------------------->
     <main>
+<!--- SUBCATEGORIES --------------------------------------------------------------------------------------------------->
+
         <article class="subcategoriesSection">
+            <h1 class="categoryName">Automoviles y motocicletas</h1>
             <br>
             <?php while ($subcat = mysqli_fetch_array($subc)) { ?>
                 <form action="Pantalla-subcategoria-sub.php" method="post" class="subcategoria-form">
@@ -136,10 +138,16 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
                     </button>
             <?php } ?>
         </article>
+<!--- ADVERTISING --------------------------------------------------------------------------------------------------->
         <article class="advertisingContainer">
-            <div class="advertisingBox"></div>
-            <div class="advertisingBox"></div>
+            <div class="advertisingBox">
+                <img src="../Product-Images/lays.jpeg" alt="" class="adverstisingImage">
+            </div>
+            <div class="advertisingBox">
+                <img src="../Product-Images/markverde.jpeg" alt="" class="adverstisingImage">
+            </div>
         </article>
+<!--- CONTENT ------------------------------------------------------------------------------------------------------->
         <article id="productsContainer">
         <section class="subcategoryTitleContainer">
             <h1 class="subcategoryTitle"><?php echo $mywher ?> Categoría</h1>
