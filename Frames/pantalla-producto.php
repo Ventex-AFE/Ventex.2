@@ -17,6 +17,18 @@ if (!isset($_POST['id_product'])) {
 } else {
     $id_product = $_POST['id_product'];
 }
+// Código para almacenar productos visitados en cookies
+if (isset($_POST['id_product'])) {
+    $id_producto = $_POST['id_product'];
+    // Obtener productos visitados almacenados en la cookie, si los hay
+    $productos_visitados = isset($_COOKIE['productos_visitados']) ? json_decode($_COOKIE['productos_visitados'], true) : [];
+    // Agregar el nuevo producto visitado a la lista
+    $productos_visitados[] = $id_producto;
+    // Convertir la lista de productos visitados a formato JSON y guardarla en la cookie
+    setcookie('productos_visitados', json_encode($productos_visitados), time() + (86400 * 30), "/"); // 86400 = 1 día
+}
+
+
 //extraido desde el perfil con el boton del editar producto
 
 // Preparar la consulta para obtener los datos del usuario

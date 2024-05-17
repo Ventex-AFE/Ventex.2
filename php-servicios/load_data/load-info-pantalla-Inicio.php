@@ -17,7 +17,7 @@ $where = '';
 //     $where = substr_replace($where, "", -3);
 //     $where .= ")";
 // }
-$consult = "SELECT * FROM productos BY RAND() LIMIT 4";
+$consult = "SELECT * FROM productos ORDER BY RAND() LIMIT 4";
 $Conexion_usser_select->set_charset("utf8");
 header('Content-Type: text/html; charset=utf-8');
 $result = $Conexion_usser_select->query($consult);
