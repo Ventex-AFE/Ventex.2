@@ -13,6 +13,7 @@ if (isset($_POST['Id_seller'])) {
     // Manejar el caso en que no se envíe el ID del vendedor
     $Id_seller = 5;
 }
+$cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
 $sql = "SELECT Name_Seller,profile_Description, Contact_description, instagram, x, whatsapp, facebook FROM seller_porfile WHERE Id_sellerP = ?";
 $stmt = mysqli_prepare($Conexion_usser_select, $sql);
 
@@ -47,6 +48,7 @@ mysqli_stmt_fetch($stmt);
 
 // Cerrar la consulta preparada
 mysqli_stmt_close($stmt);
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -59,6 +61,7 @@ mysqli_stmt_close($stmt);
     <link rel="stylesheet" href="../Componentes/header.css">
     <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
     <link rel="stylesheet" href="../Componentes/productBox.css">
+    <link rel="stylesheet" href="../Styles/Styles-Subcategoria.css">
 
     <style>
         /* <-------Styles extensible search input*/
@@ -80,29 +83,35 @@ mysqli_stmt_close($stmt);
 
 <body>
 
-    <header>
+<header>
         <section>
             <p class="logo">Ventex</p>
         </section>
         <nav>
             <ul class="menu">
-                <li><a href="">Inicio</a></li>
-                <li><a href="#">Categorías</a>
+                <li><a href="" class="headerOption">Inicio</a></li>
+                <li><a href="#" id="categorias" class="headerOption">Categorías</a>
+                    <div class="invisible"></div>
                     <ul class="menuv">
                         <?php while ($cat = mysqli_fetch_array($cats)) { ?>
                             <li class="ca">
-                                <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name=""><?php echo $cat['Nombre_Cat']; ?></a>
+                                <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
+                                    <div class="categorieSection">
+                                        <p class="categorieOption"><?php echo $cat['Nombre_Cat']; ?></p>
+                                    </div>
+                                    
+                                </a>
                             </li>
                         <?php } ?>
                     </ul>
                 </li>
-                <li><a href="">Planes</a></li>
-                <li><a href="">Vender</a></li>
+                <li><a href="" class="headerOption">Planes</a></li>
+                <li><a href="" class="headerOption">Vender</a></li>
             </ul>
         </nav>
-        <form class="busqueda">
+        <form class="busqueda" action="../Frames/Pantalla-Busqueda.php" method="post" onsubmit="return enviarFormulario()">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Buscar">
+            <input type="search" placeholder="Buscar" name="busqueda">
         </form>
         <section class="imgProfile">
             <div></div>
@@ -249,7 +258,7 @@ mysqli_stmt_close($stmt);
         </article>
     </main>
     <footer>
-        <p class="logo-f">Ventex</p>
+        
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", getData);
