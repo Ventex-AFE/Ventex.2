@@ -76,64 +76,11 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
                         </div>
                         <div class="subcategoryNameContainer">
                             <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
-                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron en salsa</p>
+                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?></p>
                         </div>
                     </button>
                 </form>
-                    <button class="subcategoryButton" type="submit">
-                        <div class="subcategoryPhotoContainer">
-                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
-                        </div>
-                        <div class="subcategoryNameContainer">
-                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
-                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
-                        </div>
-                    </button>
-                    <button class="subcategoryButton" type="submit">
-                        <div class="subcategoryPhotoContainer">
-                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
-                        </div>
-                        <div class="subcategoryNameContainer">
-                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
-                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
-                        </div>
-                    </button>
-                    <button class="subcategoryButton" type="submit">
-                        <div class="subcategoryPhotoContainer">
-                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
-                        </div>
-                        <div class="subcategoryNameContainer">
-                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
-                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
-                        </div>
-                    </button>
-                    <button class="subcategoryButton" type="submit">
-                        <div class="subcategoryPhotoContainer">
-                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
-                        </div>
-                        <div class="subcategoryNameContainer">
-                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
-                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
-                        </div>
-                    </button>
-                    <button class="subcategoryButton" type="submit">
-                        <div class="subcategoryPhotoContainer">
-                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
-                        </div>
-                        <div class="subcategoryNameContainer">
-                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
-                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
-                        </div>
-                    </button>
-                    <button class="subcategoryButton" type="submit">
-                        <div class="subcategoryPhotoContainer">
-                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
-                        </div>
-                        <div class="subcategoryNameContainer">
-                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
-                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?> chicharron</p>
-                        </div>
-                    </button>
+ 
             <?php } ?>
         </article>
         <article class="advertisingContainer">
