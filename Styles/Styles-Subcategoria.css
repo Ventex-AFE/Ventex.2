@@ -5,7 +5,7 @@
 }
 html,body{
     height: 100%;
-    background-color: #CCCCCC;
+    background-color: #e4e4e4;
 }
 main{
     width: 100%;
@@ -14,7 +14,11 @@ main{
     flex-wrap: wrap;
     align-content: flex-start;
 }
-/*-- SUBCATEGORIES ----------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*   SUBCATEGORIES                                                                                                     */
+/*---------------------------------------------------------------------------------------------------------------------*/
+
 .categoryName{
     position: absolute;
     font-size: 1.3vw;
@@ -40,7 +44,7 @@ main{
     cursor: pointer;
     transition: .3s;
     gap: 5vw;
-    margin: 1%;
+    margin: 0.7vw;
 }
 .subcategoryButton:hover{
 
@@ -69,7 +73,10 @@ main{
     font-size: 1vw;
     color: black;
 }
-/*-- ADVERTISING ------------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*   ADVERTISING                                                                                                       */
+/*---------------------------------------------------------------------------------------------------------------------*/
 .advertisingContainer{
     width: 100%;
     height: 20vw;
@@ -97,7 +104,51 @@ main{
     width: 100%;
     height: auto;
 }
-/*-- CONTENT ----------------------------------------------------------------------------------------------------------*/
+.advertisingLargeContainer{
+    width: 100%;
+    height: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.advertisingLargeBox{
+    width: 70vw;
+    height: 13vw;
+    background-image: linear-gradient(green, green);
+    margin: 1%;
+    border-radius: 0.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: .3s;
+}
+.advertisingLargeBox:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0.2vw 1vw 0.5vw rgb(152, 152, 152);
+}
+.advertisingTitle{
+    color: white;
+    font-size: 3vw;
+    position: absolute;
+}
+.adverstisingImage{
+    width: 100%;
+    height: auto;
+}
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*   CONTENT                                                                                                           */
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+/*-- Recommended Products ---------------------------------------------------------------------------------------------*/
+
+.recommendedPorductsSection{
+    width: 100%;
+    height: 50vh;
+    background-color: white;
+}
+/*-- Sub Category Title -----------------------------------------------------------------------------------------------*/
 .subcategoryTitle{
     font-size: 2.5vw;
     color: rgb(77, 75, 75);
@@ -106,7 +157,7 @@ main{
 }
 .subcategoryTitleContainer{
     width: 100%;
-    height: 10vh;
+    height: 15vh;
     display: flex;
     align-items: center;
 }
@@ -115,28 +166,38 @@ main{
     font-size: 8vh;
     font-family: 'Hammersmith One', sans-serif;
 }
-#productsContainer{
+.productsContainer{
     width: 100%;
-    height: 35vw;
+    height: 40vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-color: white;
 }
-.carrusel{
+.containerCarrusel{
     width: 80vw;
-    height: auto;
-    background-color: white;
+    height: 27vw;
     display: flex;
     position: relative;
+    transition: .3s;
+}
+.carrusel{
+    width: 80vw;
+    height: 29vw;
+    display: flex;
+    position: relative;
+    transition: .3s;
+    overflow: hidden;
 }
 .productsCarrusel{
-    width: 80vw;
-    height: auto;
+    width: auto;
+    height: 29vw;
+    /* background-color: rgb(196, 251, 212); */
     background-color: white;
     display: flex;
-    overflow: hidden;
+    align-items: center;
+    transition: .3s;
 }
 .carruselButton{
     position: absolute;
