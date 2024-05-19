@@ -12,26 +12,49 @@
 </head>
 
 <body>
-  <header>
-    <section>
-      <p class="logo">Ventex</p>
-    </section>
-    <nav>
-      <ul class="menu">
-        <li><a href="">Inicio</a></li>
-        <li><a href="">Categoria</a></li>
-        <li><a href="">Planes</a></li>
-        <li><a href="">Vender</a></li>
-      </ul>
-    </nav>
-    <form class="busqueda">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Buscar">
-    </form>
-    <section class="imgProfile">
-      <div></div>
-    </section>
-  </header>
+<header>
+
+<?php 
+  require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
+  $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
+?>
+        <section>
+            <p class="logo">Ventex</p>
+        </section>
+        <nav>
+            <ul class="menu">
+                <li><a href="" class="headerOption">Inicio</a></li>
+                <li><a href="#" id="categorias" class="headerOption">Categorías</a>
+                    <div class="invisible"></div>
+                    <ul class="menuv">
+                        <?php while ($cat = mysqli_fetch_array($cats)) { ?>
+                            <li class="ca">
+                                <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
+                                    <div class="categorieSection">
+                                        <p class="categorieOption"><?php echo $cat['Nombre_Cat']; ?></p>
+                                    </div>
+                                </a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </li>
+                <li><a href="" class="headerOption">Planes</a></li>
+                <li><a href="" class="headerOption">Vender</a></li>
+            </ul>
+        </nav>
+        <section class="busqueda">
+            <form class="busquedaForm" action="../Frames/Pantalla-Busqueda.php" method="post" onsubmit="return enviarFormulario()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Buscar" name="busqueda" class="inputSearchHeader" require>
+                <button class="searchButtonHeader">
+                    <img src="../Icons/lupaB.png" alt="" class="imageSearchHeader">
+                </button>
+            </form>
+        </section>
+        <section class="imgProfile">
+            <div></div>
+        </section>
+    </header>
 
   <main>
 
