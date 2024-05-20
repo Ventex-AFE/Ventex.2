@@ -1,5 +1,3 @@
-
-
 <?php
 require('../Conexion_db/conexion_usser_select.php');
 
@@ -19,7 +17,7 @@ $where = '';
 //     $where = substr_replace($where, "", -3);
 //     $where .= ")";
 // }
-$consult = "SELECT * FROM productos ORDER BY RAND() LIMIT 4";
+$consult = "SELECT * FROM productos ORDER BY RAND() LIMIT 5";
 $Conexion_usser_select->set_charset("utf8");
 header('Content-Type: text/html; charset=utf-8');
 $result = $Conexion_usser_select->query($consult);
@@ -34,9 +32,9 @@ if ($num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 ?>
         <section class="card">
-                        <div class="image"><span class="text"><?php echo $row['Imagen']; ?></span></div>
-                          <span class="title"><?php echo $row['Nombre_Prod']; ?></span>
-                          <span class="price">$<?php echo $row['Precio'] ?></span>
+            <div class="image"><img class="img_product" src="../Product-Images/<?php echo  $row['Imagen']?>" ></div>
+            <span class="title"><?php echo $row['Nombre_Prod']; ?></span>
+            <span class="price">$<?php echo $row['Precio'] ?></span>
         </section>
 <?php
     }
@@ -45,4 +43,3 @@ if ($num_rows > 0) {
     echo '<td colspan="17">Sin resultados</td>';
     echo '</tr>';
 }
-
