@@ -3,11 +3,12 @@ $us = 'Thomas Rogrigez';
 require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
 $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
 
-$mywher = isset($_GET['categoria']) ? $_GET['categoria'] : null ;
+$mywher = isset($_GET['categoria']) ? $_GET['categoria'] : null;
 $busc = null;
 
 if ($mywher != null) {
     $busc = "SELECT * FROM productos WHERE Categoria = '$mywher'";
+    $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Categoria = '$mywher' ORDER BY RAND() LIMIT 5");
 } else {
     $busc = "SELECT * FROM productos";
 }
@@ -27,7 +28,7 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
 </head>
 
 <body>
-<!--- HEADER ------------------------------------------------------------------------------------------------------->
+    <!--- HEADER ------------------------------------------------------------------------------------------------------->
     <header>
         <section>
             <p class="logo">Ventex</p>
@@ -66,7 +67,7 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
         </section>
     </header>
     <main>
-<!--- SUBCATEGORIES --------------------------------------------------------------------------------------------------->
+        <!--- SUBCATEGORIES --------------------------------------------------------------------------------------------------->
 
         <article class="subcategoriesSection">
             <h1 class="categoryName"><?php echo $mywher; ?></h1>
@@ -85,7 +86,7 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
                 </form>
             <?php } ?>
         </article>
-<!--- ADVERTISING --------------------------------------------------------------------------------------------------->
+        <!--- ADVERTISING --------------------------------------------------------------------------------------------------->
         <article class="advertisingContainer">
             <div class="advertisingBox">
                 <img src="../Product-Images/lays.jpeg" alt="" class="adverstisingImage">
@@ -94,90 +95,70 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
                 <img src="../Product-Images/markverde.jpeg" alt="" class="adverstisingImage">
             </div>
         </article>
-<!--- CONTENT ------------------------------------------------------------------------------------------------------->
-<article class="recommendedPorductsSection">
-
-    <div class="subcategoryTitleContainer">
-        <h2 class="subcategoryTitle">Recomendados</h2>
-    </div>
-    <button class="recommendedCategoryProductContainer">
-        <img src="../Product-Images/crybabyperfume.jpeg" alt="" class="recommendedProductImage">
-        <div class="recommendedProductTitleContainer">
-            <h1 class="recommendedProductTitle">Nombre Producto Y reguetón chaman</h1>
-        </div>
-    </button>
-    <button class="recommendedCategoryProductContainer">
-        <img src="../Product-Images/crybabyperfume.jpeg" alt="" class="recommendedProductImage">
-        <div class="recommendedProductTitleContainer">
-            <h1 class="recommendedProductTitle">Nombre Producto Y reguetón chaman</h1>
-        </div>
-    </button>
-    <button class="recommendedCategoryProductContainer">
-        <img src="../Product-Images/crybabyperfume.jpeg" alt="" class="recommendedProductImage">
-        <div class="recommendedProductTitleContainer">
-            <h1 class="recommendedProductTitle">Nombre Producto Y reguetón chaman</h1>
-        </div>
-    </button>
-    <button class="recommendedCategoryProductContainer">
-        <img src="../Product-Images/crybabyperfume.jpeg" alt="" class="recommendedProductImage">
-        <div class="recommendedProductTitleContainer">
-            <h1 class="recommendedProductTitle">Nombre Producto Y reguetón chaman</h1>
-        </div>
-    </button>
-    <button class="recommendedCategoryProductContainer">
-        <img src="../Product-Images/crybabyperfume.jpeg" alt="" class="recommendedProductImage">
-        <div class="recommendedProductTitleContainer">
-            <h1 class="recommendedProductTitle">Nombre Producto Y reguetón chaman</h1>
-        </div>
-    </button>
-</article>
-<!--- ADVERTISING 2 ------------------------------------------------------------------------------------------------->
+        <!--- CONTENT ------------------------------------------------------------------------------------------------------->
+        <article class="recommendedPorductsSection">
+            <div class="subcategoryTitleContainer">
+                <h2 class="subcategoryTitle">Recomendados</h2>
+            </div>
+            <?php while ($producto_more = mysqli_fetch_array($more)) { ?>
+                <form action="../Frames/pantalla-producto.php" method="post">
+                    <input type="hidden" name="id_product" value="<?php echo $producto_more['ID_Producto']; ?>">
+                    <button class="recommendedCategoryProductContainer">
+                        <img src="../Product-Images/<?php echo $producto_more['Imagen']; ?>" alt="" class="recommendedProductImage">
+                        <div class="recommendedProductTitleContainer">
+                            <h1 class="recommendedProductTitle"><?php echo $producto_more['Nombre_Prod']; ?></h1>
+                        </div>
+                </form>
+            <?php } ?>
+        </article>
+        <!--- ADVERTISING 2 ------------------------------------------------------------------------------------------------->
         <article class="advertisingLargeContainer">
             <div class="advertisingLargeBox">
                 <img src="../Product-Images/textura-cocodrilo.avif" alt="" class="adverstisingImage">
                 <h1 class="advertisingTitle">Ventex es para ti</h1>
             </div>
         </article>
-<!------------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------------------------------------------------------------------------------->
 
-    <?php 
+        <?php
         $subc = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Subcategoria FROM productos WHERE categoria='$mywher';");
-        while ($subcat = mysqli_fetch_array($subc)) { 
+        while ($subcat = mysqli_fetch_array($subc)) {
             $subcategoria = $subcat['Subcategoria'];
             $productos = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Categoria='$mywher' AND Subcategoria='$subcategoria'");
-    ?>
-    <article class="productsContainer">
-        <section class="subcategoryCarrusel">
-            <div class="subcategoryTitleContainer">
-                <h2 class="subcategoryTitle"><?php echo $subcategoria; ?></h2>
-            </div>
-            <section class="containerCarrusel">
-                <button class="carruselButton prev"><</button>
-                <section class="carrusel">
-                    <section class="productsCarrusel">
-                        <?php while ($producto = mysqli_fetch_array($productos)) { ?>
-                            <form action="../Frames/pantalla-producto.php" method="post">
-                                <input type="hidden" name="id_product" value="<?php echo $producto['ID_Producto']; ?>">
-                                <button class="productContainer" type="submit">
-                                    <div class="productPhoto">
-                                        <img src="../Product-Images/<?php echo $producto['Imagen']; ?>" class="productImage" />
-                                    </div>
-                                    <div class="productPrice">
-                                        <p class="priceStyle">$<?php echo $producto['Precio']; ?></p>
-                                    </div>
-                                    <div class="productName">
-                                        <p class="nameStyle"><?php echo $producto['Nombre_Prod']; ?></p>
-                                    </div>
-                                </button>
-                            </form>
-                        <?php } ?>
+        ?>
+            <article class="productsContainer">
+                <section class="subcategoryCarrusel">
+                    <div class="subcategoryTitleContainer">
+                        <h2 class="subcategoryTitle"><?php echo $subcategoria; ?></h2>
+                    </div>
+                    <section class="containerCarrusel">
+                        <button class="carruselButton prev">
+                            << /button>
+                                <section class="carrusel">
+                                    <section class="productsCarrusel">
+                                        <?php while ($producto = mysqli_fetch_array($productos)) { ?>
+                                            <form action="../Frames/pantalla-producto.php" method="post">
+                                                <input type="hidden" name="id_product" value="<?php echo $producto['ID_Producto']; ?>">
+                                                <button class="productContainer" type="submit">
+                                                    <div class="productPhoto">
+                                                        <img src="../Product-Images/<?php echo $producto['Imagen']; ?>" class="productImage" />
+                                                    </div>
+                                                    <div class="productPrice">
+                                                        <p class="priceStyle">$<?php echo $producto['Precio']; ?></p>
+                                                    </div>
+                                                    <div class="productName">
+                                                        <p class="nameStyle"><?php echo $producto['Nombre_Prod']; ?></p>
+                                                    </div>
+                                                </button>
+                                            </form>
+                                        <?php } ?>
+                                    </section>
+                                </section>
+                                <button class="carruselButton next">></button>
                     </section>
                 </section>
-                <button class="carruselButton next">></button>
-            </section>
-        </section>
-        <!-- Advertising Section -->
-        <!-- <article class="advertisingContainer">
+                <!-- Advertising Section -->
+                <!-- <article class="advertisingContainer">
             <div class="advertisingBox">
                 <img src="../Product-Images/lays.jpeg" alt="" class="adverstisingImage">
             </div>
@@ -185,8 +166,8 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
                 <img src="../Product-Images/markverde.jpeg" alt="" class="adverstisingImage">
             </div>
         </article> -->
-        <?php } ?>
-    </article>
+            <?php } ?>
+            </article>
 
     </main>
     <footer></footer>
