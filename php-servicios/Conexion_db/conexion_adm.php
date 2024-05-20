@@ -1,8 +1,10 @@
 <?php
 // Credenciales de acceso a la base de datos
 $hostname = '127.0.0.1'; //Url de la direccion dela base de datos 
-$username = 'Adm_root'; //Usuario que se uso para esta conexion y la verifcacion 
-$password = ':i8rBK0X$_6117qAh(x'; //Password del usuario 
+$username = 'root'; //Usuario que se uso para esta conexion y la verifcacion 
+$password = ''; //Password del usuario 
+//$username = 'Adm_root'; //Usuario que se uso para esta conexion y la verifcacion 
+//$password = ':i8rBK0X$_6117qAh(x'; //Password del usuario 
 $database = 'ventexafe'; //nombre de la db
 
 // Conexión a la base de datos
