@@ -50,12 +50,9 @@ carrusel.forEach((car, index) =>{
 
 })
 
-document.addEventListener("DOMContentLoaded", function() {
-
 carrusel.forEach((prevBut, index) => {
     conter.push(0);
     prevButton[index].addEventListener('click', () => prev(index));
     nextButton[index].addEventListener('click', () => next(index));
 });
-
-});
+s
