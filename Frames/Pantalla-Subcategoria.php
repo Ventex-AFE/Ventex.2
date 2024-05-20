@@ -55,7 +55,6 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
         </nav>
         <section class="busqueda">
             <form class="busquedaForm" action="../Frames/Pantalla-Busqueda.php" method="post" onsubmit="return enviarFormulario()">
-                <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="search" placeholder="Buscar" name="busqueda" class="inputSearchHeader" require>
                 <button class="searchButtonHeader">
                     <img src="../Icons/lupaB.png" alt="" class="imageSearchHeader">
@@ -70,7 +69,7 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
 <!--- SUBCATEGORIES --------------------------------------------------------------------------------------------------->
 
         <article class="subcategoriesSection">
-            <h1 class="categoryName"><?php echo $mywher; ?> Categoría</h1>
+            <h1 class="categoryName"><?php echo $mywher; ?></h1>
             <br>
             <?php while ($subcat = mysqli_fetch_array($subc)) { ?>
                 <form action="Pantalla-subcategoria-sub.php" method="post" class="subcategoria-form">
@@ -97,9 +96,40 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
         </article>
 <!--- CONTENT ------------------------------------------------------------------------------------------------------->
 <article class="recommendedPorductsSection">
-    <section class="recommendedPorductsContainer">
 
-    </section>
+    <div class="subcategoryTitleContainer">
+        <h2 class="subcategoryTitle">Recomendados</h2>
+    </div>
+    <button class="recommendedCategoryProductContainer">
+        <img src="../Product-Images/crybabyperfume.jpeg" alt="" class="recommendedProductImage">
+        <div class="recommendedProductTitleContainer">
+            <h1 class="recommendedProductTitle">Nombre Producto Y reguetón chaman</h1>
+        </div>
+    </button>
+    <button class="recommendedCategoryProductContainer">
+        <img src="../Product-Images/crybabyperfume.jpeg" alt="" class="recommendedProductImage">
+        <div class="recommendedProductTitleContainer">
+            <h1 class="recommendedProductTitle">Nombre Producto Y reguetón chaman</h1>
+        </div>
+    </button>
+    <button class="recommendedCategoryProductContainer">
+        <img src="../Product-Images/crybabyperfume.jpeg" alt="" class="recommendedProductImage">
+        <div class="recommendedProductTitleContainer">
+            <h1 class="recommendedProductTitle">Nombre Producto Y reguetón chaman</h1>
+        </div>
+    </button>
+    <button class="recommendedCategoryProductContainer">
+        <img src="../Product-Images/crybabyperfume.jpeg" alt="" class="recommendedProductImage">
+        <div class="recommendedProductTitleContainer">
+            <h1 class="recommendedProductTitle">Nombre Producto Y reguetón chaman</h1>
+        </div>
+    </button>
+    <button class="recommendedCategoryProductContainer">
+        <img src="../Product-Images/crybabyperfume.jpeg" alt="" class="recommendedProductImage">
+        <div class="recommendedProductTitleContainer">
+            <h1 class="recommendedProductTitle">Nombre Producto Y reguetón chaman</h1>
+        </div>
+    </button>
 </article>
 <!--- ADVERTISING 2 ------------------------------------------------------------------------------------------------->
         <article class="advertisingLargeContainer">
