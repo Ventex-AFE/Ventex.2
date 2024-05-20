@@ -1,53 +1,55 @@
-footer{
-    /* height: 10%; */
+footer {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: rgba(154, 149, 149, 0.66);
+
     position: relative;
+
+    padding: 20px 0;
+
 }
 
-.name-year{
-    width: 33%;
+footer section {
+    display: flex;
+    align-items: center;
+}
+
+span{
+    text-align: center;
+    padding-left: 10px;
+}
+
+.aviso{
+    align-items: center;
+    justify-content: center;
+}
+
+.con{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.name-year,
+.logo-ventex,
+.socialmedia-ventex {
+    width: 33.33%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.logo-ventex{
-    width: 33%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.logo-ventex h1 {
+    font-size: 2.5rem;
 }
 
-.logo-ventex h1{
-    padding: 2rem;
-    font-size: 3rem;
-    font-family: 'Hammersmith One', sans-serif;
+.socialmedia-ventex a {
+    color: #000;
+    text-decoration: none;
 }
 
-.socialmedia-ventex{
-    width: 33%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-.socialmedia-ventex h1{
-   width: 9vw;
-   font-size: 1.3rem;
-}
-.socialmedia-ventex a{
-   display: flex;
-   align-items: center;
-   color: inherit;
-   text-decoration: none;
-}
-.socialmedia-ventex i{
-   font-size: 2.3rem;
+.socialmedia-ventex i {
+    font-size: 2rem;
+    margin: 0 5px;
 }

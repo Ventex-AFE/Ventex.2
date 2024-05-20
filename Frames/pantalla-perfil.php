@@ -94,7 +94,7 @@ mysqli_stmt_close($stmt);
             <section class="parent_Child">
                 <section class="parent_FirstChild">
                     <article id="background">
-                        <article id="profile_Card_Img"></article>
+                    <article id="profile_Card_Img"><img id="profile_Card_Img" src="../Imgens-Pefil/<?php echo $_SESSION['img']; ?>" ></article>
                     </article>
 
                 </section>
