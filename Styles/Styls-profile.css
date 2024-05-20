@@ -75,15 +75,15 @@ body{
    z-index: 0;
    border-top-left-radius: 20px;
    border-top-right-radius: 20px;
-   background-image: url(https://i.pinimg.com/564x/3e/3e/7e/3e3e7e2ae52503139c2a71ef8cf01c4e.jpg);
+   background-image: url(../Icons/Fondos-Pantallas/VENTEX_BACK.png);
  }
  #profile_Card_Img{
     width: 30vh;
     height: 30Vh;
     border-radius: 50%;
     position: relative;
-    top: 9vh;
-    background-image: url(https://i.pinimg.com/564x/e2/5a/c1/e25ac198405c799681a7667e5204b922.jpg);
+    top: 5vh;
+    /* background-image: url(https://i.pinimg.com/564x/e2/5a/c1/e25ac198405c799681a7667e5204b922.jpg); */
  }
 
 .info {

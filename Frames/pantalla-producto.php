@@ -76,7 +76,7 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
     <link rel="stylesheet" href="../Styles/Styles-producto.css">
     <link rel="stylesheet" href="../Componentes/header.css">
     <link rel="stylesheet" href="../Componentes/footer.css">
-    <link rel="stylesheet" href="../Componentes/productBox.css">
+    <link rel="stylesheet" href="../Componentes/cardProduct.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -100,165 +100,158 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
         </section>
     </header>
     <main>
-    <section id="containerD">
-        <section id="ima">
-            <section class="imagen"><img src="../Imagens-Products/img.png"></section>
-            <section class="imagen"><img src="../Imagens-Products/img.png"></section>
-            <section class="imagen"><img src="../Imagens-Products/img.png"></section>
-            <section class="imagen"><img src="../Imagens-Products/img.png"></section>
-        </section>
-        <section id="bigima">
-            <section class="phpto"><img src="../Product-Images/<?php echo $Imagen ?>"></section>
-        </section>
-        <article id="description">
-            <section class="desc">
-                <h1 class="namP"><?php echo $Nombre_Prod ?></h1>
-                <p id="precio">$<?php echo $Precio ?></p><br>
 
-                <p id="verd">Top 5 en popularidad</p>
-                <p class=""><b><?php echo $Descripcion_contact ?><br></b></p>
-                <p class=""><?php echo $Descripcion ?></p>
-                <p id="mas">¿Quieres ver mas productos de este vendedor?</p>
-                <form action="../Frames/pantalla-perfil-vc.php" method="post">
-                    <input type="hidden" name="Id_seller" value="<?php echo $id_Seller; ?>">
-                    <input type="submit" id="bot" value="Ver perfil del vendedor">
-                </form>
+    <!-- Parte principal que muestra el producto------------------------------------->
 
+        <section class="contenedor-Producto">
+            <section id="img-Producto">
+                <img src="../Product-Images/<?php echo $Imagen ?>"> 
             </section>
-        </article>
-    </section>
+            <article id="description">
+                <section class="desc">
+                    <h1 class="name-Product"><?php echo $Nombre_Prod ?></h1>
+                    <span class="category"><?php echo $Categoria ?></span>
+                    <span id="price-product">$<?php echo $Precio ?></span>
 
-    <section id="containerT">
-        <article id="textU">
-            <h1 class="textorel">Productos Relacionados</h1>
-        </article>
-        <section class="cont">
-            <?php while ($mostrar = mysqli_fetch_array($more)) { ?>
-
-                <form action="../Frames/pantalla-producto.php" method="post" id="form1">
-                    <button class="producto" onclick="enviarFormulario()">
-                        <input type="hidden" name="id_product" value="<?php echo $mostrar['ID_Producto']; ?>">
-                        <section> <!--Esto contiene la informacion de un producto-->
-                            <article class="part1"><img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>"></article>
-                            <article class="part2">
-                                <article>
-                                    <p>$<?php echo $mostrar['Precio'] ?></p>
-                                </article>
-                                <article>
-                                    <p><?php echo $mostrar['Nombre_Prod'] ?></p>
-                                </article>
-                            </article>
-                        </section>
-
-                        <script>
-                            function enviarFormulario() {
-                                document.getElementById('form1').submit();
-                            }
-                        </script>
-                    </button>
-                </form>
-
-            <?php } ?>
-        </section>
-        <section class="contD">
-            <section class="partU">
-                <article id="textD">
-                    <article>
-                        <h1 id="Informacion">Informacion de contacto</h1>
-                    </article>
-                </article>
-                <article id="contacto">
-                    <article class="redes">
-                        <article class="red"><a href="<?php echo $instagram ?>"><img src="../Icons/instagram.png"></a></article>
-                        <article class="red"><a href="<?php echo $whatsapp ?>"><img src="../Icons/whatsapp.png"></a></article>
-                        <article class="red"><a href="<?php echo $x ?>"><img src="../Icons/x.png" alt=""></a></article>
-                    </article>
-                </article>
-            </section>
-            <section class="partU2">
-                <article id="descriptionD">
-                    <p class="text"><?php echo $profile_Description ?>
-
-                    </p>
-                </article>
-            </section>
-        </section>
-    </section>
+                    <span id="top">Top 5 en popularidad</span>
+                    <span id="desc-Contacto"><?php echo $Descripcion_contact ?></span>
+                    <span id="text-desc"><?php echo $Descripcion ?></span>
+                    <form action="../Frames/pantalla-perfil-vc.php" method="post" id="form-seller">
+                        <input type="hidden" name="Id_seller" value="<?php echo $id_Seller; ?>">
+                        <input type="submit" id="bot" value="Ver perfil del vendedor">
+                    </form>
+                    <input type="submit" id="bot" value="Reportar Producto">
 
 
-    <section class="conte">
-        <section class="partU">
-            <article id="valoracion">
-
-                <section class="textVal">
-                    <h2>Valoracion</h2>
                 </section>
+            </article>
+        </section>
+<!-- ------------------------------------------------------------------------------ -->
 
-                <section id="rating">
-                    <input type="radio" name="star">
-                    <input type="radio" name="star">
-                    <input type="radio" name="star">
-                    <input type="radio" name="star">
-                    <input type="radio" name="star">
+<!-- Contedor de los productos relacionados --------------------------------------- -->
+
+        <section class="container-moreProductos">
+            <article class="textU">
+                <h1 class="textorel">Productos Relacionados</h1>
+            </article>
+            <section class="cont">
+                <?php while ($mostrar = mysqli_fetch_array($more)) { ?>
+
+                    <form action="../Frames/pantalla-producto.php" method="post" id="form1">
+                        <button class="producto" onclick="enviarFormulario()">
+                            <input type="hidden" name="id_product" value="<?php echo $mostrar['ID_Producto']; ?>">
+                            <section class="card"> <!--Esto contiene la informacion de un producto-->
+                                <div class="image"><img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>"></div>
+                                    <span class="price">$<?php echo $mostrar['Precio'] ?></span>
+                                    <span class="title"><?php echo $mostrar['Nombre_Prod'] ?></span>
+                            </section>
+
+                            <script>
+                                function enviarFormulario() {
+                                    document.getElementById('form1').submit();
+                                }
+                            </script>
+                        </button>
+                    </form>
+
+                <?php } ?>
+            </section>
+        </section>
+<!-- ---------------------------------------------------------------------------- -->
+
+<!-- Contenedor Información de contacto -->
+
+            <section class="cont-Contact">
+                <article class="textU">
+                    <h1>Informacion de contacto</h1>
+                </article>
+                <section class="part-Desc">
+                    <article id="descriptionD">
+                        <p class="text-Desc">
+                            <?php echo $profile_Description ?>
+                        </p>
+                    </article>
                 </section>
+                <section class="part-Redes">
+                    <article id="contacto">
+                        <article class="redes">
+                            <a href="<?php echo $instagram ?>"target="_blank" ><i class="fa-brands fa-instagram"></i></a>
+                            <a href="<?php echo $whatsapp ?>" target="blank" ><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="<?php echo $x ?>" target="blank"><i class="fa-brands fa-x-twitter"></i></a>
+                        </article>
+                    </article>
+                </section>
+            </section>
+<!-- ---------------------------------------------------------------------------------- -->
+<!-- Contenedor de la valoración -->
 
+        <section class="cont-Valoracion">
+            <section class="part-Comentarios">
+                <section class="textU">
+                    <h1>Deja un Comentario</h1>
+                </section>
                 <form id="inputVal" method="post" action="../php-servicios/save_data/save_new_comentario.php">
                     <input type="hidden" name="fecha_Coment" value="<?php echo date('Y-m-d'); ?>">
                     <input type="hidden" name="hora_comentario" value="<?php echo date('H:i:s'); ?>">
                     <input type="hidden" name="id_prod" value="<?php echo $id_product; ?>">
-                    <input type="text" placeholder="Escribe una reseña del producto" name="descripcion">
-                    <article id="inputSub"><input type="submit" value="Comentar"></article>
+                    <input type="text" placeholder="Escribe una reseña del producto" name="descripcion" id="text-Comen">
+                    <article class="input-Comentar"><input class="submit-Com" type="submit" value="Comentar"></article>
                 </form>
-            </article>
-        </section>
-        <section class="partU">
-            <article id="reseña">
-                <section class="textVal">
-                    <h2>Reseñas</h2>
-                    <h1>Promedio de estrellas:</h1>
+            </section>
+            
+            <section class="part-Reseñas">
+                <section class="textU">
+                    <h1>Reseñas</h1>
                 </section>
                 <section class="contRes" id="contRes">
 
                 </section>
-            </article>
+            </section>
         </section>
-    </section>
-    <form action="" method="post">
-        <input type="hidden" value="<?php echo $id_product ?>" name="id_product" id="id_product">
-    </form>
-    <script>
-        document.addEventListener("DOMContentLoaded", getData);
+        <form action="" method="post">
+            <input type="hidden" value="<?php echo $id_product ?>" name="id_product" id="id_product">
+        </form>
+        <script>
+            document.addEventListener("DOMContentLoaded", getData);
 
-        function getData() {
-            let input = document.getElementById("id_product").value;
-            let content = document.getElementById("contRes");
-            let url = "../php-servicios/load_data/load-info-comentarios-Pantalla-seller.php";
-            let formData = new FormData();
-            formData.append('id_product', input);
+            function getData() {
+                let input = document.getElementById("id_product").value;
+                let content = document.getElementById("contRes");
+                let url = "../php-servicios/load_data/load-info-comentarios-Pantalla-seller.php";
+                let formData = new FormData();
+                formData.append('id_product', input);
 
-            fetch(url, {
-                    method: "POST",
-                    body: formData
-                }).then(response => response.text())
-                .then(data => {
-                    console.log(data);
-                    content.innerHTML = data;
-                }).catch(err => console.log(err));
-        }
-    </script>
+                fetch(url, {
+                        method: "POST",
+                        body: formData
+                    }).then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        content.innerHTML = data;
+                    }).catch(err => console.log(err));
+            }
+        </script>
     </main>
 
     <footer>
-        <section class="name-year">
-            <h1>2023-Ventex</h1>
+        <section class="con">
+            <section class="name-year">
+                <h1>2023-Ventex</h1>
+            </section>
+            <section class="logo-ventex">
+                <h1>Ventex</h1>
+            </section>
+            <section class="socialmedia-ventex">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            </section>
         </section>
-        <section class="logo-ventex">
-            <h1>Ventex</h1>
-        </section>
-        <section class="socialmedia-ventex">
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
-            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+        <section class="aviso">
+            <span>Ventex no pide a través de SMS o de las redes sociales datos bancarios, tarjetas de crédito, clave NIP,
+                contraseñas o datos sensibles de cualquier tipo. 
+                <br>Si necesitas aclarar cualquier duda, puedes contactar con el Call Center en 800 225 5748.
+            </span>
         </section>
     </footer>
 
