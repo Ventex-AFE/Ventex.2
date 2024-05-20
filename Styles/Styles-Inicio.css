@@ -188,6 +188,9 @@ main {
   height: 40vh;
   border-radius: 16px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wave {
@@ -213,7 +216,6 @@ main {
     text-align: center;
     font-size: 50px;
     position: absolute;
-    top: 2.8em;
     left: 0;
     right: 0;
     color: black;
