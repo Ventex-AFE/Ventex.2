@@ -153,6 +153,68 @@ $Conexion_usser_select = mysqli_connect($hostname, $username, $password, $databa
 <section class="imgProfile">
     <div></div>
 </section>
+
+<!--- MODAL VENDER ----------------------------------------------------------------------------------->
+
+<article class="sellModalContainer ">
+  <section class="sellModalInformationContainer">
+    <h1 class="titleModal">Ventex</h1>
+    <p class="infoModal">asasc sdsdsd sdsdsd sdsd sdsdssd ssd sdss</p>
+  </section>
+  <section class="sellModalPlansContainer">
+    <div class="titlePlansSellerModalContainer">
+      <h1 class="titlePlansSellerModal">Planes</h1>
+    </div>
+    <section class="planSellerModalContainer">
+
+      <div class="planContainer normal">
+          <div class="planNameContainer">
+              <p class="planName">Basico </p>
+              <p class="subTextPlanName">(Plan Mejorado)</p>
+          </div>
+          <p class="pricePlan"><span class="price">GRATIS</span></p>
+          <div class="benefitsPlan">
+            <ul class="planBenefitsList">
+              <li>publicación de productos</li>
+              <li>perfil basico con filtrado de productos</li>
+            </ul>
+          </div>
+          <button class="planButton basicButton">Continuar con plan gratuito</button>
+      </div>
+
+      <div class="crownContiner">
+        <img src="../Icons/corona-premium.png" alt="" class="crownPremium">
+        <div class="planContainer premium">
+          <form action="" method="post" class="formPremiumPlan">
+            <div class="planNameContainer">
+              <p class="planName premiumName">Premium </p>
+              <p class="subTextPlanName">(Plan Mejorado)</p>
+            </div>
+            <p class="pricePlan">$ <span class="price">20.00</span></p>
+            <div class="benefitsPlan">
+              <ul class="planBenefitsList">
+                <li>publicación de productos</li>
+                <li>perfil basico con filtrado de productos</li>
+                <li>Catalogos personalizados.</li>
+                <li>Registro de Pedidos</li>
+                <li>Registro de ventas</li>
+              </ul>
+            </div>
+            <button class="planButton premiumButton">
+              Obtener plan Premium
+              <img src="../Icons/cocodrilo-premium.png" alt="" class="cocoPremium">
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </section>
+  </section>
+</article>
+<div class="overlaySellModal "></div>
+
+<!---------------------------------------------------------------------------------------------------->
+
 </header>
 
   <main>
