@@ -1,58 +1,51 @@
-const products = document.querySelectorAll('.productContainer');
-const prevButton = document.querySelectorAll('.prev');
-const nextButton = document.querySelectorAll('.next');
-const carrusel = document.querySelectorAll('.productsCarrusel');
+document.addEventListener('DOMContentLoaded', () => {
+    const carrusels = document.querySelectorAll('.productsCarrusel');
+    const prevButtons = document.querySelectorAll('.prev');
+    const nextButtons = document.querySelectorAll('.next');
 
-const conter = [];
+    const carrouselsData = [];
 
-
-const prev = (ind) =>{
-    
-
-    if((Math.ceil(products.length / 5) - 1) > 0){
-        console.log('hay mas de 5 productos');
-        if(conter[ind] = 0){
-            console.log('bich');
-            conter[ind] = Math.ceil(products.length / 5) - 1;
-        }
-        else{
-            conter[ind]--;
-            console.log('bich 2');
-        }
-        scroll(ind);
-    }
-}
-const next = (ind) =>{
-
-    console.log(conter);
-    if((Math.ceil(products.length / 5) - 1) > 0){
-        console.log('hay mas de 5 productos next');
-        if(conter[ind] >= Math.ceil(products.length / 5) - 1){
-            conter[ind] = 0;
-        }
-        else{
-            conter[ind]++;
-        }
-        
-        scroll(ind);
-    }
-}
-
-const scroll = (ind) =>{
-    carrusel.forEach((item, index) =>{
-        if(ind == index){
-            item.style.transform = `translateX(-${conter[ind] * 80}vw)`;
-        }
+    carrusels.forEach((carrusel, index) => {
+        const products = carrusel.querySelectorAll('.productContainer');
+        const totalProducts = products.length;
+        const itemsPerPage = 5;
+        const totalPages = Math.ceil(totalProducts / itemsPerPage);
+        carrouselsData.push({
+            index,
+            currentPage: 0,
+            totalPages,
+            itemsPerPage
+        });
     });
-}
 
-carrusel.forEach((car, index) =>{
+    const updateCarrusel = (carruselIndex) => {
+        const data = carrouselsData[carruselIndex];
+        const carrusel = carrusels[carruselIndex];
+        const offset = data.currentPage * data.itemsPerPage * 16; // Assuming each item is 20vw wide
+        carrusel.style.transform = `translateX(-${offset}vw)`;
+    };
 
-})
+    prevButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const data = carrouselsData[index];
+            if (data.currentPage > 0) {
+                data.currentPage--;
+            } else {
+                data.currentPage = data.totalPages - 1;
+            }
+            updateCarrusel(index);
+        });
+    });
 
-carrusel.forEach((prevBut, index) => {
-    conter.push(0);
-    prevButton[index].addEventListener('click', () => prev(index));
-    nextButton[index].addEventListener('click', () => next(index));
+    nextButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const data = carrouselsData[index];
+            if (data.currentPage < data.totalPages - 1) {
+                data.currentPage++;
+            } else {
+                data.currentPage = 0;
+            }
+            updateCarrusel(index);
+        });
+    });
 });
-s

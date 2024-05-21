@@ -126,48 +126,41 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
             $subcategoria = $subcat['Subcategoria'];
             $productos = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Categoria='$mywher' AND Subcategoria='$subcategoria'");
         ?>
-            <article class="productsContainer">
-                <section class="subcategoryCarrusel">
-                    <div class="subcategoryTitleContainer">
-                        <h2 class="subcategoryTitle"><?php echo $subcategoria; ?></h2>
-                    </div>
-                    <section class="containerCarrusel">
-                        <button class="carruselButton prev">
-                            << /button>
-                                <section class="carrusel">
-                                    <section class="productsCarrusel">
-                                        <?php while ($producto = mysqli_fetch_array($productos)) { ?>
-                                            <form action="../Frames/pantalla-producto.php" method="post">
-                                                <input type="hidden" name="id_product" value="<?php echo $producto['ID_Producto']; ?>">
-                                                <button class="productContainer" type="submit">
-                                                    <div class="productPhoto">
-                                                        <img src="../Product-Images/<?php echo $producto['Imagen']; ?>" class="productImage" />
-                                                    </div>
-                                                    <div class="productPrice">
-                                                        <p class="priceStyle">$<?php echo $producto['Precio']; ?></p>
-                                                    </div>
-                                                    <div class="productName">
-                                                        <p class="nameStyle"><?php echo $producto['Nombre_Prod']; ?></p>
-                                                    </div>
-                                                </button>
-                                            </form>
-                                        <?php } ?>
-                                    </section>
-                                </section>
-                                <button class="carruselButton next">></button>
+      <?php while ($subcat = mysqli_fetch_array($subc)) { ?>
+    <article class="productsContainer">
+        <section class="subcategoryCarrusel">
+            <div class="subcategoryTitleContainer">
+                <h2 class="subcategoryTitle"><?php echo $subcat['Subcategoria']; ?></h2>
+            </div>
+            <section class="containerCarrusel">
+                <button class="carruselButton prev"><</button>
+                <section class="carrusel">
+                    <section class="productsCarrusel">
+                        <?php
+                        $productos = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Categoria='$mywher' AND Subcategoria='{$subcat['Subcategoria']}'");
+                        while ($producto = mysqli_fetch_array($productos)) { ?>
+                            <form action="../Frames/pantalla-producto.php" method="post">
+                                <input type="hidden" name="id_product" value="<?php echo $producto['ID_Producto']; ?>">
+                                <button class="productContainer" type="submit">
+                                    <div class="productPhoto">
+                                        <img src="../Product-Images/<?php echo $producto['Imagen']; ?>" class="productImage" />
+                                    </div>
+                                    <div class="productPrice">
+                                        <p class="priceStyle">$<?php echo $producto['Precio']; ?></p>
+                                    </div>
+                                    <div class="productName">
+                                        <p class="nameStyle"><?php echo $producto['Nombre_Prod']; ?></p>
+                                    </div>
+                                </button>
+                            </form>
+                        <?php } ?>
                     </section>
                 </section>
-                <!-- Advertising Section -->
-                <!-- <article class="advertisingContainer">
-            <div class="advertisingBox">
-                <img src="../Product-Images/lays.jpeg" alt="" class="adverstisingImage">
-            </div>
-            <div class="advertisingBox">
-                <img src="../Product-Images/markverde.jpeg" alt="" class="adverstisingImage">
-            </div>
-        </article> -->
-            <?php } ?>
-            </article>
+                <button class="carruselButton next">></button>
+            </section>
+        </section>
+    </article>
+<?php }} ?>
 
     </main>
     <footer></footer>
