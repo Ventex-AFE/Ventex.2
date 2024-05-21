@@ -16,6 +16,7 @@
     <meta charset="UTF-8">
     <title>Ventex</title>
     <link rel="stylesheet" href="../Componentes/header.css">
+    <link rel="stylesheet" href="../Componentes/productBox.css">
     <link rel="stylesheet" href="categorias.css">
     <link rel="stylesheet" href="../Styles/Styles-Subcategoria.css">
 </head>

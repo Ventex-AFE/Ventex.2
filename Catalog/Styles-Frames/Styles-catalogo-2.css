@@ -12,6 +12,8 @@ main{
     position: absolute;
     right: 0;
     top: 10vh;
+    display: flex;
+    flex-wrap: wrap;
 }
 header{
     width: 100%;
@@ -113,6 +115,7 @@ header{
     height: 15vh;
     display: flex;
     align-items: center;
+    background-color: #a3a3a3;
 }
 .productsContainer{
     display: grid;
