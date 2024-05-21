@@ -148,36 +148,6 @@ $Conexion_usser_select = mysqli_connect($hostname, $username, $password, $databa
     <section class="productos-Recomendados">
       <h1>Productos Recomendados</h1>
       <section class="slider" id="resultados">
-        <!-- <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section>
-
-          <section class="card">
-            <div class="image"><span class="text">dsdas</span></div>
-            <span class="title">dadas</span>
-            <span class="price">$dsd</span>
-          </section> -->
-
         <script>
           document.addEventListener("DOMContentLoaded", getData);
 
