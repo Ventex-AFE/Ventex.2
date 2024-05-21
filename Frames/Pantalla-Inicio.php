@@ -16,7 +16,7 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
             $resultado = $Conexion_usser_select->query($sql);
             if ($resultado->num_rows > 0) {
                 $row = $resultado->fetch_assoc();
-                // Mostrar los productos 
+                // Mostrar los productos
                 echo '<section class="card">';
                 echo '<div class="image"><img src="' . $row['Imagen'] . '"></div>';
                 echo '<span class="title">' . $row['Nombre_Prod'] . '</span>';
@@ -46,7 +46,7 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
 </head>
 <header>
 
-<?php 
+<?php
   require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
   $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
 ?>
@@ -70,7 +70,7 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
                 <?php } ?>
             </ul>
         </li>
-        <li><a href="" class="headerOption">Planes</a></li>
+        <li><a href="" class="headerOption planHeaderButton">Planes</a></li>
         <li><a href="" class="headerOption">Vender</a></li>
     </ul>
 </nav>
@@ -88,16 +88,17 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
 
 <!--- MODAL VENDER ----------------------------------------------------------------------------------->
 
-<article class="sellModalContainer ">
-  <section class="sellModalInformationContainer">
+<article class="sellModalContainer hidden">
+  <section class="sellModalInformationContainer ">
     <h1 class="titleModal">Ventex</h1>
     <p class="infoModal">asasc sdsdsd sdsdsd sdsd sdsdssd ssd sdss</p>
   </section>
-  <section class="sellModalPlansContainer">
+  <section class="sellModalPlansContainer ">
+    <button class="closePlansButto">x</button>
     <div class="titlePlansSellerModalContainer">
       <h1 class="titlePlansSellerModal">Planes</h1>
     </div>
-    <section class="planSellerModalContainer">
+    <section class="planSellerModalContainer ">
 
       <div class="planContainer normal">
           <div class="planNameContainer">
@@ -139,12 +140,11 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
           </form>
         </div>
       </div>
-
     </section>
   </section>
 </article>
-<div class="overlaySellModal "></div>
-
+<div class="overlaySellModal hidden"></div>
+<script src="../Scripts/Script-plansModal.js"></script>
 <!---------------------------------------------------------------------------------------------------->
 
 </header>
@@ -164,6 +164,7 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
     <section class="productos-Recomendados">
       <h1>Productos Recomendados</h1>
       <section class="slider" id="resultados">
+
         <script>
           document.addEventListener("DOMContentLoaded", getData);
 
