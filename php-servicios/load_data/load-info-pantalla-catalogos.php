@@ -94,7 +94,7 @@ if ($num_rows > 0) {
                                         <h1 class="descriptionProductBox"><?php echo $productRow['Nombre_Prod']; ?></h1>
                                     </div>
                                 </button>
-                            <form action="></form>
+                            </form>
                             <?php
                         }
                             ?>
