@@ -90,6 +90,7 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
     <link rel="stylesheet" href="../Componentes/footer.css">
     <link rel="stylesheet" href="../Componentes/cardProduct.css">
     <link rel="stylesheet" href="../Componentes/productBoxSmaller.css">
+    <link rel="stylesheet" href="../Componentes/calculationModal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -135,9 +136,8 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
                         <input type="hidden" name="Id_seller" value="<?php echo $id_Seller; ?>">
                         <input type="submit" id="bot" value="Ver perfil del vendedor">
                     </form>
-                    <input type="submit" id="bot" value="Reportar Producto">
-
-
+                    <button type="submit" id="bot" class="btn calc">Reportar Producto</button>
+   
                 </section>
             </article>
         </section>
@@ -254,7 +254,26 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
             }
         </script>
     </main>
+         <!-- calculate Modal -------------------------------------------------------------------------------------------------->
 
+        <div class="calculateModal hidden">
+        <section class="part-Comentarios" style="width: 30vw;">
+                <section class="textU">
+                    <h1>Reportar producto</h1>
+                </section>
+                <form id="inputVal" method="post" action="../php-servicios/save_data/save-reporter-productos.php">
+                    <input type="hidden" name="fecha_Comentr" value="<?php echo date('Y-m-d'); ?>">
+                    <input type="hidden" name="hora_comentarior" value="<?php echo date('H:i:s'); ?>">
+                    <input type="hidden" name="id_prodr" value="<?php echo $id_product; ?>">
+                    <input type="text" placeholder="Escribe el motivo" name="descripcionr" id="text-Comen" class="text-alining" style="width: 40vw;">
+                    <article class="input-Comentar"><input class="submit-Com" type="submit" value="Reportar"></article>
+                </form>
+            </section>
+        </div>
+
+        <div class="overlay hidden"></div>
+        <div class="invisibleOverlay hidden"></div>
+    <!-- ----------------------------------------------------------- -->
     <footer>
         <section class="con">
             <section class="name-year">
@@ -277,6 +296,7 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
         </section>
     </footer>
     <script src="../Scripts/Script-producto.js"></script>
+   
 </body>
 
 </html>
