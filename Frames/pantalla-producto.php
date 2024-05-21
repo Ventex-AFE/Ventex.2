@@ -77,7 +77,7 @@ mysqli_stmt_fetch($stmt2);
 
 // Cerrar la consulta preparada
 mysqli_stmt_close($stmt2);
-$more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Categoria = '$Categoria' ORDER BY RAND() LIMIT 5");
+$more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Categoria = '$Categoria' ORDER BY RAND() LIMIT 15");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,12 +89,16 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
     <link rel="stylesheet" href="../Componentes/header.css">
     <link rel="stylesheet" href="../Componentes/footer.css">
     <link rel="stylesheet" href="../Componentes/cardProduct.css">
+    <link rel="stylesheet" href="../Componentes/productBoxSmaller.css">
+    <link rel="stylesheet" href="../Componentes/calculationModal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-<header>
-        <section><p class="logo">Ventex</p></section>
+    <header>
+        <section>
+            <p class="logo">Ventex</p>
+        </section>
         <nav>
             <ul class="menu">
                 <li><a href="">Inicio</a></li>
@@ -113,11 +117,11 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
     </header>
     <main>
 
-    <!-- Parte principal que muestra el producto------------------------------------->
+        <!-- Parte principal que muestra el producto------------------------------------->
 
         <section class="contenedor-Producto">
             <section id="img-Producto">
-                <img src="../Product-Images/<?php echo $Imagen ?>"> 
+                <img src="../Product-Images/<?php echo $Imagen ?>">
             </section>
             <article id="description">
                 <section class="desc">
@@ -132,70 +136,76 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
                         <input type="hidden" name="Id_seller" value="<?php echo $id_Seller; ?>">
                         <input type="submit" id="bot" value="Ver perfil del vendedor">
                     </form>
-                    <input type="submit" id="bot" value="Reportar Producto">
-
-
+                    <button type="submit" id="bot" class="btn calc">Reportar Producto</button>
+   
                 </section>
             </article>
         </section>
-<!-- ------------------------------------------------------------------------------ -->
+        <!-- ------------------------------------------------------------------------------ -->
 
-<!-- Contedor de los productos relacionados --------------------------------------- -->
+        <!-- Contedor de los productos relacionados --------------------------------------- -->
 
-        <section class="container-moreProductos">
-            <article class="textU">
-                <h1 class="textorel">Productos Relacionados</h1>
-            </article>
-            <section class="cont">
-                <?php while ($mostrar = mysqli_fetch_array($more)) { ?>
-
-                    <form action="../Frames/pantalla-producto.php" method="post" id="form1">
-                        <button class="producto" onclick="enviarFormulario()">
-                            <input type="hidden" name="id_product" value="<?php echo $mostrar['ID_Producto']; ?>">
-                            <section class="card"> <!--Esto contiene la informacion de un producto-->
-                                <div class="image"><img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>"></div>
-                                    <span class="price">$<?php echo $mostrar['Precio'] ?></span>
-                                    <span class="title"><?php echo $mostrar['Nombre_Prod'] ?></span>
+        <?php
+        $productos = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Categoria='$Categoria' AND Subcategoria='$Subcategoria'"); ?>
+        <article class="productsContainer">
+            <div class="subcategoryTitleContainer">
+                <h2 class="subcategoryTitle">Productos Similares</h2>
+            </div>
+            <section class="subcategoryCarrusel">
+                <section class="containerCarrusel">
+                    <button class="carruselButton prev"><</button>
+                    <button class="carruselButton prev">
+                        <</button>
+                            <section class="carrusel">
+                                <section class="productsCarrusel">
+                                    <?php while ($producto = mysqli_fetch_array($productos)) { ?>
+                                        <form action="../Frames/pantalla-producto.php" method="post">
+                                            <input type="hidden" name="id_product" value="<?php echo $producto['ID_Producto']; ?>">
+                                            <button class="productContainer" type="submit">
+                                                <div class="productPhoto">
+                                                    <img src="../Product-Images/<?php echo $producto['Imagen']; ?>" class="productImage" />
+                                                </div>
+                                                <div class="productPrice">
+                                                    <p class="priceStyle">$<?php echo $producto['Precio']; ?></p>
+                                                </div>
+                                                <div class="productName">
+                                                    <p class="nameStyle"><?php echo $producto['Nombre_Prod']; ?></p>
+                                                </div>
+                                            </button>
+                                        </form>
+                                    <?php } ?>
+                                </section>
                             </section>
+                            <button class="carruselButton next">></button>
+                </section>
+                <!-- ---------------------------------------------------------------------------- -->
 
-                            <script>
-                                function enviarFormulario() {
-                                    document.getElementById('form1').submit();
-                                }
-                            </script>
-                        </button>
-                    </form>
-
-                <?php } ?>
+                <!-- Contenedor Información de contacto -->
+            </section>
+        </article>
+        <section class="cont-Contact">
+            <article class="textU">
+                <h1>Informacion de contacto</h1>
+            </article>
+            <section class="part-Desc">
+                <article id="descriptionD">
+                    <p class="text-Desc">
+                        <?php echo $profile_Description ?>
+                    </p>
+                </article>
+            </section>
+            <section class="part-Redes">
+                <article id="contacto">
+                    <article class="redes">
+                        <a href="<?php echo $instagram ?>" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="<?php echo $whatsapp ?>" target="blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="<?php echo $x ?>" target="blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </article>
+                </article>
             </section>
         </section>
-<!-- ---------------------------------------------------------------------------- -->
-
-<!-- Contenedor Información de contacto -->
-
-            <section class="cont-Contact">
-                <article class="textU">
-                    <h1>Informacion de contacto</h1>
-                </article>
-                <section class="part-Desc">
-                    <article id="descriptionD">
-                        <p class="text-Desc">
-                            <?php echo $profile_Description ?>
-                        </p>
-                    </article>
-                </section>
-                <section class="part-Redes">
-                    <article id="contacto">
-                        <article class="redes">
-                            <a href="<?php echo $instagram ?>"target="_blank" ><i class="fa-brands fa-instagram"></i></a>
-                            <a href="<?php echo $whatsapp ?>" target="blank" ><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="<?php echo $x ?>" target="blank"><i class="fa-brands fa-x-twitter"></i></a>
-                        </article>
-                    </article>
-                </section>
-            </section>
-<!-- ---------------------------------------------------------------------------------- -->
-<!-- Contenedor de la valoración -->
+        <!-- ---------------------------------------------------------------------------------- -->
+        <!-- Contenedor de la valoración -->
 
         <section class="cont-Valoracion">
             <section class="part-Comentarios">
@@ -210,7 +220,7 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
                     <article class="input-Comentar"><input class="submit-Com" type="submit" value="Comentar"></article>
                 </form>
             </section>
-            
+
             <section class="part-Reseñas">
                 <section class="textU">
                     <h1>Reseñas</h1>
@@ -244,7 +254,26 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
             }
         </script>
     </main>
+         <!-- calculate Modal -------------------------------------------------------------------------------------------------->
 
+        <div class="calculateModal hidden">
+        <section class="part-Comentarios" style="width: 30vw;">
+                <section class="textU">
+                    <h1>Reportar producto</h1>
+                </section>
+                <form id="inputVal" method="post" action="../php-servicios/save_data/save-reporter-productos.php">
+                    <input type="hidden" name="fecha_Comentr" value="<?php echo date('Y-m-d'); ?>">
+                    <input type="hidden" name="hora_comentarior" value="<?php echo date('H:i:s'); ?>">
+                    <input type="hidden" name="id_prodr" value="<?php echo $id_product; ?>">
+                    <input type="text" placeholder="Escribe el motivo" name="descripcionr" id="text-Comen" class="text-alining" style="width: 40vw;">
+                    <article class="input-Comentar"><input class="submit-Com" type="submit" value="Reportar"></article>
+                </form>
+            </section>
+        </div>
+
+        <div class="overlay hidden"></div>
+        <div class="invisibleOverlay hidden"></div>
+    <!-- ----------------------------------------------------------- -->
     <footer>
         <section class="con">
             <section class="name-year">
@@ -261,12 +290,13 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
         </section>
         <section class="aviso">
             <span>Ventex no pide a través de SMS o de las redes sociales datos bancarios, tarjetas de crédito, clave NIP,
-                contraseñas o datos sensibles de cualquier tipo. 
+                contraseñas o datos sensibles de cualquier tipo.
                 <br>Si necesitas aclarar cualquier duda, puedes contactar con el Call Center en 800 225 5748.
             </span>
         </section>
     </footer>
-
+    <script src="../Scripts/Script-producto.js"></script>
+   
 </body>
 
 </html>
