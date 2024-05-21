@@ -89,8 +89,7 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
     <link rel="stylesheet" href="../Componentes/header.css">
     <link rel="stylesheet" href="../Componentes/footer.css">
     <link rel="stylesheet" href="../Componentes/cardProduct.css">
-    <link rel="stylesheet" href="../Componentes/productBox.css">
-    <link rel="stylesheet" href="../Styles/Styles-Subcategoria.css">
+    <link rel="stylesheet" href="../Componentes/productBoxSmaller.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -149,10 +148,12 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
         <?php
         $productos = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Categoria='$Categoria' AND Subcategoria='$Subcategoria'"); ?>
         <article class="productsContainer">
+            <div class="subcategoryTitleContainer">
+                <h2 class="subcategoryTitle">Productos Similares</h2>
+            </div>
             <section class="subcategoryCarrusel">
                 <section class="containerCarrusel">
-                    <button class="carruselButton prev">
-                        << /button>
+                    <button class="carruselButton prev"><</button>
                             <section class="carrusel">
                                 <section class="productsCarrusel">
                                     <?php while ($producto = mysqli_fetch_array($productos)) { ?>
