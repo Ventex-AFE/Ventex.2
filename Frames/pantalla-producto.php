@@ -154,6 +154,8 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
             <section class="subcategoryCarrusel">
                 <section class="containerCarrusel">
                     <button class="carruselButton prev"><</button>
+                    <button class="carruselButton prev">
+                        <</button>
                             <section class="carrusel">
                                 <section class="productsCarrusel">
                                     <?php while ($producto = mysqli_fetch_array($productos)) { ?>
