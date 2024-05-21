@@ -1,10 +1,9 @@
 footer {
     width: 100%;
     background-color: rgba(154, 149, 149, 0.66);
-
     position: relative;
-
     padding: 20px 0;
+    bottom: 0;
 
 }
 
