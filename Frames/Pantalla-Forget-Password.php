@@ -3,47 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Componentes/footer.css">
+    <!-- <link rel="stylesheet" href="../Styles/Styles-Edit-Profile.css"> -->
     <link rel="stylesheet" href="../Componentes/Styles-Form.css">
     <link rel="stylesheet" href="../Componentes/header-form.css">
-    <link rel="stylesheet" href="../Componentes/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Ventex</title>
 </head>
 <body>
-<header>
+    <header>
         <article class="title">
             <h1>Ventex</h1>
         </article>
     </header>
-    
+
     <main>
         <section class="decor">
             <div class="circle1"></div>
             <div class="circle2"></div>
             <div class="circle3"></div>
         </section>
-
         <section class="form">
-            <form action="../php-servicios/validation_data/validation-login.php" method="POST">
-                <br><h1 class="form-title">Iniciar sesión</h1>
+            <form action="" method="PUT">
+                <br><h1 class="form-title">Restablecer Contraseña</h1>
                 <section class="input-container">
-                    <label for="correo">Correo</label>
-                    <input class="input" type="password" name="correo">
+                    <label for="password">Nueva Contraseña</label>
+                    <input class="input" type="password" name="password">
                 </section>
 
                 <section class="input-container">
-                    <label for="again-Password">Contraseña</label>
+                    <label for="again-Password">Escríbela de nuevo</label>
                     <input class="input" type="password" name="again-Password">
                 </section>
-                <input class="submit" type="submit" name="login">
+                <input class="submit" type="submit" name="login" value="Cambiar Contraseña">
             
                 <p class="signup-link">
                         ¿No tienes una cuenta?
                         <a href="../Frames/pantalla-registro.html">Registrate</a>
-                </p>
-                <p class="signup-link">
-                        ¿Olvidaste tu contraseña?
-                        <a href="recoverPassword.php">Recuperala</a>
                 </p>
             </form>
         </section>
@@ -70,6 +66,5 @@
             </span>
         </section>
     </footer>
-
 </body>
 </html>

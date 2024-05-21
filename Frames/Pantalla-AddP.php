@@ -8,8 +8,9 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventex</title>
     <link rel="stylesheet" href="../Styles/Styles-Add-Prod.css">
+    <link rel="stylesheet" href="../Componentes/header.css">
+    <link rel="stylesheet" href="../Componentes/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Cabin+Sketch&family=Hammersmith+One&display=swap" rel="stylesheet">
@@ -18,57 +19,65 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Cabin+Sketch&family=Hammersmith+One&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Ventex</title>
 </head>
 
 <body>
-    <!-- Barra de navegación -->
-    <nav id="nav">
-        <!-- Título de la página -->
-        <h1 id="name">Ventex</h1>
-        <!-- Botones de navegación -->
-        <button class="buttonP">Inicio</button>
-        <button class="buttonP">Categoría</button>
-        <button class="buttonP">Planes</button>
-        <!-- Campo de búsqueda -->
-        <input type="search" name="" id="search">
-        <!-- Sección para mostrar fotos -->
-        <section id="photo"></section>
-    </nav>
+
+    <header>
+        <section><p class="logo">Ventex</p></section>
+        <nav>
+            <ul class="menu">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Categoria</a></li>
+                <li><a href="">Planes</a></li>
+                <li><a href="">Vender</a></li>
+            </ul>
+        </nav>
+        <form class="busqueda">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Buscar">
+        </form>
+        <section class="imgProfile">
+            <div></div>
+        </section>
+    </header>
 
     <!-- Contenido principal -->
-    <section id="main">
-        <!-- Columna lateral 1 -->
-        <section id="side1">
-            <!-- Título de sección -->
-            <h1 id="Descrip-AgregarP">Agregar Producto</h1>
+    <main>
+        <section class="decor">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
         </section>
-
         <!-- Columna lateral 2 -->
-        <section id="side2">
+        
+        <section class="form">
+            <h1 class="form-title">Agregar Nuevo Producto</h1>
             <!-- Formulario para agregar nuevo producto -->
-            <form action="..\php-servicios\save_data\save-regristrer-new-product.php" id="form_product" method="post" enctype="multipart/form-data">
-                <br>
-                <!-- Campo de entrada para el nombre del producto -->
-                <div class="inputbox" style="height: 5vh;">
-                    <input type="text" name="product_name" class="inp" placeholder=" " required><br>
+            <form action="..\php-servicios\save_data\save-regristrer-new-product.php" id="form_product" method="post" enctype="multipart/form-data">    
+            <!-- Campo de entrada para el nombre del producto -->
+                <div class="input-container">
                     <!-- Etiqueta para describir el campo -->
-                    <span class="text_input">Nombre del producto</span>
+                    <label for="product_name">Nombre del producto</label>
+                    <input type="text" name="product_name" class="inp" placeholder=" " required>
                 </div>
-                <div class="inputbox" style="height: 5vh;">
-                    <input type="number" name="product_price" class="inp" placeholder=" " min="0" required><br>
+                <div class="input-container">
                     <!-- Etiqueta para describir el campo -->
-                    <span class="text_input">Precio</span>
+                    <label for="product_price">Precio</label>
+                    <input type="number" name="product_price" class="inp" placeholder=" " min="0" required>
                 </div>
                 <!-- Campo de entrada para la descripción del producto -->
-                <div class="inputbox">
-                    <input type="text" name="product_description" class="inp" placeholder=" " required><br>
+                <div class="input-container">
                     <!-- Etiqueta para describir el campo -->
-                    <span class="text_input">Descripción</span>
+                    <label for="product_description">Descripción</label>
+                    <input type="text" name="product_description" class="inp" placeholder=" " required>
                 </div>
                 <!-- Contenedor para los selectores de categoría y subcategoría -->
-                <div id="contaner-selects">
+                <div class="input-container">
                     <!-- Selector de categoría -->
-                    <select name="product_category" id="product_category" class="selects" require>
+                    <select name="product_category" id="product_category" class="select-container" require>
                         <option value="">Categoría</option>
                         <?php
                         // Consulta SQL para obtener todas las categorías
@@ -84,30 +93,41 @@ session_start();
                         }
                         ?>
                     </select>
+                    </div>
+                    <div class="input-container">
                     <!-- Selector de subcategoría -->
-                    <select name="product_subcategory" id="product_subcategory" require class="selects" style="margin-left: 10%;">
+                    <select name="product_subcategory" id="product_subcategory" class="select-container" require>
                         <option value="">Subcategoría</option>
                     </select>
-                </div>
+                    </div>
+                
                     <!-- Sección para subir una foto del producto -->
                     <div id="up-photo">
-                        <label for="archivo" class="custom-file-input">Añadir Imagen
-                            <input type="file" name="product_image" id="archivo">
-                        </label>
+                        <label for="product_image" class="custom-file-input">Añadir Imagen</label>
+                        <input type="file" name="product_image" id="archivo" accept="image/*" onchange="previewImage(event, '#imgPreview')">
                     </div>
+                     <!-- script para mostrar imagen en contenedor -->
+                        <script>
+                        function previewImage(event, querySelector){
+                        const input = event.target;
+                        $imgPreview = document.querySelector(querySelector);
+
+                        if(!input.files.length) return
+
+                        file = input.files[0];
+
+                        objectURL = URL.createObjectURL(file);
+
+                        $imgPreview.src = objectURL;
+                        }
+                    </script>
                     <!-- Botón para enviar el formulario -->
                     <div id="button-div">
-                        <button type="submit" id="button-sumit">Publicar Producto</button>
+                        <button type="submit" class="submit" id="button-sumit">Publicar Producto</button>
                     </div>
+                    
             </form>
         </section>
-    </section>
-
-    <!-- Pie de página -->
-    <footer id="footler-v">
-        <!-- Título del pie de página -->
-        <h1 id="name-footer">Ventex</h1>
-    </footer>
     <script>
         $(document).ready(function() {
             // Manejar el cambio en el primer selector de categoría
@@ -140,6 +160,33 @@ session_start();
             });
         });
     </script>
+    <section class="cont-img">
+        <img src="" id="imgPreview">
+    </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <section class="con">
+            <section class="name-year">
+                <h1>2023-Ventex</h1>
+            </section>
+            <section class="logo-ventex">
+                <h1>Ventex</h1>
+            </section>
+            <section class="socialmedia-ventex">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            </section>
+        </section>
+        <section class="aviso">
+            <span>Ventex no pide a través de SMS o de las redes sociales datos bancarios, tarjetas de crédito, clave NIP,
+                contraseñas o datos sensibles de cualquier tipo. 
+                <br>Si necesitas aclarar cualquier duda, puedes contactar con el Call Center en 800 225 5748.
+            </span>
+        </section>
+    </footer>
 </body>
 
 </html>

@@ -164,7 +164,6 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
     <section class="productos-Recomendados">
       <h1>Productos Recomendados</h1>
       <section class="slider" id="resultados">
-        
         <script>
           document.addEventListener("DOMContentLoaded", getData);
 
