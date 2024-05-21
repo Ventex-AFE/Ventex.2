@@ -240,9 +240,7 @@ Antes del doctype vas a tener que abrir la consullta para las categorias
     </header>
 */
 
-.hidden{
-    display: none;
-}
+
 .sellModalContainer{
     width: 70vw;
     height: 90vh;
@@ -251,8 +249,9 @@ Antes del doctype vas a tener que abrir la consullta para las categorias
     top: 5vh;
     left: 15vw;
     z-index: 10;
-    display: flex;
     font-family: "Hammersmith One", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
 }
 .overlaySellModal{
     width: 100%;
@@ -447,4 +446,23 @@ Antes del doctype vas a tener que abrir la consullta para las categorias
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
+}
+.closePlansButto{
+    position: absolute;
+    top: 2vw;
+    right: 2vw;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 100%;
+    background: none;
+    border: 1px solid rgb(182, 182, 182);
+    color: rgb(182, 182, 182);
+}
+.closePlansButto:hover{
+    background-color: #00d43c;
+    color: white;
+    border: none;
+}
+.hidden{
+    display: none;
 }

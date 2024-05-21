@@ -147,10 +147,10 @@ mysqli_stmt_close($stmt);
                     <section class="textU">
                         <h1>Deja un Comentario</h1>
                     </section>
-                    <form id="inputVal" method="post" action="../php-servicios/save_data/save_new_comentario.php">
+                    <form id="inputVal" method="post" action="../php-servicios/save_data/save-new-comentario-seller.php">
                         <input type="hidden" name="fecha_Coment" value="<?php echo date('Y-m-d'); ?>">
                         <input type="hidden" name="hora_comentario" value="<?php echo date('H:i:s'); ?>">
-                        <input type="hidden" name="id_prod" value="<?php echo $Id_seller; ?>">
+                        <input type="hidden" name="id_seller" value="<?php echo $Id_seller; ?>">
                         <input type="text" placeholder="Escribe una reseña" name="descripcion" id="text-Comen" style="width: 14vw;">
                         <article class="input-Comentar"><input class="submit-Com" type="submit" value="Comentar"></article>
                     </form>
@@ -168,7 +168,7 @@ mysqli_stmt_close($stmt);
             </section>
         </article>
         <form action="" method="post">
-            <input type="hidden" name="id_seller" id="id_seller">
+            <input type="hidden" name="id_seller" id="id_seller" value="<?php echo $Id_seller?>">
         </form>
         <script>
             document.addEventListener("DOMContentLoaded", getData);
@@ -178,7 +178,7 @@ mysqli_stmt_close($stmt);
                 let content = document.getElementById("contRes");
                 let url = "../php-servicios/load_data/load-info-comentarios-perfil-vc.php";
                 let formData = new FormData();
-                formData.append('id_product', input);
+                formData.append('id_seller', input);
 
                 fetch(url, {
                         method: "POST",

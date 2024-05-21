@@ -20,17 +20,19 @@ main {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: start;
 }
 
 .contenedor-Producto {
-    width: 100%;
-    max-width: 100vw;
+    width: 80%;
+    min-height: 40vw;
     display: flex;
     justify-content: center;
     padding-top: 3rem;
     gap: 2rem;
+    background-color: white;
+    margin: 2vw;
+    margin-left: 10vw;
 }
 
 .contenedor-Producto span {
@@ -50,21 +52,23 @@ img {
 
 #description {
     width: 25vw;
-    height: 30vw;
+    min-height: 25vw;
     display: flex;
     justify-content: start;
-    padding: 3rem;
+    padding: 2vw;
+    /* border: 1px solid rgb(166, 166, 166); */
 }
-
+.contactDescription{
+    font-size: 1.2rem;
+}
 .desc {
-    width: 95%;
     display: flex;
     flex-direction: column;
     align-items: start;
 }
 
 .name-Product {
-    font-size: 2.5rem;
+    font-size: 3vw;
     padding-bottom: .5rem;
 }
 
@@ -74,7 +78,8 @@ img {
 }
 
 #price-product {
-    font-size: 1.8rem;
+    font-size: 2vw;
+    color:#07BF7D
 }
 
 #top {
@@ -88,8 +93,9 @@ img {
 }
 
 #text-desc {
-    font-size: 1.2rem;
-    padding-bottom: 1.5rem;
+    text-align: left;
+    font-size: 1.2vw;
+    padding-bottom: 1.5vw;
 }
 
 #ver-mas {
@@ -99,17 +105,20 @@ img {
 }
 
 #bot {
+    width: 25vw;
+    height: 3vw;
     background-color: #fff;
-    padding: 5px;
     position: relative;
-    transition: 0.5s;
-    font-size: 17px;
+    transition: 0.3s;
+    font-size: 1vw;
     border-radius: 0.4em;
     border: none;
-    margin-bottom: 10px;
+    margin-bottom: 1vw;
+    border: 1px solid gray;
 }
 
 #bot:hover {
+    border: none;
     color: whitesmoke;
     background-color: #182722cb;
 }
@@ -149,8 +158,13 @@ img {
 /* Contenedor Información de contacto */
 
 .cont-Contact{
-    width: 80%;
+    width: 40%;
     height: auto;
+    border-radius: 0.5vw;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    text-align: left;
+    margin-left: 5vw;
 }
 
 .cont-Contact h1{
@@ -188,13 +202,14 @@ img {
     color: #182722;
 }
 
-/* Contenedor de la valoración */
-
+/*---------------------------------------------------------------------------------------------------*/
+/*   Contenedor de la valoración                                                                     */
+/*---------------------------------------------------------------------------------------------------*/
 .cont-Valoracion{
     width: 100%;
-    max-height: 30vh;
+    min-height: 30vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 10px;
 }
@@ -205,29 +220,15 @@ img {
     padding: 10px;
     border-radius: 15px;
 }
-
 #inputVal{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
     gap: 1rem;
 }
-
-#text-Comen {
-    width: 100%;
-    height: auto;
-    min-height: 10vh;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: vertical; 
-    box-sizing: border-box; 
-    font-size: 16px;
-    line-height: 1.5;
-}
-
 
 .submit-Com{
     appearance: button;
@@ -292,29 +293,99 @@ img {
 .submit-Com:active {
     padding-bottom: 10px;
 }
-
-/* Reseñas */
-
-.part-Reseñas{
-    width: 50%;
-    max-height: calc(30vh - 20px); 
+/*---------------------------------------------------------------------------------------------------*/
+/*   Comentar                                                                                        */
+/*---------------------------------------------------------------------------------------------------*/
+.writeCommentSection{
+    width: 40vw;
+    display: flex;
+    justify-content: right;
+}
+.part-Comentarios{
+    width: 36vw;
+    height: 67vh;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: white;
+    box-shadow: 0 0 1vw 0.5vw rgb(220, 220, 220);
+}
+#text-Comen {
+    width: 90%;
+    height: auto;
+    height: 40vh;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; 
+    box-sizing: border-box; 
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 2vh;
+}
+/*---------------------------------------------------------------------------------------------------*/
+/*   Reseñas                                                                                         */
+/*---------------------------------------------------------------------------------------------------*/
+
+.reviewSectionContainer{
+ width: 55vw;
+ max-height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.part-Reseñas{
+    height: 70vh;
+    width: 90%;
     overflow: hidden; 
     display: flex;
     flex-direction: column;
-}
+    background-color: #fff;
+    box-shadow: 0 0 1vw 0.5vw rgb(231, 231, 231);
 
+}
+.viewRes{
+    width: 100%;
+    border-bottom: 0.1vw solid rgb(215, 215, 215);
+    padding: 1vw;
+    padding-right: 1vw;
+}
 .contRes{
-    max-height: calc(30vh - 100px);
+    max-height: 60vh;
     overflow-y: auto;
-    margin-bottom: 10px;
+    overflow-x: hidden;
+    padding-right: 1vw;
 }
+.userReviewContainer{
+    width: 100%;
+    height: 7vh;
+    margin-bottom: 2vh;
+    display: flex;
+    align-items: center;
+}
+.userReviewPhotoContainer{
+    width: 7vh;
+    height: 7vh;
+    border-radius: 100%;
+    background-color: gray;
+    overflow: hidden;
+    margin-right: 1vw;
+    display: flex;
+    align-items: center;
+}
+.userReviewPhoto{
+    width: 100%;
+    height: auto;
+}
+.reviewUserName{
 
-/*---------*/
+}
+/*---------------------------------------------------------------------------------------------------*/
 
 .productsContainer{
     width: 100%;
-    height: 35vw;
+    height: 37vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -376,9 +447,15 @@ img {
 }
 .subcategoryTitleContainer{
     width: 100%;
-    height: 8vh;
+    height: 5vw;
     display: flex;
     align-items: center;
+}
+.productDescriptionTitle{
+    font-size: 2.5vw;
+    color: rgb(77, 75, 75);
+    font-weight: 500;
+  margin-left: 2vw;
 }
 .calculateModal{
     width: 40vw;

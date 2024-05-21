@@ -1,9 +1,8 @@
 <?php
-$us = 'Thomas Rogrigez';
 require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
 $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
 
-$mywher = /*isset($_GET['categoria']) ? $_GET['categoria'] : null*/ 'Ropa';
+$mywher = isset($_GET['categoria']) ? $_GET['categoria'] : null /*'Ropa'*/;
 $busc = null;
 
 if ($mywher != null) {
@@ -12,7 +11,7 @@ if ($mywher != null) {
 } else {
     $busc = "SELECT * FROM productos";
 }
-$subc = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Subcategoria FROM productos WHERE categoria='$mywher';");
+$subc = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Subcat,foto_subcategoria FROM subcategoria WHERE Categoria='$mywher';");
 $ex = mysqli_query($Conexion_usser_select, $busc);
 
 ?>
@@ -41,7 +40,7 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
                     <ul class="menuv">
                         <?php while ($cat = mysqli_fetch_array($cats)) { ?>
                             <li class="ca">
-                                <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
+                                <a href="Pantalla-Subcategoria.php?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
                                     <div class="categorieSection">
                                         <p class="categorieOption"><?php echo $cat['Nombre_Cat']; ?></p>
                                     </div>
@@ -76,11 +75,11 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
                 <form action="Pantalla-subcategoria-sub.php" method="post" class="subcategoria-form">
                     <button class="subcategoryButton" type="submit">
                         <div class="subcategoryPhotoContainer">
-                            <img src="../Imgens-Pefil/melanie.jpeg" alt="Nones" class="subcategoryPhoto">
+                            <img src="../Product-Images/Imagenes-subcategorias/<?php echo $subcat['foto_subcategoria']; ?>" alt="Nones" class="subcategoryPhoto">
                         </div>
                         <div class="subcategoryNameContainer">
-                            <input type="hidden" name="id" value="<?php echo $subcat['Subcategoria']; ?>">
-                            <p class="subcategoryName"><?php echo $subcat['Subcategoria']; ?></p>
+                            <input type="hidden" name="id" value="<?php echo $subcat['Nombre_Subcat']; ?>">
+                            <p class="subcategoryName"><?php echo $subcat['Nombre_Subcat']; ?></p>
                         </div>
                     </button>
                 </form>

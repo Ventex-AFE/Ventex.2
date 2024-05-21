@@ -95,26 +95,50 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
 </head>
 
 <body>
-    <header>
-        <section>
-            <p class="logo">Ventex</p>
-        </section>
-        <nav>
-            <ul class="menu">
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Categoria</a></li>
-                <li><a href="">Planes</a></li>
-                <li><a href="">Vender</a></li>
+
+<header>
+
+<?php 
+  require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
+  $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
+?>
+<section>
+    <p class="logo">Ventex</p>
+</section>
+<nav>
+    <ul class="menu">
+        <li><a href="" class="headerOption">Inicio</a></li>
+        <li><a href="#" id="categorias" class="headerOption">Categorías</a>
+            <div class="invisible"></div>
+            <ul class="menuv">
+                <?php while ($cat = mysqli_fetch_array($cats)) { ?>
+                    <li class="ca">
+                        <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
+                            <div class="categorieSection">
+                                <p class="categorieOption"><?php echo $cat['Nombre_Cat']; ?></p>
+                            </div>
+                        </a>
+                    </li>
+                <?php } ?>
             </ul>
-        </nav>
-        <form class="busqueda">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Buscar">
-        </form>
-        <section class="imgProfile">
-            <div></div>
-        </section>
-    </header>
+        </li>
+        <li><a href="" class="headerOption">Planes</a></li>
+        <li><a href="" class="headerOption">Vender</a></li>
+    </ul>
+</nav>
+<section class="busqueda">
+    <form class="busquedaForm" action="../Frames/Pantalla-Busqueda.php" method="post" onsubmit="return enviarFormulario()">
+        <input type="search" placeholder="Buscar" name="busqueda" class="inputSearchHeader" require>
+        <button class="searchButtonHeader">
+            <img src="../Icons/lupaB.png" alt="" class="imageSearchHeader">
+        </button>
+    </form>
+</section>
+<section class="imgProfile">
+    <div></div>
+</section>
+
+</header>
     <main>
 
         <!-- Parte principal que muestra el producto------------------------------------->
@@ -128,10 +152,8 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
                     <h1 class="name-Product"><?php echo $Nombre_Prod ?></h1>
                     <span class="category"><?php echo $Categoria ?></span>
                     <span id="price-product">$<?php echo $Precio ?></span>
-
-                    <span id="top">Top 5 en popularidad</span>
                     <span id="desc-Contacto"><?php echo $Descripcion_contact ?></span>
-                    <span id="text-desc"><?php echo $Descripcion ?></span>
+                    <span id="text-desc"><?php echo $Descripcion ?> y mas información innecesaria solo para llenar el campo, y pues ajjaamamm, ya estoy muerto, me quiero ir a mimir</span>
                     <form action="../Frames/pantalla-perfil-vc.php" method="post" id="form-seller">
                         <input type="hidden" name="Id_seller" value="<?php echo $id_Seller; ?>">
                         <input type="submit" id="bot" value="Ver perfil del vendedor">
@@ -153,7 +175,6 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
             </div>
             <section class="subcategoryCarrusel">
                 <section class="containerCarrusel">
-                    <button class="carruselButton prev"><</button>
                     <button class="carruselButton prev">
                         <</button>
                             <section class="carrusel">
@@ -184,13 +205,15 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
             </section>
         </article>
         <section class="cont-Contact">
-            <article class="textU">
-                <h1>Informacion de contacto</h1>
-            </article>
+            <div class="subcategoryTitleContainer">
+                <h2 class="productDescriptionTitle">Información de contacto</h2>
+            </div>
+            
             <section class="part-Desc">
                 <article id="descriptionD">
-                    <p class="text-Desc">
+                    <p class="contactDescription">
                         <?php echo $profile_Description ?>
+                        Holas como están papus, nomás vengo a poner info random para ver si es cierto o no que esta madre jala, así que no me pongan mucha atención, solo dusfruten mis amores
                     </p>
                 </article>
             </section>
@@ -207,26 +230,32 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
         <!-- ---------------------------------------------------------------------------------- -->
         <!-- Contenedor de la valoración -->
 
+
         <section class="cont-Valoracion">
-            <section class="part-Comentarios">
-                <section class="textU">
-                    <h1>Deja un Comentario</h1>
+            <section class="writeCommentSection">
+                <section class="part-Comentarios">
+                    <div class="subcategoryTitleContainer">
+                        <h2 class="productDescriptionTitle">Deja un Comentario</h2>
+                    </div>
+                    <form id="inputVal" method="post" action="../php-servicios/save_data/save_new_comentario.php">
+                        <input type="hidden" name="fecha_Coment" value="<?php echo date('Y-m-d'); ?>">
+                        <input type="hidden" name="hora_comentario" value="<?php echo date('H:i:s'); ?>">
+                        <input type="hidden" name="id_prod" value="<?php echo $id_product; ?>">
+                        <textarea placeholder="Escribe una reseña del producto" name="descripcion" id="text-Comen" required></textarea>
+                        <!-- <input type="text" placeholder="Escribe una reseña del producto" name="descripcion" id="text-Comen"> -->
+                        <article class="input-Comentar"><input class="submit-Com" type="submit" value="Comentar"></article>
+                    </form>
                 </section>
-                <form id="inputVal" method="post" action="../php-servicios/save_data/save_new_comentario.php">
-                    <input type="hidden" name="fecha_Coment" value="<?php echo date('Y-m-d'); ?>">
-                    <input type="hidden" name="hora_comentario" value="<?php echo date('H:i:s'); ?>">
-                    <input type="hidden" name="id_prod" value="<?php echo $id_product; ?>">
-                    <input type="text" placeholder="Escribe una reseña del producto" name="descripcion" id="text-Comen">
-                    <article class="input-Comentar"><input class="submit-Com" type="submit" value="Comentar"></article>
-                </form>
             </section>
-
-            <section class="part-Reseñas">
-                <section class="textU">
-                    <h1>Reseñas</h1>
-                </section>
-                <section class="contRes" id="contRes">
-
+            
+            <section class="reviewSectionContainer">
+                <section class="part-Reseñas">
+                    <div class="subcategoryTitleContainer">
+                        <h2 class="productDescriptionTitle">Reseñas</h2>
+                    </div>
+                    <section class="contRes" id="contRes">
+    
+                    </section>
                 </section>
             </section>
         </section>

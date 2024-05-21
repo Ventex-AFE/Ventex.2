@@ -16,6 +16,7 @@
     width: 18vw;
     height: 18vw;
     border-bottom: 0.1cqi solid rgb(196, 196, 196);
+    overflow: hidden;
 }
 .infoProductBox{
     width: 18vw;
@@ -42,4 +43,8 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+.photo{
+    width: auto;
+    height: 100%;
 }
