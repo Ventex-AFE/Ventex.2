@@ -32,8 +32,17 @@ $num_rows = $result->num_rows;
 
 if ($num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-?>
-              <article class="viewRes"><?php echo $row['Descripcion']; ?></article>
+?>  
+
+    <article class="viewRes">
+        <div class="userReviewContainer">
+            <div class="userReviewPhotoContainer">
+                <img src="../Imgens-Pefil/melanie.jpeg" alt="" class="userReviewPhoto">
+            </div>
+            <p class="reviewUserName">Melanie Martinez</p>
+        </div>
+        <?php echo $row['Descripcion']; ?>
+    </article>
 <?php
     }
 } else {?>
