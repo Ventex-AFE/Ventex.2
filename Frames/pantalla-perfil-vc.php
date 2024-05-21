@@ -167,13 +167,16 @@ mysqli_stmt_close($stmt);
                 </section>
             </section>
         </article>
+        <form action="" method="post">
+            <input type="hidden" name="id_seller" id="id_seller">
+        </form>
         <script>
             document.addEventListener("DOMContentLoaded", getData);
 
             function getData() {
-                let input = document.getElementById("id_product").value;
+                let input = document.getElementById("id_seller").value;
                 let content = document.getElementById("contRes");
-                let url = "../php-servicios/load_data/load-info-comentarios-Pantalla-seller.php";
+                let url = "../php-servicios/load_data/load-info-comentarios-perfil-vc.php";
                 let formData = new FormData();
                 formData.append('id_product', input);
 
