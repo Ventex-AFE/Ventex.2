@@ -83,7 +83,7 @@ mysqli_stmt_close($stmt);
 
 <body>
 
-<header>
+    <header>
         <section>
             <p class="logo">Ventex</p>
         </section>
@@ -99,7 +99,7 @@ mysqli_stmt_close($stmt);
                                     <div class="categorieSection">
                                         <p class="categorieOption"><?php echo $cat['Nombre_Cat']; ?></p>
                                     </div>
-                                    
+
                                 </a>
                             </li>
                         <?php } ?>
@@ -121,6 +121,7 @@ mysqli_stmt_close($stmt);
         <!--Left------------------------------------------------------------------------------------------->
         <article class="left">
             <section class="personalInfo">
+                <button type="submit" id="bot" class="btn calc">Reportar Vendedor</button>
                 <div class="photoContainer"><img src="../Imgens-Pefil/<?php echo $Imagen ?>" alt="" class="profilePhoto"></div>
                 <div class="nameContainer">
                     <p class="userName"><?php echo $Name_Seller ?></p>
@@ -141,7 +142,51 @@ mysqli_stmt_close($stmt);
                 <p class="text"><?php echo $Contact_description ?>
                 </p>
             </section>
+            <section class="personalInfo">
+                <section class="part-Comentarios">
+                    <section class="textU">
+                        <h1>Deja un Comentario</h1>
+                    </section>
+                    <form id="inputVal" method="post" action="../php-servicios/save_data/save_new_comentario.php">
+                        <input type="hidden" name="fecha_Coment" value="<?php echo date('Y-m-d'); ?>">
+                        <input type="hidden" name="hora_comentario" value="<?php echo date('H:i:s'); ?>">
+                        <input type="hidden" name="id_prod" value="<?php echo $Id_seller; ?>">
+                        <input type="text" placeholder="Escribe una reseña" name="descripcion" id="text-Comen" style="width: 14vw;">
+                        <article class="input-Comentar"><input class="submit-Com" type="submit" value="Comentar"></article>
+                    </form>
+                </section>
+            </section>
+            <section class="personalInfo">
+                <section class="part-Reseñas">
+                    <section class="textU">
+                        <h1>Reseñas</h1>
+                    </section>
+                    <section class="contRes" id="contRes">
+
+                    </section>
+                </section>
+            </section>
         </article>
+        <script>
+            document.addEventListener("DOMContentLoaded", getData);
+
+            function getData() {
+                let input = document.getElementById("id_product").value;
+                let content = document.getElementById("contRes");
+                let url = "../php-servicios/load_data/load-info-comentarios-Pantalla-seller.php";
+                let formData = new FormData();
+                formData.append('id_product', input);
+
+                fetch(url, {
+                        method: "POST",
+                        body: formData
+                    }).then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        content.innerHTML = data;
+                    }).catch(err => console.log(err));
+            }
+        </script>
         <!--Rigth------------------------------------------------------------------------------------------->
         <article class="rigth">
             <section class="searchSection">
@@ -258,7 +303,7 @@ mysqli_stmt_close($stmt);
         </article>
     </main>
     <footer>
-        
+
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", getData);
@@ -282,6 +327,26 @@ mysqli_stmt_close($stmt);
                 }).catch(err => console.log(err));
         }
     </script>
+    <!-- calculate Modal -------------------------------------------------------------------------------------------------->
+
+    <div class="calculateModal hidden">
+        <section class="part-Comentarios" style="width: 30vw;">
+            <section class="textU">
+                <h1>Reportar vendedor</h1>
+            </section>
+            <form id="inputVal" method="post" action="../php-servicios/save_data/save_new_reporter_seller.php">
+                <input type="hidden" name="fecha_Comentr" value="<?php echo date('Y-m-d'); ?>">
+                <input type="hidden" name="hora_comentarior" value="<?php echo date('H:i:s'); ?>">
+                <input type="hidden" name="Id_sellerr" value="<?php echo $Id_seller; ?>">
+                <input type="text" placeholder="Escribe el motivo" name="descripcionr" id="text-Comen" class="text-alining" style="width: 40vw;">
+                <article class="input-Comentar"><input class="submit-Com" type="submit" value="Reportar"></article>
+            </form>
+        </section>
+    </div>
+    <div class="overlay hidden"></div>
+    <div class="invisibleOverlay hidden"></div>
+    <!-- ----------------------------------------------------------- -->
+    <script src="../Scripts/Script-perfil-vc.js"></script>
 </body>
 
 </html>
