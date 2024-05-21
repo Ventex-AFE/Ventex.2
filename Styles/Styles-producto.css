@@ -11,12 +11,14 @@ html {
 
 body {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     /* overflow-x: hidden; */
 }
 
 main {
     width: 100%;
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: start;
 }
