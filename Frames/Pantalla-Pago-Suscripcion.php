@@ -79,17 +79,17 @@ session_start();
   <div class="credit-card-info--form">
     <div class="input_container">
       <label for="password_field" class="input_label">Nombre completo del titular de la tarjeta</label>
-      <input id="password_field" class="input_field" type="text" name="namet" title="Inpit title" placeholder="Nombre Completo">
+      <input id="password_field" class="input_field" type="text" name="namet" title="Inpit title" placeholder="Nombre Completo" required>
     </div>
     <div class="input_container">
       <label for="password_field" class="input_label">Numeros de la targeta</label>
-      <input id="password_field" class="input_field" type="number" name="numbertar" title="Inpit title" placeholder="0000 0000 0000 0000">
+      <input id="password_field" class="input_field" type="number" name="numbertar" title="Inpit title" placeholder="0000 0000 0000 0000" required>
     </div>
     <div class="input_container">
       <label for="password_field" class="input_label">Fecha de expiracion / CVV</label>
       <div class="split">
-      <input id="password_field" class="input_field" type="text" name="fechex" title="Expiry Date" placeholder="mm/aa">
-      <input id="password_field" class="input_field" type="number" name="cvv" title="CVV" placeholder="CVV">
+      <input id="password_field" class="input_field" type="text" name="fechex" title="Expiry Date" placeholder="mm/aa" required>
+      <input id="password_field" class="input_field" type="number" name="cvv" title="CVV" placeholder="CVV" required>
     </div>
     </div>
   </div>

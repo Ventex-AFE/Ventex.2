@@ -3,7 +3,7 @@ session_start();
 require_once('../Conexion_db/conexion_usser_changes.php');
 
 // Obtener el ID del usuario de la sesión
-$Id_usser_regristro = 5;
+$Id_usser_regristro = $_SESSION['id'];
 $Id_prod = mysqli_real_escape_string($Conexion_usser_changes, $_POST['id_prod']);
 $fecha_Coment = mysqli_real_escape_string($Conexion_usser_changes, $_POST['fecha_Coment']);
 $hora_comentario = mysqli_real_escape_string($Conexion_usser_changes, $_POST['hora_comentario']);

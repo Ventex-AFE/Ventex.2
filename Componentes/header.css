@@ -8,22 +8,23 @@ header{
     height: 10vh;
     display: flex;
     align-items: center;
+    justify-content: end;
     background-color: #182722;
     font-family: Arial, Helvetica, sans-serif;
     z-index: 1;
     position: relative;
 }
 .logo{
-    width: 15vw;
     height: 100%;
     padding: 2rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Hammersmith One", sans-serif;
 }
 
 nav{
     width: 40vw;
+    display: flex;
 }
 
 ul{
@@ -44,7 +45,7 @@ a{
 
 .menu li{
     display: inline-block;
-    width: 8vw;
+    width: auto;
     transition:  all 0.3 ease-in-out;
 }
 
@@ -57,7 +58,7 @@ a{
     scale: 1 1;
 }
 
-.menu > li a{
+.menu > li .headerOption{
     color: aliceblue;
     display: flex;
     align-items: center;
@@ -66,9 +67,11 @@ a{
     text-decoration: none;
     position: relative;
     height: 100%;
+    font-size: 1rem;
+    margin-left: 2vw;
 }
 
-.menu >li > a::before{
+.menu >li > .headerOption::before{
     content: "";
     position: absolute;
     width: 100%;
@@ -77,30 +80,112 @@ a{
     left: 0px;
     background-color: #07BF7D;
     transition: all 0.2s ease-in-out;
-    scale: 0 0;
+    scale: 0;
     visibility: hidden;
+    border-radius: 10px;
 }
+.menuv{
+    width: 15vw;
+    height: auto;
+    position: absolute;
+    background-color: rgba(77, 77, 77, 0.741);
+    display: none;
+    top: 10.5vh;
+}
+.invisible{
+    position: absolute;
+    width: 10vw;
+    height: 5vh;
+    display: none;
+}
+.invisible:hover{
+    display: flex;
+}
+.menuv:hover,
+.invisible:hover,
+.invisible:hover ~ .menuv,
+.menuv:hover ~ .invisible,
+#categorias:hover ~ .invisible,
+#categorias:hover ~ .menuv{
+    display: flex;
+    flex-wrap: wrap;
+}
+.linkCategoriesOption{
+    text-decoration: none;
+}
+.categorieSection{
+    width: 12vw;
+    height: 3vh;
+    padding: 0.5vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    display: flex;
+    align-items: center;
+}
+.categorieSection:hover{
+    background-color: rgba(63, 63, 63, 0.741);
+}
+
+.categorieOption{
+    text-decoration: none;
+    color: white;
+    font-size: small;
+}
+
+/* ------------------------------------------------- */
 
 .busqueda{
-    width: 20vw;
+    width: 35vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
-
-.busqueda > input{
-    height: 4vh;
-    width: 16vw;
-    border-radius: 20px;
+.busquedaForm{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: white;
+    height: 5vh;
+    width: 25vw;
+    position: relative;
+    margin-right: 1rem;
+    border: 0.5px solid white;
+}
+.inputSearchHeader{
+    height: 5vh;
+    width: 25vw;
+    /* border-radius: 20px; */
     padding-left: 1rem;
+    background: none;
+    border: none;
+    outline: 0cap; 
+    padding-right: 5vh;
 }
-
-.busqueda i{
-    color: white;
+.searchButtonHeader{
+    height: 5vh;
+    width: 5vh;
+    background-color: #182722;
+    border: none;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
 }
-
+.searchButtonHeader:hover{
+    background-color: #2d4e43;
+}
+.imageSearchHeader{
+    width: 70%;
+    height: 70%;
+}
 .imgProfile{
-    width: 12vw;
+    width: 10vw;
     height: 10vh;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
 }
 
@@ -108,7 +193,7 @@ a{
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 100%;
-    background-color: blueviolet;
+    background-color: rgb(239, 239, 239);
 }
 
 
@@ -116,9 +201,9 @@ a{
 /* //Este el header que funciona con las pantallas de categorias y tambien la pnatlla de buqueda, te falata agregar la foto del perfil
 y tambien en los perfiles
 
-Antes del doctype vas a tener que abrir la consullta para las categorias 
+Antes del doctype vas a tener que abrir la consullta para las categorias
 <?php
- // tienesque poner estas dos lineas o si 
+ // tienesque poner estas dos lineas o si
     require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
 
     $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria");
@@ -154,3 +239,212 @@ Antes del doctype vas a tener que abrir la consullta para las categorias
         </section>
     </header>
 */
+
+.hidden{
+    display: none;
+}
+.sellModalContainer{
+    width: 70vw;
+    height: 90vh;
+    background-color: rgb(254, 254, 254);
+    position: fixed;
+    top: 5vh;
+    left: 15vw;
+    z-index: 10;
+    display: flex;
+    font-family: "Hammersmith One", sans-serif;
+}
+.overlaySellModal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(186, 186, 186, 0.191);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    z-index: 6;
+    top: 0;
+}
+.sellModalInformationContainer{
+    width: 23vw;
+    height: 100%;
+    background-color: #07BF7D;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    padding: 2vw;
+}
+.titleModal{
+    color: white;
+    font-size: 4rem;
+}
+.sellModalPlansContainer{
+    width: 47vw;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.titlePlansSellerModalContainer{
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titlePlansSellerModal{
+    color: rgb(192, 192, 192);
+    font-size: 3rem;
+    font-weight: 600;
+}
+.planSellerModalContainer{
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.planContainer{
+    width: 20.7vw;
+    height: 57vh;
+    margin: 0.9vw;
+    border-radius: 0.5vw;
+    position: relative;
+    overflow: hidden;
+}
+.planNameContainer{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content:center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 100;
+}
+.planName{
+    font-size: 1.4rem;
+    width: 100%;
+}
+.subTextPlanName{
+    font-size: 0.5rem;
+    color: black;
+    width: 100%;
+}
+.pricePlan{
+    text-align: center;
+    font-size: 1rem;
+
+}
+.price{
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+.benefitsPlan{
+    width: 100%;
+    height: 25vh;
+    margin-top: 1vh;
+    padding: 1vw;
+}
+.planBenefitsList{
+    list-style-type: disc;
+}
+.planBenefitsList > li{
+    color: gray;
+    margin-left: 2.5vw;
+    font-weight: 100;
+    font-size: 0.9rem;
+    margin-top: 1vh;
+}
+.planButton{
+    width: 90%;
+    height: 7vh;
+    position: relative;
+}
+.premiumButton{
+    border: none;
+    background-color: #00f245;
+    color: white;
+}
+.premiumButton:hover{
+    background-color: #00d43c;
+}
+.basicButton{
+    background-color: white;
+    border: 0.1vw solid rgb(167, 167, 167);
+    color: gray;
+}
+.basicButton:hover{
+    background-color: #eeeeee;
+}
+.cocoPremium{
+    height: 6vh;
+    position: absolute;
+    top: -4vh;
+    right: 0;
+}
+.crownContiner{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 8;
+}
+.crownPremium{
+    position: absolute;
+    height: 10vh;
+    top: -7vh;
+    z-index: 11;
+}
+/*------------------------------------------------------------*/
+
+.normal{
+    border: 0.1vw solid rgb(203, 203, 203);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+.premiumName{
+    color: #00d43c;
+}
+.premium::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 20.7vw;
+    height: 55vh;
+    background-image: linear-gradient(#00f245, #00f24519);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+.premium::after{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 20.7vw;
+    height: 55vh;
+    background-image: linear-gradient(#00f245, #00f24519);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.formPremiumPlan{
+    position: absolute;
+    inset: 0.2vw;
+    border-radius: 0.4vw;
+    background-color: white;
+    z-index: 9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
