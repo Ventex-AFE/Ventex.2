@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Componentes/footer.css">
     <!-- <link rel="stylesheet" href="../Styles/Styles-Edit-Profile.css"> -->
-    <link rel="stylesheet" href="../Styles/Styles-Forget-Password.css">
+    <link rel="stylesheet" href="../Componentes/Styles-Form.css">
     <link rel="stylesheet" href="../Componentes/header-form.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Ventex</title>
@@ -25,7 +25,7 @@
         </section>
         <section class="form">
             <form action="" method="PUT">
-                <h1 class="form-title">Restablecer Contraseña</h1>
+                <br><h1 class="form-title">Restablecer Contraseña</h1>
                 <section class="input-container">
                     <label for="password">Nueva Contraseña</label>
                     <input class="input" type="password" name="password">
