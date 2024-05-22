@@ -1,6 +1,17 @@
+<?php 
+session_start();
+if (!isset($_SESSION['Admin']) || $_SESSION['Admin'] !== TRUE) {
+  // Redirigir al login si no está logueado como Admin
+  
+
+    header('Location:..\Frames\pantalla-Login.html');
+    exit(); // Asegúrate de detener el script después de la redirección
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,11 +48,11 @@
       <!-- Seccion para la imagen del administrador -->
       <section id="imagen-usAdm">
         <!-- imagen recoleccion con php en la db para obtner la ruta de la imagen -->
-        <img src="" id="img-A">
+        <img src="../Imgens-Pefil/<?php echo $_SESSION['img']?>" id="img-A">
       </section>
       <section id="Name-Adm">
         <!-- Parte para nombre de adm y va hacer pasado con session php -->
-        <h2>Alejandro Geronimo Jesucristo Vencedor</h2><br>
+        <h2><?php echo $_SESSION['name']?></h2><br>
         <P>CEO - Ventex</P>
       </section>
     </section>
@@ -94,7 +105,7 @@
 
     <section id="button-logout">
         <img src="" id="icon-logout">
-        <a href="o" class="link-logout">Log out</a>
+        <a href="../php-servicios/deletion_data/deletion_session_usser.php" class="link-logout">Log out</a>
       <!-- Link al archivo para destruir la session -->
     </section>
   </article>
@@ -147,8 +158,68 @@
             .then(data => {
               // console.log(data);
               content.innerHTML = data;
+              asignarEventos()
             }).catch(err => console.log(err));
         }
+
+        function asignarEventos() {
+          const optionsButton = document.querySelectorAll('.checkButton');
+                const optionsList = document.querySelectorAll('.pointsOptions');
+                const invisibleOverlay = document.querySelector('.invisibleOverlay');
+
+
+            optionsButton.forEach((but, index) => {
+                but.addEventListener('click', () => {
+                    optionsList[index].classList.remove('hidden');
+                    invisibleOverlay.classList.remove('hidden');
+                });
+            });
+            const closeOptionsList = () =>{
+    optionsList.forEach((list) => {
+            list.classList.add('hidden');
+    });
+    invisibleOverlay.classList.add('hidden');
+}
+
+optionsButton.forEach((but, index) => {
+
+    console.log('hola');
+    but.addEventListener('click', () => {
+        console.log('hola');
+        optionsList[index].classList.remove('hidden');
+        invisibleOverlay.classList.remove('hidden');
+    });
+});
+invisibleOverlay.addEventListener('click', closeOptionsList);
+            invisibleOverlay.addEventListener('click', closeOptionsList);
+
+            /*--------------------------------------------------------------------*/
+            document.addEventListener("DOMContentLoaded", function() {
+                // Obtener los botones de editar y eliminar
+                const editButtons = document.querySelectorAll('.editButton');
+                const deleteButtons = document.querySelectorAll('.deleteButton');
+
+                // Agregar event listener para el botón de editar
+                editButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Enviar el formulario correspondiente
+                        const form = this.parentNode.querySelector('form');
+                        form.submit();
+                    });
+                });
+
+                // Agregar event listener para el botón de eliminar
+                deleteButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Enviar el formulario correspondiente
+                        const form = this.parentNode.querySelector('form');
+                        form.submit();
+                    });
+                });
+            });
+
+        }
+
       </script>
     </table>
   </section>

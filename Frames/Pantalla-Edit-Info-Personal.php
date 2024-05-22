@@ -4,11 +4,15 @@ require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
 
 // Comprobar si la sesión está iniciada
 session_start();
-// if (!isset($_SESSION['id'])) {
-//     // Si no hay sesión iniciada, redireccionar o manejar el caso según tus necesidades
+if (!isset($_SESSION['id'])) {
+   // Si no hay sesión iniciada, redireccionar o manejar el caso según tus necesidades
 //     // Por ejemplo, redireccionar a una página de inicio de sesión
-//     header("Location: login.php");
-//     exit;
+//     
+header('Location:..\Frames\pantalla-Login.html');
+exit();
+}
+
+//     
 // }
 
 // Obtener el ID de usuario de la sesión
