@@ -51,7 +51,7 @@ if ($num_rows > 0) {
                     <h1 class="titleSection"><?php echo $row['Subcategoria']; ?></h1>
                 </div>
                 <div class="productsContainer">
-                    <form action="../Frames/pantalla-producto.php" method="post">
+                    <form action="../Catalog/Show-product.php" method="post">
                         <input type="hidden" name="id_product" value="<?php echo $row['ID_Producto']; ?>">
                         <button class="productBoxContainer">
                             <div class="photoContainer">
@@ -83,7 +83,7 @@ if ($num_rows > 0) {
                     <div class="productsContainer">
                         <?php
                         while ($productRow = $productResult->fetch_assoc()) {
-                        ?> <form action="../Frames/pantalla-producto.php" method="post">
+                        ?> <form action="../Catalog/Show-product.php" method="post">
                                 <input type="hidden" name="id_product" value="<?php echo $productRow['ID_Producto']; ?>">
                                 <button class="productBoxContainer">
                                     <div class="photoContainer">

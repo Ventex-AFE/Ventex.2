@@ -285,7 +285,7 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
             }
         </script>
     </main>
-         <!-- calculate Modal -------------------------------------------------------------------------------------------------->
+         <!-- repormodal Modal -------------------------------------------------------------------------------------------------->
 
         <div class="calculateModal hidden">
         <section class="part-Comentarios" style="width: 30vw;">
