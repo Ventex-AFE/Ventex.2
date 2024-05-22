@@ -235,7 +235,7 @@ mysqli_stmt_close($stmt2);
                     <div class="subcategoryTitleContainer">
                         <h2 class="productDescriptionTitle">Deja un Comentario</h2>
                     </div>
-                    <form id="inputVal" method="post" action="../php-servicios/save_data/save_new_comentario.php">
+                    <form id="inputVal" method="post" action="../php-servicios/save_data/save-new-comentario-catalogo.php">
                         <input type="hidden" name="fecha_Coment" value="<?php echo date('Y-m-d'); ?>">
                         <input type="hidden" name="hora_comentario" value="<?php echo date('H:i:s'); ?>">
                         <input type="hidden" name="id_prod" value="<?php echo $id_product; ?>">
