@@ -51,7 +51,6 @@ mysqli_stmt_close($stmt);
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
-        /* <-------Styles extensible search input*/
         .searchSection {
             text-align: left;
         }
@@ -225,17 +224,15 @@ mysqli_stmt_close($stmt);
 
                 </section>
 
-            </section>
-            <!--Info del vendedor------------------------------------------------------------------------------------------->
-            <section class="parent_Child">
-                <section class="parent_LastChild">
-                    <section class="group">
-                        <div class="searchSection">
-                            <div class="searchContainer">
-                                <input type="search" name="searchP" id="searchP" placeholder="Buscar" required onkeyup="getData()">
-                                <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
-                            </div>
+        <section class="parent_Child">
+            <section class="parent_LastChild">
+                <section class="group">
+                    <div class="searchSection">
+                        <div class="searchContainer">
+                            <input type="search" name="searchP" id="searchP" placeholder="Buscar" required onkeyup="getData()">
+                            <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
                         </div>
+                    </div>
                         <script>
                             document.addEventListener("DOMContentLoaded", getData);
 
@@ -253,8 +250,31 @@ mysqli_stmt_close($stmt);
                                     .then(data => {
                                         // console.log(data);
                                         content.innerHTML = data;
+                                        asignarEventos()
                                     }).catch(err => console.log(err));
                             }
+                            function asignarEventos() {
+                            const optionsButton = document.querySelectorAll('.pointsButton');
+                            const optionsList = document.querySelectorAll('.optionsPoints');
+                            const invisibleOverlay = document.querySelector('.invisibleOverlay');
+
+                            optionsButton.forEach((but, index) => {
+                                but.addEventListener('click', () => {
+                                    optionsList.forEach((list, i) => {
+                                        if (i !== index) {
+                                            list.classList.add('hidden');
+                                        }
+                                    });
+                                    optionsList[index].classList.toggle('hidden');
+                                    invisibleOverlay.classList.toggle('hidden');
+                                });
+                            });
+
+                            invisibleOverlay.addEventListener('click', () => {
+                                optionsList.forEach(list => list.classList.add('hidden'));
+                                invisibleOverlay.classList.add('hidden');
+                            });
+                        }
                         </script>
                         <div id="resultados"></div>
                     </section>

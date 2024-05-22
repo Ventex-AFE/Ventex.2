@@ -7,16 +7,17 @@ if (!isset($_SESSION['id'])) {
     exit;
 } 
 
-if($_SESSION['Type'] === 2){
-    //header("Location: ../Frames/Pantalla-Perfil.php");
-}else{
+if ($_SESSION['Type'] === 2) {
+    // No redireccionar
+} else {
     header("Location: ../Frames/Pantalla-Perfil-Vip.php");
 }
 
 require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
+
 // Obtener el ID de usuario de la sesión
 $id_usser = $_SESSION['id'];
-//$id_usser = 5;
+
 // Preparar la consulta para obtener los datos del usuario
 $sql = "SELECT instagram, x, whatsapp, facebook FROM seller_porfile WHERE Id_sellerP = ?";
 $stmt = mysqli_prepare($Conexion_usser_select, $sql);
@@ -69,11 +70,8 @@ mysqli_stmt_close($stmt);
 </head>
 
 <body>
-
 <header>
-
 <?php
-  require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
   $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
 ?>
 <section>
@@ -102,7 +100,7 @@ mysqli_stmt_close($stmt);
 </nav>
 <section class="busqueda">
     <form class="busquedaForm" action="../Frames/Pantalla-Busqueda.php" method="post" onsubmit="return enviarFormulario()">
-        <input type="search" placeholder="Buscar" name="busqueda" class="inputSearchHeader" require>
+        <input type="search" placeholder="Buscar" name="busqueda" class="inputSearchHeader" required>
         <button class="searchButtonHeader">
             <img src="../Icons/lupaB.png" alt="" class="imageSearchHeader">
         </button>
@@ -113,19 +111,17 @@ mysqli_stmt_close($stmt);
 </section>
 
 <!--- MODAL VENDER ----------------------------------------------------------------------------------->
-
 <article class="sellModalContainer hidden">
-  <section class="sellModalInformationContainer ">
+  <section class="sellModalInformationContainer">
     <h1 class="titleModal">Ventex</h1>
     <p class="infoModal">asasc sdsdsd sdsdsd sdsd sdsdssd ssd sdss</p>
   </section>
-  <section class="sellModalPlansContainer ">
+  <section class="sellModalPlansContainer">
     <button class="closePlansButto">x</button>
     <div class="titlePlansSellerModalContainer">
       <h1 class="titlePlansSellerModal">Planes</h1>
     </div>
-    <section class="planSellerModalContainer ">
-
+    <section class="planSellerModalContainer">
       <div class="planContainer normal">
           <div class="planNameContainer">
               <p class="planName">Basico </p>
@@ -140,7 +136,6 @@ mysqli_stmt_close($stmt);
           </div>
           <button class="planButton basicButton">Continuar con plan gratuito</button>
       </div>
-
       <div class="crownContiner">
         <img src="../Icons/corona-premium.png" alt="" class="crownPremium">
         <div class="planContainer premium">
@@ -172,111 +167,134 @@ mysqli_stmt_close($stmt);
 <div class="overlaySellModal hidden"></div>
 <script src="../Scripts/Script-plansModal.js"></script>
 <!---------------------------------------------------------------------------------------------------->
-
 </header>
 
-    <main>
-        <section class="parent">
-            <section class="parent_Child">
-                <section class="parent_FirstChild">
-                    <article id="background">
-                    <article id="profile_Card_Img"><img id="profile_Img" src="../Imgens-Pefil/<?php echo $_SESSION['img']; ?>" ></article>
+<main>
+    <section class="parent">
+        <section class="parent_Child">
+            <section class="parent_FirstChild">
+                <article id="background">
+                    <article id="profile_Card_Img">
+                        <img id="profile_Img" src="../Imgens-Pefil/<?php echo $_SESSION['img']; ?>">
                     </article>
-
-                </section>
-
-                <section class="parent_LastChild">
-                    <article class="info">
-                        <a href="Pantalla-Edit-Info-Personal.php" class="edit"><i class="fa-solid fa-user-pen"></i></a>
-                        <h1><?php echo $_SESSION['name']; ?> </h1>
-                        <h2> <?php echo $_SESSION['email']; ?></h2>
-                        <section class="details">
-                            <section class="data">
-                                <table>
-                                    <tr>
-                                        <td>Fecha de nacimiento: </td>
-                                        <td><?php echo $_SESSION['birthdate']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Número de teléfono: </td>
-                                        <td><?php echo $_SESSION['phone']; ?></td>
-                                    </tr>
-                                </table>
-                            </section>
-                        </section>
-
-                        <section class="socialMedia">
-                            <section class="info-edit">
-                                <h1>Informacion de Contacto</h1>
-                                <a href="Pantalla-Edit-RedesSocial.php"><i class="fa-solid fa-pen"></i></a>
-                            </section>
-
-                            <section>
-                                <a href="<?php echo $facebook ?>"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="<?php echo $x ?>"><i class="fa-brands fa-square-x-twitter"></i></a>
-                                <a href="<?php echo $whatsapp ?>"><i class="fa-brands fa-tiktok"></i></a>
-                            </section>
-
-                            <a href="../Frames/Pantalla-Pago-Suscripcion.php" class="subs">Suscribirse</a>
-                            <a href="../php-servicios/deletion_data/deletion_session_usser.php" class="subs">Cerrar Sesión <i class="fa-solid fa-right-from-bracket"></i></a>
-
-                        </section>
-
-
-                </section>
-
+                </article>
             </section>
-            <!--Info del vendedor------------------------------------------------------------------------------------------->
-            <section class="parent_Child">
-                <section class="parent_LastChild">
-                    <section class="group">
-                        <div class="searchSection">
-                            <div class="searchContainer">
-                                <input type="search" name="searchP" id="searchP" placeholder="Buscar" required onkeyup="getData()">
-                                <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
-                            </div>
-                            <button class="addProductButton">Agregar Producto</button>
-                        </div>
-                        <script>
-                            document.addEventListener("DOMContentLoaded", getData);
 
-                            function getData() {
-                                let input = document.getElementById("searchP").value;
-                                let content = document.getElementById("resultados");
-                                let url = "../php-servicios/load_data/load-info-pantalla-perfil.php";
-                                let formData = new FormData();
-                                formData.append('searchP', input);
-
-                                fetch(url, {
-                                        method: "POST",
-                                        body: formData
-                                    }).then(response => response.text())
-                                    .then(data => {
-                                        // console.log(data);
-                                        content.innerHTML = data;
-                                    }).catch(err => console.log(err));
-                            }
-                        </script>
-                        <div id="resultados"></div>
+            <section class="parent_LastChild">
+                <article class="info">
+                    <a href="Pantalla-Edit-Info-Personal.php" class="edit"><i class="fa-solid fa-user-pen"></i></a>
+                    <h1><?php echo $_SESSION['name']; ?></h1>
+                    <h2><?php echo $_SESSION['email']; ?></h2>
+                    <section class="details">
+                        <section class="data">
+                            <table>
+                                <tr>
+                                    <td>Fecha de nacimiento: </td>
+                                    <td><?php echo $_SESSION['birthdate']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Número de teléfono: </td>
+                                    <td><?php echo $_SESSION['phone']; ?></td>
+                                </tr>
+                            </table>
+                        </section>
                     </section>
+
+                    <section class="socialMedia">
+                        <section class="info-edit">
+                            <h1>Informacion de Contacto</h1>
+                            <a href="Pantalla-Edit-RedesSocial.php"><i class="fa-solid fa-pen"></i></a>
+                        </section>
+
+                        <section>
+                            <a href="<?php echo $facebook ?>"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="<?php echo $x ?>"><i class="fa-brands fa-square-x-twitter"></i></a>
+                            <a href="<?php echo $whatsapp ?>"><i class="fa-brands fa-tiktok"></i></a>
+                        </section>
+
+                        <a href="../Frames/Pantalla-Pago-Suscripcion.php" class="subs">Suscribirse</a>
+                        <a href="../php-servicios/deletion_data/deletion_session_usser.php" class="subs">Cerrar Sesión <i class="fa-solid fa-right-from-bracket"></i></a>
+                    </section>
+                </article>
+            </section>
+        </section>
+
+        <!-- Info del vendedor -->
+        <section class="parent_Child">
+            <section class="parent_LastChild">
+                <section class="group">
+                    <div class="searchSection">
+                        <div class="searchContainer">
+                            <input type="search" name="searchP" id="searchP" placeholder="Buscar" required onkeyup="getData()">
+                            <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
+                        </div>
+                        <button class="addProductButton">Agregar Producto</button>
+                    </div>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", getData);
+
+                        function getData() {
+                            let input = document.getElementById("searchP").value;
+                            let content = document.getElementById("resultados");
+                            let url = "../php-servicios/load_data/load-info-pantalla-perfil.php";
+                            let formData = new FormData();
+                            formData.append('searchP', input);
+
+                            fetch(url, {
+                                    method: "POST",
+                                    body: formData
+                                }).then(response => response.text())
+                                .then(data => {
+                                    content.innerHTML = data;
+                                    asignarEventos();
+                                }).catch(err => console.log(err));
+                        }
+
+                        function asignarEventos() {
+                            const optionsButton = document.querySelectorAll('.pointsButton');
+                            const optionsList = document.querySelectorAll('.optionsPoints');
+                            const invisibleOverlay = document.querySelector('.invisibleOverlay');
+
+                            optionsButton.forEach((but, index) => {
+                                but.addEventListener('click', () => {
+                                    optionsList.forEach((list, i) => {
+                                        if (i !== index) {
+                                            list.classList.add('hidden');
+                                        }
+                                    });
+                                    optionsList[index].classList.toggle('hidden');
+                                    invisibleOverlay.classList.toggle('hidden');
+                                });
+                            });
+
+                            invisibleOverlay.addEventListener('click', () => {
+                                optionsList.forEach(list => list.classList.add('hidden'));
+                                invisibleOverlay.classList.add('hidden');
+                            });
+                        }
+                    </script>
+                    <div id="resultados"></div>
                 </section>
             </section>
-    </main>
+        </section>
+    </section>
+</main>
 
-    <footer>
-        <section class="name-year">
-            <h1>2023-Ventex</h1>
-        </section>
-        <section class="logo-ventex">
-            <h1>Ventex</h1>
-        </section>
-        <section class="socialmedia-ventex">
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
-            <a href=""><i class="fa-brands fa-tiktok"></i></a>
-        </section>
-    </footer>
+<div class="invisibleOverlay hidden"></div>
+
+<footer>
+    <section class="name-year">
+        <h1>2023-Ventex</h1>
+    </section>
+    <section class="logo-ventex">
+        <h1>Ventex</h1>
+    </section>
+    <section class="socialmedia-ventex">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-tiktok"></i></a>
+    </section>
+</footer>
 
 </body>
-
 </html>

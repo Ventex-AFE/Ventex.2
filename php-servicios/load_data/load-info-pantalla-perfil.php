@@ -49,7 +49,7 @@ if ($num_rows > 0) {
             <div class="pointsButton">
                 <img src="../Icons/3pointsV.png" alt="" class="pointsIcon">
             </div>
-            <div  ></div>
+            <div></div>
             <ul class="optionsPoints hidden">
                 <li><div class="optionButton"><p>Editar</p></div></li>
                 <li><div class="optionButton"><p>Eliminar</p></div></li>
