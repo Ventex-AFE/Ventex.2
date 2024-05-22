@@ -254,26 +254,43 @@ mysqli_stmt_close($stmt);
                                     }).catch(err => console.log(err));
                             }
                             function asignarEventos() {
-                            const optionsButton = document.querySelectorAll('.pointsButton');
-                            const optionsList = document.querySelectorAll('.optionsPoints');
-                            const invisibleOverlay = document.querySelector('.invisibleOverlay');
+                                document.addEventListener("DOMContentLoaded", function() {
+    // Seleccionar todos los iconos de puntos y las listas de opciones correspondientes
+    const pointsButtons = document.querySelectorAll('.pointsButton');
+    const optionsLists = document.querySelectorAll('.optionsPoints');
+    const invisibleOverlay = document.querySelector('.invisibleOverlay');
 
-                            optionsButton.forEach((but, index) => {
-                                but.addEventListener('click', () => {
-                                    optionsList.forEach((list, i) => {
-                                        if (i !== index) {
-                                            list.classList.add('hidden');
-                                        }
-                                    });
-                                    optionsList[index].classList.toggle('hidden');
-                                    invisibleOverlay.classList.toggle('hidden');
-                                });
-                            });
+    // Función para mostrar las opciones
+    function showOptions(index) {
+        optionsLists[index].classList.remove('hidden');
+        invisibleOverlay.classList.remove('hidden');
+    }
 
-                            invisibleOverlay.addEventListener('click', () => {
-                                optionsList.forEach(list => list.classList.add('hidden'));
-                                invisibleOverlay.classList.add('hidden');
-                            });
+    // Función para ocultar todas las opciones
+    function hideOptions() {
+        optionsLists.forEach(list => {
+            list.classList.add('hidden');
+        });
+        invisibleOverlay.classList.add('hidden');
+    }
+
+    // Asignar eventos de clic a cada botón de puntos
+    pointsButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            showOptions(index);
+        });
+    });
+
+    // Ocultar las opciones cuando se hace clic en el overlay
+    invisibleOverlay.addEventListener('click', hideOptions);
+
+    // También podemos cerrar las opciones al hacer clic en cualquier botón de opción
+    const optionButtons = document.querySelectorAll('.optionButton');
+    optionButtons.forEach(button => {
+        button.addEventListener('click', hideOptions);
+    });
+});
+
                         }
                         </script>
                         <div id="resultados"></div>

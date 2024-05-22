@@ -51,7 +51,13 @@ if ($num_rows > 0) {
             </div>
             <div></div>
             <ul class="optionsPoints hidden">
-                <li><div class="optionButton"><p>Editar</p></div></li>
+            <li><div class="optionButton">
+                    <form action="" method="post">
+                    <input type="hidden" name="id_product" value="<?php $row['ID_Producto'];?>">
+                    <button >Editar</button>
+                </form>
+                </div>
+            </li>
                 <li><div class="optionButton"><p>Eliminar</p></div></li>
             </ul>
         </button>
