@@ -225,73 +225,65 @@ mysqli_stmt_close($stmt);
                 </section>
 
                 <section class="parent_Child">
-                    <section class="parent_LastChild">
-                        <section class="group">
-                            <div class="searchSection">
-                                <div class="searchContainer">
-                                    <input type="search" name="searchP" id="searchP" placeholder="Buscar" required onkeyup="getData()">
-                                    <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
-                                </div>
-                                <form action="../Frames/Pantalla-AddP.php" method="post">
-                                    <button class="addProductButton" type="submit">Agregar Producto</button>
-                                </form>
-
+                <section class="parent_LastChild">
+                    <section class="group">
+                        <div class="searchSection">
+                            <div class="searchContainer">
+                                <input type="search" name="searchP" id="searchP" placeholder="Buscar" required onkeyup="getData()">
+                                <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
                             </div>
-                            <script>
-                                document.addEventListener("DOMContentLoaded", getData);
+                            <form action="../Frames/Pantalla-AddP.php" method="post">
+                                <button class="addProductButton" type="submit">Agregar Producto</button>
+                            </form>
 
-                                function getData() {
-                                    let input = document.getElementById("searchP").value;
-                                    let content = document.getElementById("resultados");
-                                    let url = "../php-servicios/load_data/load-info-pantalla-perfil.php";
-                                    let formData = new FormData();
-                                    formData.append('searchP', input);
+                        </div>
+                        <script>
+                            document.addEventListener("DOMContentLoaded", getData);
 
-                                    fetch(url, {
-                                            method: "POST",
-                                            body: formData
-                                        }).then(response => response.text())
-                                        .then(data => {
-                                            // console.log(data);
-                                            content.innerHTML = data;
-                                            asignarEventos()
-                                        }).catch(err => console.log(err));
-                                }
+                            function getData() {
+                                let input = document.getElementById("searchP").value;
+                                let content = document.getElementById("resultados");
+                                let url = "../php-servicios/load_data/load-info-pantalla-perfil.php";
+                                let formData = new FormData();
+                                formData.append('searchP', input);
 
-                                function asignarEventos() {
+                                fetch(url, {
+                                        method: "POST",
+                                        body: formData
+                                    }).then(response => response.text())
+                                    .then(data => {
+                                        content.innerHTML = data;
+                                        asignarEventos();
+                                    }).catch(err => console.log(err));
+                            }
 
-                                    const pointsButtons = document.querySelectorAll('.pointsButton');
-                                    const optionsLists = document.querySelectorAll('.optionsPoints');
-                                    const invisibleOverlay = document.createElement('div');
-                                    invisibleOverlay.classList.add('invisibleOverlay', 'hidden');
-                                    document.body.appendChild(invisibleOverlay);
+                            function asignarEventos() {
+                                const optionsButton = document.querySelectorAll('.pointsButton');
+                                const optionsList = document.querySelectorAll('.optionsPoints');
+                                const invisibleOverlay = document.querySelector('.invisibleOverlay');
 
-                                    function showOptions(index) {
-                                        optionsLists[index].classList.remove('hidden');
-                                        invisibleOverlay.classList.remove('hidden');
-                                    }
-
-                                    function hideOptions() {
-                                        optionsLists.forEach(list => {
-                                            list.classList.add('hidden');
+                                optionsButton.forEach((but, index) => {
+                                    but.addEventListener('click', () => {
+                                        optionsList.forEach((list, i) => {
+                                            if (i !== index) {
+                                                list.classList.add('hidden');
+                                            }
                                         });
-                                        invisibleOverlay.classList.add('hidden');
-                                    }
-
-                                    pointsButtons.forEach((button, index) => {
-                                        button.addEventListener('click', () => {
-                                            showOptions(index);
-                                        });
+                                        optionsList[index].classList.toggle('hidden');
+                                        invisibleOverlay.classList.toggle('hidden');
                                     });
+                                });
 
-                                    invisibleOverlay.addEventListener('click', hideOptions);
-                                }
-                            </script>
-                            <div id="resultados"></div>
-                        </section>
+                                invisibleOverlay.addEventListener('click', () => {
+                                    optionsList.forEach(list => list.classList.add('hidden'));
+                                    invisibleOverlay.classList.add('hidden');
+                                });
+                            }
+                        </script>
+                        <div id="resultados"></div>
                     </section>
                 </section>
-
+            </section>
             </section>
             <aside>
                 <nav>
