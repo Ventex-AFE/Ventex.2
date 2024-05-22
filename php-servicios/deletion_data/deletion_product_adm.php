@@ -6,7 +6,7 @@
     $delete = mysqli_query($Conexion_usser_delete, $sql);
 
     if ($delete) {
-        header('Location: ../../Frames/pantalla-perfil.php');
+        header('Location: ../../Frames/Admin-ViewProduct-Porc.php');
         exit(); // Agregamos exit() para asegurarnos de que el script se detenga después de la redirección
     } else {
         echo 'Hubo un error al eliminar el registro.';

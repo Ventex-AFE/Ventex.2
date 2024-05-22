@@ -11,9 +11,12 @@ html {
 
 body {
     width: 100%;
+<<<<<<< Updated upstream
     display: flex;
     flex-wrap: wrap;
     /* overflow-x: hidden; */
+=======
+>>>>>>> Stashed changes
 }
 
 main {

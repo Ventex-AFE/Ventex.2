@@ -1,6 +1,8 @@
 <?php
 require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
 session_start();
+
+    $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,19 +27,29 @@ session_start();
 
 <body>
 
-    <header>
-        <section><p class="logo">Ventex</p></section>
+<header>
+        <section>
+            <p class="logo">Ventex</p>
+        </section>
         <nav>
             <ul class="menu">
                 <li><a href="">Inicio</a></li>
-                <li><a href="">Categoria</a></li>
+                <li><a href="#">Categorías</a>
+                    <ul class="menuv">
+                        <?php while ($cat = mysqli_fetch_array($cats)) { ?>
+                            <li class="ca">
+                                <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name=""><?php echo $cat['Nombre_Cat']; ?></a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </li>
                 <li><a href="">Planes</a></li>
                 <li><a href="">Vender</a></li>
             </ul>
         </nav>
-        <form class="busqueda">
+        <form class="busqueda" action="../Frames/Pantalla-Busqueda.php" method="post" onsubmit="return enviarFormulario()">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Buscar">
+            <input type="search" placeholder="Buscar" name="busqueda">
         </form>
         <section class="imgProfile">
             <div></div>

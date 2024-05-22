@@ -1,0 +1,508 @@
+*{
+    margin: 0%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Hammersmith One', sans-serif;
+}
+html, body{
+    height: 100%;
+    background-color: #CCCCCC;
+}
+/*------------------------------------------------------------------------------------------*/
+main{
+    width: 100%;
+    height: 200%;
+    float: left;
+}
+#container{
+
+    width: 83%;
+    height: 80%;
+    margin: auto;
+    margin-top: 5%;
+    background-color: #ffffff;
+    border-radius: 15px;
+
+}
+#container_left{
+    width: 60%;
+    height: 96%;
+    float: left;
+    margin: 2%;
+}
+#container_pictures{
+    width: 100%;
+    height: 48%;
+    float: left;
+    overflow: hidden;
+}
+#container_p{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+
+.imagen{
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+#container_info{
+    width: 32%;
+    height: auto;
+    float: left;
+    margin: 2%;
+    background-color: #F2F2F2;
+    border: 3px;
+    border-radius: 5px;
+    border-color: #D8D1D1;
+}
+#more_products{
+    width: 100%;
+    height: 50%;
+    float: left;
+    margin-top: 3%;
+}
+.m_product{
+    width: 31%;
+    height: 50vh;
+    float: right;
+    margin: 1%;
+    background-color: #F2F2F2;
+    border: none;
+    text-align: left;
+}
+
+.m_product:hover{
+    box-shadow: 0px 0px 10px 3px rgb(214, 214, 214);
+}
+.mc_picture{
+    width: 100%;
+    height: 28vh;
+    float: left;
+    overflow: hidden;
+    text-align: center;
+}
+.mc_picture .m_imagen{
+    width: auto;
+    height: 100%;
+}
+.m_info{
+    width: 100%;
+    height: 20vh;
+    float: left;
+}
+.m_precio{
+    font-family: 'Farro', sans-serif;
+    color: #7E7E7E;
+    font-size: xx-large;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+.m_nombre{
+    font-family: 'Farro', sans-serif;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.prec{
+    font-family: 'Farro', sans-serif;
+    color: #7E7E7E;
+    font-size: xx-large;
+    margin-left: 10%;
+}
+#contact_information{
+    width: 32%;
+    height: auto;
+    float: left;
+    margin-left: 2%;
+    background-color: #F2F2F2;
+    border: 3px;
+    border-radius: 5px;
+    border-color: #D8D1D1;
+}
+#precio{
+    font-family: 'Farro', sans-serif;
+    color: #7E7E7E;
+    font-size: xx-large;
+    margin-left: 10%;
+}
+.namP{
+    font-family: 'Cabina', sans-serif;
+    font-size: xx-large;
+    margin-left: 10%;
+    margin-bottom: 2vw;
+}
+#verd{
+    font-family: 'Cabina', sans-serif;
+    margin-left: 10%;
+    color: #4CBD24;
+}
+.desc{
+    font-family: 'Cabina', sans-serif;
+    margin: 10%;
+}
+#bot{
+    width: 80%;
+    height: 35px;
+    border-radius: 10px;
+    border: 0ch;
+    color: white;
+    font-family: 'Cabina', sans-serif;
+    margin-left:10%;
+    margin-bottom: 2vw;
+    background-color: #78855F;
+    transition: .3s;
+}
+#mas{
+    font-family: 'Cabina', sans-serif;
+    font-size: small;
+    text-align: center;
+    color: #7E7E7E;
+}
+.container_links{
+    width: 100%;
+    height: auto;
+    float: left;
+}
+.link{
+    width: 5vw;
+    height: 5vw;
+    float: left;
+    margin-left: 10%;
+    background-color: #a5a5a5;
+    border-radius: 100%;
+    margin-bottom: 1vw;
+    transition: .3s;
+}
+.link:hover{
+    box-shadow: 0 0 5px 2px rgb(177, 177, 177);
+}
+#bot:hover{
+    box-shadow: 0 0 5px 2px rgb(177, 177, 177);
+}
+.contact_description{
+    font-family: 'Cabina', sans-serif;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2vw;
+}
+/*---------------------------------------------------------------------------------------------------*/
+/*Carrucel*/
+/*-- Recommended Products ---------------------------------------------------------------------------------------------*/
+
+.recommendedPorductsSection{
+    width: 100%;
+    height: 60vh;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+    justify-content: center;
+}
+.recommendedCategoryProductContainer{
+    width: 15vw;
+    height: 15vw;
+    background-color: gray;
+    margin: 0.5vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: .3s;
+    border: none;
+}
+.recommendedCategoryProductContainer:hover{
+    transform: scale(1.03);
+}
+.recommendedProductImage{
+    width: 100%;
+    height: auto;
+}
+.recommendedProductTitleContainer{
+    width: 100%;
+    height: 5vw;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.359);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.recommendedProductTitle{
+    color: white;
+}
+/*-- Sub Category Title -----------------------------------------------------------------------------------------------*/
+.subcategoryTitle{
+    font-size: 2.5vw;
+    color: rgb(77, 75, 75);
+    font-weight: 500;
+    margin-left: -6vw;
+}
+.subcategoryTitleContainer{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+#tir{
+    color: white;
+    font-size: 8vh;
+    font-family: 'Hammersmith One', sans-serif;
+}
+.productsContainer{
+    width: 100%;
+    height: 40vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-left: 14.4vw;
+}
+.containerCarrusel{
+    width: 80vw;
+    height: 27vw;
+    display: flex;
+    position: relative;
+    transition: .3s;
+}
+.carrusel{
+    width: 80vw;
+    height: 29vw;
+    display: flex;
+    position: relative;
+    transition: .3s;
+    overflow: hidden;
+}
+.productsCarrusel{
+    width: auto;
+    height: 29vw;
+    /* background-color: rgb(196, 251, 212); */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    transition: .3s;
+}
+.carruselButton{
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 100%;
+    z-index: 4;
+    border: 1px solid rgb(195, 195, 195);
+    color: rgb(191, 191, 191);
+    font-size: 1.5vw;
+    background-color: white;
+    transition: .3s;
+}
+.carruselButton:hover{
+    transform: scale(1.05);
+}
+.prev{
+    top: 10vw;
+    left: -2.5vw;
+}
+.next{
+    top: 10vw;
+    right: -2.5vw;
+}
+/*----------------------------------------------------------*/
+.cont-Valoracion{
+    width: 100%;
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.part-Comentarios{
+    width: 45%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 15px;
+}
+#inputVal{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+}
+
+.submit-Com{
+    appearance: button;
+    background-color: #182722cb;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 19px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.submit-Com:after {
+    background-clip: padding-box;
+    background-color: #182722cb;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.submit-Com:main, .submit-Com:focus {
+    user-select: auto;
+}
+   
+.submit-Com:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+   
+.submit-Com:disabled {
+    cursor: auto;
+}
+   
+.submit-Com:active:after {
+    border-width: 0 0 0px;
+}
+   
+.submit-Com:active {
+    padding-bottom: 10px;
+}
+/*---------------------------------------------------------------------------------------------------*/
+/*   Comentar                                                                                        */
+/*---------------------------------------------------------------------------------------------------*/
+.writeCommentSection{
+    width: 40vw;
+    display: flex;
+    justify-content: right;
+}
+.part-Comentarios{
+    width: 36vw;
+    height: 67vh;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: white;
+    box-shadow: 0 0 1vw 0.5vw rgb(220, 220, 220);
+}
+#text-Comen {
+    width: 90%;
+    height: auto;
+    height: 40vh;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; 
+    box-sizing: border-box; 
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 2vh;
+}
+/*---------------------------------------------------------------------------------------------------*/
+/*   Reseñas                                                                                         */
+/*---------------------------------------------------------------------------------------------------*/
+
+.reviewSectionContainer{
+ width: 55vw;
+ max-height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.part-Reseñas{
+    height: 70vh;
+    width: 90%;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 1vw 0.5vw rgb(231, 231, 231);
+    margin-left: -3vw;
+}
+.viewRes{
+    width: 100%;
+    border-bottom: 0.1vw solid rgb(215, 215, 215);
+    padding: 1vw;
+    padding-right: 1vw;
+}
+.contRes{
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 1vw;
+}
+.userReviewContainer{
+    width: 100%;
+    height: 7vh;
+    margin-bottom: 2vh;
+    display: flex;
+    align-items: center;
+}
+.userReviewPhotoContainer{
+    width: 7vh;
+    height: 7vh;
+    border-radius: 100%;
+    background-color: gray;
+    overflow: hidden;
+    margin-right: 1vw;
+    display: flex;
+    align-items: center;
+}
+.userReviewPhoto{
+    width: 100%;
+    height: auto;
+}
+.reviewUserName{
+
+}
+.subcategoryTitle{
+    font-size: 2.5vw;
+    color: rgb(77, 75, 75);
+    font-weight: 500;
+     margin-left: -2vw;
+} 
+.subcategoryTitleContainer{
+    width: 100%;
+    height: 5vw;
+    display: flex;
+    align-items: center;
+}
+.productDescriptionTitle{
+    font-size: 2.5vw;
+    color: rgb(77, 75, 75);
+    font-weight: 500;
+  margin-left: 2vw;
+}
+/*---------------------------------------------------------------------------------------------------*/

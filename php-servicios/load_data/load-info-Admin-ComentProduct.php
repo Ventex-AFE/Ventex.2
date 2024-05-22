@@ -56,21 +56,25 @@ if ($num_rows > 0) {
         echo '<td>' . $row['Descripcion'] . '</td>';
         echo '<td>' . $row['fechar'] . '</td>';
         echo '<td>' . $row['Hora'] . '</td>';
-        ?>
+?>
 
         | <td class="check">
             <div class="pointsContiner">
                 <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                    <ul class="pointsOptions hidden">
-                        <li class="pointsOption"><button href="#" class="linkOptionPoints">
+                <ul class="pointsOptions hidden">
+                    <li class="pointsOption">
+                        <form action="../php-servicios/deletion_data/deletion_commente_prodcut.php" method="post">
+                            <input type="hidden" name="id_comment_product" value="<?php echo $row['ID_Cometario'] ?>">
+                            <button type="submit" class="linkOptionPoints">
                                 <p class="textLinkOptions">Eliminar</p>
-                            </button></li>
-                  </ul>
+                            </button></form>
+                    </li>
+                </ul>
             </div>
         </td>
-    
-                <?php
-            echo '</tr>';
+
+<?php
+        echo '</tr>';
     }
 } else {
     // Si no se devolvieron filas, mostrar un mensaje de "Sin resultados"
