@@ -51,7 +51,6 @@ mysqli_stmt_close($stmt);
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
-        /* <-------Styles extensible search input*/
         .searchSection {
             text-align: left;
         }
@@ -225,17 +224,15 @@ mysqli_stmt_close($stmt);
 
                 </section>
 
-            </section>
-            <!--Info del vendedor------------------------------------------------------------------------------------------->
-            <section class="parent_Child">
-                <section class="parent_LastChild">
-                    <section class="group">
-                        <div class="searchSection">
-                            <div class="searchContainer">
-                                <input type="search" name="searchP" id="searchP" placeholder="Buscar" required onkeyup="getData()">
-                                <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
-                            </div>
+        <section class="parent_Child">
+            <section class="parent_LastChild">
+                <section class="group">
+                    <div class="searchSection">
+                        <div class="searchContainer">
+                            <input type="search" name="searchP" id="searchP" placeholder="Buscar" required onkeyup="getData()">
+                            <button class="searchButton"><img src="../Icons/lupaB.png" alt="" class="searchIcon"></button>
                         </div>
+                    </div>
                         <script>
                             document.addEventListener("DOMContentLoaded", getData);
 
@@ -253,8 +250,48 @@ mysqli_stmt_close($stmt);
                                     .then(data => {
                                         // console.log(data);
                                         content.innerHTML = data;
+                                        asignarEventos()
                                     }).catch(err => console.log(err));
                             }
+                            function asignarEventos() {
+                                document.addEventListener("DOMContentLoaded", function() {
+    // Seleccionar todos los iconos de puntos y las listas de opciones correspondientes
+    const pointsButtons = document.querySelectorAll('.pointsButton');
+    const optionsLists = document.querySelectorAll('.optionsPoints');
+    const invisibleOverlay = document.querySelector('.invisibleOverlay');
+
+    // Función para mostrar las opciones
+    function showOptions(index) {
+        optionsLists[index].classList.remove('hidden');
+        invisibleOverlay.classList.remove('hidden');
+    }
+
+    // Función para ocultar todas las opciones
+    function hideOptions() {
+        optionsLists.forEach(list => {
+            list.classList.add('hidden');
+        });
+        invisibleOverlay.classList.add('hidden');
+    }
+
+    // Asignar eventos de clic a cada botón de puntos
+    pointsButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            showOptions(index);
+        });
+    });
+
+    // Ocultar las opciones cuando se hace clic en el overlay
+    invisibleOverlay.addEventListener('click', hideOptions);
+
+    // También podemos cerrar las opciones al hacer clic en cualquier botón de opción
+    const optionButtons = document.querySelectorAll('.optionButton');
+    optionButtons.forEach(button => {
+        button.addEventListener('click', hideOptions);
+    });
+});
+
+                        }
                         </script>
                         <div id="resultados"></div>
                     </section>
