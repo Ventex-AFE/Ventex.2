@@ -6,17 +6,6 @@ $table = "productos";
 $campo = isset($_POST['searP']) ? $Conexion_usser_select->real_escape_string($_POST['searP']) : null;
 $where = '';
 
-// if ($campo != null) {
-//     $where = "AND (";
-//     $cont = count($columas);
-
-//     for ($i = 0; $i < $cont; $i++) {
-//         $where .= $columas[$i] . " LIKE '%" . $campo . "%' OR ";
-//     }
-
-//     $where = substr_replace($where, "", -3);
-//     $where .= ")";
-// }
 $consult = "SELECT * FROM productos ORDER BY RAND() LIMIT 5";
 $Conexion_usser_select->set_charset("utf8");
 header('Content-Type: text/html; charset=utf-8');

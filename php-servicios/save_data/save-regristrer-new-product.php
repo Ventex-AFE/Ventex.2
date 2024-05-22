@@ -2,9 +2,7 @@
 session_start();
 require_once('../Conexion_db/conexion_usser_changes.php');
 
-// 	Id_usser_regristro	Nombre_Prod	Descripción	Precio	Categoría	Subcategoría	Imagen	
-//$Id_usser_regristro = $_SESSION['id'];
-$Id_usser_regristro = 5;
+$Id_usser_regristro = $_SESSION['id'];
 $nameProduct = mysqli_real_escape_string($Conexion_usser_changes, $_POST['product_name']);
 $price = mysqli_real_escape_string($Conexion_usser_changes, $_POST['product_price']);
 $descriptionp = mysqli_real_escape_string($Conexion_usser_changes, $_POST['product_description']);

@@ -3,20 +3,18 @@ session_start();
 require('../Conexion_db/conexion_usser_select.php');
 
 $columas = ['ID_Producto', 'Id_usser_regristro', 'Nombre_Prod', 'Descripcion', 'Precio', 'Categoria', 'Subcategoria', 'Imagen'];
+$columa2=['Nombre_Prod'];
 $table = "productos";
 $idUser = $_SESSION['id'];
-//$idUser = 5;
 $campo = isset($_POST['searchP']) ? $Conexion_usser_select->real_escape_string($_POST['searchP']) : null;
 $where = '';
 
 if ($campo != null) {
     $where = "AND (";
-    $cont = count($columas);
-
+    $cont = count($columa2);
     for ($i = 0; $i < $cont; $i++) {
-        $where .= $columas[$i] . " LIKE '%" . $campo . "%' OR ";
+        $where .= $columa2[$i] . " LIKE '%" . $campo . "%' OR ";
     }
-
     $where = substr_replace($where, "", -3);
     $where .= ")";
 }
@@ -35,39 +33,44 @@ $num_rows = $result->num_rows;
 if ($num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 ?>
-        
-        <button class="productContainer" type="submit">
+        <section class="productContainer" >
             <div class="productPhoto">
                 <img src="../Product-Images/<?php echo $row['Imagen']; ?>" class="productImage" />
             </div>
             <div class="productPrice">
-                <p class="priceStyle">$<?php echo $row['Precio'] ?></p>
+                <p class="priceStyle">$<?php echo $row['Precio']; ?></p>
             </div>
             <div class="productName">
-                <p class="nameStyle"><?php echo $row['Nombre_Prod']; ?> y mas madres solo pa calar aver que tal con mas</p>
+                <p class="nameStyle"><?php echo $row['Nombre_Prod']; ?></p>
             </div>
             <div class="pointsButton">
                 <img src="../Icons/3pointsV.png" alt="" class="pointsIcon">
             </div>
             <div></div>
             <ul class="optionsPoints hidden">
-            <li><div class="optionButton">
-                    <form action="" method="post">
-                    <input type="hidden" name="id_product" value="<?php $row['ID_Producto'];?>">
-                    <button >Editar</button>
-                </form>
-                </div>
-            </li>
-                <li><div class="optionButton"><p>Eliminar</p></div></li>
+                <li>
+                    <form action="../Frames/Pantalla-Edit-info-producto.php" method="post">
+                        <input type="hidden" name="id_product" value="<?php echo $row['ID_Producto']; ?>">
+                        <button type="submit">Editar</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="../Frames/pantalla-producto.php" method="post">
+                        <input type="hidden" name="id_product" value="<?php echo $row['ID_Producto']; ?>">
+                        <button type="submit">Ver producto</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="../php-servicios/deletion_data/deletion_products.php" method="post">
+                        <input type="hidden" name="id_product" value="<?php echo $row['ID_Producto']; ?>">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </li>
             </ul>
-        </button>
-                                
         </section>
-
 <?php
     }
 } else {
-   
     echo '<h1 id="Noresult">Sin resultados</h1>';
-
 }
+?>

@@ -1,9 +1,9 @@
 <?php
 require('../Conexion_db/conexion_adm.php');
 
-$columas = ['ID_Producto', 'Id_usser_regristro', 'Nombre_Prod', 'Descripcion', 'Precio','Categoria', 'Subcategoria','Imagen'];
+$columas = ['ID_Producto', 'Id_usser_regristro', 'Nombre_Prod', 'Descripcion', 'Precio', 'Categoria', 'Subcategoria', 'Imagen'];
 $table = "productos";
-$campo = isset($_POST['searP']) ? $Conexion_adm_root->real_escape_string($_POST['searP']) : null;
+$campo = isset($_POST['searchP']) ? $Conexion_adm_root->real_escape_string($_POST['searchP']) : null;
 $where = '';
 
 if ($campo != null) {
@@ -43,18 +43,23 @@ if ($num_rows > 0) {
         // echo '<td> <button class="optionPoints"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button> </td>';
 ?>
 
-    |   <td class="check">
+        | <td class="check">
             <div class="pointsContiner">
                 <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                    <ul class="pointsOptions hidden">
-                        <li class="pointsOption"><button href="#" class="linkOptionPoints">
+                <ul class="pointsOptions hidden">
+                    <li class="pointsOption">
+                        <form action="../php-servicios/deletion_data/deletion_product_adm.php" method="post">
+                            <input type="hidden" name="id_product" value="<?php echo $row['ID_Producto'] ?>">
+                            <button type="submit" class="linkOptionPoints">
                                 <p class="textLinkOptions">Eliminar</p>
-                            </button></li>
-                  </ul>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </td>
 
-            <?php
+<?php
         echo '</tr>';
     }
 } else {
