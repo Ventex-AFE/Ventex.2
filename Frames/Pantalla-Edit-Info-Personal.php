@@ -7,7 +7,42 @@ session_start();
 // if (!isset($_SESSION['id'])) {
 //     // Si no hay sesión iniciada, redireccionar o manejar el caso según tus necesidades
 //     // Por ejemplo, redireccionar a una página de inicio de sesión
-//     header("Location: login.php");
+//     
+    header('Location: ..\..\Frames\pantalla-Login.html');
+  exit(); // Asegúrate de detener el script después de la redirección
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ventex</title>
+  <link rel="stylesheet" href="../Styles/Admin-ViewProduct-porce.css" />
+  <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet" />
+
+  <style>  /* <-------Styles extensible search input*/
+        .searchSection{
+            text-align: left;
+        }
+        .containerSearchSection{
+            min-width: 20vw;
+            height: 8vh;
+            display: flex;
+            align-items: center;
+        }
+        .searchButton{  /*<------Color Button*/
+            background-color: #61abdc;
+        }
+        #searchP:valid ~ .searchButton {  /* <------Color of the button when te input is valid*/
+            background-color: rgb(66, 94, 66);
+        }
+    </style>
+</head>
 //     exit;
 // }
 

@@ -1,3 +1,46 @@
+<?php 
+session_start();
+if (!isset($_SESSION['Admin']) || $_SESSION['Admin'] !== TRUE) {
+  // Redirigir al login si no está logueado como Admin
+  
+    header('Location: ..\..\Frames\pantalla-Login.html');
+  exit(); // Asegúrate de detener el script después de la redirección
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ventex</title>
+  <link rel="stylesheet" href="../Styles/Admin-ViewProduct-porce.css" />
+  <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet" />
+
+  <style>  /* <-------Styles extensible search input*/
+        .searchSection{
+            text-align: left;
+        }
+        .containerSearchSection{
+            min-width: 20vw;
+            height: 8vh;
+            display: flex;
+            align-items: center;
+        }
+        .searchButton{  /*<------Color Button*/
+            background-color: #61abdc;
+        }
+        #searchP:valid ~ .searchButton {  /* <------Color of the button when te input is valid*/
+            background-color: rgb(66, 94, 66);
+        }
+    </style>
+</head>
+  exit(); // Asegúrate de detener el script después de la redirección
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,11 +80,12 @@
       <!-- Seccion para la imagen del administrador -->
       <section id="imagen-usAdm">
         <!-- imagen recoleccion con php en la db para obtner la ruta de la imagen -->
-        <img src="" id="img-A">
+        <img src="../Imgens-Pefil/<?php echo $_SESSION['img']?>" id="img-A">
+
       </section>
       <section id="Name-Adm">
         <!-- Parte para nombre de adm y va hacer pasado con session php -->
-        <h2>Alejandro G</h2><br>
+        <h2><?php echo $_SESSION['name']?></h2><br>
         <P>CEO - Ventex</P>
       </section>
     </section>
@@ -94,7 +138,7 @@
     
     <section id="button-logout">
         <img src="" id="icon-logout">
-        <a href="o" class="link-logout">Log out</a>
+        <a href="../php-servicios/deletion_data/deletion_session_usser.php" class="link-logout">Log out</a>
       <!-- Link al archivo para destruir la session -->
     </section>
   </article>
@@ -145,12 +189,74 @@
               .then(data => {
                 console.log(data);
                 content.innerHTML = data;
+                asignarEventos()
               }).catch(err => console.log(err));
           }
+          function asignarEventos() {
+          const optionsButton = document.querySelectorAll('.checkButton');
+                const optionsList = document.querySelectorAll('.pointsOptions');
+                const invisibleOverlay = document.querySelector('.invisibleOverlay');
+
+
+            optionsButton.forEach((but, index) => {
+                but.addEventListener('click', () => {
+                    optionsList[index].classList.remove('hidden');
+                    invisibleOverlay.classList.remove('hidden');
+                });
+            });
+            const closeOptionsList = () =>{
+    optionsList.forEach((list) => {
+            list.classList.add('hidden');
+    });
+    invisibleOverlay.classList.add('hidden');
+}
+
+optionsButton.forEach((but, index) => {
+
+    console.log('hola');
+    but.addEventListener('click', () => {
+        console.log('hola');
+        optionsList[index].classList.remove('hidden');
+        invisibleOverlay.classList.remove('hidden');
+    });
+});
+invisibleOverlay.addEventListener('click', closeOptionsList);
+            invisibleOverlay.addEventListener('click', closeOptionsList);
+
+            /*--------------------------------------------------------------------*/
+            document.addEventListener("DOMContentLoaded", function() {
+                // Obtener los botones de editar y eliminar
+                const editButtons = document.querySelectorAll('.editButton');
+                const deleteButtons = document.querySelectorAll('.deleteButton');
+
+                // Agregar event listener para el botón de editar
+                editButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Enviar el formulario correspondiente
+                        const form = this.parentNode.querySelector('form');
+                        form.submit();
+                    });
+                });
+
+                // Agregar event listener para el botón de eliminar
+                deleteButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Enviar el formulario correspondiente
+                        const form = this.parentNode.querySelector('form');
+                        form.submit();
+                    });
+                });
+            });
+          }
+       
         </script>
       </table>
     </section>
   </main>
+  <div class="invisibleOverlay hidden"></div>
+
+
+  <script src="../Scripts/Script-Admin-ViewProduct-Porc.js"></script>
   <footer>
     <h2 id="name-footer">Ventex</h2>
   </footer>

@@ -57,7 +57,21 @@ if ($num_rows > 0) {
         echo '<td>' . $row['Motivo'] . '</td>';
         echo '<td>' . $row['Fecha'] . '</td>';
         echo '<td>' . $row['Hora'] . '</td>';
-        echo '</tr>';
+        ?>
+
+        |  <td class="check">
+            <div class="pointsContiner">
+                <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
+                    <ul class="pointsOptions hidden">
+                        <li class="pointsOption"><button href="#" class="linkOptionPoints">
+                                <p class="textLinkOptions">Eliminar</p>
+                            </button></li>
+                  </ul>
+            </div>
+        </td>
+    
+                <?php
+            echo '</tr>';
     }
 } else {
     // Si no se devolvieron filas, mostrar un mensaje de "Sin resultados"

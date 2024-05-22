@@ -48,9 +48,6 @@ if ($num_rows > 0) {
                 <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
                     <ul class="pointsOptions hidden">
                         <li class="pointsOption"><button href="#" class="linkOptionPoints">
-                                <p class="textLinkOptions">Editar</p>
-                            </button></li>
-                        <li class="pointsOption"><button href="#" class="linkOptionPoints">
                                 <p class="textLinkOptions">Eliminar</p>
                             </button></li>
                   </ul>
