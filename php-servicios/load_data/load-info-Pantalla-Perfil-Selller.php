@@ -3,6 +3,7 @@ session_start();
 require('../Conexion_db/conexion_usser_select.php');
 
 $columas = ['ID_Producto', 'Id_usser_regristro', 'Nombre_Prod', 'Descripcion', 'Precio', 'Categoria', 'Subcategoria', 'Imagen'];
+$columas2 = ['Nombre_Prod'];
 $table = "productos";
 // $idUser = $_SESSION['id'];
 $idseller = $_POST['usser_id'];

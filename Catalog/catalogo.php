@@ -21,9 +21,7 @@ $diseñador = mysqli_fetch_array($busque_diseno_usser);
     <!-- <script src="catalog-styles-election.js"></script>
 </head> -->
 <style>
-    body{
-        bac
-    }
+
 </style>
 <body>
     <header>

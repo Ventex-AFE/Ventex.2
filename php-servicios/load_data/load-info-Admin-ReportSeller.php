@@ -62,9 +62,14 @@ if ($num_rows > 0) {
             <div class="pointsContiner">
                 <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
                     <ul class="pointsOptions hidden">
-                        <li class="pointsOption"><button href="#" class="linkOptionPoints">
+                        <li class="pointsOption">
+                        <form action="../php-servicios/deletion_data/deletion_reporter_seller.php" method="post">
+                            <input type="hidden" name="id_report_seller" value="<?php echo $row['ID_Reporte_S'] ?>">
+                            <button type="submit" class="linkOptionPoints">
                                 <p class="textLinkOptions">Eliminar</p>
-                            </button></li>
+                            </button>
+                        </form>
+                        </li>
                   </ul>
             </div>
         </td>

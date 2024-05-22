@@ -3,7 +3,7 @@
 require('../Conexion_db/conexion_adm.php');
 
 // Definir las columnas a las que se aplicará el filtrado
-$columas = ['ID_Comentario_S','ID_Usuario',	'ID_Seller','Descripcion','Fecha','Hora'];//ejemplo : 'id', 'nombreprod', 'descrip', 'existnafterm', 'stock'
+$columas = ['ID_Comentario_S', 'ID_Usuario',    'ID_Seller', 'Descripcion', 'Fecha', 'Hora']; //ejemplo : 'id', 'nombreprod', 'descrip', 'existnafterm', 'stock'
 $table = "comentarios_seller"; // Nombre de la tabla en la base de datos
 
 // Obtener el valor del campo de búsqueda desde un formulario POST
@@ -56,21 +56,26 @@ if ($num_rows > 0) {
         echo '<td>' . $row['Descripcion'] . '</td>';
         echo '<td>' . $row['Fecha'] . '</td>';
         echo '<td>' . $row['Hora'] . '</td>';
-        ?>
+?>
 
-        |  <td class="check">
+        | <td class="check">
             <div class="pointsContiner">
                 <button class="checkButton"><img src="../Icons/3pointsV.png" alt="" class="pointsV"></button>
-                    <ul class="pointsOptions hidden">
-                        <li class="pointsOption"><button href="#" class="linkOptionPoints">
+                <ul class="pointsOptions hidden">
+                    <li class="pointsOption">
+                        <form action="../php-servicios/deletion_data/deletion_comment_seller.php" method="post">
+                            <input type="hidden" name="id_comment_Seller" value="<?php echo $row['ID_Comentario_S'] ?>">
+                            <button type="submit" class="linkOptionPoints">
                                 <p class="textLinkOptions">Eliminar</p>
-                            </button></li>
-                  </ul>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </td>
-    
-                <?php
-            echo '</tr>';
+
+<?php
+        echo '</tr>';
     }
 } else {
     // Si no se devolvieron filas, mostrar un mensaje de "Sin resultados"

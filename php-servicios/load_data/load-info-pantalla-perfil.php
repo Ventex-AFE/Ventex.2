@@ -3,6 +3,7 @@ session_start();
 require('../Conexion_db/conexion_usser_select.php');
 
 $columas = ['ID_Producto', 'Id_usser_regristro', 'Nombre_Prod', 'Descripcion', 'Precio', 'Categoria', 'Subcategoria', 'Imagen'];
+$columa2=['Nombre_Prod'];
 $table = "productos";
 $idUser = $_SESSION['id'];
 $campo = isset($_POST['searchP']) ? $Conexion_usser_select->real_escape_string($_POST['searchP']) : null;
@@ -10,9 +11,9 @@ $where = '';
 
 if ($campo != null) {
     $where = "AND (";
-    $cont = count($columas);
+    $cont = count($columa2);
     for ($i = 0; $i < $cont; $i++) {
-        $where .= $columas[$i] . " LIKE '%" . $campo . "%' OR ";
+        $where .= $columa2[$i] . " LIKE '%" . $campo . "%' OR ";
     }
     $where = substr_replace($where, "", -3);
     $where .= ")";
@@ -54,7 +55,13 @@ if ($num_rows > 0) {
                     </form>
                 </li>
                 <li>
-                    <form action="../php-servicios/delete_product.php" method="post">
+                    <form action="../Frames/pantalla-producto.php" method="post">
+                        <input type="hidden" name="id_product" value="<?php echo $row['ID_Producto']; ?>">
+                        <button type="submit">Ver producto</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="../php-servicios/deletion_data/deletion_products.php" method="post">
                         <input type="hidden" name="id_product" value="<?php echo $row['ID_Producto']; ?>">
                         <button type="submit">Eliminar</button>
                     </form>
