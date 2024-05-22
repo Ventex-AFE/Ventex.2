@@ -4,79 +4,12 @@ require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
 
 // Comprobar si la sesión está iniciada
 session_start();
-// if (!isset($_SESSION['id'])) {
-//     // Si no hay sesión iniciada, redireccionar o manejar el caso según tus necesidades
-//     // Por ejemplo, redireccionar a una página de inicio de sesión
-//     
-
-    header('Location:..\Frames\pantalla-Login.html');
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ventex</title>
-  <link rel="stylesheet" href="../Styles/Admin-ViewProduct-porce.css" />
-  <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet" />
-
-  <style>  /* <-------Styles extensible search input*/
-        .searchSection{
-            text-align: left;
-        }
-        .containerSearchSection{
-            min-width: 20vw;
-            height: 8vh;
-            display: flex;
-            align-items: center;
-        }
-        .searchButton{  /*<------Color Button*/
-            background-color: #61abdc;
-        }
-        #searchP:valid ~ .searchButton {  /* <------Color of the button when te input is valid*/
-            background-color: rgb(66, 94, 66);
-        }
-    </style>
-</head>  exit(); // Asegúrate de detener el script después de la redirección
+if (!isset($_SESSION['id'])) {
+    // Si no hay sesión iniciada, redireccionar o manejar el caso según tus necesidades
+    // Por ejemplo, redireccionar a una página de inicio de sesión
+    header("Location: pantalla-login.html");
+    exit;
 }
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ventex</title>
-  <link rel="stylesheet" href="../Styles/Admin-ViewProduct-porce.css" />
-  <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet" />
-
-  <style>  /* <-------Styles extensible search input*/
-        .searchSection{
-            text-align: left;
-        }
-        .containerSearchSection{
-            min-width: 20vw;
-            height: 8vh;
-            display: flex;
-            align-items: center;
-        }
-        .searchButton{  /*<------Color Button*/
-            background-color: #61abdc;
-        }
-        #searchP:valid ~ .searchButton {  /* <------Color of the button when te input is valid*/
-            background-color: rgb(66, 94, 66);
-        }
-    </style>
-</head>
-//     exit;
-// }
 
 // Obtener el ID de usuario de la sesión
 $id_reporte = $_POST['Id_Pedido']; //extraido desde el perfil con el boton del editar producto
@@ -123,7 +56,7 @@ mysqli_stmt_close($stmt);
 
 <body>
         <!-- Barra de navegación -->
-        <header>
+    <header>
 
     <?php
     require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
@@ -237,7 +170,7 @@ mysqli_stmt_close($stmt);
         </section>
         <!-- Sección lateral 2 (formulario para actualizar pedido) -->
         <section class="form">
-             <h1 class="form-title">Agregar Nuevo Producto</h1>
+            <h1 class="form-title">Editar Producto</h1>
             <form action="../php-servicios/save_data/save_actulizacion_de_pedidos.php" method="post" id="form_product">
                 <input type="hidden" name="id_Pedidos_update" value="<?php echo $ID_pedido ?>"><!-- aqui va ir lo de sesion -->
                 <!-- Inputs para actualizar datos de redes sociales -->
@@ -298,9 +231,6 @@ mysqli_stmt_close($stmt);
             </span>
         </section>
     </footer>
-    <script>
-
-    </script>
 </body>
 
 </html>
