@@ -62,7 +62,7 @@ $diseñador = mysqli_fetch_array($busque_diseno_usser);
         <section class="editCatalogOptionsContainer">
             <div class="TitleModalContainer">
                 <h1 class="titleModal">Ventex</h1>
-                <h1 class="subitleModal">edit catalog</h1>
+                <h1 class="subitleModal">editar catalogo</h1>
             </div>
             <div class="editOptionsContainer">
                 <div class="changeContainer">
