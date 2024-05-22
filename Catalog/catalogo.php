@@ -3,6 +3,8 @@ require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
 $mywher = isset($_GET['id']) ? $_GET['id'] : null;
 $categoria = isset($_GET['categoria']) ? $_GET['categoria'] : null;
 $subc = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Categoria FROM productos WHERE Id_usser_regristro='$mywher';");
+$busque_diseno_usser = mysqli_query($Conexion_usser_select, "SELECT stylePage, Product_View_Style, Product_Box_Color, Header_Color, Category_Color FROM catalogo_seller WHERE Id_vendedor='$mywher';");
+$diseñador = mysqli_fetch_array($busque_diseno_usser);
 ?>
 
 <!DOCTYPE html>
@@ -16,20 +18,24 @@ $subc = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Categoria FROM pro
     <link rel="stylesheet" href="./Styles-Frames/Styles-catalogo-1.css" id="style-catalog">
     <link rel="stylesheet" href="../Componentes/editCatalogModal.css">
     <link rel="stylesheet" href="./Queries-responsive/queries-catalogo-1.css" id="style-catalog">
-    <script src="catalog-styles-election.js"></script>
-</head>
-
+    <!-- <script src="catalog-styles-election.js"></script>
+</head> -->
+<style>
+    body{
+        bac
+    }
+</style>
 <body>
     <header>
         <nav>
-            <article class="headerContainer">
+            <article class="headerContainer" style="background-color: <?php echo $diseñador['Header_Color']; ?>;">
                 <div class="logoContainer"></div>
                 <input type="search" placeholder="Buscar" class="search" name="searchP" id="searchP" onkeyup="getData()">
             </article>
             <article class="categoriesContainer">
                 <form action="../Catalog/catalogo.php" method="get">
                     <input type="hidden" name="id" value="<?php echo $mywher; ?>">
-                    <button class="categoryButton" type="submit">All</button>
+                    <button class="categoryButton" type="submit" style="background-color: <?php echo $diseñador['Category_Color']; ?>;">All</button>
                 </form>
 
                 <?php
@@ -38,7 +44,7 @@ $subc = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Categoria FROM pro
                     <form action="../Catalog/catalogo.php" method="get">
                         <input type="hidden" name="id" value="<?php echo $mywher; ?>">
                         <input type="hidden" name="categoria" value="<?php echo $categorias_button['Categoria']; ?>">
-                        <button class="categoryButton" type="submit"><?php echo $categorias_button['Categoria']; ?></button>
+                        <button class="categoryButton" type="submit" style="background-color: <?php echo $diseñador['Category_Color']; ?>;"><?php echo $categorias_button['Categoria']; ?></button>
                     </form>
                 <?php
                 }
@@ -58,7 +64,18 @@ $subc = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Categoria FROM pro
         <input type="hidden" name="id_usser" value="<?php echo $mywher ?>" id="id_usser">
         <input type="hidden" name="categoria" value="<?php echo $categoria ?>" id="categoria">
     </form>
+    <script>
+        let stylePage = "<?php echo $diseñador['stylePage']; ?>";
+        let productBoxStyle = "<?php echo $diseñador['Product_View_Style']; ?>";
 
+        const Page = document.getElementById('style-catalog');
+        const productBox = document.getElementById('style-product-box');
+
+        Page.href = `./Styles-Frames/Styles-catalogo-${stylePage}.css`;
+        productBox.href = `./Styles-Product-Box/product-box-${productBoxStyle}.css`;
+
+        console.log(`width: ${screen.width} height: ${screen.height}`);
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", getData);
 
@@ -83,6 +100,7 @@ $subc = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Categoria FROM pro
                 content.innerHTML = data;
             }).catch(err => console.log(err));
         }
+        
     </script>
 </body>
 </html>

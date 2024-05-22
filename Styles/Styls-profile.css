@@ -20,24 +20,24 @@ body{
  }
  .parent{
     min-width: 90vw;
-    min-height: auto;
-    display: grid;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
     gap: 3rem;
  }
  .parent_Child{
     width: 98vh;
-    height: 50VW;
+    
     gap: 2rem;
     padding: 3rem;
-    margin-top: 3vh;
+    padding-top: 0;
 
  }
  .parent_FirstChild{
     width: 100%;
-    height: 20VW;
+    height: 35vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,10 +82,18 @@ body{
     height: 30Vh;
     border-radius: 50%;
     position: relative;
-    top: 5vh;
+    top: 10vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     /* background-image: url(https://i.pinimg.com/564x/e2/5a/c1/e25ac198405c799681a7667e5204b922.jpg); */
  }
-
+#profile_Img{
+   width: 100%;
+   height: auto;
+ } 
 .info {
    width: 50%;
    min-height: 50vh;
@@ -95,6 +103,7 @@ body{
    justify-content: center;
    text-align: center;
    padding: 3rem;
+   margin-top: 5vh;
    gap: 1.5rem;
 }
 
@@ -217,17 +226,36 @@ td {
  }
  .group {
    width: 100%;
-   max-height: 100vh;
    display: flex;
    flex-wrap: wrap;
-   line-height: 28px;
+   justify-content: center;
+  }
+.searchSection{
+   width: 100%;
+   height: 10vh;
+   display: flex;
+   flex-wrap: wrap;
    justify-content: center;
    align-items: center;
    position: relative;
-   padding-left: 20px;
-   gap: 1rem;
-  }
-
+   margin-bottom: 2vh;
+   position: relative;
+}
+.addProductButton{
+   width: 20vh;
+   height: 6vh;
+   position: absolute;
+   right: 3vh;
+   background: none;
+   border: 1px solid rgb(153, 153, 153);
+   color: gray;
+   transition: 0.3s;
+}
+.addProductButton:hover{
+   background-color: #00a400;
+   color: white;
+   border: none;
+}
   .inputSearch {
    width: 100%;
    height: 20px;
@@ -347,12 +375,11 @@ aside nav ul {
   /*Manu Changes ---------------------------------------------*/
 
   #resultados{
-   width:90%;
+   width:95%;
    height: auto;
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
-   /* background-color: aquamarine; */
-   gap: 1vw;
+   gap: 2.5vh;
   }
 
 
