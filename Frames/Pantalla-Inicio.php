@@ -2,36 +2,6 @@
 require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
 session_start();
 
-// Función para mostrar los productos vistos recientemente
-function mostrarProductosVistosRecientemente($Conexion_usser_select) {
-    // Verificar si existe la cookie de productos vistos recientemente
-    $productos_vistos = isset($_COOKIE['productos_vistos']) ? json_decode($_COOKIE['productos_vistos'], true) : [];
-
-    // Verificar si hay productos vistos recientemente
-    if (!empty($productos_vistos)) {
-        echo '<section class="productos-Recomendados">';
-        echo '<h1>Vistos recientemente</h1>';
-        echo '<section class="slider">';
-        foreach ($productos_vistos as $producto_id) {
-            // Consultar la información del producto desde la base de datos
-            $sql = "SELECT * FROM productos WHERE id = $producto_id";
-            $resultado = $Conexion_usser_select->query($sql);
-            if ($resultado->num_rows > 0) {
-                $row = $resultado->fetch_assoc();
-                // Mostrar los productos
-                echo '<section class="card">';
-                echo '<div class="image"><img src="' . $row['Imagen'] . '"></div>';
-                echo '<span class="title">' . $row['Nombre_Prod'] . '</span>';
-                echo '<span class="price">$' . $row['Precio'] . '</span>';
-                echo '</section>';
-            }
-        }
-        echo '</section>';
-        echo '</section>';
-    } else {
-        echo '<p styles="text-aling:center;">No hay productos vistos recientemente.</p>';
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +12,7 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../Componentes/header.css">
   <link rel="stylesheet" href="../Componentes/footer.css">
+  <link rel="stylesheet" href="../Componentes/productBoxSmaller.css">
   <link rel="stylesheet" href="../Styles/Styles-Inicio.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Inicio</title>
@@ -201,12 +172,26 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
         </div>
       </div>
     </section>
+    <article class="productsContainer">
+            <div class="subcategoryTitleContainer">
+                <h2 class="subcategoryTitle">Productos del vendedor</h2>
+            </div>
+            <section class="subcategoryCarrusel">
+                <section class="containerCarrusel">
+                    <button class="carruselButton prev">
+                        <</button>
+                            <section class="carrusel">
+                                <section class="productsCarrusel" id="contenedor" >
+                                    
+                                </section>
+                            </section>
+                            <button class="carruselButton next">></button>
+                </section>
+                <!-- ---------------------------------------------------------------------------- -->
 
-    <section class="productos-Recomendados">
-      <h1>Vistos recientemente</h1>
-      <div id="contenedor"></div>
-
-    </section>
+                <!-- Contenedor Información de contacto -->
+            </section>
+        </article>
     </section>
     <script>
       document.addEventListener("DOMContentLoaded", getData);
@@ -250,6 +235,10 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
             </span>
         </section>
     </footer>
+<!--------------------------------------------------------->
+<script src="../Scripts/Script-Show-catalogo.js"></script>
+<!--------------------------------------------------------->
+
 </body>
 
 </html>

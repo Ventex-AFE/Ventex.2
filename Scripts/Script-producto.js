@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
 //-------------------------------------------------------------------------------//
 
     const calcular = document.querySelector('.calc');

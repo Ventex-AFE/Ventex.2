@@ -24,8 +24,13 @@
             <div class="circle3"></div>
         </section>
         <section class="form">
-            <form action="" method="PUT">
+            <form action="../php-servicios/save_data/save-newpassword.php" method="Post">
+                
                 <br><h1 class="form-title">Restablecer Contraseña</h1>
+                <section class="input-container">
+                    <label for="again-Password">Correo</label>
+                    <input class="input" type="email" name="email">
+                </section>
                 <section class="input-container">
                     <label for="password">Nueva Contraseña</label>
                     <input class="input" type="password" name="password">

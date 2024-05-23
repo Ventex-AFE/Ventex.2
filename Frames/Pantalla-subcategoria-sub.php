@@ -145,6 +145,7 @@
                 
             <form action="../Frames/pantalla-producto.php" method="post">
                 <button class="productContainer" type="submit">
+                <input type="hidden" name="id_product" value="<?php echo $mostrar['ID_Producto']; ?>">
                     <div class="productPhoto">
                         <img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>" class="productImage" />
                     </div>

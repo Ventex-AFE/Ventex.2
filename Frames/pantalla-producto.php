@@ -216,13 +216,12 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
                     <span class="category"><?php echo $Categoria ?></span>
                     <span id="price-product">$<?php echo $Precio ?></span>
                     <span id="desc-Contacto"><?php echo $Descripcion_contact ?></span>
-                    <span id="text-desc"><?php echo $Descripcion ?> y mas información innecesaria solo para llenar el campo, y pues ajjaamamm, ya estoy muerto, me quiero ir a mimir</span>
+                    <span id="text-desc"><?php echo $Descripcion ?> </span>
                     <form action="../Frames/pantalla-perfil-vc.php" method="post" id="form-seller">
                         <input type="hidden" name="Id_seller" value="<?php echo $id_Seller; ?>">
                         <input type="submit" id="bot" value="Ver perfil del vendedor">
                     </form>
                     <button type="submit" id="bot" class="btn calc">Reportar Producto</button>
-   
                 </section>
             </article>
         </section>
@@ -276,7 +275,6 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
                 <article id="descriptionD">
                     <p class="contactDescription">
                         <?php echo $profile_Description ?>
-                        Holas como están papus, nomás vengo a poner info random para ver si es cierto o no que esta madre jala, así que no me pongan mucha atención, solo dusfruten mis amores
                     </p>
                 </article>
             </section>
@@ -387,6 +385,7 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
             </span>
         </section>
     </footer>
+    <script src="../Scripts/Script-Show-catalogo.js"></script>
     <script src="../Scripts/Script-producto.js"></script>
    
 </body>

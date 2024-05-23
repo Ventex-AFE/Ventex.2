@@ -32,11 +32,20 @@ if (isset($_COOKIE['productos_visitados'])) {
 
             // Mostrar la información del producto en el contenedor
 ?>
-            <section class="card">
-                <div class="image"><span class="text"><?php echo $producto['Imagen']; ?></span></div>
-                <span class="title"><?php echo $producto['Nombre_Prod']; ?></span>
-                <span class="price">$<?php echo $producto['Precio']; ?></span>
-            </section>
+            <form action="../Frames/pantalla-producto.php" method="post">
+                <input type="hidden" name="id_product" value="<?php echo $producto['ID_Producto']; ?>"> <!-- Campo oculto con el ID del producto -->
+                <button class="productContainer" type="submit">
+                    <div class="productPhoto">
+                        <img src="../Product-Images/<?php echo $producto['Imagen']; ?>" class="productImage" /> <!-- Imagen del producto -->
+                    </div>
+                    <div class="productPrice">
+                        <p class="priceStyle">$<?php echo $producto['Precio']; ?></p> <!-- Precio del producto -->
+                    </div>
+                    <div class="productName">
+                        <p class="nameStyle"><?php echo $producto['Nombre_Prod']; ?></p> <!-- Nombre del producto -->
+                    </div>
+                </button>
+            </form>
 <?php
         } else {
             // Mostrar un mensaje de error si la consulta falla

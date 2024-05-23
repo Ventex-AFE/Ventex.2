@@ -20,11 +20,20 @@ $num_rows = $result->num_rows;
 if ($num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
 ?>
-        <section class="card">
-            <div class="image"><img class="img_product" src="../Product-Images/<?php echo  $row['Imagen']?>" ></div>
-            <span class="title"><?php echo $row['Nombre_Prod']; ?></span>
-            <span class="price">$<?php echo $row['Precio'] ?></span>
-        </section>
+        <form action="../Frames/pantalla-producto.php" method="post">
+            <input type="hidden" name="id_product" value="<?php echo $row['ID_Producto']; ?>"> <!-- Campo oculto con el ID del producto -->
+            <button class="productContainer" type="submit">
+                <div class="productPhoto">
+                    <img src="../Product-Images/<?php echo $row['Imagen']; ?>" class="productImage" /> <!-- Imagen del producto -->
+                </div>
+                <div class="productPrice">
+                    <p class="priceStyle">$<?php echo $row['Precio']; ?></p> <!-- Precio del producto -->
+                </div>
+                <div class="productName">
+                    <p class="nameStyle"><?php echo $row['Nombre_Prod']; ?></p> <!-- Nombre del producto -->
+                </div>
+            </button>
+        </form>
 <?php
     }
 } else {
