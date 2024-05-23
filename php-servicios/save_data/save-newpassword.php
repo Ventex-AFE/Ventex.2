@@ -1,54 +1,50 @@
 <?php
 session_start();
+require_once('../Conexion_db/conexion_usser_changes.php');
 
-// credenciales de acceso a la base datos
-$hostname = ''; //Url de la direccion dela base de datos 
-$username = ''; //Usuario que se uso para esta conexion y la verifcacion 
-$password = ''; //Password del usuario 
-$database = 'ventex'; //nombre de la db
+$correo = mysqli_real_escape_string($Conexion_usser_changes, $_POST['email']);
+$contrasena = mysqli_real_escape_string($Conexion_usser_changes, $_POST['password']);
 
-// conexión a la base de datos
-$Conexion = mysqli_connect($hostname, $username, $password, $database);
-
-if (mysqli_connect_error()) {
-    // si se encuentra error en la conexión
-    exit('Fallo en la conexión de MySQL:' . mysqli_connect_error());
-}
-
-// Se valida si se ha enviado información, con la función isset()
-if (!$_POST) {
-    // si no hay datos muestra error y re direccionar
-    //header('Location: Login_que_jale.html');
-    echo 'pato';
-}
-
-// Obtener el ID del usuario usando el nombre de usuario
-if ($Result = $Conexion->prepare('SELECT id,pass FROM users WHERE correo = ?')) {
-    // parámetros de enlace de la cadena s
-    $Result->bind_param('s', $_POST['correo']);
+// Obtener el ID del usuario usando el correo electrónico
+if ($Result = $Conexion_usser_changes->prepare('SELECT ID_Usuario FROM usuarioregistrado WHERE Correo = ?')) {
+    $Result->bind_param('s', $correo);
     $Result->execute();
-    $Result->bind_result($id, $Pato); // vincula las variables $id y $Pato a los resultados de la consulta
-    $Result->fetch(); // obtiene una fila de resultados
+    $Result->bind_result($id_usuario);
+    $Result->fetch();
     $Result->close();
+
+    if ($id_usuario) {
+        // Cambiar la contraseña del usuario 
+        $new_hash = password_hash($contrasena, PASSWORD_DEFAULT, ['cost' => 15]);
+
+        // Actualizar la contraseña del usuario en la base de datos
+        if ($Update = $Conexion_usser_changes->prepare('UPDATE usuarioregistrado SET Pass = ? WHERE ID_Usuario = ?')) {
+            $Update->bind_param('si', $new_hash, $id_usuario);
+            $Update->execute();
+            $Update->close();
+
+            // Redirigir al usuario a la página de éxito
+            header('Location: ../../Frames/pantalla-Login.html');
+            exit();
+        } else {
+            // Error al actualizar la contraseña
+            echo 'Paaaarrr';
+            //header('Location: ../../Frames/Pantalla-Forget-Password.php');
+            exit();
+        }
+    } else {
+        // Usuario no encontrado
+        echo 'Paaaarrr';
+        // header('Location: ../../Frames/Pantalla-Forget-Password.php');
+        
+        exit();
+    }
 } else {
-    header('Location: Incios.html');
+    // Error al preparar la consulta para obtener el ID de usuario
+    //header('Location: ../../Frames/Pantalla-Forget-Password.php');
+    echo 'patooooo';
+    exit();
 }
 
-// Cambiar la contraseña del usuario 
-$new_hash = password_hash($_POST['correonew'], PASSWORD_DEFAULT, ['cost' => 15]);
-//if ($Update = $Conexion->prepare('UPDATE accounts SET Pato = ? WHERE id = ?')) {
-$Update = $Conexion->prepare('UPDATE users SET pass = ? WHERE id = ?');
-$Update->bind_param('si', $new_hash, $id);
-$Update->execute();
-
-$Update->close();
-echo 'pato2.0';
-// redirigir al usuario a la página de éxito
-header('Location: Incios.html');
-//} else {
-// error al actualizar la contraseña
-//header('Location: Forget_password.php');
-//}
-//aaaaa waaa
-
-$Conexion->close();
+$Conexion_usser_changes->close();
+?>
