@@ -23,6 +23,12 @@ main{
     justify-content: left;
     align-content: flex-start;
 }
+
+.plan{
+    text-decoration: none; /* Elimina el subrayado */
+    color: white;
+}
+
 .usersContainer{
     width: 30vw;
     height: 95vh;

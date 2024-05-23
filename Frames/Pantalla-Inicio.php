@@ -1,4 +1,6 @@
 <?php
+require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
+session_start();
 
 // Función para mostrar los productos vistos recientemente
 function mostrarProductosVistosRecientemente($Conexion_usser_select) {
@@ -44,8 +46,9 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Inicio</title>
 </head>
-
+<body>
 <header>
+
 <?php
   require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
   $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
@@ -55,7 +58,7 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
 </section>
 <nav>
     <ul class="menu">
-        <li><a href="" class="headerOption">Inicio</a></li>
+        <li><a href="../Frames/Pantalla-Inicio.php" class="headerOption">Inicio</a></li>
         <li><a href="#" id="categorias" class="headerOption">Categorías</a>
             <div class="invisible"></div>
             <ul class="menuv">
@@ -71,7 +74,7 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
             </ul>
         </li>
         <li><a href="" class="headerOption planHeaderButton">Planes</a></li>
-        <li><a href="" class="headerOption">Vender</a></li>
+        <li><a href="../Frames/Pantalla-AddP.php" class="headerOption">Vender</a></li>
     </ul>
 </nav>
 <section class="busqueda">
@@ -83,7 +86,7 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
     </form>
 </section>
 <section class="imgProfile">
-    <div></div>
+    <a class="imgProfile" href="../Frames/pantalla-perfil.php"><img src="../Imgens-Pefil/<?php echo $_SESSION['img']?>"></a>
 </section>
 
 <!--- MODAL VENDER ----------------------------------------------------------------------------------->
@@ -134,7 +137,7 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
               </ul>
             </div>
             <button class="planButton premiumButton">
-              Obtener plan Premium
+              <a class ="plan" href="../Frames/Pantalla-Pago-Suscripcion.php">Obtener plan Premium</a>
               <img src="../Icons/cocodrilo-premium.png" alt="" class="cocoPremium">
             </button>
           </form>

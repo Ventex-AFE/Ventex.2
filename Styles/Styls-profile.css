@@ -26,7 +26,7 @@ body{
     justify-content: center;
  }
  .parent_Child{
-    width: 105vh;
+    width: 120vh;
     display: flex;
     flex-wrap:wrap;
     justify-content: center;

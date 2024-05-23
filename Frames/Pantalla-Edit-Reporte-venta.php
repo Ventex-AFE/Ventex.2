@@ -58,106 +58,106 @@ mysqli_stmt_close($stmt);
     <!-- Barra de navegación -->
     <header>
 
-    <?php
-    require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
-    $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
-    ?>
-    <section>
-        <p class="logo">Ventex</p>
-    </section>
-    <nav>
-        <ul class="menu">
-            <li><a href="pantalla-Inicio.php" class="headerOption">Inicio</a></li>
-            <li><a href="#" id="categorias" class="headerOption">Categorías</a>
-                <div class="invisible"></div>
-                <ul class="menuv">
-                    <?php while ($cat = mysqli_fetch_array($cats)) { ?>
-                        <li class="ca">
-                            <a href="Pantalla-Subcategoria.php?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
-                                <div class="categorieSection">
-                                    <p class="categorieOption"><?php echo $cat['Nombre_Cat']; ?></p>
-                                </div>
-                            </a>
-                        </li>
-                    <?php } ?>
-                </ul>
-            </li>
-            <li><a href="" class="headerOption planHeaderButton">Planes</a></li>
-            <li><a href="" class="headerOption">Vender</a></li>
-        </ul>
-    </nav>
-    <section class="busqueda">
-        <form class="busquedaForm" action="../Frames/Pantalla-Busqueda.php" method="post" onsubmit="return enviarFormulario()">
-            <input type="search" placeholder="Buscar" name="busqueda" class="inputSearchHeader" require>
-            <button class="searchButtonHeader">
-                <img src="../Icons/lupaB.png" alt="" class="imageSearchHeader">
-            </button>
-        </form>
-    </section>
-    <section class="imgProfile">
-        <div></div>
-    </section>
+<?php
+  require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
+  $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
+?>
+<section>
+    <p class="logo">Ventex</p>
+</section>
+<nav>
+    <ul class="menu">
+        <li><a href="../Frames/Pantalla-Inicio.php" class="headerOption">Inicio</a></li>
+        <li><a href="#" id="categorias" class="headerOption">Categorías</a>
+            <div class="invisible"></div>
+            <ul class="menuv">
+                <?php while ($cat = mysqli_fetch_array($cats)) { ?>
+                    <li class="ca">
+                        <a href="Pantalla-Subcategoria.php?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
+                            <div class="categorieSection">
+                                <p class="categorieOption"><?php echo $cat['Nombre_Cat']; ?></p>
+                            </div>
+                        </a>
+                    </li>
+                <?php } ?>
+            </ul>
+        </li>
+        <li><a href="" class="headerOption planHeaderButton">Planes</a></li>
+        <li><a href="../Frames/Pantalla-AddP.php" class="headerOption">Vender</a></li>
+    </ul>
+</nav>
+<section class="busqueda">
+    <form class="busquedaForm" action="../Frames/Pantalla-Busqueda.php" method="post" onsubmit="return enviarFormulario()">
+        <input type="search" placeholder="Buscar" name="busqueda" class="inputSearchHeader" require>
+        <button class="searchButtonHeader">
+            <img src="../Icons/lupaB.png" alt="" class="imageSearchHeader">
+        </button>
+    </form>
+</section>
+<section class="imgProfile">
+    <a class="imgProfile" href="../Frames/pantalla-perfil.php"><img src="../Imgens-Pefil/<?php echo $_SESSION['img']?>"></a>
+</section>
 
-    <!--- MODAL VENDER ----------------------------------------------------------------------------------->
+<!--- MODAL VENDER ----------------------------------------------------------------------------------->
 
-    <article class="sellModalContainer hidden">
-    <section class="sellModalInformationContainer ">
-        <h1 class="titleModal">Ventex</h1>
-        <p class="infoModal">Con Ventex, los emprendedores estudiantiles pueden gestionar y promocionar sus productos de manera eficiente. Compra un plan y desbloquea todo el potencial de tu negocio.</p>
-    </section>
-    <section class="sellModalPlansContainer ">
-        <button class="closePlansButto">x</button>
-        <div class="titlePlansSellerModalContainer">
-        <h1 class="titlePlansSellerModal">Planes</h1>
-        </div>
-        <section class="planSellerModalContainer ">
+<article class="sellModalContainer hidden">
+  <section class="sellModalInformationContainer ">
+    <h1 class="titleModal">Ventex</h1>
+    <p class="infoModal">Con Ventex, los emprendedores estudiantiles pueden gestionar y promocionar sus productos de manera eficiente. Compra un plan y desbloquea todo el potencial de tu negocio.</p>
+  </section>
+  <section class="sellModalPlansContainer ">
+    <button class="closePlansButto">x</button>
+    <div class="titlePlansSellerModalContainer">
+      <h1 class="titlePlansSellerModal">Planes</h1>
+    </div>
+    <section class="planSellerModalContainer ">
 
-        <div class="planContainer normal">
+      <div class="planContainer normal">
+          <div class="planNameContainer">
+              <p class="planName">Basico </p>
+              <p class="subTextPlanName">(Plan Mejorado)</p>
+          </div>
+          <p class="pricePlan"><span class="price">GRATIS</span></p>
+          <div class="benefitsPlan">
+            <ul class="planBenefitsList">
+              <li>publicación de productos</li>
+              <li>perfil basico con filtrado de productos</li>
+            </ul>
+          </div>
+          <button class="planButton basicButton">Continuar con plan gratuito</button>
+      </div>
+
+      <div class="crownContiner">
+        <img src="../Icons/corona-premium.png" alt="" class="crownPremium">
+        <div class="planContainer premium">
+          <form action="" method="post" class="formPremiumPlan">
             <div class="planNameContainer">
-                <p class="planName">Basico </p>
-                <p class="subTextPlanName">(Plan Mejorado)</p>
+              <p class="planName premiumName">Premium </p>
+              <p class="subTextPlanName">(Plan Mejorado)</p>
             </div>
-            <p class="pricePlan"><span class="price">GRATIS</span></p>
+            <p class="pricePlan">$ <span class="price">20.00</span></p>
             <div class="benefitsPlan">
-                <ul class="planBenefitsList">
+              <ul class="planBenefitsList">
                 <li>publicación de productos</li>
                 <li>perfil basico con filtrado de productos</li>
-                </ul>
+                <li>Catalogos personalizados.</li>
+                <li>Registro de Pedidos</li>
+                <li>Registro de ventas</li>
+              </ul>
             </div>
-            <button class="planButton basicButton">Continuar con plan gratuito</button>
+            <button class="planButton premiumButton">
+              <a class ="plan" href="../Frames/Pantalla-Pago-Suscripcion.php">Obtener plan Premium</a>
+              <img src="../Icons/cocodrilo-premium.png" alt="" class="cocoPremium">
+            </button>
+          </form>
         </div>
-
-        <div class="crownContiner">
-            <img src="../Icons/corona-premium.png" alt="" class="crownPremium">
-            <div class="planContainer premium">
-            <form action="" method="post" class="formPremiumPlan">
-                <div class="planNameContainer">
-                <p class="planName premiumName">Premium </p>
-                <p class="subTextPlanName">(Plan Mejorado)</p>
-                </div>
-                <p class="pricePlan">$ <span class="price">20.00</span></p>
-                <div class="benefitsPlan">
-                <ul class="planBenefitsList">
-                    <li>publicación de productos</li>
-                    <li>perfil basico con filtrado de productos</li>
-                    <li>Catalogos personalizados.</li>
-                    <li>Registro de Pedidos</li>
-                    <li>Registro de ventas</li>
-                </ul>
-                </div>
-                <button class="planButton premiumButton">
-                Obtener plan Premium
-                <img src="../Icons/cocodrilo-premium.png" alt="" class="cocoPremium">
-                </button>
-            </form>
-            </div>
-        </div>
-        </section>
+      </div>
     </section>
-    </article>
-    <div class="overlaySellModal hidden"></div>
-    <script src="../Scripts/Script-plansModal.js"></script>
-    <!---------------------------------------------------------------------------------------------------->
+  </section>
+</article>
+<div class="overlaySellModal hidden"></div>
+<script src="../Scripts/Script-plansModal.js"></script>
+<!---------------------------------------------------------------------------------------------------->
 
 </header>
     <!-- Contenido principal -->
