@@ -10,16 +10,22 @@ $Category_color = mysqli_real_escape_string($Conexion_usser_changes, $_POST['Cat
 $Produc_type = mysqli_real_escape_string($Conexion_usser_changes, $_POST['productBoxPreviewStyle']);
 $Catalogo_style = mysqli_real_escape_string($Conexion_usser_changes, $_POST['catalogStyle']);
 
-echo $Id_usser_regristro, $Catalogo_style,$Produc_type, $header_color, $Category_color, $box_color;
+echo $Id_usser_regristro, $Catalogo_style, $Produc_type, $header_color, $Category_color, $box_color;
 
-$sentence = "INSERT INTO catalogo_seller (Id_vendedor,stylePage, Product_View_Style, Header_Color, Category_Color, Product_Box_Color) 
-            VALUES ('$Id_usser_regristro', '$Catalogo_style','$Produc_type', '$header_color', '$Category_color', '$box_color')";
+$sentence = "UPDATE catalogo_seller 
+             SET stylePage = '$Catalogo_style',
+                 Product_View_Style = '$Produc_type',
+                 Header_Color = '$header_color',
+                 Category_Color = '$Category_color',
+                 Product_Box_Color = '$box_color'
+             WHERE Id_vendedor = '$Id_usser_regristro'";
+
 $guardar = mysqli_query($Conexion_usser_changes, $sentence);
 
 if (!$guardar) {
     echo "Error al guardar los datos en la base de datos: " . mysqli_error($Conexion_usser_changes);
 } else {
-    //header('Location: ../../Frames/pantalla-perfil.php');
+    header('Location: ../../Frames/pantalla-perfil.php');
 }
 
 mysqli_close($Conexion_usser_changes);

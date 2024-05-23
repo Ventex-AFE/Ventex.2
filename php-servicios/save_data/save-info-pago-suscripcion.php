@@ -1,63 +1,72 @@
 <?php
 session_start();
-
 require_once('../Conexion_db/conexion_usser_changes.php');
 
 // Verifica y filtra los datos de entrada
 $Id_usuario = $_SESSION['id'];
-//$Id_usuario = 5;
 $nom = mysqli_real_escape_string($Conexion_usser_changes, $_POST['namet']);
 $numbertar = mysqli_real_escape_string($Conexion_usser_changes, $_POST['numbertar']);
 $fechex = mysqli_real_escape_string($Conexion_usser_changes, $_POST['fechex']);
 
-// Asegúrate de que sea un número entero
+// Preparar la consulta para insertar en la tabla suscripciones_ventex
+$sql_insert = "INSERT INTO suscripciones_ventex (ID_Usuario, Nombre_Titular, Numero_targeta, Fecha) VALUES (?, ?, ?, ?)";
 
-// Utiliza un UPDATE con sentencia preparada para intentar actualizar el registro
-$sql_update = "INSERT INTO suscripciones_ventex (ID_Usuario, Nombre_Titular, Numero_targeta, Fecha) VALUES (?, ?, ?, ?)";
-
-
-if ($stmt = mysqli_prepare($Conexion_usser_changes, $sql_update)) {
+if ($stmt = mysqli_prepare($Conexion_usser_changes, $sql_insert)) {
     mysqli_stmt_bind_param($stmt, "isss", $Id_usuario, $nom, $numbertar, $fechex);
     $resultado = mysqli_stmt_execute($stmt);
 
     if (!$resultado) {
-        echo "Error en la consulta: " . mysqli_error($Conexion_usser_changes);
-        echo "Consulta SQL: $sql_update";
+        echo "Error en la consulta: " . mysqli_stmt_error($stmt);
         exit();
     } else {
-        // Redireccionar si todo está bien y cambiar nombre
-
-        // Hacer la segunda sentencia de actualización (UPDATE) con sentencia preparada
-        $sql2 = "UPDATE usuarioregistrado SET Type_usser = ? WHERE ID_Usuario = $Id_usuario";
+        // Si la inserción es exitosa, proceder con la actualización
+        $sql_update = "UPDATE usuarioregistrado SET Type_usser = ? WHERE ID_Usuario = ?";
         $type_usser_new = 3;
-        // Verificar la conexión antes de preparar la segunda sentencia
-        if ($Conexion_usser_changes) {
-            $stmt2 = mysqli_prepare($Conexion_usser_changes, $sql2);
 
-            // Verificar la preparación de la segunda sentencia
-            if ($stmt2) {
-                mysqli_stmt_bind_param($stmt2, "i", $type_usser_new);
-                $envio2 = mysqli_stmt_execute($stmt2);
+        if ($stmt2 = mysqli_prepare($Conexion_usser_changes, $sql_update)) {
+            mysqli_stmt_bind_param($stmt2, "ii", $type_usser_new, $Id_usuario);
+            $envio2 = mysqli_stmt_execute($stmt2);
 
-                // Verificar si hubo errores en la consulta
-                if (!$envio2) {
-                    // Mostrar un mensaje de error y detalles de MySQL
-                    echo '<SCRIPT> alert("Error al actualizar el perfil del vendedor")</SCRIPT>';
-                    echo 'Error de MySQL: ' . mysqli_error($Conexion_usser_changes);
-                } else {
-                    header('Location: ../../Frames/pantalla-Login.html');
-                }
+            if (!$envio2) {
+                echo '<SCRIPT> alert("Error al actualizar el perfil del vendedor")</SCRIPT>';
+                echo 'Error de MySQL: ' . mysqli_stmt_error($stmt2);
             } else {
-                // Mostrar un mensaje de error si la preparación falla
-                echo 'Error al preparar la segunda sentencia SQL';
+                // Si la actualización es exitosa, proceder con la inserción en catalogo_seller
+                $box_color = 'Campo vacio';
+                $header_color = 'Campo vacio';
+                $Category_color = 'Campo vacio';
+                $Produc_type = '0';
+                $Catalogo_style = '0';
+
+                $sql_insert_catalogo = "INSERT INTO catalogo_seller (Id_vendedor, stylePage, Product_View_Style, Header_Color, Category_Color, Product_Box_Color) 
+                                        VALUES (?, ?, ?, ?, ?, ?)";
+                if ($stmt3 = mysqli_prepare($Conexion_usser_changes, $sql_insert_catalogo)) {
+                    mysqli_stmt_bind_param($stmt3, "isssss", $Id_usuario, $Catalogo_style, $Produc_type, $header_color, $Category_color, $box_color);
+                    $guardar = mysqli_stmt_execute($stmt3);
+
+                    if (!$guardar) {
+                        echo 'Error al insertar en catalogo_seller: ' . mysqli_stmt_error($stmt3);
+                    } else {
+                        header('Location: ../../Frames/pantalla-Login.html');
+                    }
+
+                    mysqli_stmt_close($stmt3);
+                } else {
+                    echo 'Error al preparar la sentencia SQL para catalogo_seller: ' . mysqli_error($Conexion_usser_changes);
+                }
             }
+
+            mysqli_stmt_close($stmt2);
+        } else {
+            echo 'Error al preparar la sentencia de actualización: ' . mysqli_error($Conexion_usser_changes);
         }
     }
 
     mysqli_stmt_close($stmt);
 } else {
-    echo "Error al preparar la sentencia de actualización: " . mysqli_error($Conexion_usser_changes);
+    echo "Error al preparar la sentencia de inserción: " . mysqli_error($Conexion_usser_changes);
 }
 
 // Cierra la conexión
 mysqli_close($Conexion_usser_changes);
+?>

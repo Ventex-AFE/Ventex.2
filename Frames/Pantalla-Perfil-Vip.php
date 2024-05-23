@@ -362,9 +362,10 @@ mysqli_stmt_close($stmt);
                 <input type="radio" name="catalogStyle" id="" value="1" class="radioButton" checked>
                 <input type="radio" name="catalogStyle" id="" value="2" class="radioButton">
                 </div>
-                </form>
+                
             </section>
             <section class="catalogPreviewContainer">
+            </form>
 <!-- CATALOG PREVIEW SCREEN --------------------------------------------------------->
                 <div class="catalogPreviewScreen">
                     <div class="headerPreview">
