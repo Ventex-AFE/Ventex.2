@@ -1,4 +1,5 @@
 <?php
+session_start();
 $recibir_datos = isset($_POST['busqueda']) ? $_POST['busqueda'] : '';
 ?>
 <!DOCTYPE html>
@@ -41,7 +42,7 @@ $recibir_datos = isset($_POST['busqueda']) ? $_POST['busqueda'] : '';
             </ul>
         </li>
         <li><a href="" class="headerOption planHeaderButton">Planes</a></li>
-        <li><a href="" class="headerOption">Vender</a></li>
+        <li><a href="../Frames/Pantalla-AddP.php" class="headerOption">Vender</a></li>
     </ul>
 </nav>
 <section class="busqueda">
@@ -53,7 +54,7 @@ $recibir_datos = isset($_POST['busqueda']) ? $_POST['busqueda'] : '';
     </form>
 </section>
 <section class="imgProfile">
-    <div></div>
+    <a class="imgProfile" href="../Frames/pantalla-perfil.php"><img src="../Imgens-Pefil/<?php echo $_SESSION['img']?>"></a>
 </section>
 
 <!--- MODAL VENDER ----------------------------------------------------------------------------------->
@@ -104,7 +105,7 @@ $recibir_datos = isset($_POST['busqueda']) ? $_POST['busqueda'] : '';
               </ul>
             </div>
             <button class="planButton premiumButton">
-              Obtener plan Premium
+              <a class="plan" href="../Frames/Pantalla-Pago-Suscripcion.php">Obtener plan Premium</a>
               <img src="../Icons/cocodrilo-premium.png" alt="" class="cocoPremium">
             </button>
           </form>
