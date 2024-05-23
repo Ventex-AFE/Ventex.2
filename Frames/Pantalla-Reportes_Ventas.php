@@ -101,7 +101,7 @@ $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM ca
 <article class="sellModalContainer hidden">
 <section class="sellModalInformationContainer ">
     <h1 class="titleModal">Ventex</h1>
-    <p class="infoModal">asasc sdsdsd sdsdsd sdsd sdsdssd ssd sdss</p>
+    <p class="infoModal">Con Ventex, los emprendedores estudiantiles pueden gestionar y promocionar sus productos de manera eficiente. Compra un plan y desbloquea todo el potencial de tu negocio.</p>
 </section>
 <section class="sellModalPlansContainer ">
     <button class="closePlansButto">x</button>

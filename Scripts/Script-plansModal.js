@@ -2,6 +2,7 @@ const planHeaderButton = document.querySelector('.planHeaderButton')
 const sellModalContainer = document.querySelector('.sellModalContainer');
 const overlaySellModal = document.querySelector('.overlaySellModal');
 const closePlansButto = document.querySelector('.closePlansButto');
+const basicButton = document.querySelector('.basicButton');
 
 
 
@@ -17,3 +18,4 @@ planHeaderButton.addEventListener('click', (e) => {
 });
 overlaySellModal.addEventListener('click', closePlans);
 closePlansButto.addEventListener('click', closePlans);
+basicButton.addEventListener('click', closePlans);
