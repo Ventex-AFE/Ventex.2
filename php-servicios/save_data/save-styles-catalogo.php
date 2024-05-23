@@ -19,11 +19,7 @@ $guardar = mysqli_query($Conexion_usser_changes, $sentence);
 if (!$guardar) {
     echo "Error al guardar los datos en la base de datos: " . mysqli_error($Conexion_usser_changes);
 } else {
-    // Mostrar el formulario y enviarlo automáticamente
-    echo '<form id="redirectForm" action="../../Frames/pantalla-producto.php" method="post">';
-    echo '<input type="hidden" name="id_product" value="' . $Id_prod . '">';
-    echo '</form>';
-    echo '<script>document.getElementById("redirectForm").submit();</script>';
+    //header('Location: ../../Frames/pantalla-perfil.php');
 }
 
 mysqli_close($Conexion_usser_changes);
