@@ -20,8 +20,8 @@ $diseñador = mysqli_fetch_array($busque_diseno_usser);
     <link rel="stylesheet" href="../Catalog/Styles-Product-Box/preview-product-box-1.css" id="previewProductBox">
     <link rel="stylesheet" href="../Componentes/editCatalogModal.css">
     <link rel="stylesheet" href="./Queries-responsive/queries-catalogo-1.css" id="style-catalog">
-    <!-- <script src="catalog-styles-election.js"></script>
-</head> -->
+    <!-- <script src="catalog-styles-election.js"></script>-->
+</head> 
 <style>
 
 </style>
