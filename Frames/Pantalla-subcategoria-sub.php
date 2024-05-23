@@ -19,7 +19,7 @@
             <meta charset="UTF-8">
             <title>Ventex</title>
             <link rel="stylesheet" href="../Componentes/header.css">
-            <link rel="stylesheet" href="../Componentes/productBox.css">
+            <link rel="stylesheet" href="../Componentes/productBoxSmaller.css">
             <link rel="stylesheet" href="../Componentes/footer.css">
             <link rel="stylesheet" href="../Styles/Styles-Subcategoria-sub.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -143,7 +143,6 @@
         <?php while($mostrar=mysqli_fetch_array($ex)) { ?>
                 
             <form action="../Frames/pantalla-producto.php" method="post">
-                <input type="hidden" name="id_product" value="<?php echo $mostrar['ID_Producto']; ?>">
                 <button class="productContainer" type="submit">
                     <div class="productPhoto">
                         <img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>" class="productImage" />
@@ -155,73 +154,6 @@
                         <p class="nameStyle"><?php echo $mostrar['Nombre_Prod']; ?></p>
                     </div>
                 </button>
-                <button class="productContainer" type="submit">
-                    <div class="productPhoto">
-                        <img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>" class="productImage" />
-                    </div>
-                    <div class="productPrice">
-                        <p class="priceStyle">$<?php echo $mostrar['Precio']; ?></p>
-                    </div>
-                    <div class="productName">
-                        <p class="nameStyle"><?php echo $mostrar['Nombre_Prod']; ?></p>
-                    </div>
-                </button>
-                <button class="productContainer" type="submit">
-                    <div class="productPhoto">
-                        <img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>" class="productImage" />
-                    </div>
-                    <div class="productPrice">
-                        <p class="priceStyle">$<?php echo $mostrar['Precio']; ?></p>
-                    </div>
-                    <div class="productName">
-                        <p class="nameStyle"><?php echo $mostrar['Nombre_Prod']; ?></p>
-                    </div>
-                </button>
-                <button class="productContainer" type="submit">
-                    <div class="productPhoto">
-                        <img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>" class="productImage" />
-                    </div>
-                    <div class="productPrice">
-                        <p class="priceStyle">$<?php echo $mostrar['Precio']; ?></p>
-                    </div>
-                    <div class="productName">
-                        <p class="nameStyle"><?php echo $mostrar['Nombre_Prod']; ?></p>
-                    </div>
-                </button>
-                <button class="productContainer" type="submit">
-                    <div class="productPhoto">
-                        <img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>" class="productImage" />
-                    </div>
-                    <div class="productPrice">
-                        <p class="priceStyle">$<?php echo $mostrar['Precio']; ?></p>
-                    </div>
-                    <div class="productName">
-                        <p class="nameStyle"><?php echo $mostrar['Nombre_Prod']; ?></p>
-                    </div>
-                </button>
-                <button class="productContainer" type="submit">
-                    <div class="productPhoto">
-                        <img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>" class="productImage" />
-                    </div>
-                    <div class="productPrice">
-                        <p class="priceStyle">$<?php echo $mostrar['Precio']; ?></p>
-                    </div>
-                    <div class="productName">
-                        <p class="nameStyle"><?php echo $mostrar['Nombre_Prod']; ?></p>
-                    </div>
-                </button>
-                <button class="productContainer" type="submit">
-                    <div class="productPhoto">
-                        <img src="../Product-Images/<?php echo $mostrar['Imagen']; ?>" class="productImage" />
-                    </div>
-                    <div class="productPrice">
-                        <p class="priceStyle">$<?php echo $mostrar['Precio']; ?></p>
-                    </div>
-                    <div class="productName">
-                        <p class="nameStyle"><?php echo $mostrar['Nombre_Prod']; ?></p>
-                    </div>
-                </button>
-                
             </form>
 
         <?php }?>

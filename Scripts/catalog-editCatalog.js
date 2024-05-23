@@ -7,6 +7,24 @@ const previewCatalog = document.getElementById('previewCatalog');
 const catalogStyles = document.querySelectorAll('input[name="catalogStyle"]');
 const previewProductBox = document.getElementById('previewProductBox');
 const productBoxPreviewStyles = document.getElementsByName('productBoxPreviewStyle');
+const editCatalogModalContainer = document.querySelector('.editCatalogModalContainer');
+const editCatalogOverlay = document.querySelector('.editCatalogOverlay');
+const catalogo = document.querySelector('.catalogo');
+const cancelButton = document.querySelector('.cancelButton');
+
+const closeModal = () =>{
+    editCatalogModalContainer.classList.add('hidden');
+    editCatalogOverlay.classList.add('hidden');
+}
+
+catalogo.addEventListener('click', (e)=>{
+    console.log('pto');
+    e.preventDefault();
+    editCatalogModalContainer.classList.remove('hidden');
+    editCatalogOverlay.classList.remove('hidden');
+});
+editCatalogOverlay.addEventListener('click', closeModal);
+cancelButton.addEventListener('click', closeModal);
 
 const makeChanges = () => {
     const headerColor = headerColorInput ? headerColorInput.value : null;
@@ -69,3 +87,8 @@ catalogStyles.forEach(style => {
 productBoxPreviewStyles.forEach(style => {
     style.addEventListener('change', makeChanges);
 });
+
+
+
+
+
