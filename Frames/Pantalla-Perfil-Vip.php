@@ -417,10 +417,15 @@ mysqli_stmt_close($stmt);
             </section>
             <section class="buttonsEditCatalogContainer">
                 <button class="buttonEditCatalog cancelButton">Cancelar</button>
-                <button class="buttonEditCatalog updateChangesButton">Actualizar Cambios</button>
+                <button id="botonEnviar" class="buttonEditCatalog updateChangesButton">Actualizar Cambios</button>
             </section>
         </section>
     </article>
+    <script>
+        document.getElementById('botonEnviar').addEventListener('click', function() {
+            document.getElementById('form_changes').submit();
+        });
+    </script>
     <div class="editCatalogOverlay hidden"></div>
 
     <script src="../Scripts/catalog-editCatalog.js"></script>
