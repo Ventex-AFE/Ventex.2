@@ -336,7 +336,7 @@ mysqli_stmt_close($stmt);
                 <h1 class="subitleModal">editar catalogo</h1>
             </div>
             <div class="editOptionsContainer">
-                <form action="../php-servicios/save_data/save-styles-catalogo.php" method="post">
+                <form action="../php-servicios/save_data/save-styles-catalogo.php" method="post" id="form_changes">
                 <div class="changeContainer">
                     <label for="headerColor" class="inputLabel">Color Header</label>
                     <input type="color" name="headerColor" value="#B3C372" id="headerColor" class="inputColor">
@@ -350,7 +350,7 @@ mysqli_stmt_close($stmt);
                     <input type="radio" name="productBoxPreviewStyle" id="" value="1" class="radioButton" checked>
                     <input type="radio" name="productBoxPreviewStyle" id="" value="2" class="radioButton">
                 </div>
-                </form>
+                
             </div>
         </section>
         <section class="rigthCatalogPreviewAllContainer">
@@ -362,6 +362,7 @@ mysqli_stmt_close($stmt);
                 <input type="radio" name="catalogStyle" id="" value="1" class="radioButton" checked>
                 <input type="radio" name="catalogStyle" id="" value="2" class="radioButton">
                 </div>
+                </form>
             </section>
             <section class="catalogPreviewContainer">
 <!-- CATALOG PREVIEW SCREEN --------------------------------------------------------->
