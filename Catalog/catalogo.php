@@ -16,7 +16,8 @@ $diseñador = mysqli_fetch_array($busque_diseno_usser);
     <title>Ventex</title>
     <link rel="stylesheet" href="./Styles-Product-Box/product-box-1.css" id="style-product-box">
     <link rel="stylesheet" href="./Styles-Frames/Styles-catalogo-1.css" id="style-catalog">
-    <link rel="stylesheet" href="../Catalog/Styles-Frames/Preview-catalogo-1.css">
+    <link rel="stylesheet" href="../Catalog/Styles-Frames/Preview-catalogo-1.css" id="previewCatalog">
+    <link rel="stylesheet" href="../Catalog/Styles-Product-Box/preview-product-box-1.css" id="previewProductBox">
     <link rel="stylesheet" href="../Componentes/editCatalogModal.css">
     <link rel="stylesheet" href="./Queries-responsive/queries-catalogo-1.css" id="style-catalog">
     <!-- <script src="catalog-styles-election.js"></script>
@@ -65,18 +66,19 @@ $diseñador = mysqli_fetch_array($busque_diseno_usser);
             <div class="editOptionsContainer">
                 <div class="changeContainer">
                     <label for="headerColor" class="inputLabel">Color Header</label>
-                    <input type="color" name="headerColor" value="#B3C372" id="" class="inputColor">
+                    <input type="color" name="headerColor" value="#B3C372" id="headerColor" class="inputColor">
                 </div>
                 <div class="changeContainer">
                     <label for="headerColor" class="inputLabel">Color Categorias</label>
-                    <input type="color" name="headerColor" value="#647A3F" id="" class="inputColor">
+                    <input type="color" name="headerColor" value="#647A3F" id="categoriesColor" class="inputColor">
                 </div>
                 <div class="changeContainer">
                     <label for="headerColor" class="inputLabel radioLabel">Diseño caja producto</label>
-                    <input type="radio" name="" id="" class="radioButton">
-                    <input type="radio" name="" id="" class="radioButton">
+                    <input type="radio" name="productBoxPreviewStyle" id="" class="radioButton" checked>
+                    <input type="radio" name="productBoxPreviewStyle" id="" class="radioButton">
                 </div>
             </div>
+            <button class="makeChangesPreviewScreen">Hacer Cambio</button>
         </section>
         <section class="rigthCatalogPreviewAllContainer">
             <section class="selectStyleCatalogContainer">
@@ -84,8 +86,8 @@ $diseñador = mysqli_fetch_array($busque_diseno_usser);
                     <h1 class="actionName">Elige diseño del catalogo</h1>
                 </div>
                 <div class="selectStyleOptionsContainer">
-                <input type="radio" name="" id="" class="radioButton">
-                <input type="radio" name="" id="" class="radioButton">
+                <input type="radio" name="catalogStyle" id="" class="radioButton" checked>
+                <input type="radio" name="catalogStyle" id="" class="radioButton">
                 </div>
             </section>
             <section class="catalogPreviewContainer">
@@ -95,6 +97,7 @@ $diseñador = mysqli_fetch_array($busque_diseno_usser);
                         <div class="searchPreview"></div>
                     </div>
                     <div class="categoriesPreview">
+                        <button class="categoryButtonPreview"></button>
                         <button class="categoryButtonPreview"></button>
                         <button class="categoryButtonPreview"></button>
                         <button class="categoryButtonPreview"></button>
@@ -145,6 +148,8 @@ $diseñador = mysqli_fetch_array($busque_diseno_usser);
         </section>
     </article>
     <div class="editCatalogOverlay hidden"></div>
+
+    <script src="../Catalog/catalog-editCatalog.js"></script>
 <!-- Edit Modal ------------------------------------------------------------------------------------------------>
 
     <form action="">
