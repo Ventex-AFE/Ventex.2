@@ -46,7 +46,6 @@ function mostrarProductosVistosRecientemente($Conexion_usser_select) {
 </head>
 
 <header>
-
 <?php
   require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
   $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM categoria;");
