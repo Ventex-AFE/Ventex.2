@@ -243,7 +243,7 @@ td {
    width: 20vh;
    height: 6vh;
    position: absolute;
-   right: 3vh;
+   right: 6vh;
    background: none;
    border: 1px solid rgb(153, 153, 153);
    color: gray;
@@ -373,7 +373,7 @@ aside nav ul {
   /*Manu Changes ---------------------------------------------*/
 
   #resultados{
-   width:95%;
+   width: 90%;
    height: auto;
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;

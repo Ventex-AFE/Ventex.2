@@ -47,6 +47,9 @@ mysqli_stmt_close($stmt);
     <link rel="stylesheet" href="../Styles/Styls-profile.css">
     <link rel="stylesheet" href="../Componentes/extensibleSearchInput.css">
     <link rel="stylesheet" href="../Componentes/productBoxSmallerWithPoints.css">
+    <link rel="stylesheet" href="../Styles/Preview-catalogo-1.css" id="previewCatalog">
+    <link rel="stylesheet" href="../Styles/preview-product-box-1.css" id="previewProductBox">
+    <link rel="stylesheet" href="../Componentes/editCatalogModal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -315,6 +318,102 @@ mysqli_stmt_close($stmt);
 
     <script src="../Scripts/Script-Perfil.js"></script>
     <!----------------------------------------------------------------------->
+
+
+    <!-- Edit Modal ------------------------------------------------------------------------------------------------>
+    <article class="editCatalogModalContainer ">
+        <section class="editCatalogOptionsContainer">
+            <div class="TitleModalContainer">
+                <h1 class="titleModal">Ventex</h1>
+                <h1 class="subitleModal">editar catalogo</h1>
+            </div>
+            <div class="editOptionsContainer">
+                <div class="changeContainer">
+                    <label for="headerColor" class="inputLabel">Color Header</label>
+                    <input type="color" name="headerColor" value="#B3C372" id="headerColor" class="inputColor">
+                </div>
+                <div class="changeContainer">
+                    <label for="headerColor" class="inputLabel">Color Categorias</label>
+                    <input type="color" name="headerColor" value="#647A3F" id="categoriesColor" class="inputColor">
+                </div>
+                <div class="changeContainer">
+                    <label for="headerColor" class="inputLabel radioLabel">Diseño caja producto</label>
+                    <input type="radio" name="productBoxPreviewStyle" id="" class="radioButton" checked>
+                    <input type="radio" name="productBoxPreviewStyle" id="" class="radioButton">
+                </div>
+            </div>
+        </section>
+        <section class="rigthCatalogPreviewAllContainer">
+            <section class="selectStyleCatalogContainer">
+                <div class="actionTitleContainer">
+                    <h1 class="actionName">Elige diseño del catalogo</h1>
+                </div>
+                <div class="selectStyleOptionsContainer">
+                <input type="radio" name="catalogStyle" id="" class="radioButton" checked>
+                <input type="radio" name="catalogStyle" id="" class="radioButton">
+                </div>
+            </section>
+            <section class="catalogPreviewContainer">
+<!-- CATALOG PREVIEW SCREEN --------------------------------------------------------->
+                <div class="catalogPreviewScreen">
+                    <div class="headerPreview">
+                        <div class="searchPreview"></div>
+                    </div>
+                    <div class="categoriesPreview">
+                        <button class="categoryButtonPreview"></button>
+                        <button class="categoryButtonPreview"></button>
+                        <button class="categoryButtonPreview"></button>
+                        <button class="categoryButtonPreview"></button>
+                        <button class="categoryButtonPreview"></button>
+                        <button class="categoryButtonPreview"></button>
+                        <button class="categoryButtonPreview"></button>
+                        <button class="categoryButtonPreview"></button>
+                        <button class="categoryButtonPreview"></button>
+                        <button class="categoryButtonPreview"></button>
+                    </div>
+                    <div class="productsAllContainerPreview">
+                        <div class="titlePreviewContainer">
+                            <h1 class="titleCategoryPreview"> Categoria de productos</h1>
+                        </div>
+                        <div class="previewProductsContainer">
+                            <div class="productBoxPreview">
+                                <div class="productImagePreview"></div>
+                            </div>
+                            <div class="productBoxPreview">
+                                <div class="productImagePreview"></div>
+                            </div>
+                            <div class="productBoxPreview">
+                                <div class="productImagePreview"></div>
+                            </div>
+                            <div class="productBoxPreview">
+                                <div class="productImagePreview"></div>
+                            </div>
+                            <div class="productBoxPreview">
+                                <div class="productImagePreview"></div>
+                            </div>
+                            <div class="productBoxPreview">
+                                <div class="productImagePreview"></div>
+                            </div>
+                            <div class="productBoxPreview">
+                                <div class="productImagePreview"></div>
+                            </div>
+                            <div class="productBoxPreview">
+                                <div class="productImagePreview"></div>
+                            </div>
+                    </div>
+                </div>
+<!----------------------------------------------------------------------------------->
+            </section>
+            <section class="buttonsEditCatalogContainer">
+                <button class="buttonEditCatalog cancelButton">Cancelar</button>
+                <button class="buttonEditCatalog updateChangesButton">Actualizar Cambios</button>
+            </section>
+        </section>
+    </article>
+    <div class="editCatalogOverlay "></div>
+
+    <script src="../Scripts/catalog-editCatalog.js"></script>
+<!---------------------------------------------------------------------------------------------------------->
 </body>
 
 </html>
