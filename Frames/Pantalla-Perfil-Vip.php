@@ -300,16 +300,24 @@ mysqli_stmt_close($stmt);
     </main>
 
     <footer>
-        <section class="name-year">
-            <h1>2023-Ventex</h1>
+        <section class="con">
+            <section class="name-year">
+                <h1>2023-Ventex</h1>
+            </section>
+            <section class="logo-ventex">
+                <h1>Ventex</h1>
+            </section>
+            <section class="socialmedia-ventex">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            </section>
         </section>
-        <section class="logo-ventex">
-            <h1>Ventex</h1>
-        </section>
-        <section class="socialmedia-ventex">
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
-            <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
-            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+        <section class="aviso">
+            <span>Ventex no pide a través de SMS o de las redes sociales datos bancarios, tarjetas de crédito, clave NIP,
+                contraseñas o datos sensibles de cualquier tipo. 
+                <br>Si necesitas aclarar cualquier duda, puedes contactar con el Call Center en 800 225 5748.
+            </span>
         </section>
     </footer>
 
@@ -321,7 +329,7 @@ mysqli_stmt_close($stmt);
 
 
     <!-- Edit Modal ------------------------------------------------------------------------------------------------>
-    <article class="editCatalogModalContainer ">
+    <article class="editCatalogModalContainer hidden">
         <section class="editCatalogOptionsContainer">
             <div class="TitleModalContainer">
                 <h1 class="titleModal">Ventex</h1>
@@ -410,7 +418,7 @@ mysqli_stmt_close($stmt);
             </section>
         </section>
     </article>
-    <div class="editCatalogOverlay "></div>
+    <div class="editCatalogOverlay hidden"></div>
 
     <script src="../Scripts/catalog-editCatalog.js"></script>
 <!---------------------------------------------------------------------------------------------------------->
