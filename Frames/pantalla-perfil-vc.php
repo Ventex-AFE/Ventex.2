@@ -191,7 +191,7 @@ mysqli_stmt_close($stmt);
         <!--Left------------------------------------------------------------------------------------------->
         <article class="left">
             <section class="personalInfo">
-                <button type="submit" id="bot" class="btn calc">Reportar Vendedor</button>
+                <!-- <button type="submit" id="bot" class="btn calc">Reportar Vendedor</button> -->
                 <div class="photoContainer"><img src="../Imgens-Pefil/<?php echo $Imagen ?>" alt="" class="profilePhoto"></div>
                 <div class="nameContainer">
                     <p class="userName"><?php echo $Name_Seller ?></p>

@@ -1,6 +1,6 @@
 'use strict';
 
-let stylePage = 2;
+let stylePage = 1;
 let productBoxStyle = 2;
 
 // const headerStyle = document.querySelector('.headerContainer');
