@@ -96,7 +96,7 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body >
 
 <header>
 
@@ -221,7 +221,7 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
                         <input type="hidden" name="Id_seller" value="<?php echo $id_Seller; ?>">
                         <input type="submit" id="bot" value="Ver perfil del vendedor">
                     </form>
-                    <button type="submit" id="bot" class="btn calc">Reportar Producto</button>
+                    <button type="submit" id="bot" class="btn reportButton" >Reportar Producto</button>
                 </section>
             </article>
         </section>
@@ -346,8 +346,8 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
     </main>
          <!-- repormodal Modal -------------------------------------------------------------------------------------------------->
 
-        <div class="calculateModal hidden">
-        <section class="part-Comentarios" style="width: 30vw;">
+        <div class="reportModal hidden">
+            <section class="part-Comentarios"">
                 <section class="textU">
                     <h1>Reportar producto</h1>
                 </section>
@@ -355,7 +355,7 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
                     <input type="hidden" name="fecha_Comentr" value="<?php echo date('Y-m-d'); ?>">
                     <input type="hidden" name="hora_comentarior" value="<?php echo date('H:i:s'); ?>">
                     <input type="hidden" name="id_prodr" value="<?php echo $id_product; ?>">
-                    <input type="text" placeholder="Escribe el motivo" name="descripcionr" id="text-Comen" class="text-alining" style="width: 40vw;">
+                    <textarea placeholder="Escribe el motivo" name="descripcionr" id="text-Comen" class="text-alining" style="width: 40vw;"></textarea>
                     <article class="input-Comentar"><input class="submit-Com" type="submit" value="Reportar"></article>
                 </form>
             </section>
@@ -385,8 +385,8 @@ $more = mysqli_query($Conexion_usser_select, "SELECT * FROM productos WHERE Cate
             </span>
         </section>
     </footer>
-    <script src="../Scripts/Script-Show-catalogo.js"></script>
     <script src="../Scripts/Script-producto.js"></script>
+    <script src="../Scripts/Script-Show-catalogo.js"></script>
    
 </body>
 
