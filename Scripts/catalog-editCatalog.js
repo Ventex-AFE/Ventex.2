@@ -28,13 +28,13 @@ const makeChanges = () => {
 
     catalogStyles.forEach((style, index) => {
         if (style.checked) {
-            previewCatalog.href = `./Styles-Frames/Preview-catalogo-${index + 1}.css`;
+            previewCatalog.href = `../Styles/Preview-catalogo-${index + 1}.css`;
         }
     });
 
     productBoxPreviewStyles.forEach((style, index) => {
         if (style.checked) {
-            previewProductBox.href = `../Catalog/Styles-Product-Box/preview-product-box-${index + 1}.css`;
+            previewProductBox.href = `../Styles/preview-product-box-${index + 1}.css`;
         }
     });
 }
