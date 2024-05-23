@@ -22,6 +22,7 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
     <meta charset="UTF-8">
     <title>Categoria</title>
     <link rel="stylesheet" href="../Componentes/header.css">
+    <link rel="stylesheet" href="../Componentes/footer.css">
     <link rel="stylesheet" href="../Componentes/productBoxSmaller.css">
     <link rel="stylesheet" href="../Styles/Styles-Subcategoria.css">
 </head>
@@ -163,7 +164,27 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
 <?php }} ?>
 
     </main>
-    <footer></footer>
+    <footer>
+        <section class="con">
+            <section class="name-year">
+                <h1>2023-Ventex</h1>
+            </section>
+            <section class="logo-ventex">
+                <h1>Ventex</h1>
+            </section>
+            <section class="socialmedia-ventex">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            </section>
+        </section>
+        <section class="aviso">
+            <span>Ventex no pide a través de SMS o de las redes sociales datos bancarios, tarjetas de crédito, clave NIP,
+                contraseñas o datos sensibles de cualquier tipo. 
+                <br>Si necesitas aclarar cualquier duda, puedes contactar con el Call Center en 800 225 5748.
+            </span>
+        </section>
+    </footer>
     <script src="../Scripts/Script-subcategoria.js"></script>
 </body>
 
