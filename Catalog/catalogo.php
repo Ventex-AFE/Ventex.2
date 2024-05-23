@@ -78,7 +78,6 @@ $diseñador = mysqli_fetch_array($busque_diseno_usser);
                     <input type="radio" name="productBoxPreviewStyle" id="" class="radioButton">
                 </div>
             </div>
-            <button class="makeChangesPreviewScreen">Hacer Cambio</button>
         </section>
         <section class="rigthCatalogPreviewAllContainer">
             <section class="selectStyleCatalogContainer">
