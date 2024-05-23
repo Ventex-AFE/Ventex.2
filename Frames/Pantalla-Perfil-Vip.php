@@ -293,7 +293,7 @@ mysqli_stmt_close($stmt);
                     <ul>
                         <li><a href="../Frames/pantalla-pedidos.php">Pedidos</a></li>
                         <li><a href="../Frames/Pantalla-Reportes_Ventas.php">Reportes</a></li>
-                        <li><a href="#" class="catalogo">Catálogo</a></li>
+                        <!-- <li><a href="#" class="catalogo">Catálogo</a></li> -->
                     </ul>
                 </nav>
             </aside>

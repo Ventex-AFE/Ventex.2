@@ -14,10 +14,9 @@ $diseñador = mysqli_fetch_array($busque_diseno_usser);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ventex</title>
-    <link rel="stylesheet" href="../Styles-Product-Box/product-box-1.css" id="style-product-box">
-    <link rel="stylesheet" href="../Styles-Frames/Styles-catalogo-1.css" id="style-catalog">
-    <link rel="stylesheet" href="../Queries-responsive/queries-catalogo-1.css" id="style-catalog">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./Styles-Product-Box/product-box-1.css" id="style-product-box">
+    <link rel="stylesheet" href="./Styles-Frames/Styles-catalogo-1.css" id="style-catalog">
+    <link rel="stylesheet" href="./Queries-responsive/queries-catalogo-1.css" id="style-catalog">
     <!-- <script src="catalog-styles-election.js"></script>-->
 </head> 
 <style>
