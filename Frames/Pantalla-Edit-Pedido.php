@@ -73,7 +73,7 @@ mysqli_stmt_close($stmt);
                 <ul class="menuv">
                     <?php while ($cat = mysqli_fetch_array($cats)) { ?>
                         <li class="ca">
-                            <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
+                            <a href="Pantalla-Subcategoria.php?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
                                 <div class="categorieSection">
                                     <p class="categorieOption"><?php echo $cat['Nombre_Cat']; ?></p>
                                 </div>
@@ -170,7 +170,7 @@ mysqli_stmt_close($stmt);
         </section>
         <!-- Sección lateral 2 (formulario para actualizar pedido) -->
         <section class="form">
-            <h1 class="form-title">Editar Producto</h1>
+            <h1 class="form-title">Editar Pedido</h1>
             <form action="../php-servicios/save_data/save_actulizacion_de_pedidos.php" method="post" id="form_product">
                 <input type="hidden" name="id_Pedidos_update" value="<?php echo $ID_pedido ?>"><!-- aqui va ir lo de sesion -->
                 <!-- Inputs para actualizar datos de redes sociales -->
