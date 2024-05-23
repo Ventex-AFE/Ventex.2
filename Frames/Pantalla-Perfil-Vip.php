@@ -336,19 +336,21 @@ mysqli_stmt_close($stmt);
                 <h1 class="subitleModal">editar catalogo</h1>
             </div>
             <div class="editOptionsContainer">
+                <form action="../php-servicios/save_data/save-styles-catalogo.php" method="post">
                 <div class="changeContainer">
                     <label for="headerColor" class="inputLabel">Color Header</label>
                     <input type="color" name="headerColor" value="#B3C372" id="headerColor" class="inputColor">
                 </div>
                 <div class="changeContainer">
                     <label for="headerColor" class="inputLabel">Color Categorias</label>
-                    <input type="color" name="headerColor" value="#647A3F" id="categoriesColor" class="inputColor">
+                    <input type="color" name="CategoryColor" value="#647A3F" id="categoriesColor" class="inputColor">
                 </div>
                 <div class="changeContainer">
                     <label for="headerColor" class="inputLabel radioLabel">Diseño caja producto</label>
-                    <input type="radio" name="productBoxPreviewStyle" id="" class="radioButton" checked>
-                    <input type="radio" name="productBoxPreviewStyle" id="" class="radioButton">
+                    <input type="radio" name="productBoxPreviewStyle" id="" value="1" class="radioButton" checked>
+                    <input type="radio" name="productBoxPreviewStyle" id="" value="2" class="radioButton">
                 </div>
+                </form>
             </div>
         </section>
         <section class="rigthCatalogPreviewAllContainer">
@@ -357,8 +359,8 @@ mysqli_stmt_close($stmt);
                     <h1 class="actionName">Elige diseño del catalogo</h1>
                 </div>
                 <div class="selectStyleOptionsContainer">
-                <input type="radio" name="catalogStyle" id="" class="radioButton" checked>
-                <input type="radio" name="catalogStyle" id="" class="radioButton">
+                <input type="radio" name="catalogStyle" id="" value="1" class="radioButton" checked>
+                <input type="radio" name="catalogStyle" id="" value="2" class="radioButton">
                 </div>
             </section>
             <section class="catalogPreviewContainer">
