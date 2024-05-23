@@ -58,7 +58,7 @@ mysqli_stmt_close($stmt);
 
 <body>
     <!-- Barra de navegación -->
-    <header>
+<header>
 
 <?php
 require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
@@ -75,7 +75,7 @@ $cats = mysqli_query($Conexion_usser_select, "SELECT DISTINCT Nombre_Cat FROM ca
             <ul class="menuv">
                 <?php while ($cat = mysqli_fetch_array($cats)) { ?>
                     <li class="ca">
-                        <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
+                        <a href="Pantalla-Subcategoria.php?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
                             <div class="categorieSection">
                                 <p class="categorieOption"><?php echo $cat['Nombre_Cat']; ?></p>
                             </div>

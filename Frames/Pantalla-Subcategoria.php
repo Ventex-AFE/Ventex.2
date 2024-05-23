@@ -78,6 +78,7 @@ $ex = mysqli_query($Conexion_usser_select, $busc);
                             <img src="../Product-Images/Imagenes-subcategorias/<?php echo $subcat['foto_subcategoria']; ?>" alt="Nones" class="subcategoryPhoto">
                         </div>
                         <div class="subcategoryNameContainer">
+                            <input type="hidden" value="<?php echo $mywher; ?>" name="categoria">
                             <input type="hidden" name="id" value="<?php echo $subcat['Nombre_Subcat']; ?>">
                             <p class="subcategoryName"><?php echo $subcat['Nombre_Subcat']; ?></p>
                         </div>

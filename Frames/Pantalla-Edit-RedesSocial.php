@@ -66,7 +66,7 @@ mysqli_stmt_close($stmt);
                 <ul class="menuv">
                     <?php while ($cat = mysqli_fetch_array($cats)) { ?>
                         <li class="ca">
-                            <a href="Pantalla-Subcategoria?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
+                            <a href="Pantalla-Subcategoria.php?categoria=<?php echo $cat['Nombre_Cat']; ?>" name="" class="linkCategoriesOption">
                                 <div class="categorieSection">
                                     <p class="categorieOption"><?php echo $cat['Nombre_Cat']; ?></p>
                                 </div>
