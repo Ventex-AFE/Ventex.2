@@ -1,6 +1,7 @@
 <?php
     $subpro = $_POST['id'];
     $mywher = $_POST['categoria'];
+    session_start();
     
     require_once('../php-servicios/Conexion_db/conexion_usser_select.php');
 
@@ -37,7 +38,7 @@
 </section>
 <nav>
     <ul class="menu">
-        <li><a href="" class="headerOption">Inicio</a></li>
+        <li><a href="../Frames/Pantalla-Inicio.php" class="headerOption">Inicio</a></li>
         <li><a href="#" id="categorias" class="headerOption">Categorías</a>
             <div class="invisible"></div>
             <ul class="menuv">
@@ -53,7 +54,7 @@
             </ul>
         </li>
         <li><a href="" class="headerOption planHeaderButton">Planes</a></li>
-        <li><a href="" class="headerOption">Vender</a></li>
+        <li><a href="../Frames/Pantalla-AddP.php" class="headerOption">Vender</a></li>
     </ul>
 </nav>
 <section class="busqueda">
@@ -65,7 +66,7 @@
     </form>
 </section>
 <section class="imgProfile">
-    <div></div>
+    <a class="imgProfile" href="../Frames/pantalla-perfil.php"><img src="../Imgens-Pefil/<?php echo $_SESSION['img']?>"></a>
 </section>
 
 <!--- MODAL VENDER ----------------------------------------------------------------------------------->
@@ -116,7 +117,7 @@
               </ul>
             </div>
             <button class="planButton premiumButton">
-              Obtener plan Premium
+              <a class ="plan" href="../Frames/Pantalla-Pago-Suscripcion.php">Obtener plan Premium</a>
               <img src="../Icons/cocodrilo-premium.png" alt="" class="cocoPremium">
             </button>
           </form>

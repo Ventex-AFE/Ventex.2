@@ -152,6 +152,12 @@ a{
     margin-right: 1rem;
     border: 0.5px solid white;
 }
+
+.plan{
+    text-decoration: none;
+    color: white;
+}
+
 .inputSearchHeader{
     height: 5vh;
     width: 25vw;
@@ -182,18 +188,20 @@ a{
     height: 70%;
 }
 .imgProfile{
-    width: 10vw;
-    height: 10vh;
+    width: 9vh;
+    height: 9vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.imgProfile div{
-    width: 3.5rem;
-    height: 3.5rem;
+    overflow: hidden;
     border-radius: 100%;
     background-color: rgb(239, 239, 239);
+}
+
+.imgProfile > a > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%
 }
 
 
