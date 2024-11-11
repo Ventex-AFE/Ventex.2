@@ -192,6 +192,7 @@ mysqli_stmt_close($stmt);
                         <a href="Pantalla-Edit-Info-Personal.php" class="edit"><i class="fa-solid fa-user-pen"></i></a>
                         <h1><?php echo $_SESSION['name']; ?> </h1>
                         <h2> <?php echo $_SESSION['email']; ?> </h2>
+                        <a href="http://localhost/ventex.2fer/Catalog/catalogo.php?id=<?php echo $_SESSION['id'] ?>" style="text-decoration: none; color: black;" target="_blank" rel="noopener noreferrer">Link personal</a>
                         <section class="details">
                             <section class="data">
                                 <table>
@@ -293,7 +294,7 @@ mysqli_stmt_close($stmt);
                     <ul>
                         <li><a href="../Frames/pantalla-pedidos.php">Pedidos</a></li>
                         <li><a href="../Frames/Pantalla-Reportes_Ventas.php">Reportes</a></li>
-                        <!-- <li><a href="#" class="catalogo">Catálogo</a></li> -->
+                        <li><a href="#" class="catalogo">Catálogo</a></li>
                     </ul>
                 </nav>
             </aside>
