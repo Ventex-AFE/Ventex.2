@@ -192,7 +192,7 @@ mysqli_stmt_close($stmt);
                         <a href="Pantalla-Edit-Info-Personal.php" class="edit"><i class="fa-solid fa-user-pen"></i></a>
                         <h1><?php echo $_SESSION['name']; ?> </h1>
                         <h2> <?php echo $_SESSION['email']; ?> </h2>
-                        <a href="http://localhost/ventex.2fer/Catalog/catalogo.php?id=<?php echo $_SESSION['id'] ?>" style="text-decoration: none; color: black;" target="_blank" rel="noopener noreferrer">Link personal</a>
+                        <a href="http://127.0.0.1/GitHub/ventex/Catalog/catalogo.php?id=<?php echo $_SESSION['id'] ?>" style="text-decoration: none; color: black;" target="_blank" rel="noopener noreferrer">Link personal</a>
                         <section class="details">
                             <section class="data">
                                 <table>
